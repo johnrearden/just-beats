@@ -44,6 +44,8 @@ Make your own drum loops on the web
 
 ## Data Model
 
+![Entity-relationship diagram for models](media/docs/just_beats_er_dgm.png)
+
 # Testing
 - Manual testing
 - Automated testing
