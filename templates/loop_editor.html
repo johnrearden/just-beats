@@ -2,13 +2,19 @@
 
 {% block content %}
 
-{% for loop in obj %}
     <div>
         <h2>Name : {{ loop.name }}</h2>
         <h2>Created on : {{ loop.created_on }}</h2>
         <h2>Allow copy : {{ loop.allow_copy }}</h2>
         <h2>Tempo : {{ loop.tempo }}</h2>
     </div>
-{% endfor %}
+
+    {% for track in tracks %}
+
+    <h1>Uses track with {{ track.beats }}</h1>
+
+    {% endfor %}
+
+    <h3>Instrument: {{ instrument.name }}</h3>
 
 {% endblock %}
