@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for loop in obj %}
+    <div>
+        <h2>Name : {{ loop.name }}</h2>
+        <h2>Created on : {{ loop.created_on }}</h2>
+        <h2>Allow copy : {{ loop.allow_copy }}</h2>
+        <h2>Tempo : {{ loop.tempo }}</h2>
+    </div>
+{% endfor %}
+
+{% endblock %}
