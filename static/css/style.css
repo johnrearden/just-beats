@@ -1,3 +1,34 @@
 body {
     background-color: bisque;
 }
+
+.track-holder {
+    background-color: lightgrey;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.track {
+    display: inline-block;
+    color: blue;
+   
+}
+
+.beat {
+    display: inline-block;
+    width: 20px;
+    height: 40px;
+    background-color: gray;
+    color: red;
+    border: 1px solid blue;
+}
+
+.active_beat {
+    background-color: cyan;
+}
+
+.instrument-name {
+    display: inline-block;
+    width: 150px;
+}

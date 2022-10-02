@@ -1,20 +1,34 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
 
-    <div>
-        <h2>Name : {{ loop.name }}</h2>
-        <h2>Created on : {{ loop.created_on }}</h2>
-        <h2>Allow copy : {{ loop.allow_copy }}</h2>
-        <h2>Tempo : {{ loop.tempo }}</h2>
+<div>
+    <p>Name : {{ loop.name }}</p>
+    <p>Created on : {{ loop.created_on }}</p>
+    <p>Allow copy : {{ loop.allow_copy }}</p>
+    <p>Tempo : {{ loop.tempo }}</p>
+</div>
+<div class="container">
+    <div class="track-holder text-center">
+        {% for track in tracks %}
+        <div class="row">
+            <div class="col-md-2 offset-2">
+                <div>{{ track.instrument.name }}</div>
+            </div>
+            <div class="col-md-8 track">
+                <div id="track_{{ forloop.counter0 }}"></div>
+            </div>
+        </div>
+
+        {% endfor %}
     </div>
+</div>
 
-    {% for track in tracks %}
 
-    <h1>Uses track with {{ track.beats }}</h1>
+<div>{{ yoke|json_script:"yoke-element" }}</div>
 
-    {% endfor %}
-
-    <h3>Instrument: {{ instrument.name }}</h3>
+<script src="{% static 'js/track_renderer.js' %}"></script>
 
 {% endblock %}

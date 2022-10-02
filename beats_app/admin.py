@@ -8,7 +8,7 @@ class DrumloopAdmin(admin.ModelAdmin):
 
 @admin.register(Track)
 class TrackAdmin(admin.ModelAdmin):
-    list_display = ('id', 'drumloop', 'beats','beat_volumes', 'track_volume', 'get_instrument')
+    list_display = ('id', 'drumloop', 'beats','beat_volumes', 'track_volume', 'instrument')
 
     def get_instrument(self, instance):
         return [instrument.name for instrument in instance.instrument.all()]
