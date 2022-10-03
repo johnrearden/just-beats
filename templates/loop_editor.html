@@ -4,26 +4,38 @@
 
 {% block content %}
 
-<div>
-    <p>Name : {{ loop.name }}</p>
-    <p>Created on : {{ loop.created_on }}</p>
-    <p>Allow copy : {{ loop.allow_copy }}</p>
-    <p>Tempo : {{ loop.tempo }}</p>
-</div>
+
 <div class="container">
-    <div class="track-holder text-center">
-        {% for track in tracks %}
+    <form action="" method="POST">
         <div class="row">
-            <div class="col-md-2 offset-2">
-                <div>{{ track.instrument.name }}</div>
-            </div>
-            <div class="col-md-8 track">
-                <div id="track_{{ forloop.counter0 }}"></div>
+            <div class="col-md-8 offset-2 p-md-2 text-center">
+                <label for="drumloop_name">Loop Name</label>
+                <input type="text" id="drumloop_name" value="{{ loop.name }}" name="drumloop_name">
+                <label for="tempo">Tempo</label>
+                <input type="number" id="tempo" name="tempo" value="{{ loop.tempo }}" min="60" max="200" step="1">
+                <label for="allow_copy">Allow Copy?</label>
+                <input type="checkbox" id="allow_copy" name="allow_copy" selected="{{ loop.allow_copy }}">
             </div>
         </div>
 
-        {% endfor %}
-    </div>
+        <div class="track-holder text-center">
+            {% for track in tracks %}
+            <div class="row">
+                <label for="">Track : {{ forloop.counter0 }}</label>
+                <input type="text" class="beats-hidden-field text-center" id="beats_{{ forloop.counter0 }}" 
+                    name="beats_{{ forloop.counter0 }}" value="{{ track.beats }}" readonly>
+                <div class="col-md-2 offset-2">
+                    <div>{{ track.instrument.name }}</div>
+                </div>
+                <div class="col-md-8 track">
+                    <div id="track_{{ forloop.counter0 }}"></div>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+    </form>
+
 </div>
 
 
