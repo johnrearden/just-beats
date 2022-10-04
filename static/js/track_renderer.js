@@ -37,8 +37,9 @@ const onBeatClick = (event) => {
 }
 
 const replaceCharacter = (string, position, newCharacter) => {
-    let before = string.substring(0, position);
-    let after = string.substring(position + 1);
+    let copy = Object.assign("", string);
+    let before = copy.substring(0, position);
+    let after = copy.substring(position + 1);
     console.log(`"${before}" + "${newCharacter}" + "${after}", position = ${position}`);
     return before + newCharacter + after;
 }
