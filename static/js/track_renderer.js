@@ -1,12 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let scriptElement = document.getElementById('yoke-element');
-    let jsonObj = JSON.parse(scriptElement.textContent);
-    console.log(jsonObj);
-
-    for (let i = 0; i < jsonObj.beats.length; i++) {
+    let numberOfTracks = document.getElementsByClassName('track').length;
+    console.log(`numberOfTracks : ${numberOfTracks}`);
+    for (let i = 0; i < numberOfTracks; i++) {
         let trackId = `track_${i}`;
         let track_div = document.getElementById(trackId);
-        let beatString = jsonObj.beats[i]
+        let beatString = document.getElementById('beats_' + i).value;
         for (let j = 0; j < beatString.length; j++) {
             let beatDiv = document.createElement('div');
             if (beatString[j] === '8') {
@@ -23,10 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const onBeatClick = (event) => {
     let beatDiv = event.target;
-    let [trackNumber, beatNumber] = beatDiv.id.split(":");
+    let [trackString, beatString] = beatDiv.id.split(":");
+    trackNumber = parseInt(trackString);
+    beatNumber = parseInt(beatString);
     let beatInputField = document.getElementById(`beats_${trackNumber}`)
-    console.log(`trackNumber: ${trackNumber}, beatNumber: ${beatNumber}`);
-    console.log(`Beat clicked : ${beatDiv.id}`);
     if (beatDiv.classList.contains('active_beat')) {
         beatDiv.classList.remove('active_beat');
         beatInputField.value = replaceCharacter(beatInputField.value, beatNumber, "0");
@@ -37,9 +35,7 @@ const onBeatClick = (event) => {
 }
 
 const replaceCharacter = (string, position, newCharacter) => {
-    let copy = Object.assign("", string);
-    let before = copy.substring(0, position);
-    let after = copy.substring(position + 1);
-    console.log(`"${before}" + "${newCharacter}" + "${after}", position = ${position}`);
+    let before = string.substring(0, position);
+    let after = string.substring(position + 1);
     return before + newCharacter + after;
 }

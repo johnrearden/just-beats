@@ -90,5 +90,7 @@ Make your own drum loops on the web
 
 [Return to top](#just-beats)
 ## Credits
+Cloning a string in javascript:
+https://stackoverflow.com/questions/31712808/how-to-force-javascript-to-deep-copy-a-string
 
 [Return to top](#just-beats)

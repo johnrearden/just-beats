@@ -7,6 +7,7 @@
 
 <div class="container">
     <form action="" method="POST">
+        {% csrf_token %}
         <div class="row">
             <div class="col-md-8 offset-2 p-md-2 text-center">
                 <label for="drumloop_name">Loop Name</label>
@@ -14,7 +15,8 @@
                 <label for="tempo">Tempo</label>
                 <input type="number" id="tempo" name="tempo" value="{{ loop.tempo }}" min="60" max="200" step="1">
                 <label for="allow_copy">Allow Copy?</label>
-                <input type="checkbox" id="allow_copy" name="allow_copy" selected="{{ loop.allow_copy }}">
+                <input type="checkbox" id="allow_copy" name="allow_copy" checked="{{ loop.allow_copy }}" value="allowed">
+                <input type="text" name="drumloop_id" value="{{ loop.id }}">
             </div>
         </div>
 
@@ -22,24 +24,28 @@
             {% for track in tracks %}
             <div class="row">
                 <label for="">Track : {{ forloop.counter0 }}</label>
-                <input type="text" class="beats-hidden-field text-center" id="beats_{{ forloop.counter0 }}" 
+                <input type="text" class="beats-hidden-field text-center" id="beats_{{ forloop.counter0 }}"
                     name="beats_{{ forloop.counter0 }}" value="{{ track.beats }}" readonly>
-                <div class="col-md-2 offset-2">
+                <input type="text" class="beats-hidden-field text-center" id="beat_volumes_{{ forloop.counter0 }}"
+                    name="beat_volumes_{{ forloop.counter0 }}" value="{{ track.beat_volumes }}" readonly>
+                <input type="text" id="tracks" name="tracks" value="{{ track.id }}">
+                <div class="col-md-2 offset-1 instrument-name">
                     <div>{{ track.instrument.name }}</div>
                 </div>
-                <div class="col-md-8 track">
+                <div class="col-md-2 track-volume">
+                    <input type="number" name="track_volume_{{ forloop.counter0 }}" value="{{ track.track_volume }}">
+                </div>
+                <div class="col-md-6 track">
                     <div id="track_{{ forloop.counter0 }}"></div>
                 </div>
             </div>
 
             {% endfor %}
         </div>
+        <input type="submit">
     </form>
 
 </div>
-
-
-<div>{{ yoke|json_script:"yoke-element" }}</div>
 
 <script src="{% static 'js/track_renderer.js' %}"></script>
 

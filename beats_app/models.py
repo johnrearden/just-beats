@@ -9,7 +9,7 @@ class Drumloop(models.Model):
     tempo = models.IntegerField(default=120, validators=[MaxValueValidator(200), MinValueValidator(60)])
 
     def __str__(self):
-        return f"{self.name}"
+        return f"{self.name}, tempo={self.tempo}, {'(can be copied)' if self.allow_copy else '(copying not allowed)'}"
 
 
 class Instrument(models.Model):
@@ -28,4 +28,4 @@ class Track(models.Model):
     track_volume = models.IntegerField(default=10, validators=[MaxValueValidator(10), MinValueValidator(0)])
 
     def __str__(self):
-        return f"{self.instrument}: {self.beats}"
+        return f"{self.instrument}: {self.beats}, {self.beat_volumes}, trk_vol={self.track_volume}, belongs to {self.drumloop.name}"

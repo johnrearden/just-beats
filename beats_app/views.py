@@ -1,32 +1,48 @@
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.views import View
 from .models import Drumloop, Track, Instrument
 
 class LoopEditor(View):
-    def get(self, request, name='default_name', *args, **kwargs):
+    def get(self, request, id=1, *args, **kwargs):
         query_set = Drumloop.objects.all()
-        loop = get_object_or_404(query_set, name='brand_new_loop')
+        loop = get_object_or_404(query_set, id=id)
         tracks = Track.objects.select_related()
-        print(tracks)
         
-        instruments= Instrument.objects.select_related()
-
-        beats_list = [track.beats for track in tracks]
-        beat_volumes_list = [track.beat_volumes for track in tracks]
-        instruments_list = [(instrument.name, instrument.url) for instrument in instruments]
-
-        my_dict = {
-            'beats': beats_list,
-            'beats_volumes': beat_volumes_list, 
-            'instruments': instruments_list,
-        }
-
         return render(
             request,
             "loop_editor.html",
             {
                 "loop": loop,
-                "yoke": my_dict,
                 "tracks": tracks,
             }
         )
+
+    def post(self, request):
+
+        print(request.POST)
+        querydict = request.POST
+        track_ids = querydict.getlist('tracks')
+        for id_str in track_ids:
+            id = int(id_str)
+            queryset = Track.objects.filter(id=id)
+            beats = querydict.get(f"beats_{id - 1}")
+            beat_volumes = querydict.get(f"beat_volumes_{id - 1}")
+            track_volume = querydict.get(f"track_volume_{id - 1}")
+            track = queryset.first()
+            track.beats = beats
+            track.beat_volumes = beat_volumes
+            track.track_volume = track_volume
+            track.save()
+        loop_id = int(querydict.get('drumloop_id'))
+        drumloop = Drumloop.objects.filter(id=loop_id).first()
+        drumloop.name = querydict.get('drumloop_name')
+        drumloop.tempo = int(querydict.get('tempo'))
+        if querydict.__contains__('allow_copy'):
+            drumloop.allow_copy = querydict.get('allow_copy')
+        else:
+            drumloop.allow_copy = False
+        drumloop.save()
+
+        return HttpResponse('<h1>Thanks</h1>')
+
