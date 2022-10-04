@@ -39,7 +39,7 @@ class LoopEditor(View):
         drumloop.name = querydict.get('drumloop_name')
         drumloop.tempo = int(querydict.get('tempo'))
         if querydict.__contains__('allow_copy'):
-            drumloop.allow_copy = querydict.get('allow_copy')
+            drumloop.allow_copy = True
         else:
             drumloop.allow_copy = False
         drumloop.save()

@@ -32,6 +32,7 @@
                 <div class="col-md-2 offset-1 instrument-name">
                     <div>{{ track.instrument.name }}</div>
                 </div>
+                <div class="instrument-url hidden">{{ track.instrument.url }}</div>
                 <div class="col-md-2 track-volume">
                     <input type="number" name="track_volume_{{ forloop.counter0 }}" value="{{ track.track_volume }}">
                 </div>
@@ -44,6 +45,7 @@
         </div>
         <input type="submit">
     </form>
+    <button id="play-loop" class="btn btn-success">PLAY</button>
 
 </div>
 
