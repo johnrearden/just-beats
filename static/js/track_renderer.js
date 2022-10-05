@@ -1,8 +1,32 @@
+const audioCtx = new AudioContext();
+audioCtx.onstatechange = () => {
+    console.log(audioCtx.state);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
     let playButton = document.getElementById('play-loop');
     let tempo = parseInt(document.getElementById('tempo').value);
-    playButton.addEventListener('click', () => init(tempo));
+    let seqData = new SequenceData(tempo, 32);
+    let drumURLs = [];
+    let instrumentURLElements = document.getElementsByClassName('instrument-url');
+
+    // The drum sample urls are read from the DOM in the order in which the
+    // elements appear - this should remain stable, and is the same order in 
+    // which the beats are read.
+    for (let element of instrumentURLElements) {
+        let drumURL = element.innerHTML;
+        drumURLs.push(drumURL);
+    }
+    setupSequences(audioCtx, drumURLs).then((sequences) => {
+        scheduler(audioCtx, seqData, sequences);
+    });
+    let tempoInput = document.getElementById('tempo');
+    tempoInput.addEventListener('change', () => {
+        seqData.setTempo(tempoInput.value);
+        console.log(`tempo set to ${tempoInput.value}`);
+    })
+    playButton.addEventListener('click', () => init(seqData));
 
     let beatsFields = document.getElementsByClassName('beats-field')
     let numberOfTracks = beatsFields.length;
@@ -46,22 +70,19 @@ const replaceCharacter = (string, position, newCharacter) => {
     return before + newCharacter + after;
 }
 
-function init(tempo) {
-    const seqData = new SequenceData(tempo, 32);
-    const audioCtx = new AudioContext();
-    let drumURLs = [];
-    let instrumentURLElements = document.getElementsByClassName('instrument-url');
+function init(seqData) {
+    console.log(audioCtx.state);
+    if (audioCtx.state === 'running') {
+        audioCtx.suspend().then(() => {
+            console.log('audioCtx suspended');
+        })
+    } else {
+        audioCtx.resume().then(() => {
+            console.log('audioCtx resuming');
+        })
 
-    // The drum sample urls are read from the DOM in the order in which the
-    // elements appear - this should remain stable, and is the same order in 
-    // which the beats are read.
-    for (let element of instrumentURLElements) {
-        let drumURL = element.innerHTML;
-        drumURLs.push(drumURL);
     }
-    setupSequences(audioCtx, drumURLs).then((sequences) => {
-        scheduler(audioCtx, seqData, sequences);
-    });
+
 }
 
 function scheduleNote(audioCtx, sample, noteTime) {
@@ -87,9 +108,9 @@ function scheduler(audioCtx, seqData, sequences) {
         }
 
         // Add beatDuration to nextBeatTime, and increment the beatIndex counter
-            // (looping back when we hit the end)
-            seqData.nextBeatTime += seqData.beatDuration;
-            seqData.beatIndex = (seqData.beatIndex + 1) % seqData.loopLength;
+        // (looping back when we hit the end)
+        seqData.nextBeatTime += seqData.beatDuration;
+        seqData.beatIndex = (seqData.beatIndex + 1) % seqData.loopLength;
     }
 
     timerId = setTimeout(
