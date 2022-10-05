@@ -93,4 +93,7 @@ Make your own drum loops on the web
 Cloning a string in javascript:
 https://stackoverflow.com/questions/31712808/how-to-force-javascript-to-deep-copy-a-string
 
+Creating an audio sequencer:
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Advanced_techniques
+
 [Return to top](#just-beats)

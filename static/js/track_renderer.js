@@ -4,12 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let tempo = parseInt(document.getElementById('tempo').value);
     playButton.addEventListener('click', () => init(tempo));
 
-    let numberOfTracks = document.getElementsByClassName('track').length;
-    console.log(`numberOfTracks : ${numberOfTracks}`);
+    let beatsFields = document.getElementsByClassName('beats-field')
+    let numberOfTracks = beatsFields.length;
     for (let i = 0; i < numberOfTracks; i++) {
-        let trackId = `track_${i}`;
-        let track_div = document.getElementById(trackId);
-        let beatString = document.getElementById('beats_' + i).value;
+        let trackDOMIndex = `track_${i}`;
+        let trackId = beatsFields[i].id.split('_')[1]
+        let track_div = document.getElementById(trackDOMIndex);
+        let beatString = beatsFields[i].value;
         for (let j = 0; j < beatString.length; j++) {
             let beatDiv = document.createElement('div');
             if (beatString[j] === '8') {
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 beatDiv.className = "beat";
             }
-            beatDiv.id = `${i}:${j}`
+            beatDiv.id = `${trackId}:${j}`
             beatDiv.addEventListener('click', e => onBeatClick(e));
             track_div.appendChild(beatDiv)
         }
@@ -50,7 +51,10 @@ function init(tempo) {
     const audioCtx = new AudioContext();
     let drumURLs = [];
     let instrumentURLElements = document.getElementsByClassName('instrument-url');
-    console.log(`instrumentURLElements == ${instrumentURLElements}`);
+
+    // The drum sample urls are read from the DOM in the order in which the
+    // elements appear - this should remain stable, and is the same order in 
+    // which the beats are read.
     for (let element of instrumentURLElements) {
         let drumURL = element.innerHTML;
         drumURLs.push(drumURL);
@@ -94,13 +98,11 @@ function scheduler(audioCtx, seqData, sequences) {
 
 async function setupSequences(audioCtx, drumURLs) {
     let sequences = [];
-    console.log(drumURLs);
+    let beatsFields = document.getElementsByClassName('beats-field')
     for (let i = 0; i < drumURLs.length; i++) {
         const filepath = `static/${drumURLs[i]}`;
-        
         sample = await getFile(audioCtx, filepath);
-        let pattern = document.getElementById(`beats_${i}`).value;
-        sequences.push(new DrumSequence(sample, pattern));
+        sequences.push(new DrumSequence(sample, beatsFields[i].id));
     }
     return sequences;
 }
@@ -132,8 +134,6 @@ class SequenceData {
 
         let beatsPerSec = tempo / 60 * 8;
         this.beatDuration = 1 / beatsPerSec;
-        console.log(`tempo = ${this.tempo}`);
-        console.log(`loopLength = ${this.loopLength}`);
     }
 
     setTempo(tempo) {
@@ -144,19 +144,14 @@ class SequenceData {
 }
 
 class DrumSequence {
-    constructor(sample, sequence) {
+    constructor(sample, DOMElementId) {
         this.sample = sample;
-        this.sequence = sequence;
+        this.DOMElementId = DOMElementId;
 
         this.pointer = 0;
-        console.log(`sequence: ${this.sequence}`);
-    }
-
-    setSequence = (sequence) => {
-        this.sequence = sequence;
     }
 
     hasBeatAt = (index) => {
-        return this.sequence.charAt(index) === '8'
+        return document.getElementById(this.DOMElementId).value.charAt(index) === "8"
     }
 }

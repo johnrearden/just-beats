@@ -1,9 +1,10 @@
 body {
-    background-color: bisque;
+    background-color: black;
+    color: rgb(140, 189, 6);
 }
 
 .track-holder {
-    background-color: lightgrey;
+    background-color: #333333;
     padding: 5px;
     border: 1px solid gray;
     border-radius: 5px;
@@ -21,27 +22,40 @@ body {
 
 .beat {
     display: inline-block;
-    width: 15px;
-    height: 30px;
+    width: 20px;
+    height: 50px;
     background-color: gray;
     color: red;
-    border: 1px solid blue;
+    border: 1px solid rgb(116, 221, 125);
 }
 
-.active_beat {
-    background-color: cyan;
-}
-
-.instrument-name {
+.beat:nth-child(4n - 3) {
     display: inline-block;
-    width: 150px;
+    margin-left: 3px;
+    width: 20px;
+    background-color: gray;
+    color: red;
+    border: 1px solid rgb(116, 221, 125);
+    height: 52px;
 }
 
-.beats-hidden-field {
+.active_beat, .active_beat:nth-child(4n - 3) {
+    background: radial-gradient(rgb(140, 189, 6),rgb(68, 92, 3));
+}
+
+.beats-field {
+    user-select: none;
+}
+
+.beat-volumes-field {
     user-select: none;
     display: none;
 }
 
 .hidden {
     display: none;
+}
+
+.beats-holder, .instrument-name, .track-volume {
+    display: inline-block;
 }
