@@ -1,23 +1,54 @@
+:root {
+    --track-light: rgb(27, 85, 200);
+    --track-dark: rgb(100, 133, 200);
+}
+
 body {
+    /* background-image: url('/static/images/cravi1.jpg');
+    background-position: center;
+    background-size: cover; */
     background-color: black;
     color: rgb(140, 189, 6);
 }
 
+input {
+    background-color:#ffffff33;
+    color: inherit;
+    border: none;
+    border: 1px solid inherit;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin: 0 20px;
+    text-align: center;
+}
+
+#drumloop_name {
+    width: 400px;
+    height: 100px;
+    font-size: 2rem;
+}
+
+#tempo {
+    font-size: 1.3rem;
+}
+
 .track-holder {
-    background-color: #333333;
-    padding: 5px;
+    background-color: #333333aa;
+    padding: 0 20px;
     border: 1px solid gray;
     border-radius: 5px;
 }
 
 .track {
     display: inline-block;
-    color: blue;
 }
 
 .track-volume {
     display: inline-block;
-    color: blue;
+    color: white;
+    background: yellow;
+    border: 1px solid red;
+    width: 100%;
 }
 
 .beat {
@@ -39,7 +70,11 @@ body {
     height: 52px;
 }
 
-.active_beat, .active_beat:nth-child(4n - 3) {
+.current {
+    border: 2px solid white;
+}
+
+.active_beat {
     background: radial-gradient(rgb(140, 189, 6),rgb(68, 92, 3));
 }
 

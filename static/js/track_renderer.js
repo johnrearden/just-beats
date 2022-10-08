@@ -1,3 +1,5 @@
+let visualEffectDelaySet = false;
+
 const audioCtx = new AudioContext();
 audioCtx.onstatechange = () => {
     console.log(audioCtx.state);
@@ -79,19 +81,45 @@ function init(seqData) {
     } else {
         audioCtx.resume().then(() => {
             console.log('audioCtx resuming');
+            checkForVisualBeatCue(seqData, -1);
         })
-
     }
-
 }
 
-function scheduleNote(audioCtx, sample, noteTime) {
+function scheduleNote(audioCtx, sample, volume, noteTime) {
     const sampleSource = new AudioBufferSourceNode(audioCtx, {
         buffer: sample,
         playbackRate: 1.0,
     });
-    sampleSource.connect(audioCtx.destination);
+    const gainNode = audioCtx.createGain();
+    gainNode.gain.setValueAtTime(volume, noteTime);
+    sampleSource.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
     sampleSource.start(noteTime);
+}
+
+function changeBackgroundColor(seqData) {
+    let drumLoopName = document.getElementById('drumloop_name');
+    drumLoopName.style.transition = "none";
+    drumLoopName.style.fontSize = "2.2rem";
+
+    let trackHolder = document.getElementsByClassName('track-holder')[0];
+    trackHolder.style.transition = "none";
+    trackHolder.style.background = "rgb(0, 20, 20, 100)";
+    setTimeout(() => {
+        drumLoopName.style.transition = "all 0.4s";
+        drumLoopName.style.fontSize = "2rem";
+        trackHolder.style.transition = "all 0.4s";
+        trackHolder.style.background = "rgb(0, 0, 0, 100)";
+    }, 10);
+
+}
+
+function checkForVisualBeatCue(seqData, lastBeatIndex) {
+    if (seqData.beatIndex % 8 === 0 && seqData.beatIndex != lastBeatIndex) {
+        changeBackgroundColor(seqData);
+    }
+    setTimeout(checkForVisualBeatCue, 15, seqData, seqData.beatIndex);
 }
 
 function scheduler(audioCtx, seqData, sequences) {
@@ -103,7 +131,11 @@ function scheduler(audioCtx, seqData, sequences) {
         // to be played.
         for (let sequence of sequences) {
             if (sequence.hasBeatAt(seqData.beatIndex)) {
-                scheduleNote(audioCtx, sequence.sample, seqData.nextBeatTime);
+                scheduleNote(
+                    audioCtx,
+                    sequence.sample,
+                    sequence.getVolumeAt(seqData.beatIndex),
+                    seqData.nextBeatTime);
             }
         }
 
@@ -119,11 +151,15 @@ function scheduler(audioCtx, seqData, sequences) {
 
 async function setupSequences(audioCtx, drumURLs) {
     let sequences = [];
-    let beatsFields = document.getElementsByClassName('beats-field')
+    let beatsFields = document.getElementsByClassName('beats-field');
+    let trackVolumeInputs = document.getElementsByClassName('track-volume');
     for (let i = 0; i < drumURLs.length; i++) {
         const filepath = `static/${drumURLs[i]}`;
         sample = await getFile(audioCtx, filepath);
-        sequences.push(new DrumSequence(sample, beatsFields[i].id));
+        sequences.push(new DrumSequence(
+            sample,
+            beatsFields[i].id,
+            trackVolumeInputs[i].id))
     }
     return sequences;
 }
@@ -133,15 +169,6 @@ async function getFile(audioContext, filepath) {
     const arrayBuffer = await response.arrayBuffer();
     const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
     return audioBuffer;
-}
-
-function playSample(audioCtx, audioBuffer, time) {
-    const sampleSource = new AudioBufferSourceNode(audioCtx, {
-        buffer: audioBuffer,
-        playbackRate: 1.0,
-    });
-    sampleSource.connect(audioCtx.destination);
-    sampleSource.start(time);
 }
 
 class SequenceData {
@@ -165,14 +192,18 @@ class SequenceData {
 }
 
 class DrumSequence {
-    constructor(sample, DOMElementId) {
+    constructor(sample, beatsFieldID, volumeInputID) {
         this.sample = sample;
-        this.DOMElementId = DOMElementId;
-
-        this.pointer = 0;
+        this.beatsFieldID = beatsFieldID;
+        this.volumeInputID = volumeInputID;
     }
 
     hasBeatAt = (index) => {
-        return document.getElementById(this.DOMElementId).value.charAt(index) === "8"
+        return document.getElementById(this.beatsFieldID).value.charAt(index) === "8"
+    }
+
+    getVolumeAt = (index) => {
+        let volume = document.getElementById(this.volumeInputID).value;
+        return volume * 0.1;
     }
 }
