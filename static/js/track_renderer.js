@@ -154,7 +154,7 @@ async function setupSequences(audioCtx, drumURLs) {
     let beatsFields = document.getElementsByClassName('beats-field');
     let trackVolumeInputs = document.getElementsByClassName('track-volume');
     for (let i = 0; i < drumURLs.length; i++) {
-        const filepath = `static/${drumURLs[i]}`;
+        const filepath = `media/${drumURLs[i]}`;
         sample = await getFile(audioCtx, filepath);
         sequences.push(new DrumSequence(
             sample,
