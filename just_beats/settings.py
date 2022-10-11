@@ -34,8 +34,6 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['just-beats.herokuapp.com', 'localhost']
 
-COLLECT_STATIC = 0
-
 # Application definition
 
 INSTALLED_APPS = [
