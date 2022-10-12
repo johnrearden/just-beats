@@ -1,28 +1,19 @@
 let visualEffectDelaySet = false;
 
 const audioCtx = new AudioContext();
+audioCtx.suspend();
 audioCtx.onstatechange = () => {
     console.log(audioCtx.state);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    console.log(`snareURL = ${snareURL}`);
-
     let playButton = document.getElementById('play-loop');
     let tempo = parseInt(document.getElementById('tempo').value);
     let seqData = new SequenceData(tempo, 32);
-    let drumURLs = [];
-    let instrumentURLElements = document.getElementsByClassName('instrument-url');
 
-    // The drum sample urls are read from the DOM in the order in which the
-    // elements appear - this should remain stable, and is the same order in 
-    // which the beats are read.
-    for (let element of instrumentURLElements) {
-        let drumURL = element.innerHTML;
-        drumURLs.push(drumURL);
-        console.log(drumURL);
-    }
+    // The drum sample urls are loaded via templating in an inline script in 
+    // loop_editor.html
     setupSequences(audioCtx, drumURLs).then((sequences) => {
         scheduler(audioCtx, seqData, sequences);
     });
@@ -156,8 +147,14 @@ async function setupSequences(audioCtx, drumURLs) {
     let sequences = [];
     let beatsFields = document.getElementsByClassName('beats-field');
     let trackVolumeInputs = document.getElementsByClassName('track-volume');
-    for (let i = 0; i < drumURLs.length; i++) {
-        const filepath = `static/${drumURLs[i]}`;
+    let originalURLs = document.getElementsByClassName('instrument-url');
+    console.log(drumURLs);
+    
+    for (let i = 0; i < beatsFields.length; i++) {
+        console.log(originalURLs[i].innerHTML);
+        let drumURL = drumURLs[originalURLs[i].innerHTML]
+        console.log(`drumURL == ${drumURL}`);
+        const filepath = drumURL;
         sample = await getFile(audioCtx, filepath);
         sequences.push(new DrumSequence(
             sample,

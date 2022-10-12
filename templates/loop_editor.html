@@ -87,7 +87,19 @@
 </div>
 
 <script>
-    const snareURL = "{% static 'audio/snare_breathe.wav' %}";
+    /*
+        This JavaScript snippet maps the audio file URLs stored in the database
+        to the URLs on Cloudinary, which hash the filenames so that browser caches
+        are invalidated where necessary. Must be inline to avail of templating.
+    */
+    const drumURLs = {
+        "audio/kick_swooshy.wav" : "{% static 'audio/kick_swooshy.wav' %}",
+        "audio/perc_wobble.wav" : "{% static 'audio/perc_wobble.wav' %}",
+        "audio/snare_breathe.wav" : "{% static 'audio/snare_breathe.wav' %}",
+        "audio/hats_micro.wav" : "{% static 'audio/hats_micro.wav' %}",
+        "audio/kick_hard.wav" : "{% static 'audio/kick_hard.wav' %}",
+    }
+    
 </script>
 
 <script src="{% static 'js/track_renderer.js' %}" type="text/javascript"></script>
