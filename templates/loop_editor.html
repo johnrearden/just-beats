@@ -27,10 +27,6 @@
                 <input type="text" class="hidden" name="drumloop_id" value="{{ loop.id }}">
             </div>
 
-            <audio id="dummy-audio-element" controls>
-                <source src="{% static 'audio/perc_wobble.wav' %}">
-            </audio>
-
             <div class="track-holder text-center mt-4">
                 <hr>
                 {% for track in tracks %}
@@ -89,6 +85,10 @@
     </div>
 
 </div>
+
+<script>
+    const snareURL = "{% static 'audio/snare_breathe.wav' %}";
+</script>
 
 <script src="{% static 'js/track_renderer.js' %}"></script>
 

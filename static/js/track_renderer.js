@@ -7,6 +7,8 @@ audioCtx.onstatechange = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    console.log(`snareURL = ${snareURL}`);
+
     let playButton = document.getElementById('play-loop');
     let tempo = parseInt(document.getElementById('tempo').value);
     let seqData = new SequenceData(tempo, 32);
@@ -74,9 +76,6 @@ const replaceCharacter = (string, position, newCharacter) => {
 }
 
 function init(seqData) {
-    let dummyAudio = document.getElementById('dummy-audio-element');
-    let source = dummyAudio.src;
-    console.log(`audioElement src == ${source}`);
     console.log(audioCtx.state);
     if (audioCtx.state === 'running') {
         audioCtx.suspend().then(() => {
