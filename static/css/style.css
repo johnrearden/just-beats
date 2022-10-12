@@ -91,3 +91,9 @@ input {
 .beats-holder, .instrument-name, .track-volume {
     display: inline-block;
 }
+
+.instrument-name {
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px;
+}

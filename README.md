@@ -96,4 +96,11 @@ https://stackoverflow.com/questions/31712808/how-to-force-javascript-to-deep-cop
 Creating an audio sequencer:
 https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Advanced_techniques
 
+Bit shifting in Javascript:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unsigned_right_shift
+
+Hashing a string: 
+https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript
+
+
 [Return to top](#just-beats)

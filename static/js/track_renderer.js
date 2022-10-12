@@ -8,6 +8,8 @@ audioCtx.onstatechange = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    setIntrumentNameColors();
+
     let playButton = document.getElementById('play-loop');
     let tempo = parseInt(document.getElementById('tempo').value);
     let seqData = new SequenceData(tempo, 32);
@@ -44,6 +46,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 })
+
+const setIntrumentNameColors = () => {
+    let instrumentNameDivs = document.getElementsByClassName('instrument-name');
+    for (let div of instrumentNameDivs) {
+        let text = div.innerHTML;
+        let hash = hashString(text);
+        let unsignedHash = hash >>> 0;
+        let red = (unsignedHash & 0x00ff0000) >>> 16;
+        let green = (unsignedHash & 0x0000ff00) >>> 8;
+        let blue = unsignedHash & 0x000000ff;
+        div.style.backgroundColor = `rgb(${red}, ${green}, ${blue}, 0.4)`;
+        div.style.color = "white";
+    }
+}
+
+const hashString = (string) => {
+    let hash = 0;
+    if (string.length === 0) return hash;
+    for (let i = 0; i < string.length; i++) {
+        let chr = string.charCodeAt(i);
+        hash = ((hash << 5) - hash) + chr;
+        hash |= 0;
+    }
+    return hash;
+}
 
 const onBeatClick = (event) => {
     let beatDiv = event.target;
@@ -148,12 +175,9 @@ async function setupSequences(audioCtx, drumURLs) {
     let beatsFields = document.getElementsByClassName('beats-field');
     let trackVolumeInputs = document.getElementsByClassName('track-volume');
     let originalURLs = document.getElementsByClassName('instrument-url');
-    console.log(drumURLs);
     
     for (let i = 0; i < beatsFields.length; i++) {
-        console.log(originalURLs[i].innerHTML);
         let drumURL = drumURLs[originalURLs[i].innerHTML]
-        console.log(`drumURL == ${drumURL}`);
         const filepath = drumURL;
         sample = await getFile(audioCtx, filepath);
         sequences.push(new DrumSequence(
