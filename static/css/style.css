@@ -4,9 +4,6 @@
 }
 
 body {
-    background-image: url('static/images/cravi1.jpg');
-    background-position: center;
-    background-size: cover;
     background-color: black;
     color: rgb(140, 189, 6);
 }

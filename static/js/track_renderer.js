@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let element of instrumentURLElements) {
         let drumURL = element.innerHTML;
         drumURLs.push(drumURL);
+        console.log(drumURL);
     }
     setupSequences(audioCtx, drumURLs).then((sequences) => {
         scheduler(audioCtx, seqData, sequences);
@@ -73,6 +74,9 @@ const replaceCharacter = (string, position, newCharacter) => {
 }
 
 function init(seqData) {
+    let dummyAudio = document.getElementById('dummy-audio-element');
+    let source = dummyAudio.src;
+    console.log(`audioElement src == ${source}`);
     console.log(audioCtx.state);
     if (audioCtx.state === 'running') {
         audioCtx.suspend().then(() => {
