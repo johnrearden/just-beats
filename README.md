@@ -102,5 +102,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unsi
 Hashing a string: 
 https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript
 
+Configuring Google social login using allauth
+https://django-allauth.readthedocs.io/en/latest/installation.html
+
 
 [Return to top](#just-beats)
