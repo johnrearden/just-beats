@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 class Drumloop(models.Model):
     name = models.CharField(max_length=50, unique=True, default="brand_new_loop")
+    creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name="drumloops", default=1)
     created_on = models.DateTimeField(auto_now_add=True)
     allow_copy = models.BooleanField(default=True)
     tempo = models.IntegerField(default=120, validators=[MaxValueValidator(200), MinValueValidator(60)])
