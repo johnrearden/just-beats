@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'beats_app',
 ]
 
-SITE_ID = 1
+SITE_ID = 2
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'

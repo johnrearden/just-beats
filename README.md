@@ -64,6 +64,11 @@ Make your own drum loops on the web
 [Return to top](#just-beats)
 
 # Bugs
+
+Google social authentication: Error 400 redirect_uri_mismatch. The problem was caused by the redirect uri
+I supplied to Google when setting up the credentials having a missing trailing slash at the end. 
+https://www.youtube.com/watch?v=QHz1Rs6lZHQ&t=1s
+
 ## Solved Bugs
 
 ## Remaining Bugs
@@ -104,6 +109,9 @@ https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javas
 
 Configuring Google social login using allauth
 https://django-allauth.readthedocs.io/en/latest/installation.html
+
+Django authentication with Google
+https://www.codeunderscored.com/django-authentication-with-google/
 
 
 [Return to top](#just-beats)
