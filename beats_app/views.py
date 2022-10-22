@@ -1,5 +1,6 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
+from django.urls import reverse
 from django.views import View, generic
 from django.contrib.auth.models import User
 from .models import Drumloop, Track, Instrument
@@ -56,4 +57,4 @@ class LoopEditor(View):
             drumloop.allow_copy = False
         drumloop.save()
 
-        return HttpResponse('<h1>Thanks</h1>')
+        return HttpResponseRedirect(reverse('home'))

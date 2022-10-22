@@ -3,13 +3,74 @@
 {% load static %}
 
 {% block content %}
-
-{% for loop in object_list %}
+<h1 class="text-center mt-3">Drumloops</h1>
 <div class="container">
     <div class="row">
-        <h1>Loop : {{ loop.name }} created by {{ loop.creator }}</h1>
+        <div class="col-md-10 offset-md-1 text-center">
+            <table class="drumloop-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Creator</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Tempo</th>
+                        <th scope="col"># Tracks</th>
+                        <th scope="col">Copy?</th>
+                        <th scope="col">Rating</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for loop in object_list %}
+                    <tr class="drumloop-table-row">
+                        <td class="drumloop-table-item">
+                            {{ loop.creator }}
+                        </td>
+                        <td class="drumloop-table-item">
+                            {{ loop.name }}
+                        </td>
+                        <td class="drumloop-table-item">
+                            {{ loop.tempo }}
+                        </td>
+                        <td class="drumloop-table-item">
+                            2345
+                        </td>
+                        <td class="drumloop-table-item">
+                            {{ loop.allow_copy }}
+                        </td>
+                        <td id="rating-display-{{forloop.counter0}}">
+                        </td>
+                        <td>
+                            <a href="{% url 'loop_editor' %}">
+                                <i class="fa-regular fa-circle-play play-button"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <input readonly class="d-none" id="rating-{{ forloop.counter0 }}" value="{{loop.rating}}">
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
-{% endfor %}
+
+<!-- This script is placed inline as it is integral to the operation of this template, 
+     and cannot be reused elsewhere -->
+<script>
+    const loopCount = document.getElementsByClassName('drumloop-table-row').length;
+    for (let i = 0; i < loopCount; i++) {
+        let literal = `rating-${i}`;
+        const rating = document.getElementById(literal).value;
+        const ratingDisplay = document.getElementById(`rating-display-${i}`);
+        for (let j = 1; j <= 5; j++) {
+            const newElement = document.createElement("span");
+            if (j <= rating) {
+                newElement.innerHTML = `<i class="fa-solid fa-star rating-star"></i>`;
+            } else {
+                newElement.innerHTML = `<i class="fa-regular fa-star rating-star"></i>`;
+            }
+            ratingDisplay.appendChild(newElement);
+        }
+    }
+</script>
 
 {% endblock %}
