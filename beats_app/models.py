@@ -23,7 +23,7 @@ class Instrument(models.Model):
 
 class Track(models.Model):
     drumloop = models.ForeignKey(Drumloop, on_delete=models.CASCADE, related_name="tracks")
-    instrument = models.OneToOneField(Instrument, on_delete=models.CASCADE)
+    instrument = models.ForeignKey(Instrument, on_delete=models.CASCADE, related_name="tracks")
     beats = models.CharField(max_length=32)
     beat_volumes = models.CharField(max_length=32)
     track_volume = models.IntegerField(default=10, validators=[MaxValueValidator(10), MinValueValidator(0)])
