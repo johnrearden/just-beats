@@ -10,9 +10,13 @@
         {% csrf_token %}
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-8 offset-2 p-4 mt-3 text-center">
+                <div class="col-md-6 p-4 mt-3 text-center">
                     <label for="drumloop_name">Loop Name</label>
                     <input type="text" id="drumloop_name" value="{{ loop.name }}" name="drumloop_name">
+                </div>
+                <div class="col-md-6 text-center">
+                    <label for="creator_name">Creator</label>
+                    <input type="text" id="creator_name" readonly value="{{ loop.creator }}" name="creator_name">
                 </div>
             <div class="row text-center align-items-center">
                 <div class="col-5 offset-1">

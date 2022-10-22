@@ -37,6 +37,7 @@ class LoopEditor(View):
         loop_id = int(querydict.get('drumloop_id'))
         drumloop = Drumloop.objects.filter(id=loop_id).first()
         drumloop.name = querydict.get('drumloop_name')
+        drumloop.creator = querydict.get('creator_name')
         drumloop.tempo = int(querydict.get('tempo'))
         if querydict.__contains__('allow_copy'):
             drumloop.allow_copy = True
