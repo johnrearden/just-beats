@@ -1,16 +1,23 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
-from django.views import View
+from django.views import View, generic
 from django.contrib.auth.models import User
 from .models import Drumloop, Track, Instrument
+
+
+class LoopList(generic.ListView):
+    model = Drumloop
+    queryset = Drumloop.objects.order_by('-created_on')
+    template_name = 'loop_list.html'
+    paginate_by = 3
+
 
 class LoopEditor(View):
     def get(self, request, id=1, *args, **kwargs):
         query_set = Drumloop.objects.all()
         loop = get_object_or_404(query_set, id=id)
         tracks = Track.objects.select_related().filter(drumloop=loop)
-        print(tracks)
-        
+
         return render(
             request,
             "loop_editor.html",
@@ -50,4 +57,3 @@ class LoopEditor(View):
         drumloop.save()
 
         return HttpResponse('<h1>Thanks</h1>')
-

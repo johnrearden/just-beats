@@ -37,6 +37,9 @@ Make your own drum loops on the web
 
 ## Design
 
+### Wireframes
+![Wireframe of drumloop list view](media/docs/drumloop_list_wireframe.png)
+
 
 [Return to top](#just-beats)
 

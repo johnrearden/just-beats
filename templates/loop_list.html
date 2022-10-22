@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% for loop in object_list %}
+<div class="container">
+    <div class="row">
+        <h1>Loop : {{ loop.name }} created by {{ loop.creator }}</h1>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}
