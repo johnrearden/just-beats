@@ -4,6 +4,7 @@ from .models import Drumloop, Track, Instrument
 @admin.register(Drumloop)
 class DrumloopAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'creator', 'created_on', 'allow_copy', 'tempo')
+    list_editable = ('name', 'creator', 'allow_copy', 'tempo')
     search_fields = ('name',)
 
 @admin.register(Track)

@@ -1,13 +1,15 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.views import View
+from django.contrib.auth.models import User
 from .models import Drumloop, Track, Instrument
 
 class LoopEditor(View):
     def get(self, request, id=1, *args, **kwargs):
         query_set = Drumloop.objects.all()
         loop = get_object_or_404(query_set, id=id)
-        tracks = Track.objects.select_related()
+        tracks = Track.objects.select_related().filter(drumloop=loop)
+        print(tracks)
         
         return render(
             request,
@@ -37,7 +39,9 @@ class LoopEditor(View):
         loop_id = int(querydict.get('drumloop_id'))
         drumloop = Drumloop.objects.filter(id=loop_id).first()
         drumloop.name = querydict.get('drumloop_name')
-        drumloop.creator = querydict.get('creator_name')
+        user_name = querydict.get('creator_name')
+        user = User.objects.all().filter(username=user_name)[0]
+        drumloop.creator = user
         drumloop.tempo = int(querydict.get('tempo'))
         if querydict.__contains__('allow_copy'):
             drumloop.allow_copy = True
