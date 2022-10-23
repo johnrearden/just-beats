@@ -28,7 +28,7 @@
                         <td class="drumloop-table-item">
                             {{ loop.name }}
                         </td>
-                        <td class="drumloop-table-item">
+                        <td id="tempo" class="drumloop-table-item">
                             {{ loop.tempo }}
                         </td>
                         <td class="drumloop-table-item">
@@ -71,6 +71,7 @@
             ratingDisplay.appendChild(newElement);
         }
     }
+
 </script>
 
 {% endblock %}

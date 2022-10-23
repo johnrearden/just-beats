@@ -1,14 +1,18 @@
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework import status
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.views import View, generic
 from django.contrib.auth.models import User
 from .models import Drumloop, Track, Instrument
+from .serializers import TrackSerializer
 
 
 class LoopList(generic.ListView):
     model = Drumloop
-    queryset = Drumloop.objects.order_by('-created_on')
+    queryset = Drumloop.objects.order_by('-rating')
     template_name = 'loop_list.html'
     paginate_by = 3
 
@@ -58,3 +62,15 @@ class LoopEditor(View):
         drumloop.save()
 
         return HttpResponseRedirect(reverse('home'))
+
+
+class TracksForLoop(APIView):
+    def get(self, request, id, *args, **kwargs):
+        print(f'request incoming : loop id is {id}')
+        try:
+            loop = Drumloop.objects.get(id=id)
+        except Drumloop.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        tracks = Track.objects.select_related().filter(drumloop=loop)
+        serializer = TrackSerializer(tracks, context={'request': request}, many=True)
+        return Response(serializer.data)
