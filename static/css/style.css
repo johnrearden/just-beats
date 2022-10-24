@@ -1,9 +1,9 @@
 :root {
     --track-light: rgb(27, 85, 200);
     --track-dark: rgb(100, 133, 200);
-    --text-standard: rgb(140, 189, 6);
-    /* --text-standard: rgb(40, 125, 200); */
-    --text-dim:rgb(48, 65, 2);
+    /* --text-standard: rgb(140, 189, 6); */
+    --text-standard: rgb(180, 180, 180);
+    --text-dim: #30303050;
     /* --text-dim:rgb(1, 47, 75); */
     --text-medium: rgb(81, 110, 3);
 }
@@ -26,38 +26,58 @@ input {
 
 /* These css elements style the drum loop list template ----------*/
 
+.beats-header {
+    color: greenyellow;
+    text-shadow: 0 0 5px pink;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
 .drumloop-table {
     margin: auto;
     padding: 10px;
     text-align: center;
     border-collapse: separate;
     border-spacing: 0.5rem 1rem;
-    border: 3px solid var(--text-dim);
-    border-radius: 10px;
+    border: 3px solid gray;
+    border-radius: 50px;
+    /* background-image: radial-gradient(#00000044, #00000077); */
+}
+
+.drumloop-table thead {
+    color: greenyellow;
+    text-shadow: 2px 2px 5px purple;
 }
 
 
 .drumloop-table-row:hover .drumloop-table-item{
     background-image: radial-gradient(black, var(--text-medium));
-    
 }
 
 .drumloop-table-item {
-    font-size: 2rem;
+    font-size: 1.2rem;
     padding: 5px 15px;
-    border: 1px solid var(--text-standard);
-    border-radius: 5px;
-    background-image: radial-gradient( black, var(--text-dim));
+    /* background-image: radial-gradient( black, var(--text-dim)); */
     transition: 1s all;
 }
 
 .rating-star {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    color: orange;
+    text-shadow: 0 0 5px lightblue;
 }
 
 .play-button {
     font-size: 3rem;
-    color: yellow;
+    color: greenyellow;
+    text-shadow: 0 0 5px pink;
+}
+
+.drum-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    opacity: 0.4;
 }
 
 /* These css elements style the drumloop_editor template ---------*/
