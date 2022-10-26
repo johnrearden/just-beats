@@ -4,12 +4,10 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container vert-gap">
     <div class="row">
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-8 text-center">
-            <h1 class="text-center mt-3 beats-header">Drumloops</h1>
+        <div class="col-md-8 offset-md-2 text-center">
+            <h1 class="text-center beats-header">Drumloops</h1>
             <table class="drumloop-table">
                 <thead>
                     <tr>
@@ -46,6 +44,9 @@
                             <!-- Store the loop fields necessary for creating the DrumLoop object-->
                             <i id="loop-{{ loop.id }}-{{ loop.tempo }}" 
                                class="fa-regular fa-circle-play play-button"></i>
+                        </td>
+                        <td>
+                            <a class="edit-link" href="{% url 'loop_editor' loop.id %}">Edit</a>
                         </td>
                     </tr>
                     <input readonly class="d-none" id="rating-{{ forloop.counter0 }}" value="{{loop.rating}}">

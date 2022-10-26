@@ -26,6 +26,10 @@ input {
 
 /* These css elements style the drum loop list template ----------*/
 
+.vert-gap {
+    margin-top: 300px;
+}
+
 .beats-header {
     color: greenyellow;
     text-shadow: 0 0 5px pink;
@@ -52,16 +56,17 @@ input {
 }
 
 
-.drumloop-table-row:hover .drumloop-table-item{
-    background-image: radial-gradient(black, var(--text-medium));
-}
+/* .drumloop-table-row:hover .drumloop-table-item{
+    color: greenyellow;
+    text-shadow: 0 0 5px pink;
+} */
 
 .drumloop-table-item {
     color: black;
     font-size: 1.2rem;
     padding: 5px 15px;
     /* background-image: radial-gradient( black, var(--text-dim)); */
-    transition: 1s all;
+    transition: 0.5s all;
 }
 
 .rating-star {
@@ -71,9 +76,35 @@ input {
 }
 
 .play-button {
-    font-size: 3rem;
+    font-size: 2rem;
+    color: greenyellow;
+    text-shadow: 0 0 5px purple;
+    margin: 0 20px;
+    transition: 0.5s all;
+}
+
+.play-button:hover {
+    text-shadow: 0 0 5px pink;
+    transition: 0.5s all;
+}
+
+.edit-link {
+    text-decoration: none;
+    color: greenyellow;
+    text-shadow: 0 0 5px purple;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    transition: 0.5s all;
+    border: 1px solid greenyellow;
+    border-radius: 5px;
+    padding: 3px 10px;
+}
+
+.edit-link:hover {
     color: greenyellow;
     text-shadow: 0 0 5px pink;
+    transition: 0.5s all;
+    border: 1px solid greenyellow;
 }
 
 .drum-image {

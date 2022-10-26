@@ -32,7 +32,7 @@ class LoopEditor(View):
             }
         )
 
-    def post(self, request):
+    def post(self, request, id):
 
         print(request.POST)
         querydict = request.POST
@@ -62,6 +62,7 @@ class LoopEditor(View):
         drumloop.save()
 
         return HttpResponseRedirect(reverse('home'))
+        
 
 
 class TracksForLoop(APIView):
