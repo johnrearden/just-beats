@@ -38,10 +38,12 @@ input {
     padding: 10px;
     text-align: center;
     border-collapse: separate;
-    border-spacing: 0.5rem 1rem;
-    border: 3px solid gray;
-    border-radius: 50px;
-    /* background-image: radial-gradient(#00000044, #00000077); */
+    border-spacing: 0.2rem 0.5rem;
+    border: 3px solid transparent;
+    /* outline: 3px solid black; */
+    border-radius: 10px;
+    background-image: radial-gradient(#aaaaaaff, #aaaaaacc);
+    box-shadow: 0 0 5px black;
 }
 
 .drumloop-table thead {
@@ -55,6 +57,7 @@ input {
 }
 
 .drumloop-table-item {
+    color: black;
     font-size: 1.2rem;
     padding: 5px 15px;
     /* background-image: radial-gradient( black, var(--text-dim)); */

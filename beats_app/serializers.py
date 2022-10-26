@@ -3,7 +3,9 @@ from .models import Track
 
 class TrackSerializer(serializers.ModelSerializer):
 
+    instrument_url = serializers.CharField(read_only=True, source="instrument.url")
+
     class Meta:
         model = Track
-        fields = ('pk', 'drumloop', 'instrument', 'beats', 'beat_volumes', 
+        fields = ('pk', 'drumloop', 'instrument_url', 'beats', 'beat_volumes', 
                   'track_volume')

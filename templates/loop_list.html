@@ -31,7 +31,7 @@
                         <td class="drumloop-table-item">
                             {{ loop.name }}
                         </td>
-                        <td id="tempo" class="drumloop-table-item">
+                        <td id="tempo" class="drumloop-table-item loop-tempo">
                             {{ loop.tempo }}
                         </td>
                         <td class="drumloop-table-item">
@@ -43,9 +43,9 @@
                         <td id="rating-display-{{forloop.counter0}}">
                         </td>
                         <td>
-                            <a href="{% url 'loop_editor' %}">
-                                <i class="fa-regular fa-circle-play play-button"></i>
-                            </a>
+                            <!-- Store the loop fields necessary for creating the DrumLoop object-->
+                            <i id="loop-{{ loop.id }}-{{ loop.tempo }}" 
+                               class="fa-regular fa-circle-play play-button"></i>
                         </td>
                     </tr>
                     <input readonly class="d-none" id="rating-{{ forloop.counter0 }}" value="{{loop.rating}}">
@@ -56,8 +56,8 @@
     </div>
 </div>
 
-<!-- This script is placed inline as it is integral to the operation of this template, 
-     and cannot be reused elsewhere -->
+<!-- This script is placed inline as it is tightly bound to the ratings element 
+     of this template, and cannot be reused elsewhere -->
 <script>
     const loopCount = document.getElementsByClassName('drumloop-table-row').length;
     for (let i = 0; i < loopCount; i++) {
@@ -74,7 +74,23 @@
             ratingDisplay.appendChild(newElement);
         }
     }
-
 </script>
+
+<script>
+    /*
+    This JavaScript snippet maps the audio file URLs stored in the database
+    to the URLs on Cloudinary, which hash the filenames so that browser caches
+    are invalidated where necessary. Must be inline to avail of templating.
+    */
+    const drumURLs = {
+        "audio/kick_swooshy.wav": "{% static 'audio/kick_swooshy.wav'|escapejs %}",
+        "audio/perc_wobble.wav": "{% static 'audio/perc_wobble.wav'|escapejs %}",
+        "audio/snare_breathe.wav": "{% static 'audio/snare_breathe.wav'|escapejs %}",
+        "audio/hats_micro.wav": "{% static 'audio/hats_micro.wav'|escapejs %}",
+        "audio/kick_hard.wav": "{% static 'audio/kick_hard.wav'|escapejs %}",
+    }
+</script>
+
+<script src="{% static 'js/LoopPlayer.js' %}" type="text/javascript"></script>
 
 {% endblock %}
