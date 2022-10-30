@@ -28,7 +28,7 @@
                     <input type="checkbox" id="allow_copy" name="allow_copy" checked="{{ loop.allow_copy }}"
                         value="allowed">
                 </div>
-                <input type="text" class="hidden" name="drumloop_id" value="{{ loop.id }}">
+                <input type="text" class="hidden" id="drumloop-id" name="drumloop_id" value="{{ loop.id }}">
             </div>
 
             <div class="track-holder text-center mt-4">
@@ -47,6 +47,8 @@
                     <input type="text" class="beat-volumes-field hidden" id="beat_volumes_{{ track.id }}"
                         name="beat_volumes_{{ track.id}}" value="{{ track.beat_volumes }}" readonly>
                     <input type="text" id="tracks" class="hidden" name="tracks" value="{{ track.id }}">
+                    <input type="text" id="instrument_id" class="hidden" name="instrument_id" 
+                        value="{{ track.instrument.id }}">
                     <div class="instrument-url hidden">{{ track.instrument.url }}</div>
 
                     <!-- Visible fields : These can be edited directly by the user.-->
@@ -96,15 +98,42 @@
         are invalidated where necessary. Must be inline to avail of templating.
     */
     const drumURLs = {
-        "audio/kick_swooshy.wav" : "{% static 'audio/kick_swooshy.wav'|escapejs %}",
-        "audio/perc_wobble.wav" : "{% static 'audio/perc_wobble.wav'|escapejs %}",
-        "audio/snare_breathe.wav" : "{% static 'audio/snare_breathe.wav'|escapejs %}",
-        "audio/hats_micro.wav" : "{% static 'audio/hats_micro.wav'|escapejs %}",
-        "audio/kick_hard.wav" : "{% static 'audio/kick_hard.wav'|escapejs %}",
+        "audio/kick_swooshy.wav": "{% static 'audio/kick_swooshy.wav'|escapejs %}",
+        "audio/perc_wobble.wav": "{% static 'audio/perc_wobble.wav'|escapejs %}",
+        "audio/snare_breathe.wav": "{% static 'audio/snare_breathe.wav'|escapejs %}",
+        "audio/hats_micro.wav": "{% static 'audio/hats_micro.wav'|escapejs %}",
+        "audio/kick_hard.wav": "{% static 'audio/kick_hard.wav'|escapejs %}",
+        "audio/clap_liquid.wav": "{% static 'audio/clap_liquid.wav'|escapejs %}",
+        "audio/clap_vinyl.wav": "{% static 'audio/clap_vinyl.wav'|escapejs %}",
+        "audio/hats_massamola.wav": "{% static 'audio/hats_massamola.wav'|escapejs %}",
+        "audio/hats_metal.wav": "{% static 'audio/hats_metal.wav'|escapejs %}",
+        "audio/hats_zippo.wav": "{% static 'audio/hats_zippo.wav'|escapejs %}",
+        "audio/hihat_808.wav": "{% static 'audio/hihat_808.wav'|escapejs %}",
+        "audio/kick_borefest.wav": "{% static 'audio/kick_borefest.wav'|escapejs %}",
+        "audio/kick_coffee_shop.wav": "{% static 'audio/kick_coffee_shop.wav'|escapejs %}",
+        "audio/kick_juicy.wav": "{% static 'audio/kick_juicy.wav'|escapejs %}",
+        "audio/kick_stomp.wav": "{% static 'audio/kick_stomp.wav'|escapejs %}",
+        "audio/kick_tape.wav": "{% static 'audio/kick_tape.wav'|escapejs %}",
+        "audio/kick_tight.wav": "{% static 'audio/kick_tight.wav'|escapejs %}",
+        "audio/perc_808.wav": "{% static 'audio/perc_808.wav'|escapejs %}",
+        "audio/perc_hollow.wav": "{% static 'audio/perc_hollow.wav'|escapejs %}",
+        "audio/perc_laser.wav": "{% static 'audio/perc_laser.wav'|escapejs %}",
+        "audio/perc_nasty.wav": "{% static 'audio/perc_nasty.wav'|escapejs %}",
+        "audio/perc_skipper.wav": "{% static 'audio/perc_skipper.wav'|escapejs %}",
+        "audio/perc_springboard.wav": "{% static 'audio/perc_springboard.wav'|escapejs %}",
+        "audio/perc_tambo.wav": "{% static 'audio/perc_tambo.wav'|escapejs %}",
+        "audio/perc_weirdo.wav": "{% static 'audio/perc_weirdo.wav'|escapejs %}",
+        "audio/snare_electro.wav": "{% static 'audio/snare_electro.wav'|escapejs %}",
+        "audio/snare_lastbar.wav": "{% static 'audio/snare_lastbar.wav'|escapejs %}",
+        "audio/snare_lofi.wav": "{% static 'audio/snare_lofi.wav'|escapejs %}",
+        "audio/snare_tight.wav": "{% static 'audio/snare_tight.wav'|escapejs %}",
+        "audio/tom_acoustic.wav": "{% static 'audio/tom_acoustic.wav'|escapejs %}",
+        "audio/tom_short.wav": "{% static 'audio/tom_short.wav'|escapejs %}",
     }
 
 </script>
 
-<script src="{% static 'js/track_renderer.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/LoopPlayer.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/LoopEditor.js' %}" type="text/javascript"></script>
 
 {% endblock %}

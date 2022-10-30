@@ -1,6 +1,5 @@
 class LoopPlayer {
     constructor(tempo, tracks, loopID) {
-        console.log('Loopplayer constructor')
         // Create a new AudioContext and suspend it immediately. This is to ensure
         // consistent behaviour - browsers will allow autoplay (having initially 
         // forbidden it) after an unspecified number of user actions initiating
@@ -75,9 +74,7 @@ class LoopPlayer {
     // Switches the beat at index on and off alternately.
     toggleBeatAt = (trackID, index) => {
         let trackSeq = this.trackSequences.get(trackID);
-        if (trackSeq.beatList.charAt(index) === '8') {
-
-        }
+        trackSeq.toggleBeat(index);
     }
 
     // Alter the tempo (beats per minute) that the loop is playing at.
@@ -174,6 +171,14 @@ class TrackSequence {
         this.masterVolume = masterVolume;
     }
 
+    toggleBeat = (index) => {
+        if (this.beatList.charAt(index) === "8") {
+            this.beatList = replaceCharacter(this.beatList, index, "0");
+        } else {
+            this.beatList = replaceCharacter(this.beatList, index, "8");
+        }
+    }
+
     // returns true if there is a beat to be played at this index.
     hasBeatAt = (index) => {
         return this.beatList.charAt(index) === '8';
@@ -189,58 +194,9 @@ class TrackSequence {
     }
 }
 
-let loopPlayer;
-
-document.addEventListener('DOMContentLoaded', () => {
-    const playButtons = document.getElementsByClassName('play-button');
-    for (let button of playButtons) {
-        button.addEventListener('click', (e) => {
-
-            // Get the id and tempo associated with this loop.
-            let idAttr = e.target.id;
-            let arr = idAttr.split('-');
-            let loopID = arr[1];
-            let tempo = arr[2];
-
-            if (loopPlayer) {
-                console.log(`current loopID == ${loopPlayer.loopID}, new id == ${loopID}`);
-            }
-            
-
-            // If the loopPlayer has been created, and it is already playing
-            // this loop, toggle the play button as normal.
-            if (loopPlayer) {
-                if (loopPlayer.loopID !== loopID) {
-                    console.log()
-                    console.log('loop has changed .....');
-                    // Get the tracks related to this loop from the server.
-                    let url = '/tracks/' + loopID;
-                    fetch(url)
-                        .then(response => response.json())
-                        .then(tracks => {
-                            populateLoopPlayer(tempo, tracks, loopID);
-                            loopPlayer.audioCtx.resume();
-                        });
-                }
-                loopPlayer.togglePlay();
-            } else {
-                // Get the tracks related to this loop from the server.
-                let url = '/tracks/' + loopID;
-                fetch(url)
-                    .then(response => response.json())
-                    .then(tracks => {
-                        loopPlayer = new LoopPlayer(tempo, tracks, loopID);
-                        loopPlayer.togglePlay();
-                    });
-            }
-        });
-    }
-});
-
-const populateLoopPlayer = (tempo, tracks, loopID) => {
-    if (!loopPlayer) {
-        loopPlayer = new LoopPlayer(tempo, tracks, loopID);
-    } else {
-        loopPlayer.swapLoop(tempo, tracks, loopID);
-    }
+const replaceCharacter = (string, position, newCharacter) => {
+    let before = string.substring(0, position);
+    let after = string.substring(position + 1);
+    return before + newCharacter + after;
 }
+
