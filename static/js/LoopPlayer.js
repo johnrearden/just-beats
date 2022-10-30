@@ -58,6 +58,7 @@ class LoopPlayer {
         let sample = await this.getAudioBuffer(drumURL);
         let trackSequence = new TrackSequence(
             track.pk,
+            track.instrument_id,
             sample,
             track.beats,
             track.beat_volumes,
@@ -108,6 +109,10 @@ class LoopPlayer {
     // Changes the overall track volume to the new value.
     changeTrackVolume = (trackID, newVolume) => {
         this.trackSequences.get(trackID).masterVolume = newVolume;
+    }
+
+    getInstrumentID = (trackID) => {
+        return this.trackSequences.get(trackID).instrumentID;
     }
 
     scheduler = () => {
@@ -163,8 +168,9 @@ class LoopPlayer {
 // by the LoopPlayer. In addition to the fields in the model Track, it also
 // holds the same (an AudioBuffer) to allow the track to be played aloud.
 class TrackSequence {
-    constructor(id, sample, beatList, volumeList, masterVolume) {
+    constructor(id, instrumentID, sample, beatList, volumeList, masterVolume) {
         this.id = id;
+        this.instrumentID = instrumentID;
         this.sample = sample;
         this.beatList = beatList;
         this.volumeList = volumeList;
@@ -190,7 +196,6 @@ class TrackSequence {
         let character = this.volumeList.charAt(index);
         let value = parseInt(character);
         return value * 0.1;
-
     }
 }
 

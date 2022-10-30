@@ -2,10 +2,11 @@ from django.http import HttpResponseRedirect
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from django.views import View, generic
 from django.contrib.auth.models import User
+from urllib.parse import urlencode
 from .models import Drumloop, Track, Instrument
 from .serializers import TrackSerializer
 
@@ -22,6 +23,7 @@ class LoopEditor(View):
         query_set = Drumloop.objects.all()
         loop = get_object_or_404(query_set, id=id)
         tracks = Track.objects.select_related().filter(drumloop=loop)
+        instruments = Instrument.objects.order_by('name')
 
         return render(
             request,
@@ -29,15 +31,15 @@ class LoopEditor(View):
             {
                 "loop": loop,
                 "tracks": tracks,
+                "instruments": instruments,
             }
         )
 
     def post(self, request, id):
 
-        print(request.POST)
         querydict = request.POST
         track_ids = querydict.getlist('tracks')
-        for id_str in track_ids:
+        for count, id_str in enumerate(track_ids):
             id = int(id_str)
             queryset = Track.objects.filter(id=id)
             beats = querydict.get(f"beats_{id}")
@@ -47,6 +49,8 @@ class LoopEditor(View):
             track.beats = beats
             track.beat_volumes = beat_volumes
             track.track_volume = track_volume
+            instrument_id = int(querydict.getlist("instrument_id")[count])
+            track.instrument = Instrument.objects.get(id=instrument_id)
             track.save()
         loop_id = int(querydict.get('drumloop_id'))
         drumloop = Drumloop.objects.filter(id=loop_id).first()
@@ -61,13 +65,14 @@ class LoopEditor(View):
             drumloop.allow_copy = False
         drumloop.save()
 
-        return HttpResponseRedirect(reverse('home'))
-        
-
+        keep_editing = querydict.get('keep_editing') == 'yes'
+        if keep_editing:
+            return HttpResponseRedirect(f"/editor/{loop_id}")
+        else:
+            return HttpResponseRedirect(reverse('home'))
 
 class TracksForLoop(APIView):
     def get(self, request, id, *args, **kwargs):
-        print(f'request incoming : loop id is {id}')
         try:
             loop = Drumloop.objects.get(id=id)
         except Drumloop.DoesNotExist:

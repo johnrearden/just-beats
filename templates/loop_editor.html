@@ -6,7 +6,7 @@
 
 
 <div class="container">
-    <form action="" method="POST">
+    <form id='loop-editor-form' action="" method="POST">
         {% csrf_token %}
         <div class="container">
             <div class="row align-items-center">
@@ -18,67 +18,70 @@
                     <label for="creator_name">Creator</label>
                     <input type="text" id="creator_name" readonly value="{{ loop.creator }}" name="creator_name">
                 </div>
-            <div class="row text-center align-items-center">
-                <div class="col-5 offset-1">
-                    <label for="tempo">Tempo</label>
-                    <input type="number" id="tempo" name="tempo" value="{{ loop.tempo }}" min="60" max="200" step="1">
+                <div class="row text-center align-items-center">
+                    <div class="col-5 offset-1">
+                        <label for="tempo">Tempo</label>
+                        <input type="number" id="tempo" name="tempo" value="{{ loop.tempo }}" min="60" max="200"
+                            step="1">
+                    </div>
+                    <div class="col-5">
+                        <label for="allow_copy">Allow Copy?</label>
+                        <input type="checkbox" id="allow_copy" name="allow_copy" checked="{{ loop.allow_copy }}"
+                            value="allowed">
+                    </div>
+                    <input type="text" class="hidden" id="keep-editing" name="keep_editing" value="no">
+                    <input type="text" class="hidden" id="drumloop-id" name="drumloop_id" value="{{ loop.id }}">
                 </div>
-                <div class="col-5">
-                    <label for="allow_copy">Allow Copy?</label>
-                    <input type="checkbox" id="allow_copy" name="allow_copy" checked="{{ loop.allow_copy }}"
-                        value="allowed">
-                </div>
-                <input type="text" class="hidden" id="drumloop-id" name="drumloop_id" value="{{ loop.id }}">
-            </div>
 
-            <div class="track-holder text-center mt-4">
-                <hr>
-                {% for track in tracks %}
-                <div class="row align-items-center">
+                <div class="track-holder text-center mt-4">
+                    <hr>
+                    {% for track in tracks %}
+                    <div class="row align-items-center">
 
-                    <!-- Hidden fields : Their values are read by the script and used to set up the 
+                        <!-- Hidden fields : Their values are read by the script and used to set up the 
                      WebAudio audioContext. The user is not able to modify them directly. The
                      beats-field value is the single source of truth for the pattern of beats that the user
                      selects. It is loaded from the database, edited indirectly by clicking on the beatDivs
                      below, read by the sequencer to play the loop and returned to the backend with the 
                      form's POST request.-->
-                    <input type="text" class="beats-field hidden" id="beats_{{ track.id }}"
-                        name="beats_{{ track.id }}" value="{{ track.beats }}" readonly>
-                    <input type="text" class="beat-volumes-field hidden" id="beat_volumes_{{ track.id }}"
-                        name="beat_volumes_{{ track.id}}" value="{{ track.beat_volumes }}" readonly>
-                    <input type="text" id="tracks" class="hidden" name="tracks" value="{{ track.id }}">
-                    <input type="text" id="instrument_id" class="hidden" name="instrument_id" 
-                        value="{{ track.instrument.id }}">
-                    <div class="instrument-url hidden">{{ track.instrument.url }}</div>
+                        <input type="text" class="beats-field hidden" id="beats_{{ track.id }}"
+                            name="beats_{{ track.id }}" value="{{ track.beats }}" readonly>
+                        <input type="text" class="beat-volumes-field hidden" id="beat_volumes_{{ track.id }}"
+                            name="beat_volumes_{{ track.id}}" value="{{ track.beat_volumes }}" readonly>
+                        <input type="text" id="tracks" class="hidden" name="tracks" value="{{ track.id }}">
+                        <input type="text" id="instrument-id-for-track_{{ track.id }}" class="instrument-id hidden" 
+                            name="instrument_id" value="{{ track.instrument.id }}">
+                        <div class="instrument-url hidden">{{ track.instrument.url }}</div>
 
-                    <!-- Visible fields : These can be edited directly by the user.-->
-                    <div class="col-6 col-md-2" vertical-align>
-                        <div class="instrument-name">{{ track.instrument.name }}</div>
-                    </div>
+                        <!-- Visible fields : These can be edited directly by the user.-->
+                        <div class="col-6 col-md-2" vertical-align>
+                            <div class="instrument-name" onclick="onInstrumentClicked({{ track.id }})">
+                                {{ track.instrument.name }}
+                            </div>
+                        </div>
 
-                    <div class="col-6 col-md-2">
-                        <label for="track_volume_{{ track.id }}">Vol</label>
-                        <input type="range" id="track_volume_{{ track.id }}" name="track_volume_{{ track.id }}" 
-                            value="{{ track.track_volume }}" min="0"
-                            max="10" class="track-volume" list="tickmarks">
-                        <datalist id="tickmarks">
-                            <option value="0" label="0"></option>
-                            <option value="2"></option>
-                            <option value="4"></option>
-                            <option value="6"></option>
-                            <option value="8"></option>
-                            <option value="10" label="10"></option>
-                        </datalist>
-                    </div>
+                        <div class="col-6 col-md-2">
+                            <label for="track_volume_{{ track.id }}">Vol</label>
+                            <input type="range" id="track_volume_{{ track.id }}" name="track_volume_{{ track.id }}"
+                                value="{{ track.track_volume }}" min="0" max="10" class="track-volume" list="tickmarks">
+                            <datalist id="tickmarks">
+                                <option value="0" label="0"></option>
+                                <option value="2"></option>
+                                <option value="4"></option>
+                                <option value="6"></option>
+                                <option value="8"></option>
+                                <option value="10" label="10"></option>
+                            </datalist>
+                        </div>
 
-                    <div class="col-12 col-md-8">
-                        <div id="track_{{ forloop.counter0 }}" class="beats-holder"></div>
+                        <div class="col-12 col-md-8">
+                            <div id="track_{{ forloop.counter0 }}" class="beats-holder"></div>
+                        </div>
                     </div>
+                    <hr>
+                    {% endfor %}
                 </div>
-                <hr>
-                {% endfor %}
-            </div>
-            <div class="row"></div>
+                <div class="row"></div>
                 <div class="text-center p-3">
                     <input type="submit">
                 </div>
@@ -89,6 +92,44 @@
         <button id="play-loop" class="btn btn-success">PLAY</button>
     </div>
 
+</div>
+
+<!-- Instrument selection modal -->
+<div class="modal fade" id="instrument-chooser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Choose Instrument</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <span id="modal-current-trackID" class="hidden"></span>
+                <span id="modal-current-instrumentID" class="hidden"></span>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        {% for instrument in instruments %}
+
+                        <div class="col-md-6">
+                            <span id="modal-instrument-id_{{ instrument.id }}" class="instrument-spans"
+                                onclick="onModalInstrumentClicked(event)">
+                                {{ instrument.name }}
+                            </span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="onModalSaveChangesClicked()">
+                    Save changes
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>

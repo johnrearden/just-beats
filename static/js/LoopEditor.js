@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     playButton.addEventListener('click', e => loopPlayer.togglePlay());
                 });
 
+
     setIntrumentNameColors();
 
     // Draw the clickable beat divs to the page.
@@ -56,6 +57,60 @@ const onBeatClick = (event) => {
     }
 }
 
+const onInstrumentClicked = (trackID) => {
+
+    // Stop the LoopPlayer if playing
+    loopPlayer.audioCtx.suspend();
+
+    // Store the trackID of the track whose intrument has been clicked in the
+    // modal to be retrieved when the modal is closed.
+    let modalTrackID = document.getElementById('modal-current-trackID');
+    modalTrackID.textContent = trackID;
+    let currentInstrumentID = loopPlayer.getInstrumentID(trackID);
+    console.log(`currentInstrumentID == ${currentInstrumentID}`);
+    const modalCurrentInstrumentID = document.getElementById('modal-current-instrumentID');
+    modalCurrentInstrumentID.textContent = currentInstrumentID;
+    const instrumentSpans = document.getElementsByClassName('instrument-spans');
+    for (let span of instrumentSpans) {
+        if (span.id.split('_')[1] === currentInstrumentID) {
+            span.classList.add('selected-instrument');
+        } else {
+            span.classList.remove('selected-instrument');
+        }
+    }
+    $('#instrument-chooser').modal('show');
+}
+
+const onModalSaveChangesClicked = (e) => {
+    const trackID = document.getElementById('modal-current-trackID').textContent;
+    const instrumentID = document.getElementById('modal-current-instrumentID').textContent;
+
+    // Change the value of the hidden instrument_id text field in the html form, and
+    // then force form submission to save the new instrument, and all previous 
+    // unsaved changes to the backend.
+    const instrumentIdInputs = document.getElementsByClassName('instrument-id');
+    for (let input of instrumentIdInputs) {
+        if (input.id.split('_')[1] === trackID) {
+            input.value = instrumentID;
+        }
+    }
+    document.getElementById('keep-editing').value = "yes";
+    document.getElementById('loop-editor-form').submit();
+}
+
+const onModalInstrumentClicked = (e) => {
+    const selectedInstrumentID = e.target.id.split('_')[1];
+    const modalCurrentInstrumentID = document.getElementById('modal-current-instrumentID');
+    modalCurrentInstrumentID.textContent = selectedInstrumentID;
+    const instrumentSpans = document.getElementsByClassName('instrument-spans');
+    for (let span of instrumentSpans) {
+        if (span.id.split('_')[1] === selectedInstrumentID) {
+            span.classList.add('selected-instrument');
+        } else {
+            span.classList.remove('selected-instrument');
+        }
+    }
+}
 
 const setIntrumentNameColors = () => {
     let instrumentNameDivs = document.getElementsByClassName('instrument-name');

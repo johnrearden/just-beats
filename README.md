@@ -46,6 +46,13 @@ Make your own drum loops on the web
 
 # Development Process
 
+### Inline JavaScript and event handlers.
+When using Django templates, the fields passed in from the backend are only 
+available within the HTML document itself. It is therefore simpler to write event
+handlers directly into the document, rather than in external JS files. This means that
+the HTML and JavaScript are tightly coupled, but this would be necessary in any case 
+in the absence of direct fetch calls to the API. 
+
 ## Data Model
 
 ![Entity-relationship diagram for models](media/docs/entity_relationship_diagram.png)

@@ -17,3 +17,4 @@ class TrackAdmin(admin.ModelAdmin):
 @admin.register(Instrument)
 class InstrumentAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'url')
+    list_editable = ('name', 'url')

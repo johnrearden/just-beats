@@ -194,3 +194,9 @@ input {
     border-radius: 5px;
     padding: 5px;
 }
+
+/* These css elements style the instrument selector modal ---------*/
+.selected-instrument {
+    color: red;
+    background-color: pink;
+}
