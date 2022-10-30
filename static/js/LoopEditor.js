@@ -98,7 +98,8 @@ const onModalSaveChangesClicked = (e) => {
     document.getElementById('loop-editor-form').submit();
 }
 
-const onModalInstrumentClicked = (e) => {
+const onModalInstrumentClicked = (e, instrumentURL) => {
+    console.log(instrumentURL);
     const selectedInstrumentID = e.target.id.split('_')[1];
     const modalCurrentInstrumentID = document.getElementById('modal-current-instrumentID');
     modalCurrentInstrumentID.textContent = selectedInstrumentID;
@@ -110,6 +111,11 @@ const onModalInstrumentClicked = (e) => {
             span.classList.remove('selected-instrument');
         }
     }
+    const url = drumURLs[instrumentURL];
+    audio = new Audio(url);
+    audio.play();
+
+
 }
 
 const setIntrumentNameColors = () => {

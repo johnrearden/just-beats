@@ -101,7 +101,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLongTitle">Choose Instrument</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <span id="modal-current-trackID" class="hidden"></span>
@@ -112,9 +112,9 @@
                     <div class="row">
                         {% for instrument in instruments %}
 
-                        <div class="col-md-6">
+                        <div class="col-md-6 text-center">
                             <span id="modal-instrument-id_{{ instrument.id }}" class="instrument-spans"
-                                onclick="onModalInstrumentClicked(event)">
+                                onclick="onModalInstrumentClicked(event, '{{ instrument.url }}')">
                                 {{ instrument.name }}
                             </span>
                         </div>
@@ -123,7 +123,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary" onclick="onModalSaveChangesClicked()">
                     Save changes
                 </button>
