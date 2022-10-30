@@ -36,7 +36,6 @@ class LoopPlayer {
         this.trackSequences = new Map();
         for (let track of tracks) {
             this.addTrackSequence(track);
-            console.log(this.trackSequences.size);
         }
         this.scheduler();
     }
