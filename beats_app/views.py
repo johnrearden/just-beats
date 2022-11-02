@@ -92,4 +92,11 @@ class AddNewTrack(APIView):
         instrument = Instrument.objects.get(pk=instrumentID)
         newTrack = Track(drumloop=drumloop,instrument=instrument)
         newTrack.save()
-        return HttpResponse('Happy out')
+        return HttpResponse('Ok')
+
+class DeleteTrack(APIView):
+    def post(self, request, *args, **kwargs):
+        data = request.data
+        trackID = int(data.get('trackID'))
+        Track.objects.get(pk=trackID).delete()
+        return HttpResponse('Ok')

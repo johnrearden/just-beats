@@ -167,6 +167,54 @@ const onAddNewTrackButtonClick = (e) => {
 
     // Display the modal.
     $('#instrument-chooser').modal('show');
+} 
+
+const onDeleteTrackButtonClick = (event, trackID) => {
+    event.preventDefault();
+
+    // Store the selected trackID in the confirm button.
+    const confirmButton = document.getElementById('confirm-delete-track-button');
+    confirmButton.setAttribute('trackID', trackID);
+
+    // Open a modal dialog to ask user to confirm action.
+    $('#delete-track-confirmation').modal('show');
+}
+
+const onRefuseDeleteTrackClick = (event) => {
+    $('#delete-track-confirmation').modal('hide');
+}
+
+const onConfirmDeleteTrackClick = (event) => {
+
+    // Hide the dialog again.
+    $('#delete-track-confirmation').modal('hide');
+
+    // Get the trackID from the confirm button.
+    const trackID = event.target.getAttribute('trackID');
+
+    // Remove the track from the page, so that it is not returned with
+    // the form on page reload.
+    const trackIDAttribute = `track_${trackID}`;
+    const trackRow = document.getElementById(trackIDAttribute);
+    trackRow.parentNode.removeChild(trackRow);
+
+
+    // Make a POST request to the backend to delete this track.
+    const csrfToken = getCookie('csrftoken');
+    const params = {
+        'trackID': trackID,
+    }
+    const options = {
+        method: 'POST',
+        credentials: 'same-origin',
+        body: JSON.stringify(params),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrfToken,
+        },
+    }
+    fetch('/delete_track/', options); // No need to reload page in this instance.
 }
 
 getCookie = (name) => {
