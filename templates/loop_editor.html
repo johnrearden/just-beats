@@ -49,13 +49,14 @@
                         <input type="text" class="beat-volumes-field hidden" id="beat_volumes_{{ track.id }}"
                             name="beat_volumes_{{ track.id}}" value="{{ track.beat_volumes }}" readonly>
                         <input type="text" id="tracks" class="hidden" name="tracks" value="{{ track.id }}">
-                        <input type="text" id="instrument-id-for-track_{{ track.id }}" class="instrument-id hidden" 
+                        <input type="text" id="instrument-id-for-track_{{ track.id }}" class="instrument-id hidden"
                             name="instrument_id" value="{{ track.instrument.id }}">
                         <div class="instrument-url hidden">{{ track.instrument.url }}</div>
 
                         <!-- Visible fields : These can be edited directly by the user.-->
                         <div class="col-6 col-md-2" vertical-align>
-                            <div class="instrument-name" onclick="onInstrumentClicked({{ track.id }})">
+                            <div class="instrument-name"
+                                onclick="onInstrumentButtonClicked('{{ loop.id }}','{{ track.id }}')">
                                 {{ track.instrument.name }}
                             </div>
                         </div>
@@ -82,16 +83,19 @@
                     {% endfor %}
                 </div>
                 <div class="row"></div>
-                <div class="text-center p-3">
+                <div class="col text-center p-3">
                     <input type="submit">
                 </div>
+
             </div>
         </div>
     </form>
-    <div class="text-center p-3">
+    <div class="col text-center p-3">
         <button id="play-loop" class="btn btn-success">PLAY</button>
     </div>
-
+    <div class="col text-center p-3">
+        <button id="add-new-track" class="btn btn-warning">ADD NEW TRACK</button>
+    </div>
 </div>
 
 <!-- Instrument selection modal -->
@@ -104,7 +108,6 @@
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <span id="modal-current-trackID" class="hidden"></span>
                 <span id="modal-current-instrumentID" class="hidden"></span>
             </div>
             <div class="modal-body">

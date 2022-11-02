@@ -124,5 +124,8 @@ https://django-allauth.readthedocs.io/en/latest/installation.html
 Django authentication with Google
 https://www.codeunderscored.com/django-authentication-with-google/
 
+Get csrf cookie for POST request
+https://www.brennantymrak.com/articles/fetching-data-with-ajax-and-django.html
+
 
 [Return to top](#just-beats)

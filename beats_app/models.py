@@ -35,8 +35,8 @@ class Track(models.Model):
         Drumloop, on_delete=models.CASCADE, related_name="tracks")
     instrument = models.ForeignKey(
         Instrument, on_delete=models.CASCADE, related_name="tracks")
-    beats = models.CharField(max_length=32)
-    beat_volumes = models.CharField(max_length=32)
+    beats = models.CharField(max_length=32, default="00000000000000000000000000000000")
+    beat_volumes = models.CharField(max_length=32, default="00000000000000000000000000000000")
     track_volume = models.IntegerField(
         default=10, validators=[MaxValueValidator(10), MinValueValidator(0)])
 

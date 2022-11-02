@@ -1,4 +1,4 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
@@ -9,6 +9,8 @@ from django.contrib.auth.models import User
 from urllib.parse import urlencode
 from .models import Drumloop, Track, Instrument
 from .serializers import TrackSerializer
+
+import json
 
 
 class LoopList(generic.ListView):
@@ -80,3 +82,14 @@ class TracksForLoop(APIView):
         tracks = Track.objects.select_related().filter(drumloop=loop)
         serializer = TrackSerializer(tracks, context={'request': request}, many=True)
         return Response(serializer.data)
+
+class AddNewTrack(APIView):
+    def post(self, request, *args, **kwargs):
+        data = request.data
+        loopID = int(data.get('loopID'))
+        instrumentID = int(data.get('instrumentID'))
+        drumloop = Drumloop.objects.get(pk=loopID)
+        instrument = Instrument.objects.get(pk=instrumentID)
+        newTrack = Track(drumloop=drumloop,instrument=instrument)
+        newTrack.save()
+        return HttpResponse('Happy out')

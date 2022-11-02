@@ -1,6 +1,11 @@
 let loopPlayer;
+let instrumentModalConfig;
 
 document.addEventListener('DOMContentLoaded', () => {
+    const addNewTrackButton = document.getElementById('add-new-track');
+    addNewTrackButton.addEventListener('click', (event) => {
+        onAddNewTrackButtonClick(event);
+    });
     const playButton = document.getElementById('play-loop');
 
     // Fetch the tracks for this loop from the server, and create a new
@@ -8,14 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const loopID = document.getElementById('drumloop-id').value;
     const tempo = document.getElementById('tempo').value;
     let url = '/tracks/' + loopID;
-            fetch(url)
-                .then(response => response.json())
-                .then(tracks => {
-                    loopPlayer = new LoopPlayer(tempo, tracks, loopID);
-                    playButton.addEventListener('click', e => loopPlayer.togglePlay());
-                });
-
-
+    fetch(url)
+        .then(response => response.json())
+        .then(tracks => {
+            loopPlayer = new LoopPlayer(tempo, tracks, loopID);
+            playButton.addEventListener('click', e => loopPlayer.togglePlay());
+        });
     setIntrumentNameColors();
 
     // Draw the clickable beat divs to the page.
@@ -57,19 +60,23 @@ const onBeatClick = (event) => {
     }
 }
 
-const onInstrumentClicked = (trackID) => {
+const onInstrumentButtonClicked = (loopID, trackID) => {
 
     // Stop the LoopPlayer if playing
     loopPlayer.audioCtx.suspend();
 
-    // Store the trackID of the track whose intrument has been clicked in the
-    // modal to be retrieved when the modal is closed.
-    let modalTrackID = document.getElementById('modal-current-trackID');
-    modalTrackID.textContent = trackID;
-    let currentInstrumentID = loopPlayer.getInstrumentID(trackID);
-    console.log(`currentInstrumentID == ${currentInstrumentID}`);
-    const modalCurrentInstrumentID = document.getElementById('modal-current-instrumentID');
-    modalCurrentInstrumentID.textContent = currentInstrumentID;
+
+    // Create a new InstrumentModalConfig object to store current state.
+    const currentInstrumentID = loopPlayer.getInstrumentID(parseInt(trackID));
+    console.log(typeof (trackID));
+    instrumentModalConfig = new InstrumentModalConfig(
+        trackID,
+        currentInstrumentID,
+        loopID,
+        false,
+    )
+
+    // Set the current instrument as selected in the modal.
     const instrumentSpans = document.getElementsByClassName('instrument-spans');
     for (let span of instrumentSpans) {
         if (span.id.split('_')[1] === currentInstrumentID) {
@@ -78,31 +85,56 @@ const onInstrumentClicked = (trackID) => {
             span.classList.remove('selected-instrument');
         }
     }
+
+    // Display the modal.
     $('#instrument-chooser').modal('show');
 }
 
 const onModalSaveChangesClicked = (e) => {
-    const trackID = document.getElementById('modal-current-trackID').textContent;
-    const instrumentID = document.getElementById('modal-current-instrumentID').textContent;
 
-    // Change the value of the hidden instrument_id text field in the html form, and
-    // then force form submission to save the new instrument, and all previous 
-    // unsaved changes to the backend.
-    const instrumentIdInputs = document.getElementsByClassName('instrument-id');
-    for (let input of instrumentIdInputs) {
-        if (input.id.split('_')[1] === trackID) {
-            input.value = instrumentID;
+    // If an existing track is being modified, update the instrumentID input 
+    // so that the backend can save the new instrument selection.
+    if (!instrumentModalConfig.newTrack) {
+        for (let input of instrumentIdInputs) {
+            if (input.id.split('_')[1] === instrumentModalConfig.selectedTrackID) {
+                input.value = instrumentModalConfig.selectedInstrumentID;
+            }
         }
+        // Force submission of the loop-editor-form to reload the page.
+        document.getElementById('keep-editing').value = "yes";
+        document.getElementById('loop-editor-form').submit();
+    } else {
+        const csrfToken = getCookie('csrftoken');
+        // A new track is being created. Make a POST request to the backend
+        // to create a new track.
+        const params = {
+            'loopID': instrumentModalConfig.currentLoopID,
+            'instrumentID': instrumentModalConfig.currentInstrumentID,
+        }
+        const options = {
+            method: 'POST',
+            credentials: 'same-origin',
+            body: JSON.stringify(params),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrfToken,
+            },
+
+        }
+        fetch('/add_new_track/', options)
+            .then(() => {
+                // Submit the form to save all changes and display the 
+                // new track on the page, once the response has been received.
+                document.getElementById('keep-editing').value = "yes";
+                document.getElementById('loop-editor-form').submit();
+            });
     }
-    document.getElementById('keep-editing').value = "yes";
-    document.getElementById('loop-editor-form').submit();
 }
 
 const onModalInstrumentClicked = (e, instrumentURL) => {
-    console.log(instrumentURL);
     const selectedInstrumentID = e.target.id.split('_')[1];
-    const modalCurrentInstrumentID = document.getElementById('modal-current-instrumentID');
-    modalCurrentInstrumentID.textContent = selectedInstrumentID;
+    instrumentModalConfig.currentInstrumentID = selectedInstrumentID;
     const instrumentSpans = document.getElementsByClassName('instrument-spans');
     for (let span of instrumentSpans) {
         if (span.id.split('_')[1] === selectedInstrumentID) {
@@ -114,8 +146,43 @@ const onModalInstrumentClicked = (e, instrumentURL) => {
     const url = drumURLs[instrumentURL];
     audio = new Audio(url);
     audio.play();
+}
 
+const onAddNewTrackButtonClick = (e) => {
+    // Stop the LoopPlayer if playing
+    loopPlayer.audioCtx.suspend();
 
+    // Display the first instrument as selected, so that there is a default if
+    // the modal is closed before a selection is made.
+    const instrumentSpans = document.getElementsByClassName('instrument-spans');
+    const defaultInstrumentID = instrumentSpans[0].id.split('_')[1];
+
+    // Create a new InstrumentModalConfig object to store current state.
+    instrumentModalConfig = new InstrumentModalConfig(
+        -1, // In this case, there is no track yet.
+        defaultInstrumentID,
+        loopPlayer.loopID,
+        true,
+    )
+
+    // Display the modal.
+    $('#instrument-chooser').modal('show');
+}
+
+getCookie = (name) => {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
 }
 
 const setIntrumentNameColors = () => {
@@ -141,4 +208,13 @@ const hashString = (string) => {
         hash |= 0;
     }
     return hash;
+}
+
+class InstrumentModalConfig {
+    constructor(selectedTrackID, currentInstrumentID, currentLoopID, newTrack) {
+        this.selectedTrackID = selectedTrackID;
+        this.currentInstrumentID = currentInstrumentID;
+        this.currentLoopID = currentLoopID;
+        this.newTrack = newTrack;
+    }
 }

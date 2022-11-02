@@ -112,7 +112,7 @@ class LoopPlayer {
     }
 
     getInstrumentID = (trackID) => {
-        return this.trackSequences.get(trackID).instrumentID;
+        return this.trackSequences.get(parseInt(trackID)).instrumentID;
     }
 
     scheduler = () => {
