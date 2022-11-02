@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let beatsFields = document.getElementsByClassName('beats-field')
     let numberOfTracks = beatsFields.length;
     for (let i = 0; i < numberOfTracks; i++) {
-        let trackDOMIndex = `track_${i}`;
+        let trackDOMIndex = `beats-holder-track_${i}`;
         let trackId = beatsFields[i].id.split('_')[1]
         let track_div = document.getElementById(trackDOMIndex);
         let beatString = beatsFields[i].value;
@@ -65,16 +65,15 @@ const onInstrumentButtonClicked = (loopID, trackID) => {
     // Stop the LoopPlayer if playing
     loopPlayer.audioCtx.suspend();
 
-
     // Create a new InstrumentModalConfig object to store current state.
-    const currentInstrumentID = loopPlayer.getInstrumentID(parseInt(trackID));
-    console.log(typeof (trackID));
+    const currentInstrumentID = loopPlayer.getInstrumentID(trackID);
     instrumentModalConfig = new InstrumentModalConfig(
         trackID,
         currentInstrumentID,
         loopID,
         false,
     )
+    console.log(instrumentModalConfig)
 
     // Set the current instrument as selected in the modal.
     const instrumentSpans = document.getElementsByClassName('instrument-spans');
@@ -95,10 +94,11 @@ const onModalSaveChangesClicked = (e) => {
     // If an existing track is being modified, update the instrumentID input 
     // so that the backend can save the new instrument selection.
     if (!instrumentModalConfig.newTrack) {
+        const instrumentIdInputs = document.getElementsByClassName('instrument-id');
         for (let input of instrumentIdInputs) {
             if (input.id.split('_')[1] === instrumentModalConfig.selectedTrackID) {
-                input.value = instrumentModalConfig.selectedInstrumentID;
-            }
+                input.value = instrumentModalConfig.currentInstrumentID;
+            } 
         }
         // Force submission of the loop-editor-form to reload the page.
         document.getElementById('keep-editing').value = "yes";

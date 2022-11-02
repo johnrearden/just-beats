@@ -45,11 +45,9 @@ class LoopEditor(View):
             id = int(id_str)
             queryset = Track.objects.filter(id=id)
             beats = querydict.get(f"beats_{id}")
-            beat_volumes = querydict.get(f"beat_volumes_{id}")
             track_volume = querydict.get(f"track_volume_{id}")
             track = queryset.first()
             track.beats = beats
-            track.beat_volumes = beat_volumes
             track.track_volume = track_volume
             instrument_id = int(querydict.getlist("instrument_id")[count])
             track.instrument = Instrument.objects.get(id=instrument_id)

@@ -11,7 +11,6 @@ class Drumloop(models.Model):
     creator = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="drumloops", default=1)
     created_on = models.DateTimeField(auto_now_add=True)
-    allow_copy = models.BooleanField(default=True)
     rating = models.IntegerField(default=0, validators=[
         MinValueValidator(0), MaxValueValidator(5)
     ])
@@ -19,7 +18,7 @@ class Drumloop(models.Model):
                                 MaxValueValidator(200), MinValueValidator(60)])
 
     def __str__(self):
-        return f"{self.name}, tempo={self.tempo}, {'(can be copied)' if self.allow_copy else '(copying not allowed)'}"
+        return f"{self.name}, tempo={self.tempo}"
 
 
 class Instrument(models.Model):
@@ -36,9 +35,8 @@ class Track(models.Model):
     instrument = models.ForeignKey(
         Instrument, on_delete=models.CASCADE, related_name="tracks")
     beats = models.CharField(max_length=32, default="00000000000000000000000000000000")
-    beat_volumes = models.CharField(max_length=32, default="00000000000000000000000000000000")
     track_volume = models.IntegerField(
         default=10, validators=[MaxValueValidator(10), MinValueValidator(0)])
 
     def __str__(self):
-        return f"{self.instrument}: {self.beats}, {self.beat_volumes}, trk_vol={self.track_volume}, belongs to {self.drumloop.name}"
+        return f"{self.instrument}: {self.beats}, trk_vol={self.track_volume}, belongs to {self.drumloop.name}"

@@ -55,13 +55,13 @@ class LoopPlayer {
     addTrackSequence = async (track) => {
         let instrumentURL = track.instrument_url;
         let drumURL = drumURLs[instrumentURL];
+        console.log(drumURL);
         let sample = await this.getAudioBuffer(drumURL);
         let trackSequence = new TrackSequence(
             track.pk,
             track.instrument_id,
             sample,
             track.beats,
-            track.beat_volumes,
             track.track_volume,
         );
         this.trackSequences.set(track.pk, trackSequence);
@@ -126,7 +126,7 @@ class LoopPlayer {
                 if (track.hasBeatAt(this.beatIndex)) {
                     this.scheduleNote(
                         track.sample,
-                        track.getVolumeAt(this.beatIndex),
+                        track.getVolume(),
                         this.nextBeatTime);
                 }
             })
@@ -168,12 +168,11 @@ class LoopPlayer {
 // by the LoopPlayer. In addition to the fields in the model Track, it also
 // holds the same (an AudioBuffer) to allow the track to be played aloud.
 class TrackSequence {
-    constructor(id, instrumentID, sample, beatList, volumeList, masterVolume) {
+    constructor(id, instrumentID, sample, beatList, masterVolume) {
         this.id = id;
         this.instrumentID = instrumentID;
         this.sample = sample;
         this.beatList = beatList;
-        this.volumeList = volumeList;
         this.masterVolume = masterVolume;
     }
 
@@ -185,17 +184,13 @@ class TrackSequence {
         }
     }
 
+    getVolume = () => {
+        return this.masterVolume * 0.1;
+    }
+
     // returns true if there is a beat to be played at this index.
     hasBeatAt = (index) => {
         return this.beatList.charAt(index) === '8';
-    }
-
-    // returns the volume of the beat at the specified index, as a value
-    // between 0.0 and 1.0 (the range for gain in a GainNode).
-    getVolumeAt = (index) => {
-        let character = this.volumeList.charAt(index);
-        let value = parseInt(character);
-        return value * 0.1;
     }
 }
 

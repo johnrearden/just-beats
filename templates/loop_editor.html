@@ -24,11 +24,6 @@
                         <input type="number" id="tempo" name="tempo" value="{{ loop.tempo }}" min="60" max="200"
                             step="1">
                     </div>
-                    <div class="col-5">
-                        <label for="allow_copy">Allow Copy?</label>
-                        <input type="checkbox" id="allow_copy" name="allow_copy" checked="{{ loop.allow_copy }}"
-                            value="allowed">
-                    </div>
                     <input type="text" class="hidden" id="keep-editing" name="keep_editing" value="no">
                     <input type="text" class="hidden" id="drumloop-id" name="drumloop_id" value="{{ loop.id }}">
                 </div>
@@ -45,8 +40,6 @@
                      form's POST request.-->
                         <input type="text" class="beats-field hidden" id="beats_{{ track.id }}"
                             name="beats_{{ track.id }}" value="{{ track.beats }}" readonly>
-                        <input type="text" class="beat-volumes-field hidden" id="beat_volumes_{{ track.id }}"
-                            name="beat_volumes_{{ track.id}}" value="{{ track.beat_volumes }}" readonly>
                         <input type="text" id="tracks" class="hidden" name="tracks" value="{{ track.id }}">
                         <input type="text" id="instrument-id-for-track_{{ track.id }}" class="instrument-id hidden"
                             name="instrument_id" value="{{ track.instrument.id }}">
@@ -75,7 +68,7 @@
                         </div>
 
                         <div class="col-12 col-md-7">
-                            <div id="track_{{ forloop.counter0 }}" class="beats-holder"></div>
+                            <div id="beats-holder-track_{{ forloop.counter0 }}" class="beats-holder"></div>
                         </div>
                         <div class="col-md-1">
                             <button onclick="onDeleteTrackButtonClick(event, '{{ track.id }}')">
@@ -140,29 +133,29 @@
 
 <div class="modal fade" id='delete-track-confirmation' tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <!-- <div class="modal-header">
+        <div class="modal-content">
+            <!-- <div class="modal-header">
           <h5 class="modal-title">Delete a Track</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div> -->
-        <div class="modal-body">
-          <p>Do you really want to delete this track?</p>
+            <div class="modal-body">
+                <p>Do you really want to delete this track?</p>
+            </div>
+            <div class="modal-footer">
+                <button id='refuse-delete-track-button' type="button" class="btn btn-danger"
+                    onclick="onRefuseDeleteTrackClick(event)">
+                    No, wait!
+                </button>
+                <button id='confirm-delete-track-button' type="button" class="btn btn-primary"
+                    onclick="onConfirmDeleteTrackClick(event)">
+                    Delete It!
+                </button>
+            </div>
         </div>
-        <div class="modal-footer">
-            <button id='refuse-delete-track-button' type="button" class="btn btn-danger" 
-                  onclick="onRefuseDeleteTrackClick(event)">
-            No, wait!
-        </button>
-          <button id='confirm-delete-track-button' type="button" class="btn btn-primary" 
-                  onclick="onConfirmDeleteTrackClick(event)">
-            Delete It!
-        </button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
 
 <script>
     /*

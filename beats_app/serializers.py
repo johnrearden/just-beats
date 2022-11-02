@@ -9,4 +9,4 @@ class TrackSerializer(serializers.ModelSerializer):
     class Meta:
         model = Track
         fields = ('pk', 'drumloop', 'instrument_url', 'beats', 
-                  'beat_volumes', 'track_volume', 'instrument_id')
+                  'track_volume', 'instrument_id')
