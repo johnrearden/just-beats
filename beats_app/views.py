@@ -71,6 +71,30 @@ class LoopEditor(View):
         else:
             return HttpResponseRedirect(reverse('home'))
 
+class SaveLoopAndTracks(APIView):
+    def post(self, request, *args, **kwargs):
+        data = request.data
+        print(f'data is {data}')
+        loopID = int(data.get('loopID'))
+        original_loop = Drumloop.objects.get(pk=loopID)
+        original_loop.name = data.get('name')
+        original_loop.tempo = int(data.get('tempo'))
+        original_loop.save()
+        for element in data.get('trackList'):
+            trackID = int(element.get('trackID'))
+            original_track = Track.objects.get(pk=trackID)
+            original_track.beats = element.get('beats')
+            original_track.track_volume = element.get('volume')
+            instrument = Instrument.objects.get(pk=element.get('instrumentID'))
+            original_track.instrument = instrument
+            original_track.save()
+            print(f'track {trackID} saved')
+        print(f'drumloop {loopID} saved!')
+        return Response('Ok')
+
+
+
+
 class TracksForLoop(APIView):
     def get(self, request, id, *args, **kwargs):
         try:

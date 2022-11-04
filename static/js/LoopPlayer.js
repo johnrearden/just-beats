@@ -1,5 +1,5 @@
 class LoopPlayer {
-    constructor(tempo, tracks, loopID) {
+    constructor(tempo, tracks, loopID, name) {
         // Create a new AudioContext and suspend it immediately. This is to ensure
         // consistent behaviour - browsers will allow autoplay (having initially 
         // forbidden it) after an unspecified number of user actions initiating
@@ -9,6 +9,9 @@ class LoopPlayer {
 
         // The id (pk from model) of the current loop.
         this.loopID = loopID;
+
+        // The name of the current loop.
+        this.name = name;
 
         // The tempo of the loop, as specified in the Django model
         this.changeTempo(tempo);
@@ -55,9 +58,7 @@ class LoopPlayer {
     addTrackSequence = async (track) => {
         let instrumentURL = track.instrument_url;
         let drumURL = drumURLs[instrumentURL];
-        console.log(drumURL);
         let sample = await this.getAudioBuffer(drumURL);
-        console.log(typeof(track.pk));
         let trackSequence = new TrackSequence(
             track.pk,
             track.instrument_id,
@@ -107,14 +108,32 @@ class LoopPlayer {
         this.nextBeatTime = 0;
     }
 
+
+    deleteTrack = (trackID) => {
+        this.trackSequences.delete(parseInt(trackID));
+    }
+
     // Changes the overall track volume to the new value.
     changeTrackVolume = (trackID, newVolume) => {
         const idAsNumber = parseInt(trackID);
         this.trackSequences.get(idAsNumber).masterVolume = newVolume;
     }
 
+    // Changes the track name.
+    changeLoopName = (newName) => {
+        this.name = newName;
+    }
+
     getInstrumentID = (trackID) => {
         return this.trackSequences.get(parseInt(trackID)).instrumentID;
+    }
+
+    setInstrument = async (trackID, newInstrumentID, newInstrumentURL) => {
+        const trackSeq = this.trackSequences.get(parseInt(trackID));
+        trackSeq.instrumentID = newInstrumentID;
+        let drumURL = drumURLs[newInstrumentURL];
+        let sample = await this.getAudioBuffer(drumURL);
+        trackSeq.sample = sample;
     }
 
     scheduler = () => {
@@ -123,15 +142,14 @@ class LoopPlayer {
 
             // Check the currentNote of each instrument to see if it is due 
             // to be played.
-            this.trackSequences.forEach((key, value) => {
-                let track = this.trackSequences.get(value);
+            for (const track of this.trackSequences.values()) {
                 if (track.hasBeatAt(this.beatIndex)) {
                     this.scheduleNote(
                         track.sample,
                         track.getVolume(),
                         this.nextBeatTime);
                 }
-            })
+            }
 
             // Add beatDuration to nextBeatTime, and increment the beatIndex counter
             // (looping back when we hit the end)
@@ -163,6 +181,24 @@ class LoopPlayer {
         const arrayBuffer = await response.arrayBuffer();
         const audioBuffer = await this.audioCtx.decodeAudioData(arrayBuffer);
         return audioBuffer;
+    }
+
+    // Return a JSON representation of this loop, for sending in a POST request.
+    getLoopAsJSON = () => {
+        const obj = {}
+        obj.name = this.name;
+        obj.tempo = this.tempo;
+        obj.loopID = this.loopID;
+        obj.trackList = []
+        for (const track of this.trackSequences.values()) {
+            const element = {};
+            element.trackID = track.id;
+            element.instrumentID = track.instrumentID;
+            element.beats = track.beatList;
+            element.volume = track.masterVolume;
+            obj.trackList.push(element);
+        }
+        return JSON.stringify(obj);
     }
 }
 

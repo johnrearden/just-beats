@@ -7,4 +7,5 @@ urlpatterns = [
     path('tracks/<int:id>', views.TracksForLoop.as_view(), name='tracks'),
     path('add_new_track/', views.AddNewTrack.as_view(), name='add_new_track'),
     path('delete_track/', views.DeleteTrack.as_view(), name='delete_track'),
+    path('save_loop_and_tracks/', views.SaveLoopAndTracks.as_view(), name='save_loop_and_tracks'),
 ]

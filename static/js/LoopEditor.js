@@ -12,52 +12,34 @@ document.addEventListener('DOMContentLoaded', () => {
     // LoopPlayer object to play the loop.
     const loopID = document.getElementById('drumloop-id').value;
     const tempo = document.getElementById('tempo').value;
+    const name = document.getElementById('drumloop_name').value;
     let url = '/tracks/' + loopID;
     fetch(url)
         .then(response => response.json())
         .then(tracks => {
-            loopPlayer = new LoopPlayer(tempo, tracks, loopID);
+            loopPlayer = new LoopPlayer(tempo, tracks, loopID, name);
             playButton.addEventListener('click', e => loopPlayer.togglePlay());
         });
     setIntrumentNameColors();
-
-    // Draw the clickable beat divs to the page.
-    let beatsFields = document.getElementsByClassName('beats-field')
-    let numberOfTracks = beatsFields.length;
-    for (let i = 0; i < numberOfTracks; i++) {
-        let trackDOMIndex = `beats-holder-track_${i}`;
-        let trackId = beatsFields[i].id.split('_')[1]
-        let track_div = document.getElementById(trackDOMIndex);
-        let beatString = beatsFields[i].value;
-        for (let j = 0; j < beatString.length; j++) {
-            let beatDiv = document.createElement('div');
-            if (beatString[j] === '8') {
-                beatDiv.className = "beat active_beat";
-            } else {
-                beatDiv.className = "beat";
-            }
-            beatDiv.id = `${trackId}:${j}`
-            beatDiv.addEventListener('click', e => onBeatClick(e));
-            track_div.appendChild(beatDiv)
-        }
-    }
 });
 
 const onBeatClick = (event) => {
     let beatDiv = event.target;
     let [trackString, beatString] = beatDiv.id.split(":");
+    console.log(trackString, beatString);
     trackNumber = parseInt(trackString);
     beatNumber = parseInt(beatString);
-    let beatInputField = document.getElementById(`beats_${trackNumber}`)
     if (beatDiv.classList.contains('active_beat')) {
         beatDiv.classList.remove('active_beat');
-        beatInputField.value = replaceCharacter(beatInputField.value, beatNumber, "0");
         loopPlayer.toggleBeatAt(trackNumber, beatNumber);
     } else {
         beatDiv.classList.add('active_beat');
-        beatInputField.value = replaceCharacter(beatInputField.value, beatNumber, "8");
         loopPlayer.toggleBeatAt(trackNumber, beatNumber);
     }
+}
+
+const onDrumloopNameChange = (event) => {
+    loopPlayer.changeLoopName(event.target.value);
 }
 
 const onTempoInputChange = (event) => {
@@ -82,6 +64,8 @@ const onInstrumentButtonClicked = (loopID, trackID) => {
         currentInstrumentID,
         loopID,
         false,
+        '',
+        '',
     )
     console.log(instrumentModalConfig)
 
@@ -99,20 +83,31 @@ const onInstrumentButtonClicked = (loopID, trackID) => {
     $('#instrument-chooser').modal('show');
 }
 
-const onModalSaveChangesClicked = (e) => {
+const onModalSaveChangesClicked = async(e) => {
 
     // If an existing track is being modified, update the instrumentID input 
     // so that the backend can save the new instrument selection.
     if (!instrumentModalConfig.newTrack) {
-        const instrumentIdInputs = document.getElementsByClassName('instrument-id');
-        for (let input of instrumentIdInputs) {
-            if (input.id.split('_')[1] === instrumentModalConfig.selectedTrackID) {
-                input.value = instrumentModalConfig.currentInstrumentID;
-            } 
+
+        // Change the loopPlayer instrument id and sample for this track.
+        await loopPlayer.setInstrument(
+            instrumentModalConfig.selectedTrackID, 
+            instrumentModalConfig.currentInstrumentID, 
+            instrumentModalConfig.currentInstrumentURL);
+
+        // Change the instrument name on the track GUI.
+        const instrumentNameDivs = document.getElementsByClassName('instrument-name');
+        for (const div of instrumentNameDivs) {
+            if (div.id.split('_')[1] === instrumentModalConfig.selectedTrackID) {
+                console.log('track matched');
+                div.innerText = instrumentModalConfig.currentInstrumentName;
+            }
         }
-        // Force submission of the loop-editor-form to reload the page.
-        document.getElementById('keep-editing').value = "yes";
-        document.getElementById('loop-editor-form').submit();
+        setIntrumentNameColors();
+
+        // Hide the instrument modal.
+        $('#instrument-chooser').modal('hide');
+
     } else {
         const csrfToken = getCookie('csrftoken');
         // A new track is being created. Make a POST request to the backend
@@ -134,17 +129,18 @@ const onModalSaveChangesClicked = (e) => {
         }
         fetch('/add_new_track/', options)
             .then(() => {
-                // Submit the form to save all changes and display the 
-                // new track on the page, once the response has been received.
-                document.getElementById('keep-editing').value = "yes";
-                document.getElementById('loop-editor-form').submit();
+                // Reload the page
+                window.location.reload();
             });
     }
 }
 
-const onModalInstrumentClicked = (e, instrumentURL) => {
+const onModalInstrumentClicked = (e, instrumentURL, instrumentName) => {
     const selectedInstrumentID = e.target.id.split('_')[1];
     instrumentModalConfig.currentInstrumentID = selectedInstrumentID;
+    instrumentModalConfig.currentInstrumentName = instrumentName;
+    instrumentModalConfig.currentInstrumentURL = instrumentURL;
+
     const instrumentSpans = document.getElementsByClassName('instrument-spans');
     for (let span of instrumentSpans) {
         if (span.id.split('_')[1] === selectedInstrumentID) {
@@ -177,7 +173,7 @@ const onAddNewTrackButtonClick = (e) => {
 
     // Display the modal.
     $('#instrument-chooser').modal('show');
-} 
+}
 
 const onDeleteTrackButtonClick = (event, trackID) => {
     event.preventDefault();
@@ -208,6 +204,9 @@ const onConfirmDeleteTrackClick = (event) => {
     const trackRow = document.getElementById(trackIDAttribute);
     trackRow.parentNode.removeChild(trackRow);
 
+    // Remove the track from the LoopPlayer, so that it is not POSTed
+    // the next time the user tries to save the loop and track.
+    loopPlayer.deleteTrack(trackID);
 
     // Make a POST request to the backend to delete this track.
     const csrfToken = getCookie('csrftoken');
@@ -225,6 +224,24 @@ const onConfirmDeleteTrackClick = (event) => {
         },
     }
     fetch('/delete_track/', options); // No need to reload page in this instance.
+}
+
+const postLoopAndTracks = async(event) => {
+    const csrfToken = getCookie('csrftoken');
+    
+    const options = {
+        method: 'POST',
+        credentials: 'same-origin',
+        body: loopPlayer.getLoopAsJSON(),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrfToken,
+        },
+    }
+    await fetch('/save_loop_and_tracks/', options)
+        .then(response => response.json())
+        .then(json => console.log(json));
 }
 
 getCookie = (name) => {
@@ -269,9 +286,12 @@ const hashString = (string) => {
 }
 
 class InstrumentModalConfig {
-    constructor(selectedTrackID, currentInstrumentID, currentLoopID, newTrack) {
+    constructor(selectedTrackID, currentInstrumentID, currentLoopID, 
+                newTrack, currentInstrumentURL, currentInstrumentName) {
         this.selectedTrackID = selectedTrackID;
         this.currentInstrumentID = currentInstrumentID;
+        this.currentInstrumentURL = currentInstrumentURL;
+        this.currentInstrumentName = currentInstrumentName;
         this.currentLoopID = currentLoopID;
         this.newTrack = newTrack;
     }

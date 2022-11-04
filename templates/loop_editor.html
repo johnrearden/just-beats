@@ -6,13 +6,12 @@
 
 
 <div class="container">
-    <form id='loop-editor-form' action="" method="POST">
-        {% csrf_token %}
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 p-4 mt-3 text-center">
                     <label for="drumloop_name">Loop Name</label>
-                    <input type="text" id="drumloop_name" value="{{ loop.name }}" name="drumloop_name">
+                    <input type="text" id="drumloop_name" value="{{ loop.name }}" name="drumloop_name"
+                           oninput="onDrumloopNameChange(event)">
                 </div>
                 <div class="col-md-6 text-center">
                     <label for="creator_name">Creator</label>
@@ -24,7 +23,6 @@
                         <input type="number" id="tempo" name="tempo" value="{{ loop.tempo }}" min="60" max="200"
                             step="1" oninput="onTempoInputChange(event)">
                     </div>
-                    <input type="text" class="hidden" id="keep-editing" name="keep_editing" value="no">
                     <input type="text" class="hidden" id="drumloop-id" name="drumloop_id" value="{{ loop.id }}">
                 </div>
 
@@ -32,22 +30,8 @@
                     {% for track in tracks %}
                     <div id='track_{{ track.id }}' class="row align-items-center">
 
-                        <!-- Hidden fields : Their values are read by the script and used to set up the 
-                     WebAudio audioContext. The user is not able to modify them directly. The
-                     beats-field value is the single source of truth for the pattern of beats that the user
-                     selects. It is loaded from the database, edited indirectly by clicking on the beatDivs
-                     below, read by the sequencer to play the loop and returned to the backend with the 
-                     form's POST request.-->
-                        <input type="text" class="beats-field hidden" id="beats_{{ track.id }}"
-                            name="beats_{{ track.id }}" value="{{ track.beats }}" readonly>
-                        <input type="text" id="tracks" class="hidden" name="tracks" value="{{ track.id }}">
-                        <input type="text" id="instrument-id-for-track_{{ track.id }}" class="instrument-id hidden"
-                            name="instrument_id" value="{{ track.instrument.id }}">
-                        <div class="instrument-url hidden">{{ track.instrument.url }}</div>
-
-                        <!-- Visible fields : These can be edited directly by the user.-->
                         <div class="col-6 col-md-2" vertical-align>
-                            <div class="instrument-name"
+                            <div id="instrument-name_{{ track.id }}" class="instrument-name"
                                 onclick="onInstrumentButtonClicked('{{ loop.id }}','{{ track.id }}')">
                                 {{ track.instrument.name }}
                             </div>
@@ -69,8 +53,22 @@
                         </div>
 
                         <div class="col-12 col-md-7">
-                            <div id="beats-holder-track_{{ forloop.counter0 }}" class="beats-holder"></div>
+                            <div id="beats-holder-track_{{ forloop.counter0 }}" class="beats-holder">
+                                {% for char in track.beats %}
+                                    {% if char == '8' %}
+                                    <div id="{{ track.id }}:{{ forloop.counter0 }}" 
+                                         class="beat active_beat"
+                                         onclick="onBeatClick(event)"></div>
+                                    {% else %}
+                                    <div id="{{ track.id }}:{{ forloop.counter0 }}" 
+                                         class="beat"
+                                         onclick="onBeatClick(event)"></div>
+                                    {% endif %}
+                                
+                                {% endfor %}
+                            </div>
                         </div>
+
                         <div class="col-md-1">
                             <button onclick="onDeleteTrackButtonClick(event, '{{ track.id }}')">
                                 Delete
@@ -79,20 +77,15 @@
                     </div>
                     {% endfor %}
                 </div>
-                <div class="row"></div>
-                <div class="col text-center p-3">
-                    <input type="submit">
-                </div>
-
             </div>
         </div>
-    </form>
     <div class="col text-center p-3">
         <button id="play-loop" class="btn btn-success">PLAY</button>
     </div>
     <div class="col text-center p-3">
         <button id="add-new-track" class="btn btn-warning">ADD NEW TRACK</button>
     </div>
+    <button onclick="postLoopAndTracks(event)">send post request</button>
 </div>
 
 <!-- Instrument selection modal -->
@@ -114,7 +107,7 @@
 
                         <div class="col-md-6 text-center">
                             <span id="modal-instrument-id_{{ instrument.id }}" class="instrument-spans"
-                                onclick="onModalInstrumentClicked(event, '{{ instrument.url }}')">
+                                onclick="onModalInstrumentClicked(event, '{{ instrument.url }}', '{{ instrument.name }}')">
                                 {{ instrument.name }}
                             </span>
                         </div>
