@@ -57,6 +57,7 @@ class LoopPlayer {
         let drumURL = drumURLs[instrumentURL];
         console.log(drumURL);
         let sample = await this.getAudioBuffer(drumURL);
+        console.log(typeof(track.pk));
         let trackSequence = new TrackSequence(
             track.pk,
             track.instrument_id,
@@ -108,7 +109,8 @@ class LoopPlayer {
 
     // Changes the overall track volume to the new value.
     changeTrackVolume = (trackID, newVolume) => {
-        this.trackSequences.get(trackID).masterVolume = newVolume;
+        const idAsNumber = parseInt(trackID);
+        this.trackSequences.get(idAsNumber).masterVolume = newVolume;
     }
 
     getInstrumentID = (trackID) => {

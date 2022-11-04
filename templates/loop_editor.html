@@ -22,7 +22,7 @@
                     <div class="col-5 offset-1">
                         <label for="tempo">Tempo</label>
                         <input type="number" id="tempo" name="tempo" value="{{ loop.tempo }}" min="60" max="200"
-                            step="1">
+                            step="1" oninput="onTempoInputChange(event)">
                     </div>
                     <input type="text" class="hidden" id="keep-editing" name="keep_editing" value="no">
                     <input type="text" class="hidden" id="drumloop-id" name="drumloop_id" value="{{ loop.id }}">
@@ -56,7 +56,8 @@
                         <div class="col-6 col-md-2">
                             <label for="track_volume_{{ track.id }}">Vol</label>
                             <input type="range" id="track_volume_{{ track.id }}" name="track_volume_{{ track.id }}"
-                                value="{{ track.track_volume }}" min="0" max="10" class="track-volume" list="tickmarks">
+                                value="{{ track.track_volume }}" min="0" max="10" class="track-volume" list="tickmarks"
+                                oninput="onTrackVolumeChange(event, '{{ track.id }}')">
                             <datalist id="tickmarks">
                                 <option value="0" label="0"></option>
                                 <option value="2"></option>

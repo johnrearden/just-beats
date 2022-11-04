@@ -60,6 +60,16 @@ const onBeatClick = (event) => {
     }
 }
 
+const onTempoInputChange = (event) => {
+    const newTempo = event.target.value;
+    console.log(`new tempo is ${newTempo}`);
+    loopPlayer.changeTempo(newTempo);
+}
+
+const onTrackVolumeChange = (event, trackID) => {
+    loopPlayer.changeTrackVolume(trackID, event.target.value);
+}
+
 const onInstrumentButtonClicked = (loopID, trackID) => {
 
     // Stop the LoopPlayer if playing
