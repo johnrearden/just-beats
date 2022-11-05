@@ -13,6 +13,10 @@ body {
     color: var(--text-standard);
 }
 
+h1, p {
+    color: white;
+}
+
 input {
     background-color:#ffffff33;
     color: inherit;
@@ -24,10 +28,31 @@ input {
     text-align: center;
 }
 
+a {
+    text-decoration: none;
+}
+
+button {
+    color: greenyellow;
+    background-color: #88888870;
+    text-shadow: 0 0 5px purple;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    transition: 0.2s all;
+    border: 1px solid greenyellow;
+    border-radius: 5px;
+    padding: 3px 10px;
+}
+
+button:hover {
+    text-shadow: 0 0 5px pink;
+    transition: 0.2s all;
+}
+
 /* These css elements style the drum loop list template ----------*/
 
 .vert-gap {
-    margin-top: 300px;
+    margin-top: 200px;
 }
 
 .beats-header {
@@ -54,12 +79,6 @@ input {
     color: greenyellow;
     text-shadow: 2px 2px 5px purple;
 }
-
-
-/* .drumloop-table-row:hover .drumloop-table-item{
-    color: greenyellow;
-    text-shadow: 0 0 5px pink;
-} */
 
 .drumloop-table-item {
     color: black;
@@ -201,4 +220,17 @@ input {
 .selected-instrument {
     color: red;
     background-color: pink;
+}
+
+/* These css elements style the forms */
+.form-holder {
+    color: white;
+    background-color: black;
+    display: block;
+    font-size: 1.5em;
+}
+
+.form-holder input{
+    padding: 5px;
+    margin: 15px;
 }

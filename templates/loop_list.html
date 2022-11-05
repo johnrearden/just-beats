@@ -6,7 +6,14 @@
 
 <div class="container vert-gap">
     <div class="row">
-        <div class="col-md-8 offset-md-2 text-center">
+        <div class="col-md-4">
+            <h1>Feeling Creative?</h1>
+            <p>Why not create a new loop of your own? Click here to start!</p>
+            <div class="text-center">
+                <a href="{% url 'new_drumloop_form' %}"><button>Create New Loop</button></a>
+            </div>
+        </div>
+        <div class="col-md-8 text-center">
             <h1 class="text-center beats-header">Drumloops</h1>
             <table class="drumloop-table">
                 <thead>
@@ -15,7 +22,6 @@
                         <th scope="col">Name</th>
                         <th scope="col">Tempo</th>
                         <th scope="col"># Tracks</th>
-                        <th scope="col">Copy?</th>
                         <th scope="col">Rating</th>
                         <th scope="col"></th>
                     </tr>
@@ -35,20 +41,17 @@
                         <td class="drumloop-table-item">
                             2345
                         </td>
-                        <td class="drumloop-table-item">
-                            {{ loop.allow_copy }}
-                        </td>
                         <td id="rating-display-{{forloop.counter0}}">
                         </td>
                         <td>
                             <!-- Store the loop fields necessary for creating the DrumLoop object-->
-                            <i id="loop-{{ loop.id }}-{{ loop.tempo }}" 
-                               class="fa-regular fa-circle-play play-button"></i>
+                            <i id="loop-{{ loop.id }}-{{ loop.tempo }}"
+                                class="fa-regular fa-circle-play play-button"></i>
                         </td>
                         <td>
-                            <a class="edit-link" href="{% url 'loop_editor' loop.id %}">Edit</a>
-                        </td>
-                    </tr>
+                            <a href="{% url 'loop_editor' loop.id %}">
+                                <button>Edit</button>
+                            </a>
                     <input readonly class="d-none" id="rating-{{ forloop.counter0 }}" value="{{loop.rating}}">
                     {% endfor %}
                 </tbody>

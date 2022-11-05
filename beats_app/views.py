@@ -9,15 +9,37 @@ from django.contrib.auth.models import User
 from urllib.parse import urlencode
 from .models import Drumloop, Track, Instrument
 from .serializers import TrackSerializer
+from .forms import NewDrumloopForm
 
-import json
 
 
 class LoopList(generic.ListView):
     model = Drumloop
     queryset = Drumloop.objects.order_by('-rating')
     template_name = 'loop_list.html'
-    paginate_by = 3
+    paginate_by = 8
+
+
+class CreateNewLoop(View):
+    def get(self, request):
+        return render(
+            request, 
+            'new_drumloop_form.html', 
+            {"new_drumloop_form": NewDrumloopForm()}
+        )
+
+    def post(self, request):
+        querydict = request.POST
+        print(f'form POSTed : {querydict}')
+        new_drumloop = Drumloop.objects.create(
+                                    name=querydict.get('name'),
+                                    tempo=int(querydict.get('tempo')))
+        drumloop_id = new_drumloop.pk
+        instrument = Instrument.objects.first()
+        default_track = Track.objects.create(
+                                    drumloop=new_drumloop,
+                                    instrument=instrument,)
+        return HttpResponseRedirect(f'/editor/{drumloop_id}')
 
 
 class LoopEditor(View):
@@ -74,7 +96,6 @@ class LoopEditor(View):
 class SaveLoopAndTracks(APIView):
     def post(self, request, *args, **kwargs):
         data = request.data
-        print(f'data is {data}')
         loopID = int(data.get('loopID'))
         original_loop = Drumloop.objects.get(pk=loopID)
         original_loop.name = data.get('name')
@@ -88,11 +109,7 @@ class SaveLoopAndTracks(APIView):
             instrument = Instrument.objects.get(pk=element.get('instrumentID'))
             original_track.instrument = instrument
             original_track.save()
-            print(f'track {trackID} saved')
-        print(f'drumloop {loopID} saved!')
         return Response('Ok')
-
-
 
 
 class TracksForLoop(APIView):

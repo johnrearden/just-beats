@@ -44,7 +44,6 @@ const onDrumloopNameChange = (event) => {
 
 const onTempoInputChange = (event) => {
     const newTempo = event.target.value;
-    console.log(`new tempo is ${newTempo}`);
     loopPlayer.changeTempo(newTempo);
 }
 

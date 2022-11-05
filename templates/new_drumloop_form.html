@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 form-holder mt-5 text-center">
+            <form action="/create_new_loop/" method="POST">
+                {% csrf_token %}
+                {{ new_drumloop_form.as_p }}
+                <input type="submit" value="Let's get looping!">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
