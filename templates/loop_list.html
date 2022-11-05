@@ -49,9 +49,13 @@
                                 class="fa-regular fa-circle-play play-button"></i>
                         </td>
                         <td>
+                            {% if user == loop.creator %}
                             <a href="{% url 'loop_editor' loop.id %}">
                                 <button>Edit</button>
                             </a>
+                            {% endif %}
+                            
+                        </td>
                     <input readonly class="d-none" id="rating-{{ forloop.counter0 }}" value="{{loop.rating}}">
                     {% endfor %}
                 </tbody>
