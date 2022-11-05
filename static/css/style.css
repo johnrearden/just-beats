@@ -13,8 +13,14 @@ body {
     color: var(--text-standard);
 }
 
-h1, p {
+h1 {
     color: white;
+    text-shadow: 0 0 5px greenyellow;
+}
+
+p {
+    color: white;
+    font-size: 1.2rem;
 }
 
 input {
@@ -49,10 +55,18 @@ button:hover {
     transition: 0.2s all;
 }
 
+
+/* These css elements style the navbar */
+
+
 /* These css elements style the drum loop list template ----------*/
 
 .vert-gap {
     margin-top: 200px;
+}
+
+.dark-shadow-text {
+    text-shadow: 0 0 130px black;
 }
 
 .beats-header {
@@ -84,7 +98,6 @@ button:hover {
     color: black;
     font-size: 1.2rem;
     padding: 5px 15px;
-    /* background-image: radial-gradient( black, var(--text-dim)); */
     transition: 0.5s all;
 }
 
