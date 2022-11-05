@@ -43,12 +43,15 @@ class LoopPlayer {
     }
 
     togglePlay = () => {
-        console.log(`Now ${this.audioCtx.state}`);
         if (this.audioCtx.state === 'running') {
             this.audioCtx.suspend();
         } else {
             this.audioCtx.resume();
         }
+    }
+
+    isPlaying = () => {
+        return this.audioCtx.state === 'running';
     }
 
     // Adds a track to the loop. Extracts the fields of the backend model Track
@@ -94,7 +97,7 @@ class LoopPlayer {
         this.loopID = loopID;
 
         // The tempo of the loop, as specified in the Django model
-        this.tempo = tempo;
+        this.changeTempo(tempo);
 
         // The tracks related to this loop. These are assigned to an object
         // to enable straightforward lookup by id.

@@ -13,7 +13,7 @@ body {
     color: var(--text-standard);
 }
 
-h1 {
+h1, h2, h3 {
     color: white;
     text-shadow: 0 0 5px greenyellow;
 }
@@ -77,8 +77,7 @@ button:hover {
 }
 
 .drumloop-table {
-    max-width: 100%;
-    width: 100%;
+    overflow-x: auto;
     margin: auto;
     padding: 10px;
     text-align: center;
