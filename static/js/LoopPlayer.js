@@ -45,11 +45,9 @@ class LoopPlayer {
     togglePlay = () => {
         console.log(`Now ${this.audioCtx.state}`);
         if (this.audioCtx.state === 'running') {
-            console.log('switching to suspended');
             this.audioCtx.suspend();
         } else {
             this.audioCtx.resume();
-            console.log('switching to resumed');
         }
     }
 
