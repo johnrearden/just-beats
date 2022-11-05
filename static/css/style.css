@@ -77,15 +77,16 @@ button:hover {
 }
 
 .drumloop-table {
+    max-width: 100%;
+    width: 100%;
     margin: auto;
     padding: 10px;
     text-align: center;
     border-collapse: separate;
-    border-spacing: 0.2rem 0.5rem;
+    border-spacing: 0 0.5rem;
     border: 3px solid transparent;
-    /* outline: 3px solid black; */
     border-radius: 10px;
-    background-image: radial-gradient(#aaaaaaff, #aaaaaacc);
+    background-image: radial-gradient(#aaaaaa99, #aaaaaa55);
     box-shadow: 0 0 5px black;
 }
 
@@ -118,25 +119,6 @@ button:hover {
 .play-button:hover {
     text-shadow: 0 0 5px pink;
     transition: 0.5s all;
-}
-
-.edit-link {
-    text-decoration: none;
-    color: greenyellow;
-    text-shadow: 0 0 5px purple;
-    font-size: 1.2rem;
-    font-weight: bolder;
-    transition: 0.5s all;
-    border: 1px solid greenyellow;
-    border-radius: 5px;
-    padding: 3px 10px;
-}
-
-.edit-link:hover {
-    color: greenyellow;
-    text-shadow: 0 0 5px pink;
-    transition: 0.5s all;
-    border: 1px solid greenyellow;
 }
 
 .drum-image {

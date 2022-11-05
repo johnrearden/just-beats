@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<div class="container vert-gap">
+<div class="container-md vert-gap">
     <div class="row">
         <div class="col-md-4 text-center align-self-center">
             <h1>Feeling Creative?</h1>
@@ -21,7 +21,6 @@
                         <th scope="col">Creator</th>
                         <th scope="col">Name</th>
                         <th scope="col">Tempo</th>
-                        <th scope="col"># Tracks</th>
                         <th scope="col">Rating</th>
                         <th scope="col"></th>
                     </tr>
@@ -38,9 +37,6 @@
                         <td id="tempo" class="drumloop-table-item loop-tempo">
                             {{ loop.tempo }}
                         </td>
-                        <td class="drumloop-table-item">
-                            2345
-                        </td>
                         <td id="rating-display-{{forloop.counter0}}">
                         </td>
                         <td>
@@ -54,8 +50,9 @@
                                 <button>Edit</button>
                             </a>
                             {% endif %}
-                            
+
                         </td>
+                    </tr>
                     <input readonly class="d-none" id="rating-{{ forloop.counter0 }}" value="{{loop.rating}}">
                     {% endfor %}
                 </tbody>
