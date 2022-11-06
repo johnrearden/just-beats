@@ -47,13 +47,28 @@ class ReviewDrumloop(View):
         drumloop = Drumloop.objects.get(id=int(id))
         user = User.objects.get(username=username)
         previous_reviews = Review.objects.filter(drumloop=drumloop).order_by('-created_on')[:5]
+        review_form = ReviewForm(initial={'rating': '3', 'drumloop': drumloop, 'reviewer': user})
         context = {
-            "review_form": ReviewForm(),
+            "review_form": review_form,
             "user": user,
             "drumloop": drumloop,
             "previous_reviews": previous_reviews,
         }
         return render(request, 'review_form.html', context)
+
+
+class SaveReview(View):
+    def post(self, request):
+        print(request.POST)
+        form = ReviewForm(request.POST)
+        
+        if form.is_valid():
+            form.save()
+            print('form saved')
+        else:
+            print('form is not valid, dopey')
+        return HttpResponseRedirect('/')
+
 
 class LoopEditor(View):
     def get(self, request, id=1, *args, **kwargs):

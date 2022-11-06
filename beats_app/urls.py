@@ -9,5 +9,6 @@ urlpatterns = [
     path('add_new_track/', views.AddNewTrack.as_view(), name='add_new_track'),
     path('delete_track/', views.DeleteTrack.as_view(), name='delete_track'),
     path('save_loop_and_tracks/', views.SaveLoopAndTracks.as_view(), name='save_loop_and_tracks'),
-    path('create_review/<int:id>/<str:username>/', views.ReviewDrumloop.as_view(), name='review_drumloop')
+    path('create_review/<int:id>/<str:username>/', views.ReviewDrumloop.as_view(), name='review_drumloop'),
+    path('save_review/', views.SaveReview.as_view(), name="save_review")
 ]

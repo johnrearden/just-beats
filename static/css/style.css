@@ -13,15 +13,15 @@ body {
     color: var(--text-standard);
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
     color: white;
     text-shadow: 0 0 5px greenyellow;
     font-family: 'sugar_death2';
 }
 
-p {
+p, span {
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 input {
@@ -56,20 +56,58 @@ button:hover {
     transition: 0.2s all;
 }
 
+.darker-background {
+    background-image: radial-gradient(#000000ff, #00000088);
+    border-radius: 20px;
+}
 
-/* These css elements style the navbar */
+.light-border {
+    border: 1px solid gray;
+    border-radius: 20px;
+}
 
+
+/* These css elements style the review page */
+
+input[type="number"] {
+    background-color: #ffffff33;
+    color: white;
+    border: 1px solid gray;
+    max-width: 100px
+}
+
+.custom-text-area {
+    background-color: #ffffff33;
+    color: white;
+    border: 1px solid gray;
+}
+
+.custom-text-area:focus {
+    background-color: #ffffff77;
+    color: white;
+}
+
+label {
+    color: white;
+    text-shadow: 0 0 5px greenyellow;
+    font-family: 'sugar_death2';
+    font-size: 1.5rem;
+}
+
+.review-outline {
+    border: 1px solid #ffffff33;
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 10px;
+}
 
 /* These css elements style the drum loop list template ----------*/
 
 .vert-gap {
-    margin-top: 100px;
+    margin-top: 200px;
 }
 
-.darker-background {
-    background-image: radial-gradient(#000000ff, #00000000);
-    border-radius: 20px;
-}
+
 
 .dark-shadow-text {
     text-shadow: 0 0 130px black;

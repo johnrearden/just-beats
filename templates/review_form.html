@@ -4,21 +4,55 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            {% for review in previous_reviews %}
-            <div>
-                <span>{{ review.comment }}</span>
-                <span>{{ review.rating }}</span>
-                <span>{{ review.reviewer.username }}</span>
+<div class="container vert-gap">
+    <div class="row align-items-start">
+        <div class="col-md-7">
+
+            <!--Container for list of previous reviews-->
+
+            <div class="container darker-background light-border p-3">
+                <div class="row">
+                    <div class="col-md-10 offset-md-1 text-center">
+                        <h1 class="mb-3">What other people think ..</h1>
+                    </div>
+                </div>
+                <hr>
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h3>Comment</h3>
+                    </div>
+                    <div class="col-md-2 text-center">
+                        <h5>Stars</h5>
+                    </div>
+                    <div class="col-md-2 text-center">
+                        <h5>By</h5>
+                    </div>
+                </div>
+                {% for review in previous_reviews %}
+                <div class="row review-outline">
+                    <div class="col-md-8">
+                        <span>"{{ review.comment }}"</span>
+                    </div>
+                    <div class="col-md-2 text-center">
+                        <span>{{ review.rating }}</span>
+                    </div>
+                    <div class="col-md-2 text-center ">
+                        <span>{{ review.reviewer.username }}</span>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
-            
-            {% endfor %}
         </div>
-        <div class="col-md-6">
-            {% csrf_token %}
-            {{ review_form.as_p }}
+
+        <div class="col-md-1"></div>
+
+        <!--Review form, with rating and comment inputs-->
+        <div class="col-md-4 darker-background light-border p-3 text-center">
+            <form action="/save_review/" method="POST">
+                {% csrf_token %}
+                {{ review_form.as_p }}
+                <input type="submit" value="Submit your review">
+            </form>
         </div>
     </div>
 </div>
