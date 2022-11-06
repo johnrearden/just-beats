@@ -15,7 +15,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: blue;
+    color: yellow;
     text-shadow: 0 0 5px greenyellow;
     font-family: 'wallpoet', sans-serif;
 }
@@ -41,7 +41,6 @@ a {
 }
 
 button {
-    font-family: 'chinese_rocks';
     color: greenyellow;
     background-color: #88888870;
     text-shadow: 0 0 5px purple;
@@ -128,7 +127,6 @@ label {
 .beats-header {
     color: greenyellow;
     text-shadow: 0 0 5px pink;
-    text-transform: uppercase;
     font-weight: bolder;
 }
 
@@ -202,6 +200,7 @@ label {
     padding: 0 20px;
     border: 1px solid gray;
     border-radius: 5px;
+    max-width: 1320px;
 }
 
 .track {
@@ -218,8 +217,8 @@ label {
 
 .beat {
     display: inline-block;
-    width: 15px;
-    height: 40px;
+    width: 10px;
+    height: 32px;
     background-color: gray;
     color: red;
     border: 1px solid rgb(116, 221, 125);
@@ -228,11 +227,16 @@ label {
 .beat:nth-child(4n - 3) {
     display: inline-block;
     margin-left: 3px;
-    width: 15px;
     background-color: gray;
     color: red;
     border: 1px solid rgb(116, 221, 125);
-    height: 45px;
+    height: 35px;
+}
+
+@media screen and (max-width: 600px) {
+    .beat {
+        width: 6px;
+    }
 }
 
 .current {
