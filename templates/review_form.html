@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            {% for review in previous_reviews %}
+            <div>
+                <span>{{ review.comment }}</span>
+                <span>{{ review.rating }}</span>
+                <span>{{ review.reviewer.username }}</span>
+            </div>
+            
+            {% endfor %}
+        </div>
+        <div class="col-md-6">
+            {% csrf_token %}
+            {{ review_form.as_p }}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

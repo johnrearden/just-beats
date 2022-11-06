@@ -7,9 +7,9 @@ from django.urls import reverse
 from django.views import View, generic
 from django.contrib.auth.models import User
 from urllib.parse import urlencode
-from .models import Drumloop, Track, Instrument
+from .models import Drumloop, Track, Instrument, Review
 from .serializers import TrackSerializer
-from .forms import NewDrumloopForm
+from .forms import NewDrumloopForm, ReviewForm
 
 
 
@@ -41,6 +41,19 @@ class CreateNewLoop(View):
                                     instrument=instrument,)
         return HttpResponseRedirect(f'/editor/{drumloop_id}')
 
+class ReviewDrumloop(View):
+    def get(self, request, id, username):
+        print(f'id={id}, username={username}')
+        drumloop = Drumloop.objects.get(id=int(id))
+        user = User.objects.get(username=username)
+        previous_reviews = Review.objects.filter(drumloop=drumloop).order_by('-created_on')[:5]
+        context = {
+            "review_form": ReviewForm(),
+            "user": user,
+            "drumloop": drumloop,
+            "previous_reviews": previous_reviews,
+        }
+        return render(request, 'review_form.html', context)
 
 class LoopEditor(View):
     def get(self, request, id=1, *args, **kwargs):

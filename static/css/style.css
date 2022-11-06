@@ -62,7 +62,12 @@ button:hover {
 /* These css elements style the drum loop list template ----------*/
 
 .vert-gap {
-    margin-top: 200px;
+    margin-top: 100px;
+}
+
+.darker-background {
+    background-image: radial-gradient(#000000ff, #00000000);
+    border-radius: 20px;
 }
 
 .dark-shadow-text {

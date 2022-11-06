@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Drumloop, Track, Instrument
+from .models import Drumloop, Track, Instrument, Review
 
 @admin.register(Drumloop)
 class DrumloopAdmin(admin.ModelAdmin):
@@ -18,3 +18,8 @@ class TrackAdmin(admin.ModelAdmin):
 class InstrumentAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'url')
     list_editable = ('name', 'url')
+
+@admin.register(Review)
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ('id', 'reviewer', 'drumloop', 'rating', 'comment', 'created_on')
+    list_editable = ('reviewer', 'drumloop', 'rating', 'comment',)

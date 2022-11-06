@@ -10,7 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const loopID = target.getAttribute('data-id');
             const tempo = target.getAttribute('data-tempo');
             const name = target.getAttribute('data-name');
-            const creator = target.getAttribute('data-creator');
+            const username = target.getAttribute('data-user');
+
+            const ratingButton = document.getElementById('rating-launcher-button');
+            ratingButton.setAttribute('data-id', loopID);
+            ratingButton.setAttribute('data-username', username);
 
             // If the loopPlayer has been created, and it is already playing
             // this loop, toggle the play button as normal.
@@ -45,6 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    const ratingLauncher = document.getElementById('rating-launcher-button');
+    ratingLauncher.addEventListener('click', (event) => {
+        const loopID = event.target.getAttribute('data-id');
+        const username = event.target.getAttribute('data-username');
+        const url = `/create_review/${loopID}/${username}/`;
+        window.location = url;
+    });
 });
 
 // Each time the loopPlayer is toggled, the rating link must be also. This keeps
