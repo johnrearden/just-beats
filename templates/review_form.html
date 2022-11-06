@@ -30,9 +30,15 @@
                 </div>
                 {% for review in previous_reviews %}
                 <div class="row review-outline">
+                    {% if review.approved %}
                     <div class="col-md-8">
                         <span>"{{ review.comment }}"</span>
                     </div>
+                    {% else %}
+                    <div class="col-md-8">
+                        <span>(awaiting approval)</span>
+                    </div>
+                    {% endif %}
                     <div class="col-md-2 text-center">
                         <span>{{ review.rating }}</span>
                     </div>

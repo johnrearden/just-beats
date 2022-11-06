@@ -21,7 +21,7 @@ class InstrumentAdmin(admin.ModelAdmin):
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ('id', 'reviewer', 'drumloop', 'rating', 'comment', 'created_on')
-    list_editable = ('reviewer', 'drumloop', 'rating', 'comment',)
+    list_display = ('id', 'reviewer', 'drumloop', 'rating', 'comment', 'created_on', 'approved')
+    list_editable = ('reviewer', 'drumloop', 'rating', 'comment', 'approved',)
 
 

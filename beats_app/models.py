@@ -47,6 +47,7 @@ class Review(models.Model):
     rating = models.IntegerField(default=0, validators=[MaxValueValidator(5), MinValueValidator(0)])
     comment = models.TextField(max_length=100)
     created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
 
     def __str__(self):
         return f"Review of {self.drumloop.name} by {self.reviewer.username} - stars = {self.rating}"
