@@ -11,10 +11,11 @@
 body {
     background-color: black;
     color: var(--text-standard);
+    font-family: 'Homenaje', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: white;
+    color: blue;
     text-shadow: 0 0 5px greenyellow;
     font-family: 'sugar_death2';
 }
