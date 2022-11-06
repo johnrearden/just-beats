@@ -11,13 +11,13 @@
 body {
     background-color: black;
     color: var(--text-standard);
-    font-family: 'Homenaje', sans-serif;
+    font-family: 'Kanit', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
     color: blue;
     text-shadow: 0 0 5px greenyellow;
-    font-family: 'sugar_death2';
+    font-family: 'wallpoet', sans-serif;
 }
 
 p, span {
@@ -41,6 +41,7 @@ a {
 }
 
 button {
+    font-family: 'chinese_rocks';
     color: greenyellow;
     background-color: #88888870;
     text-shadow: 0 0 5px purple;
@@ -58,13 +59,23 @@ button:hover {
 }
 
 .darker-background {
-    background-image: radial-gradient(#000000ff, #00000088);
+    background-image: radial-gradient(#00000088, #00000033);
     border-radius: 20px;
+}
+
+.grey-background {
+    background-image: radial-gradient(#ffffff00, #ffffff88);
 }
 
 .light-border {
     border: 1px solid gray;
     border-radius: 20px;
+}
+
+/* These css elements style the navbar */
+
+.site-logo {
+    font-family: 'outrun';
 }
 
 
@@ -91,7 +102,7 @@ input[type="number"] {
 label {
     color: white;
     text-shadow: 0 0 5px greenyellow;
-    font-family: 'sugar_death2';
+    font-family: 'chinese_rocks';
     font-size: 1.5rem;
 }
 
@@ -253,6 +264,7 @@ label {
     width: 100%;
     border-radius: 5px;
     padding: 5px;
+    font-family: 'chinese_rocks';
 }
 
 /* These css elements style the instrument selector modal ---------*/
