@@ -157,8 +157,8 @@ label {
 
 .rating-star {
     font-size: 1.2rem;
-    color: orange;
-    text-shadow: 0 0 5px lightblue;
+    color: gold;
+    /* text-shadow: 0 0 5px lightblue; */
 }
 
 .play-button {

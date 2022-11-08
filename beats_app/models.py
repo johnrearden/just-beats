@@ -41,6 +41,7 @@ class Track(models.Model):
     def __str__(self):
         return f"{self.instrument}: {self.beats}, trk_vol={self.track_volume}, belongs to {self.drumloop.name}"
 
+
 class Review(models.Model):
     reviewer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviewers')
     drumloop = models.ForeignKey(Drumloop, on_delete=models.CASCADE, related_name='loops')
