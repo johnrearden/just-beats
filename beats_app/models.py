@@ -1,7 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth.models import User
-from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
 
@@ -9,7 +8,7 @@ class Drumloop(models.Model):
     name = models.CharField(max_length=50, unique=True,
                             default="brand_new_loop")
     creator = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="drumloops", default=1)
+        User, on_delete=models.CASCADE, related_name="drumloops")
     created_on = models.DateTimeField(auto_now_add=True)
     rating = models.IntegerField(default=0, validators=[
         MinValueValidator(0), MaxValueValidator(5)
@@ -34,7 +33,7 @@ class Track(models.Model):
         Drumloop, on_delete=models.CASCADE, related_name="tracks")
     instrument = models.ForeignKey(
         Instrument, on_delete=models.CASCADE, related_name="tracks")
-    beats = models.CharField(max_length=32, default="00000000000000000000000000000000")
+    beats = models.CharField(max_length=32, default="0" * 32)
     track_volume = models.IntegerField(
         default=10, validators=[MaxValueValidator(10), MinValueValidator(0)])
 

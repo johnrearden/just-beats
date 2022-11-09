@@ -28,8 +28,9 @@ class TestViews(TestCase):
                                 'new_drumloop_form.html')
 
     def test_post_new_loop(self):
+        user = User.objects.create(username='name', password='pass')
         response = self.client.post(
-            '/create_new_loop/', {'name': 'test_name', 'tempo': '42'})
+            '/create_new_loop/', {'name': 'test_name', 'tempo': '42', 'creator': user.pk})
         newly_created_drumloop = Drumloop.objects.get(name='test_name')
         self.assertRedirects(response, f'/editor/{newly_created_drumloop.pk}')
 

@@ -62,6 +62,8 @@ in the absence of direct fetch calls to the API.
 # Testing
 - Manual testing
 - Automated testing
+Note - tried using nose as the test runner, but it doesn't pick up model coverage as 
+these are loaded before test run starts.https://github.com/jazzband/django-nose/issues/180
 - In-app testing
 - User story testing
 - Validator testing
@@ -69,6 +71,24 @@ in the absence of direct fetch calls to the API.
 ## Manual Testing
 
 ## Automated Testing
+
+### Testing django views, models and forms.
+Automated tests were written for all forms, models and views using the Django testing framework. 
+- Models: 
+    - Each model was tested to ensure that object creation resulted in the correct application of supplied field values, and the correct injection of default values where these were absent. 
+    - The relevant validators were also tested with illegal input to ensure that they raised ValidationErrors. 
+    - For the sake of getting to 100% coverage, the __str__ methods of each model were also tested to ensure appropriate output. The string methods were tested not for exact match, but for containing the relevant fields, to allow for rewording of the string methods while retaining the essential output. IMO, this makes the tests a little less brittle.
+- Forms:  
+    - The ReviewForm was tested to ensure its rating value had to be within bounds, and that a comment
+    had to be provided in order for the is_valid() method to return True.
+    - The ReviewForm widget class names were tested to ensure that they would remain hidden to the user.
+    - The NewDrumloopForm was tested to ensure that the loop name was required. 
+- Views: 
+    - All view get methods were tested to ensure that they return a 200, and that the correct template
+    was used for all standard (Non-API) views.
+    - All view post methods were tested to ensure that they return a 200 if appropriate, and that any
+    object data posted results in the creation of the correct object.
+- Serializers were not tested, as this would amount to testing Django functionality.
 
 ## User Story Testing
 
@@ -128,6 +148,9 @@ https://www.codeunderscored.com/django-authentication-with-google/
 
 Get csrf cookie for POST request
 https://www.brennantymrak.com/articles/fetching-data-with-ajax-and-django.html
+
+Testing Djando form widget fields
+https://stackoverflow.com/questions/50643143/testing-form-field-widget-type
 
 
 [Return to top](#just-beats)

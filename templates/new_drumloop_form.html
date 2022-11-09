@@ -9,6 +9,7 @@
             <form action="/create_new_loop/" method="POST">
                 {% csrf_token %}
                 {{ new_drumloop_form.as_p }}
+                <input type="hidden" name="creator" value="{{ user.id }}">
                 <input type="submit" value="Let's get looping!">
             </form>
         </div>

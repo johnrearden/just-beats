@@ -27,9 +27,13 @@ class CreateNewLoop(View):
 
     def post(self, request):
         querydict = request.POST
+        creator_id_string = querydict.get('creator')
+        creator = User.objects.get(id=int(creator_id_string))
         new_drumloop = Drumloop.objects.create(
             name=querydict.get('name'),
-            tempo=int(querydict.get('tempo')))
+            tempo=int(querydict.get('tempo')),
+            creator=creator
+            )
         drumloop_id = new_drumloop.pk
         instrument = Instrument.objects.first()
         default_track = Track.objects.create(
@@ -40,7 +44,6 @@ class CreateNewLoop(View):
 
 class ReviewDrumloop(View):
     def get(self, request, id, username):
-        print(f'id={id}, username={username}')
         drumloop = Drumloop.objects.get(id=int(id))
         user = User.objects.get(username=username)
         previous_reviews = Review.objects.filter(
@@ -105,10 +108,7 @@ class SaveLoopAndTracks(APIView):
 
 class TracksForLoop(APIView):
     def get(self, request, id, *args, **kwargs):
-        try:
-            loop = Drumloop.objects.get(id=id)
-        except Drumloop.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
+        loop = Drumloop.objects.get(id=id)
         tracks = Track.objects.select_related().filter(drumloop=loop)
         serializer = TrackSerializer(
             tracks, context={'request': request}, many=True)
