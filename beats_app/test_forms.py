@@ -58,8 +58,8 @@ class TestReviewForm(TestCase):
     def test_drumloop_field_is_hidden(self):
         self.assertEqual(self.test_form.fields['drumloop'].widget.__class__.__name__, 'HiddenInput')
 
-    def test_user_field_is_hidden(self):
-        self.assertEqual(self.test_form.fields['user'].widget.__class__.__name__, 'HiddenInput')
+    def test_reviewer_field_is_hidden(self):
+        self.assertEqual(self.test_form.fields['reviewer'].widget.__class__.__name__, 'HiddenInput')
 
 
 class TestNewDrumloopForm(TestCase):

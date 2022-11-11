@@ -58,22 +58,22 @@
                     <ul class="navbar-nav ms-auto" >
                         {% if user.is_authenticated %}
                         <li class="nav-item align-self-center me-5 fst-italic">
-                            Logged in as <span class="fw-bold">{{ user.username }}</span>
+                            Logged in as <span id="logged-in-user" class="fw-bold">{{ user.username }}</span>
                         </li>
                         {% endif %}
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
     </li>
     {% if user.is_authenticated %}
-    <li class="nav-item">
+    <li id="logout-link" class="nav-item">
         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
     </li>
     {% else %}
     <li class="nav-item">
-        <a class="nav-link" href="{% url 'account_login' %}">Register</a>
+        <a id="register-link" class="nav-link" href="{% url 'account_login' %}">Register</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+        <a id="login-link" class="nav-link" href="{% url 'account_login' %}">Login</a>
     </li>
     {% endif %}
     </ul>

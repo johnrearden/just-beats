@@ -90,6 +90,15 @@ Automated tests were written for all forms, models and views using the Django te
     object data posted results in the creation of the correct object.
 - Serializers were not tested, as this would amount to testing Django functionality.
 
+The nose test runner was installed, which conveniently runs the coverage report and html generation as part of the test suite, but unfortunately it turned out that nose loads the models before running the tests, so that the model code is never accessed during the tests themselves, and thus does not show up
+in the coverage report. This is a deal-breaker, as the html coverage report is very useful for finding
+untested parts of the codebase.
+
+### Testing page functionality with Selenium
+Note - writing of tests was considerably slowed down by an issue with actions fired by selenium 
+resulting in changes to the development database, rather than the testing database. The url used for testing should be localhost, but the port used is assigned dynamically, and should be accessed using self.live_server_url. Unfortunately, I initally set the selenium webdriver to connect to localhost at port 8000, the default django server, and I didn't detect the problem because the dev server was actually running as I was writing the tests. This resulted in the dev database being used rather than the test database, and so a test involving user registration actions passed the first time with a test username, and subsequently failed due to fact that the database was not being destroyed after test runs. Solution found here https://stackoverflow.com/questions/17435155/django-functional-liveservertestcase-after-submitting-form-with-selenium-obje. 
+developer.lifetime -= 2 hours. 
+
 ## User Story Testing
 
 ## Validator Testing

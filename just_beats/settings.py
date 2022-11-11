@@ -97,17 +97,20 @@ WSGI_APPLICATION = 'just_beats.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if sys.argv.__contains__('test'):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL')),
+    }
 
-
-""" DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL')),
-} """
+SELENIUM_TEST_USERNAME = os.environ.get("SELENIUM_TEST_USERNAME")
+SELENIUM_TEST_PASSWORD = os.environ.get("SELENIUM_TEST_PASSWORD")
 
 
 # Password validation
