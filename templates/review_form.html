@@ -32,7 +32,7 @@
                 <div class="row review-outline">
                     {% if review.approved %}
                     <div class="col-md-8">
-                        <span>"{{ review.comment }}"</span>
+                        <span class="existing-comment">"{{ review.comment }}"</span>
                     </div>
                     {% else %}
                     <div class="col-md-8">
@@ -40,10 +40,10 @@
                     </div>
                     {% endif %}
                     <div class="col-md-2 text-center">
-                        <span>{{ review.rating }}</span>
+                        <span class="existing-rating">{{ review.rating }}</span>
                     </div>
                     <div class="col-md-2 text-center ">
-                        <span>{{ review.reviewer.username }}</span>
+                        <span class="existing-reviewer">{{ review.reviewer.username }}</span>
                     </div>
                 </div>
                 {% endfor %}
@@ -57,7 +57,7 @@
             <form action="/save_review/" method="POST">
                 {% csrf_token %}
                 {{ review_form.as_p }}
-                <input type="submit" value="Submit your review">
+                <input id="submit" type="submit" value="Submit your review">
             </form>
         </div>
     </div>

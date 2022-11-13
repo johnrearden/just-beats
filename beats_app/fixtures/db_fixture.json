@@ -1,0 +1,693 @@
+[
+{
+    "model": "beats_app.drumloop",
+    "pk": 1,
+    "fields": {
+        "name": "Dum Dum Tish",
+        "creator": 2,
+        "created_on": "2022-10-22T08:44:48.172Z",
+        "rating": 2,
+        "tempo": 120
+    }
+},
+{
+    "model": "beats_app.drumloop",
+    "pk": 2,
+    "fields": {
+        "name": "Funky Server John",
+        "creator": 2,
+        "created_on": "2022-10-22T08:45:02.051Z",
+        "rating": 4,
+        "tempo": 126
+    }
+},
+{
+    "model": "beats_app.drumloop",
+    "pk": 5,
+    "fields": {
+        "name": "bop bop",
+        "creator": 1,
+        "created_on": "2022-11-05T11:23:01.654Z",
+        "rating": 0,
+        "tempo": 127
+    }
+},
+{
+    "model": "beats_app.drumloop",
+    "pk": 7,
+    "fields": {
+        "name": "loopy loop",
+        "creator": 1,
+        "created_on": "2022-11-05T11:23:39.158Z",
+        "rating": 0,
+        "tempo": 120
+    }
+},
+{
+    "model": "beats_app.drumloop",
+    "pk": 8,
+    "fields": {
+        "name": "doom loop",
+        "creator": 1,
+        "created_on": "2022-11-05T16:19:36.735Z",
+        "rating": 0,
+        "tempo": 90
+    }
+},
+{
+    "model": "beats_app.drumloop",
+    "pk": 11,
+    "fields": {
+        "name": "brand_new_loop",
+        "creator": 4,
+        "created_on": "2022-11-09T09:32:06.765Z",
+        "rating": 0,
+        "tempo": 120
+    }
+},
+{
+    "model": "beats_app.drumloop",
+    "pk": 13,
+    "fields": {
+        "name": "maximus decimus",
+        "creator": 3,
+        "created_on": "2022-11-12T00:43:12.661Z",
+        "rating": 0,
+        "tempo": 99
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 1,
+    "fields": {
+        "name": "Kick Hard",
+        "url": "audio/kick_hard.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 2,
+    "fields": {
+        "name": "Kick Swooshy",
+        "url": "audio/kick_swooshy.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 3,
+    "fields": {
+        "name": "Percussion Wobble",
+        "url": "audio/perc_wobble.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 4,
+    "fields": {
+        "name": "Snare Breathe",
+        "url": "audio/snare_breathe.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 5,
+    "fields": {
+        "name": "Hats Micro",
+        "url": "audio/hats_micro.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 6,
+    "fields": {
+        "name": "Clap Liquid",
+        "url": "audio/clap_liquid.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 7,
+    "fields": {
+        "name": "Clap Vinyl",
+        "url": "audio/clap_vinyl.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 8,
+    "fields": {
+        "name": "Hats Massamola",
+        "url": "audio/hats_massamola.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 9,
+    "fields": {
+        "name": "Hats Metal",
+        "url": "audio/hats_metal.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 10,
+    "fields": {
+        "name": "Hats Zippo",
+        "url": "audio/hats_zippo.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 11,
+    "fields": {
+        "name": "Hats 808",
+        "url": "audio/hihat_808.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 12,
+    "fields": {
+        "name": "Kick Borefest",
+        "url": "audio/kick_borefest.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 13,
+    "fields": {
+        "name": "Kick Coffee Shop",
+        "url": "audio/kick_coffee_shop.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 14,
+    "fields": {
+        "name": "Kick Juicy",
+        "url": "audio/kick_juicy.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 15,
+    "fields": {
+        "name": "Kick Stomp",
+        "url": "audio/kick_stomp.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 16,
+    "fields": {
+        "name": "Kick Tape",
+        "url": "audio/kick_tape.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 17,
+    "fields": {
+        "name": "Kick Tight",
+        "url": "audio/kick_tight.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 18,
+    "fields": {
+        "name": "Perc 808",
+        "url": "audio/perc_808.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 19,
+    "fields": {
+        "name": "Perc Hollow",
+        "url": "audio/perc_hollow.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 20,
+    "fields": {
+        "name": "Perc Laser",
+        "url": "audio/perc_laser.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 21,
+    "fields": {
+        "name": "Perc Nasty",
+        "url": "audio/perc_nasty.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 22,
+    "fields": {
+        "name": "Perc Skipper",
+        "url": "audio/perc_skipper.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 23,
+    "fields": {
+        "name": "Perc Springboard",
+        "url": "audio/perc_springboard.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 24,
+    "fields": {
+        "name": "Perc Tambo",
+        "url": "audio/perc_tambo.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 25,
+    "fields": {
+        "name": "Perc Weirdo",
+        "url": "audio/perc_weirdo.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 26,
+    "fields": {
+        "name": "Snare Electro",
+        "url": "audio/snare_electro.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 27,
+    "fields": {
+        "name": "Snare Lastbar",
+        "url": "audio/snare_lastbar.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 28,
+    "fields": {
+        "name": "Snare LoFi",
+        "url": "audio/snare_lofi.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 29,
+    "fields": {
+        "name": "Snare Tight",
+        "url": "audio/snare_tight.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 30,
+    "fields": {
+        "name": "Tom Acoustic",
+        "url": "audio/tom_acoustic.wav"
+    }
+},
+{
+    "model": "beats_app.instrument",
+    "pk": 31,
+    "fields": {
+        "name": "Tom Short",
+        "url": "audio/tom_short.wav"
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 1,
+    "fields": {
+        "drumloop": 1,
+        "instrument": 15,
+        "beats": "80000000800000008000000080000000",
+        "track_volume": 10
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 5,
+    "fields": {
+        "drumloop": 1,
+        "instrument": 5,
+        "beats": "00808080008080800080808000808080",
+        "track_volume": 8
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 6,
+    "fields": {
+        "drumloop": 2,
+        "instrument": 2,
+        "beats": "80000000800000008000000080000000",
+        "track_volume": 10
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 7,
+    "fields": {
+        "drumloop": 2,
+        "instrument": 24,
+        "beats": "00008080000088888080000000008080",
+        "track_volume": 4
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 8,
+    "fields": {
+        "drumloop": 2,
+        "instrument": 10,
+        "beats": "00808080008080800080808000808080",
+        "track_volume": 7
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 37,
+    "fields": {
+        "drumloop": 2,
+        "instrument": 20,
+        "beats": "00000000808000000000000000000000",
+        "track_volume": 6
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 38,
+    "fields": {
+        "drumloop": 2,
+        "instrument": 28,
+        "beats": "00008000000080000000800000008080",
+        "track_volume": 10
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 39,
+    "fields": {
+        "drumloop": 1,
+        "instrument": 26,
+        "beats": "80000000808000000000000080008080",
+        "track_volume": 10
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 40,
+    "fields": {
+        "drumloop": 1,
+        "instrument": 20,
+        "beats": "00008000000080800000000000000000",
+        "track_volume": 10
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 43,
+    "fields": {
+        "drumloop": 1,
+        "instrument": 31,
+        "beats": "00808000008080000080800000000000",
+        "track_volume": 10
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 49,
+    "fields": {
+        "drumloop": 7,
+        "instrument": 1,
+        "beats": "00000000000000000000000000000000",
+        "track_volume": 10
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 50,
+    "fields": {
+        "drumloop": 8,
+        "instrument": 1,
+        "beats": "80000000800080008080000000008000",
+        "track_volume": 10
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 51,
+    "fields": {
+        "drumloop": 8,
+        "instrument": 5,
+        "beats": "00808080008080800080808000808888",
+        "track_volume": 7
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 52,
+    "fields": {
+        "drumloop": 8,
+        "instrument": 14,
+        "beats": "80800000000080000000800088880000",
+        "track_volume": 6
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 53,
+    "fields": {
+        "drumloop": 8,
+        "instrument": 15,
+        "beats": "00008000800080000000008080000080",
+        "track_volume": 5
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 54,
+    "fields": {
+        "drumloop": 8,
+        "instrument": 31,
+        "beats": "00008080000000888000000080800000",
+        "track_volume": 6
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 55,
+    "fields": {
+        "drumloop": 8,
+        "instrument": 3,
+        "beats": "00000000008000000080008080800080",
+        "track_volume": 6
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 56,
+    "fields": {
+        "drumloop": 5,
+        "instrument": 14,
+        "beats": "80008000000080008000000080000000",
+        "track_volume": 10
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 57,
+    "fields": {
+        "drumloop": 5,
+        "instrument": 9,
+        "beats": "00808000800080800000800000808080",
+        "track_volume": 6
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 58,
+    "fields": {
+        "drumloop": 5,
+        "instrument": 4,
+        "beats": "00008000000080800000000000000000",
+        "track_volume": 10
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 59,
+    "fields": {
+        "drumloop": 5,
+        "instrument": 27,
+        "beats": "00000080008000000080000000008080",
+        "track_volume": 10
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 60,
+    "fields": {
+        "drumloop": 5,
+        "instrument": 12,
+        "beats": "80000000800000008000000080000000",
+        "track_volume": 10
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 61,
+    "fields": {
+        "drumloop": 5,
+        "instrument": 5,
+        "beats": "00000000000000000000000000000000",
+        "track_volume": 10
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 62,
+    "fields": {
+        "drumloop": 11,
+        "instrument": 1,
+        "beats": "00000000000000000000000000000000",
+        "track_volume": 10
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 63,
+    "fields": {
+        "drumloop": 13,
+        "instrument": 1,
+        "beats": "80008000000080008000000000000000",
+        "track_volume": 10
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 64,
+    "fields": {
+        "drumloop": 13,
+        "instrument": 9,
+        "beats": "00008080800000808000800000008080",
+        "track_volume": 5
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 65,
+    "fields": {
+        "drumloop": 13,
+        "instrument": 10,
+        "beats": "00808080008080000080808000000080",
+        "track_volume": 3
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 66,
+    "fields": {
+        "drumloop": 13,
+        "instrument": 2,
+        "beats": "80000000000000000000000000000000",
+        "track_volume": 10
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 67,
+    "fields": {
+        "drumloop": 13,
+        "instrument": 27,
+        "beats": "00008000000080000000000080800080",
+        "track_volume": 10
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 68,
+    "fields": {
+        "drumloop": 13,
+        "instrument": 25,
+        "beats": "00008080008080000000000080088080",
+        "track_volume": 10
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 69,
+    "fields": {
+        "drumloop": 13,
+        "instrument": 11,
+        "beats": "00008080000080808888808000008888",
+        "track_volume": 10
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 70,
+    "fields": {
+        "drumloop": 13,
+        "instrument": 15,
+        "beats": "80000000000000000000000000000000",
+        "track_volume": 10
+    }
+},
+{
+    "model": "beats_app.track",
+    "pk": 71,
+    "fields": {
+        "drumloop": 13,
+        "instrument": 15,
+        "beats": "80000000000000000000000000000000",
+        "track_volume": 10
+    }
+},
+{
+    "model": "beats_app.review",
+    "pk": 2,
+    "fields": {
+        "reviewer": 2,
+        "drumloop": 8,
+        "rating": 5,
+        "comment": "This loop blew my mind",
+        "created_on": "2022-11-06T01:00:18.804Z",
+        "approved": true
+    }
+},
+{
+    "model": "beats_app.review",
+    "pk": 3,
+    "fields": {
+        "reviewer": 2,
+        "drumloop": 2,
+        "rating": 1,
+        "comment": "Fell asleep. Meh.",
+        "created_on": "2022-11-06T01:01:11.443Z",
+        "approved": true
+    }
+},
+{
+    "model": "beats_app.review",
+    "pk": 7,
+    "fields": {
+        "reviewer": 3,
+        "drumloop": 13,
+        "rating": 0,
+        "comment": "I felt my life explode into a million kernels of popcorn and bounce around the microwave of existenc",
+        "created_on": "2022-11-12T00:56:12.508Z",
+        "approved": true
+    }
+}
+]

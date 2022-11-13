@@ -97,7 +97,9 @@ untested parts of the codebase.
 ### Testing page functionality with Selenium
 Note - writing of tests was considerably slowed down by an issue with actions fired by selenium 
 resulting in changes to the development database, rather than the testing database. The url used for testing should be localhost, but the port used is assigned dynamically, and should be accessed using self.live_server_url. Unfortunately, I initally set the selenium webdriver to connect to localhost at port 8000, the default django server, and I didn't detect the problem because the dev server was actually running as I was writing the tests. This resulted in the dev database being used rather than the test database, and so a test involving user registration actions passed the first time with a test username, and subsequently failed due to fact that the database was not being destroyed after test runs. Solution found here https://stackoverflow.com/questions/17435155/django-functional-liveservertestcase-after-submitting-form-with-selenium-obje. 
-developer.lifetime -= 2 hours. 
+
+Also, it was necessary to use the default static storage in place of Cloudinary's static hashed storage
+to run the selenium based tests, so a conditional statement was added to settings.py to detect if a test was being run or not.
 
 ## User Story Testing
 

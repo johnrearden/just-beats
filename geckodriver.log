@@ -1588,3 +1588,1964 @@ console.warn: LoginRecipes: "Falling back to a synchronous message for: http://l
 console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:37043."
 console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:37043."
 1668172822261	Marionette	INFO	Stopped listening on port 32833
+1668173332576	geckodriver	INFO	Listening on 127.0.0.1:40733
+1668173333080	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "41317" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileZ4gwvR"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668173333692	Marionette	INFO	Marionette enabled
+1668173333696	Marionette	INFO	Listening on port 41861
+WebDriver BiDi listening on ws://127.0.0.1:41317
+Read port: 41861
+1668173333871	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileZ4gwvR/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:41317/devtools/browser/450bc157-9610-4f59-a69e-dace07001b20
+1668173345160	Marionette	INFO	Stopped listening on port 41861
+1668173345555	geckodriver	INFO	Listening on 127.0.0.1:59003
+1668173346058	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "55611" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilef25Fqj"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668173346673	Marionette	INFO	Marionette enabled
+1668173346677	Marionette	INFO	Listening on port 46497
+WebDriver BiDi listening on ws://127.0.0.1:55611
+Read port: 46497
+1668173346862	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilef25Fqj/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:55611/devtools/browser/d9ec52fd-65d0-4bb0-9acb-cb6372f0fefb
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668173348075	Marionette	INFO	Stopped listening on port 46497
+1668173349786	geckodriver	INFO	Listening on 127.0.0.1:33185
+1668173350289	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "35923" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile7B0tSJ"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668173350886	Marionette	INFO	Marionette enabled
+1668173350890	Marionette	INFO	Listening on port 35055
+WebDriver BiDi listening on ws://127.0.0.1:35923
+Read port: 35055
+1668173351081	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile7B0tSJ/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:35923/devtools/browser/a6c7592e-a738-49c9-af56-c22290a87b86
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:47661."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:47661."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:47661."
+1668173354195	Marionette	INFO	Stopped listening on port 35055
+1668173429144	geckodriver	INFO	Listening on 127.0.0.1:37691
+1668173429647	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "46253" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileZtDEfz"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668173430260	Marionette	INFO	Marionette enabled
+1668173430264	Marionette	INFO	Listening on port 41113
+WebDriver BiDi listening on ws://127.0.0.1:46253
+Read port: 41113
+1668173430464	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileZtDEfz/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:46253/devtools/browser/72142bd8-3039-4b0f-a17b-804b7abc9f61
+1668173441858	Marionette	INFO	Stopped listening on port 41113
+1668173442283	geckodriver	INFO	Listening on 127.0.0.1:48635
+1668173442786	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "55115" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileoZy16c"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668173443383	Marionette	INFO	Marionette enabled
+1668173443388	Marionette	INFO	Listening on port 44325
+WebDriver BiDi listening on ws://127.0.0.1:55115
+Read port: 44325
+1668173443581	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileoZy16c/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:55115/devtools/browser/61483472-4132-4db8-b15d-d2cdc18a3bb3
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668173444878	Marionette	INFO	Stopped listening on port 44325
+1668173446495	geckodriver	INFO	Listening on 127.0.0.1:49353
+1668173446998	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "41535" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilexXnbRW"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668173447616	Marionette	INFO	Marionette enabled
+1668173447620	Marionette	INFO	Listening on port 44611
+WebDriver BiDi listening on ws://127.0.0.1:41535
+Read port: 44611
+1668173447805	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilexXnbRW/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:41535/devtools/browser/db45958c-c24e-4205-9e3a-f74b1583a047
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:39547."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:39547."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:39547."
+1668173450387	Marionette	INFO	Stopped listening on port 44611
+1668175544397	geckodriver	INFO	Listening on 127.0.0.1:39251
+1668175544900	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "47849" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileoGpOkM"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668175545501	Marionette	INFO	Marionette enabled
+1668175545505	Marionette	INFO	Listening on port 38507
+WebDriver BiDi listening on ws://127.0.0.1:47849
+Read port: 38507
+1668175545720	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileoGpOkM/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:47849/devtools/browser/0eca2cd9-5e71-42e7-ae10-5e32f58332d4
+1668175557334	Marionette	INFO	Stopped listening on port 38507
+1668175557784	geckodriver	INFO	Listening on 127.0.0.1:36965
+1668175558287	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "39243" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileIRY1dn"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668175558897	Marionette	INFO	Marionette enabled
+1668175558901	Marionette	INFO	Listening on port 34323
+WebDriver BiDi listening on ws://127.0.0.1:39243
+Read port: 34323
+1668175559109	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileIRY1dn/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:39243/devtools/browser/40815476-ca38-415d-b97d-97a0a8f9f126
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668175560573	Marionette	INFO	Stopped listening on port 34323
+1668175562075	geckodriver	INFO	Listening on 127.0.0.1:57885
+1668175562578	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "60637" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile7OGa5f"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668175563201	Marionette	INFO	Marionette enabled
+1668175563206	Marionette	INFO	Listening on port 40819
+WebDriver BiDi listening on ws://127.0.0.1:60637
+Read port: 40819
+1668175563403	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile7OGa5f/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:60637/devtools/browser/f32bc143-1dab-4772-a455-0d81dc97caee
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:60191."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:60191."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:60191."
+1668175566418	Marionette	INFO	Stopped listening on port 40819
+1668257195907	geckodriver	INFO	Listening on 127.0.0.1:51327
+1668257196410	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "56873" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile8dfloz"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668257197006	Marionette	INFO	Marionette enabled
+1668257197011	Marionette	INFO	Listening on port 35717
+WebDriver BiDi listening on ws://127.0.0.1:56873
+Read port: 35717
+1668257197200	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile8dfloz/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56873/devtools/browser/67b96dd9-f5ab-43ad-ba77-7121d49eae4b
+1668257198634	Marionette	INFO	Stopped listening on port 35717
+1668257305567	geckodriver	INFO	Listening on 127.0.0.1:58299
+1668257306071	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "36547" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofiledNHvMw"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668257306723	Marionette	INFO	Marionette enabled
+1668257306730	Marionette	INFO	Listening on port 39587
+Read port: 39587
+WebDriver BiDi listening on ws://127.0.0.1:36547
+1668257306810	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofiledNHvMw/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:36547/devtools/browser/8bb2180e-6f34-44f0-bb70-fe78d163abd4
+1668257308362	Marionette	INFO	Stopped listening on port 39587
+1668257330369	geckodriver	INFO	Listening on 127.0.0.1:54809
+1668257330872	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "44703" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileBTSvP7"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668257331483	Marionette	INFO	Marionette enabled
+1668257331488	Marionette	INFO	Listening on port 38097
+WebDriver BiDi listening on ws://127.0.0.1:44703
+Read port: 38097
+1668257331676	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileBTSvP7/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:44703/devtools/browser/7c80787a-ea85-410d-a273-c87ef4de6dd1
+1668257333655	Marionette	INFO	Stopped listening on port 38097
+1668257343873	geckodriver	INFO	Listening on 127.0.0.1:53861
+1668257344376	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "35963" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileJ2mOtj"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668257344963	Marionette	INFO	Marionette enabled
+1668257344967	Marionette	INFO	Listening on port 40519
+Read port: 40519
+WebDriver BiDi listening on ws://127.0.0.1:35963
+1668257345041	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileJ2mOtj/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:35963/devtools/browser/a61d8452-ebcf-4d32-8bca-ef25b3f9ef5c
+1668257346757	Marionette	INFO	Stopped listening on port 40519
+1668257423779	geckodriver	INFO	Listening on 127.0.0.1:59993
+1668257424282	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "54589" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileS2hDBr"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668257424870	Marionette	INFO	Marionette enabled
+1668257424874	Marionette	INFO	Listening on port 38287
+Read port: 38287
+WebDriver BiDi listening on ws://127.0.0.1:54589
+1668257424959	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileS2hDBr/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:54589/devtools/browser/aa7397ca-69b7-474f-9f47-e91eb57ef62c
+1668257426369	Marionette	INFO	Stopped listening on port 38287
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668257621311	geckodriver	INFO	Listening on 127.0.0.1:37069
+1668257621814	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "60487" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilexCNRQf"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668257622419	Marionette	INFO	Marionette enabled
+1668257622424	Marionette	INFO	Listening on port 37249
+WebDriver BiDi listening on ws://127.0.0.1:60487
+Read port: 37249
+1668257622611	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilexCNRQf/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:60487/devtools/browser/86b50a99-624e-4e2d-8848-780e5f34a7ff
+1668257634409	Marionette	INFO	Stopped listening on port 37249
+1668258633573	geckodriver	INFO	Listening on 127.0.0.1:34985
+1668258634076	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "38563" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilexpO6Rc"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668258634666	Marionette	INFO	Marionette enabled
+1668258634670	Marionette	INFO	Listening on port 43069
+Read port: 43069
+WebDriver BiDi listening on ws://127.0.0.1:38563
+1668258634754	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilexpO6Rc/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:38563/devtools/browser/d672af27-8d6a-4f72-abe2-b27bf967b380
+1668258636002	Marionette	INFO	Stopped listening on port 43069
+1668258673643	geckodriver	INFO	Listening on 127.0.0.1:56561
+1668258674146	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "47261" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileXBRp6w"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668258674762	Marionette	INFO	Marionette enabled
+1668258674766	Marionette	INFO	Listening on port 46691
+WebDriver BiDi listening on ws://127.0.0.1:47261
+Read port: 46691
+1668258674951	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileXBRp6w/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:47261/devtools/browser/e467114f-26a9-4558-90db-e4b8978a41ee
+1668258678424	Marionette	INFO	Stopped listening on port 46691
+1668258726007	geckodriver	INFO	Listening on 127.0.0.1:58103
+1668258726510	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "58159" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileAyiSDX"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668258727113	Marionette	INFO	Marionette enabled
+1668258727118	Marionette	INFO	Listening on port 34211
+WebDriver BiDi listening on ws://127.0.0.1:58159
+Read port: 34211
+1668258727324	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileAyiSDX/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:58159/devtools/browser/84c1ac56-18c8-4e2f-9471-fbad590e9490
+1668258728595	Marionette	INFO	Stopped listening on port 34211
+1668258730320	geckodriver	INFO	Listening on 127.0.0.1:38465
+1668258730823	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "53995" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileSwHHJG"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668258731420	Marionette	INFO	Marionette enabled
+1668258731424	Marionette	INFO	Listening on port 42877
+Read port: 42877
+WebDriver BiDi listening on ws://127.0.0.1:53995
+1668258731497	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileSwHHJG/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53995/devtools/browser/9313336d-5cbb-4b88-9071-1fa100293124
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668258732887	Marionette	INFO	Stopped listening on port 42877
+1668258734623	geckodriver	INFO	Listening on 127.0.0.1:41035
+1668258735126	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "38659" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileVu5XHX"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668258735717	Marionette	INFO	Marionette enabled
+1668258735721	Marionette	INFO	Listening on port 42671
+Read port: 42671
+WebDriver BiDi listening on ws://127.0.0.1:38659
+1668258735805	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileVu5XHX/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:38659/devtools/browser/08dbf86e-2965-464a-bfb6-91d12eb4915b
+1668258739376	Marionette	INFO	Stopped listening on port 42671
+1668258739808	geckodriver	INFO	Listening on 127.0.0.1:33459
+1668258740311	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "59123" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilefq9a32"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668258740917	Marionette	INFO	Marionette enabled
+1668258740921	Marionette	INFO	Listening on port 37855
+WebDriver BiDi listening on ws://127.0.0.1:59123
+Read port: 37855
+1668258741123	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilefq9a32/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:59123/devtools/browser/8a91e777-12f8-4377-8fd6-eed029f14ca6
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:56181."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:56181."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:56181."
+1668258743812	Marionette	INFO	Stopped listening on port 37855
+1668258798170	geckodriver	INFO	Listening on 127.0.0.1:39739
+1668258798673	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "36991" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilelZTccS"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668258799285	Marionette	INFO	Marionette enabled
+1668258799290	Marionette	INFO	Listening on port 40527
+WebDriver BiDi listening on ws://127.0.0.1:36991
+Read port: 40527
+1668258799480	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilelZTccS/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:36991/devtools/browser/63fb1369-8661-4eff-b43c-c02abe009c90
+1668258803032	Marionette	INFO	Stopped listening on port 40527
+1668258841596	geckodriver	INFO	Listening on 127.0.0.1:42965
+1668258842099	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "34989" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileKBZUsR"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668258842679	Marionette	INFO	Marionette enabled
+1668258842683	Marionette	INFO	Listening on port 39231
+Read port: 39231
+WebDriver BiDi listening on ws://127.0.0.1:34989
+1668258842761	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileKBZUsR/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:34989/devtools/browser/876edd7a-c209-4944-a16c-f73395e462b6
+1668258846458	Marionette	INFO	Stopped listening on port 39231
+1668259596513	geckodriver	INFO	Listening on 127.0.0.1:41393
+1668259597016	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "56115" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilew0efbJ"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668259597604	Marionette	INFO	Marionette enabled
+1668259597608	Marionette	INFO	Listening on port 45797
+Read port: 45797
+WebDriver BiDi listening on ws://127.0.0.1:56115
+1668259597685	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilew0efbJ/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56115/devtools/browser/dc47fec0-6f70-43a1-8acc-64980988e044
+1668259601496	Marionette	INFO	Stopped listening on port 45797
+1668259679630	geckodriver	INFO	Listening on 127.0.0.1:34701
+1668259680133	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "37627" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileYnIC3A"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668259680741	Marionette	INFO	Marionette enabled
+1668259680745	Marionette	INFO	Listening on port 33559
+WebDriver BiDi listening on ws://127.0.0.1:37627
+Read port: 33559
+1668259680941	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileYnIC3A/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:37627/devtools/browser/b8b626e9-9be6-4129-9eb4-161dbfb2640e
+1668259684478	Marionette	INFO	Stopped listening on port 33559
+1668260028969	geckodriver	INFO	Listening on 127.0.0.1:45643
+1668260029473	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "32931" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilevlDZ60"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668260030070	Marionette	INFO	Marionette enabled
+1668260030075	Marionette	INFO	Listening on port 34215
+WebDriver BiDi listening on ws://127.0.0.1:32931
+Read port: 34215
+1668260030270	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilevlDZ60/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:32931/devtools/browser/0733474f-1ef3-4c19-8c6a-df11c1204357
+1668260033871	Marionette	INFO	Stopped listening on port 34215
+1668260196963	geckodriver	INFO	Listening on 127.0.0.1:47311
+1668260197467	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "34421" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileqzoyzd"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668260198070	Marionette	INFO	Marionette enabled
+1668260198074	Marionette	INFO	Listening on port 34567
+WebDriver BiDi listening on ws://127.0.0.1:34421
+Read port: 34567
+1668260198286	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileqzoyzd/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:34421/devtools/browser/ecff2903-6bee-4f8b-85c2-39c9d7d8d0f6
+1668260200248	Marionette	INFO	Stopped listening on port 34567
+1668260201300	geckodriver	INFO	Listening on 127.0.0.1:35087
+1668260201803	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "49979" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilezJBnNF"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668260202390	Marionette	INFO	Marionette enabled
+1668260202395	Marionette	INFO	Listening on port 42247
+Read port: 42247
+WebDriver BiDi listening on ws://127.0.0.1:49979
+1668260202469	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilezJBnNF/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:49979/devtools/browser/9e7da80e-3ffb-46ac-8a3b-e7108d8374ce
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668260204091	Marionette	INFO	Stopped listening on port 42247
+1668260205595	geckodriver	INFO	Listening on 127.0.0.1:33931
+1668260206098	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "42905" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilemlJbgX"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668260206700	Marionette	INFO	Marionette enabled
+1668260206704	Marionette	INFO	Listening on port 37451
+WebDriver BiDi listening on ws://127.0.0.1:42905
+Read port: 37451
+1668260206890	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilemlJbgX/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:42905/devtools/browser/842e1298-1375-4839-84f6-69fe8414cb25
+1668260210850	Marionette	INFO	Stopped listening on port 37451
+JavaScript error: resource://gre/actors/AudioPlaybackParent.jsm, line 20: TypeError: browser is null
+1668260212732	geckodriver	INFO	Listening on 127.0.0.1:57043
+1668260213235	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "32925" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileokvkKD"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668260213810	Marionette	INFO	Marionette enabled
+1668260213814	Marionette	INFO	Listening on port 45439
+Read port: 45439
+WebDriver BiDi listening on ws://127.0.0.1:32925
+1668260213893	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileokvkKD/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:32925/devtools/browser/81d3d541-c39f-41ba-acb3-4523687c040e
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:34019."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:34019."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:34019."
+1668260216995	Marionette	INFO	Stopped listening on port 45439
+1668260271771	geckodriver	INFO	Listening on 127.0.0.1:59495
+1668260272274	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "32833" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile6dcAWw"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668260272874	Marionette	INFO	Marionette enabled
+1668260272878	Marionette	INFO	Listening on port 40929
+WebDriver BiDi listening on ws://127.0.0.1:32833
+Read port: 40929
+1668260273073	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile6dcAWw/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:32833/devtools/browser/3a7e00c4-3b64-4cd5-82b2-8e96dc24be53
+1668260292825	Marionette	INFO	Stopped listening on port 40929
+1668260293323	geckodriver	INFO	Listening on 127.0.0.1:53471
+1668260293826	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "52359" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileWxN6cp"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668260294433	Marionette	INFO	Marionette enabled
+1668260294437	Marionette	INFO	Listening on port 44799
+WebDriver BiDi listening on ws://127.0.0.1:52359
+Read port: 44799
+1668260294624	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileWxN6cp/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52359/devtools/browser/a87da5be-957c-4d23-8694-bf94e5959561
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668260296272	Marionette	INFO	Stopped listening on port 44799
+1668260297601	geckodriver	INFO	Listening on 127.0.0.1:37997
+1668260298104	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "32889" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile67B13n"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668260298708	Marionette	INFO	Marionette enabled
+1668260298713	Marionette	INFO	Listening on port 38173
+WebDriver BiDi listening on ws://127.0.0.1:32889
+Read port: 38173
+1668260298910	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile67B13n/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:32889/devtools/browser/79b93064-8dab-4fee-91ba-60c0bf5243f8
+1668260300768	Marionette	INFO	Stopped listening on port 38173
+1668260301914	geckodriver	INFO	Listening on 127.0.0.1:38667
+1668260302417	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "41705" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilemUA2KS"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668260303004	Marionette	INFO	Marionette enabled
+1668260303008	Marionette	INFO	Listening on port 36053
+Read port: 36053
+WebDriver BiDi listening on ws://127.0.0.1:41705
+1668260303089	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilemUA2KS/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:41705/devtools/browser/3cd9cc57-606a-4e6a-9b52-7ce295ce8f73
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:51395."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:51395."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:51395."
+1668260305542	Marionette	INFO	Stopped listening on port 36053
+1668261293158	geckodriver	INFO	Listening on 127.0.0.1:48693
+1668261293661	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "41773" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile1FztpZ"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668261294251	Marionette	INFO	Marionette enabled
+1668261294255	Marionette	INFO	Listening on port 38725
+Read port: 38725
+WebDriver BiDi listening on ws://127.0.0.1:41773
+1668261294330	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile1FztpZ/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:41773/devtools/browser/459c093d-20ff-4ec5-b847-dbdb47dc233c
+1668261313890	Marionette	INFO	Stopped listening on port 38725
+1668261314373	geckodriver	INFO	Listening on 127.0.0.1:38739
+1668261314875	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "59153" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilexusCLB"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668261315472	Marionette	INFO	Marionette enabled
+1668261315476	Marionette	INFO	Listening on port 45025
+WebDriver BiDi listening on ws://127.0.0.1:59153
+Read port: 45025
+1668261315665	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilexusCLB/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:59153/devtools/browser/dfab04ed-b8cf-4b26-9f72-9938d867f19b
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668261317448	Marionette	INFO	Stopped listening on port 45025
+1668261318695	geckodriver	INFO	Listening on 127.0.0.1:57397
+1668261319198	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "52321" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilek1ynRp"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668261319791	Marionette	INFO	Marionette enabled
+1668261319797	Marionette	INFO	Listening on port 43571
+Read port: 43571
+WebDriver BiDi listening on ws://127.0.0.1:52321
+1668261319873	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilek1ynRp/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52321/devtools/browser/a6c5afec-1999-4456-a83a-5a16e75ce691
+1668261322018	Marionette	INFO	Stopped listening on port 43571
+JavaScript error: resource://gre/actors/AudioPlaybackParent.jsm, line 20: TypeError: browser is null
+1668261322998	geckodriver	INFO	Listening on 127.0.0.1:42241
+1668261323500	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "54513" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile92lPNd"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668261324091	Marionette	INFO	Marionette enabled
+1668261324096	Marionette	INFO	Listening on port 37919
+Read port: 37919
+WebDriver BiDi listening on ws://127.0.0.1:54513
+1668261324172	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile92lPNd/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:54513/devtools/browser/627173a6-680d-49a6-bf3d-c5e25b6b5301
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:52353."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:52353."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:52353."
+1668261326923	Marionette	INFO	Stopped listening on port 37919
+1668261928869	geckodriver	INFO	Listening on 127.0.0.1:58367
+1668261929372	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "58557" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileNO3xSS"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668261929995	Marionette	INFO	Marionette enabled
+1668261929999	Marionette	INFO	Listening on port 42699
+WebDriver BiDi listening on ws://127.0.0.1:58557
+Read port: 42699
+1668261930191	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileNO3xSS/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:58557/devtools/browser/c62b3136-ef7d-4d1d-bced-e25ccf77b0b9
+1668261931949	Marionette	INFO	Stopped listening on port 42699
+1668262476048	geckodriver	INFO	Listening on 127.0.0.1:55971
+1668262476551	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "39989" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilePMfml6"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668262477140	Marionette	INFO	Marionette enabled
+1668262477144	Marionette	INFO	Listening on port 36831
+Read port: 36831
+WebDriver BiDi listening on ws://127.0.0.1:39989
+1668262477216	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilePMfml6/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:39989/devtools/browser/f8610ecb-4f1b-4386-9b5e-f8275c5afe2f
+1668262479365	Marionette	INFO	Stopped listening on port 36831
+1668262514704	geckodriver	INFO	Listening on 127.0.0.1:38603
+1668262515207	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "42107" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileoRtntT"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668262515802	Marionette	INFO	Marionette enabled
+1668262515806	Marionette	INFO	Listening on port 44739
+Read port: 44739
+WebDriver BiDi listening on ws://127.0.0.1:42107
+1668262515885	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileoRtntT/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:42107/devtools/browser/38d20371-02fa-4e6d-934a-2a79c4353502
+1668262517882	Marionette	INFO	Stopped listening on port 44739
+1668263045071	geckodriver	INFO	Listening on 127.0.0.1:48843
+1668263045575	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "54607" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileEcd62k"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668263046165	Marionette	INFO	Marionette enabled
+1668263046171	Marionette	INFO	Listening on port 39989
+Read port: 39989
+WebDriver BiDi listening on ws://127.0.0.1:54607
+1668263046244	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileEcd62k/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:54607/devtools/browser/e319f20f-b109-4f3a-9874-b781988bb328
+1668263048408	Marionette	INFO	Stopped listening on port 39989
+1668263065862	geckodriver	INFO	Listening on 127.0.0.1:53159
+1668263066366	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "54853" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileor6ict"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668263066980	Marionette	INFO	Marionette enabled
+1668263066983	Marionette	INFO	Listening on port 45871
+WebDriver BiDi listening on ws://127.0.0.1:54853
+Read port: 45871
+1668263067193	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileor6ict/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:54853/devtools/browser/66242084-73e7-4371-a154-2dca3bb99ad5
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1668263092129	geckodriver	INFO	Listening on 127.0.0.1:39483
+1668263092631	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "46731" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilevg6yac"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668263093235	Marionette	INFO	Marionette enabled
+1668263093240	Marionette	INFO	Listening on port 42765
+WebDriver BiDi listening on ws://127.0.0.1:46731
+Read port: 42765
+1668263093438	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilevg6yac/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:46731/devtools/browser/42ea5e9b-2a19-4e2a-992c-d7a046b0c2c5
+1668263096661	Marionette	INFO	Stopped listening on port 42765
+1668263128283	geckodriver	INFO	Listening on 127.0.0.1:52061
+1668263128786	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "53619" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileUW4Jlc"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668263129379	Marionette	INFO	Marionette enabled
+1668263129384	Marionette	INFO	Listening on port 39919
+Read port: 39919
+WebDriver BiDi listening on ws://127.0.0.1:53619
+1668263129461	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileUW4Jlc/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53619/devtools/browser/0b717cb7-d8d0-409c-a735-d9691212f9d2
+1668263132932	Marionette	INFO	Stopped listening on port 39919
+1668263163941	geckodriver	INFO	Listening on 127.0.0.1:53449
+1668263164444	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "46355" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileoExTDF"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668263165046	Marionette	INFO	Marionette enabled
+1668263165051	Marionette	INFO	Listening on port 39139
+WebDriver BiDi listening on ws://127.0.0.1:46355
+Read port: 39139
+1668263165239	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileoExTDF/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:46355/devtools/browser/7c7adcfc-e557-4d42-a8dd-7c2b35f41aa7
+1668263168142	Marionette	INFO	Stopped listening on port 39139
+1668263286601	geckodriver	INFO	Listening on 127.0.0.1:49337
+1668263287104	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "60187" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilec0CBdr"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668263287698	Marionette	INFO	Marionette enabled
+1668263287702	Marionette	INFO	Listening on port 38007
+Read port: 38007
+WebDriver BiDi listening on ws://127.0.0.1:60187
+1668263287778	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilec0CBdr/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:60187/devtools/browser/61f3cf9e-617e-4e5d-82b0-48b98fdf3fa8
+1668263290894	Marionette	INFO	Stopped listening on port 38007
+1668263320397	geckodriver	INFO	Listening on 127.0.0.1:45909
+1668263320900	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "60765" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile1grCrc"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668263321498	Marionette	INFO	Marionette enabled
+1668263321503	Marionette	INFO	Listening on port 34481
+WebDriver BiDi listening on ws://127.0.0.1:60765
+Read port: 34481
+1668263321697	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile1grCrc/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:60765/devtools/browser/b3fafe2e-c325-4a10-b2d5-de24e561d7a8
+1668263324374	Marionette	INFO	Stopped listening on port 34481
+1668270968922	geckodriver	INFO	Listening on 127.0.0.1:42049
+1668270969426	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "40069" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilekU5PmN"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668270970025	Marionette	INFO	Marionette enabled
+1668270970030	Marionette	INFO	Listening on port 41897
+WebDriver BiDi listening on ws://127.0.0.1:40069
+Read port: 41897
+1668270970227	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilekU5PmN/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:40069/devtools/browser/2a728b8f-ca88-49a3-99f1-b44d7b371ebf
+1668270973158	Marionette	INFO	Stopped listening on port 41897
+1668271302680	geckodriver	INFO	Listening on 127.0.0.1:39087
+1668271303183	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "48763" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile2NzgSt"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668271303761	Marionette	INFO	Marionette enabled
+1668271303766	Marionette	INFO	Listening on port 39151
+Read port: 39151
+WebDriver BiDi listening on ws://127.0.0.1:48763
+1668271303831	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile2NzgSt/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:48763/devtools/browser/0cc2a390-3c3b-441a-b5b4-438dfc1d0609
+1668271307087	Marionette	INFO	Stopped listening on port 39151
+1668271545109	geckodriver	INFO	Listening on 127.0.0.1:39587
+1668271545612	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "34029" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile4C3VhQ"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668271546202	Marionette	INFO	Marionette enabled
+1668271546206	Marionette	INFO	Listening on port 43967
+Read port: 43967
+WebDriver BiDi listening on ws://127.0.0.1:34029
+1668271546280	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile4C3VhQ/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:34029/devtools/browser/a9ac1960-5f34-46c0-a390-478275a8ddc5
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668271550086	Marionette	INFO	Stopped listening on port 43967
+1668271554138	geckodriver	INFO	Listening on 127.0.0.1:42763
+1668271554642	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "start_maximized" "--remote-debugging-port" "40671" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileXJUu94"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668271555238	Marionette	INFO	Marionette enabled
+1668271555241	Marionette	INFO	Listening on port 39765
+Read port: 39765
+WebDriver BiDi listening on ws://127.0.0.1:40671
+1668271555314	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileXJUu94/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:40671/devtools/browser/cafff67d-89f6-4386-825c-97c85493009b
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668271558867	Marionette	INFO	Stopped listening on port 39765
+1668271738496	geckodriver	INFO	Listening on 127.0.0.1:36261
+1668271738999	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "41353" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilex436IZ"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668271739599	Marionette	INFO	Marionette enabled
+1668271739603	Marionette	INFO	Listening on port 34863
+WebDriver BiDi listening on ws://127.0.0.1:41353
+Read port: 34863
+1668271739793	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilex436IZ/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:41353/devtools/browser/e702f8ab-244d-420d-8dca-02dbb309b3e9
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668271751562	Marionette	INFO	Stopped listening on port 34863
+1668271778504	geckodriver	INFO	Listening on 127.0.0.1:39017
+1668271779007	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "33537" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilebuXGiw"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668271779610	Marionette	INFO	Marionette enabled
+1668271779614	Marionette	INFO	Listening on port 39883
+WebDriver BiDi listening on ws://127.0.0.1:33537
+Read port: 39883
+1668271779796	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilebuXGiw/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:33537/devtools/browser/2601965f-4299-4d73-ae3a-23866e5ec8d5
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668271782181	Marionette	INFO	Stopped listening on port 39883
+1668272572641	geckodriver	INFO	Listening on 127.0.0.1:35691
+1668272573144	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "48703" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileC6T7uI"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668272573720	Marionette	INFO	Marionette enabled
+1668272573725	Marionette	INFO	Listening on port 34949
+Read port: 34949
+WebDriver BiDi listening on ws://127.0.0.1:48703
+1668272573792	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileC6T7uI/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:48703/devtools/browser/b0cab7fb-4b99-4bf0-812d-6699a3afdf60
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668272586351	Marionette	INFO	Stopped listening on port 34949
+1668272602858	geckodriver	INFO	Listening on 127.0.0.1:54229
+1668272603361	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "54801" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile3MYyvp"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668272603971	Marionette	INFO	Marionette enabled
+1668272603976	Marionette	INFO	Listening on port 41731
+WebDriver BiDi listening on ws://127.0.0.1:54801
+Read port: 41731
+1668272604157	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile3MYyvp/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:54801/devtools/browser/2bed64db-5f41-4482-9e1c-86a70b154a9a
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668272607449	Marionette	INFO	Stopped listening on port 41731
+1668272651808	geckodriver	INFO	Listening on 127.0.0.1:46023
+1668272652311	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "59283" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilea6ksa3"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668272652896	Marionette	INFO	Marionette enabled
+1668272652902	Marionette	INFO	Listening on port 40583
+Read port: 40583
+WebDriver BiDi listening on ws://127.0.0.1:59283
+1668272652969	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilea6ksa3/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:59283/devtools/browser/646ec1e7-a119-45e9-b8df-7ecaf3f4e0f0
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668272656972	Marionette	INFO	Stopped listening on port 40583
+1668272715204	geckodriver	INFO	Listening on 127.0.0.1:40873
+1668272715707	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "49855" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile8CTBls"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668272716317	Marionette	INFO	Marionette enabled
+1668272716322	Marionette	INFO	Listening on port 44557
+WebDriver BiDi listening on ws://127.0.0.1:49855
+Read port: 44557
+1668272716509	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile8CTBls/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:49855/devtools/browser/6a0a3924-d5d0-43c2-a3c6-10f598a67dcc
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668272719605	Marionette	INFO	Stopped listening on port 44557
+1668273168977	geckodriver	INFO	Listening on 127.0.0.1:34149
+1668273169479	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "58055" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileqd1w3L"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668273170060	Marionette	INFO	Marionette enabled
+1668273170065	Marionette	INFO	Listening on port 38055
+Read port: 38055
+WebDriver BiDi listening on ws://127.0.0.1:58055
+1668273170134	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileqd1w3L/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:58055/devtools/browser/2ab3d048-4894-4fc4-90fb-5e684d99558b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668273172310	Marionette	INFO	Stopped listening on port 38055
+1668273214769	geckodriver	INFO	Listening on 127.0.0.1:60747
+1668273215272	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "47609" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile4fsksC"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668273215852	Marionette	INFO	Marionette enabled
+1668273215857	Marionette	INFO	Listening on port 33083
+Read port: 33083
+WebDriver BiDi listening on ws://127.0.0.1:47609
+1668273215924	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile4fsksC/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:47609/devtools/browser/aef33bdf-439f-4c25-82ae-fbd9dfb5814b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668273218005	Marionette	INFO	Stopped listening on port 33083
+1668273326944	geckodriver	INFO	Listening on 127.0.0.1:57029
+1668273327447	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "34835" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileVZD9Yw"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668273328047	Marionette	INFO	Marionette enabled
+1668273328051	Marionette	INFO	Listening on port 35601
+WebDriver BiDi listening on ws://127.0.0.1:34835
+Read port: 35601
+1668273328237	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileVZD9Yw/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:34835/devtools/browser/3dd46b8c-142c-41a4-8cd3-3ae23c32b2ca
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:47249."
+1668273331445	Marionette	INFO	Stopped listening on port 35601
+1668273360472	geckodriver	INFO	Listening on 127.0.0.1:52789
+1668273360975	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "37789" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileHL302n"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668273361590	Marionette	INFO	Marionette enabled
+1668273361595	Marionette	INFO	Listening on port 43755
+WebDriver BiDi listening on ws://127.0.0.1:37789
+Read port: 43755
+1668273361779	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileHL302n/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:37789/devtools/browser/7ef06b47-efda-418f-bb4b-6363678ecbb7
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:33689."
+1668273368948	Marionette	INFO	Stopped listening on port 43755
+1668273388594	geckodriver	INFO	Listening on 127.0.0.1:37075
+1668273389097	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "40127" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile8w03nD"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668273389711	Marionette	INFO	Marionette enabled
+1668273389715	Marionette	INFO	Listening on port 44471
+WebDriver BiDi listening on ws://127.0.0.1:40127
+Read port: 44471
+1668273389897	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile8w03nD/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:40127/devtools/browser/0d6863ce-5905-404f-afba-00709cb28387
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:52147."
+1668273397900	Marionette	INFO	Stopped listening on port 44471
+1668273406794	geckodriver	INFO	Listening on 127.0.0.1:34173
+1668273407297	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "43943" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile6ZmDLZ"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668273407907	Marionette	INFO	Marionette enabled
+1668273407911	Marionette	INFO	Listening on port 38279
+WebDriver BiDi listening on ws://127.0.0.1:43943
+Read port: 38279
+1668273408093	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile6ZmDLZ/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:43943/devtools/browser/5dd16bff-d00c-4854-b59c-47e518585e36
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:34909."
+1668273416023	Marionette	INFO	Stopped listening on port 38279
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668273685961	geckodriver	INFO	Listening on 127.0.0.1:53151
+1668273686463	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "43061" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilefUaLLp"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668273687083	Marionette	INFO	Marionette enabled
+1668273687088	Marionette	INFO	Listening on port 37611
+WebDriver BiDi listening on ws://127.0.0.1:43061
+Read port: 37611
+1668273687269	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilefUaLLp/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:43061/devtools/browser/b73ae30f-872e-47cf-9617-43116896692d
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668273689465	Marionette	INFO	Stopped listening on port 37611
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 420))
+1668273704121	geckodriver	INFO	Listening on 127.0.0.1:42619
+1668273704624	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "35741" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileTwd1UA"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668273705239	Marionette	INFO	Marionette enabled
+1668273705244	Marionette	INFO	Listening on port 43483
+WebDriver BiDi listening on ws://127.0.0.1:35741
+Read port: 43483
+1668273705431	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileTwd1UA/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:35741/devtools/browser/231d3de8-def6-484d-b5e8-2db1817b18ec
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:57615."
+1668273713631	Marionette	INFO	Stopped listening on port 43483
+1668273863142	geckodriver	INFO	Listening on 127.0.0.1:35623
+1668273863646	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "56561" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileOQDbmQ"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668273864259	Marionette	INFO	Marionette enabled
+1668273864263	Marionette	INFO	Listening on port 37533
+WebDriver BiDi listening on ws://127.0.0.1:56561
+Read port: 37533
+1668273864447	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileOQDbmQ/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56561/devtools/browser/595b05b5-2952-4acb-90d2-7827255c3197
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668273866651	Marionette	INFO	Stopped listening on port 37533
+1668273969781	geckodriver	INFO	Listening on 127.0.0.1:44313
+1668273970285	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "46079" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilep4Bffc"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668273970889	Marionette	INFO	Marionette enabled
+1668273970894	Marionette	INFO	Listening on port 36253
+WebDriver BiDi listening on ws://127.0.0.1:46079
+Read port: 36253
+1668273971073	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilep4Bffc/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:46079/devtools/browser/7e206984-c2bc-4da6-b853-e220bbac5cb7
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668273972845	Marionette	INFO	Stopped listening on port 36253
+1668274038945	geckodriver	INFO	Listening on 127.0.0.1:53369
+1668274039448	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "42297" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileqNBJVf"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668274040048	Marionette	INFO	Marionette enabled
+1668274040053	Marionette	INFO	Listening on port 38763
+WebDriver BiDi listening on ws://127.0.0.1:42297
+Read port: 38763
+1668274040239	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileqNBJVf/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:42297/devtools/browser/84299582-aae3-4f09-921b-5a3091c3f48f
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668274042166	Marionette	INFO	Stopped listening on port 38763
+1668274065315	geckodriver	INFO	Listening on 127.0.0.1:34341
+1668274065818	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "43539" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile8eKEk6"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668274066419	Marionette	INFO	Marionette enabled
+1668274066424	Marionette	INFO	Listening on port 36851
+WebDriver BiDi listening on ws://127.0.0.1:43539
+Read port: 36851
+1668274066606	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile8eKEk6/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:43539/devtools/browser/15530e0f-bd1d-49b5-b249-dc97486336e7
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668274068715	Marionette	INFO	Stopped listening on port 36851
+1668274166691	geckodriver	INFO	Listening on 127.0.0.1:41893
+1668274167194	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "59671" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilesADf4i"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668274167762	Marionette	INFO	Marionette enabled
+1668274167780	Marionette	INFO	Listening on port 41279
+Read port: 41279
+WebDriver BiDi listening on ws://127.0.0.1:59671
+1668274167851	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilesADf4i/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:59671/devtools/browser/44a27363-6422-4ba5-82c9-80ccb3516771
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668274170047	Marionette	INFO	Stopped listening on port 41279
+1668274180712	geckodriver	INFO	Listening on 127.0.0.1:50517
+1668274181216	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "44729" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileAGBZF7"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668274181800	Marionette	INFO	Marionette enabled
+1668274181804	Marionette	INFO	Listening on port 34323
+Read port: 34323
+WebDriver BiDi listening on ws://127.0.0.1:44729
+1668274181873	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileAGBZF7/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:44729/devtools/browser/1159cd55-a84b-4bf0-9bdf-32ac3519e681
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668274183808	Marionette	INFO	Stopped listening on port 34323
+1668274192973	geckodriver	INFO	Listening on 127.0.0.1:44871
+1668274193476	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "42541" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile1xW3tj"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668274194097	Marionette	INFO	Marionette enabled
+1668274194101	Marionette	INFO	Listening on port 36267
+WebDriver BiDi listening on ws://127.0.0.1:42541
+Read port: 36267
+1668274194282	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile1xW3tj/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:42541/devtools/browser/00cb4a9d-c365-495f-b979-9430b42c8b5b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668274196142	Marionette	INFO	Stopped listening on port 36267
+1668274559257	geckodriver	INFO	Listening on 127.0.0.1:44549
+1668274559760	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "55373" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileCsHVEd"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668274560360	Marionette	INFO	Marionette enabled
+1668274560364	Marionette	INFO	Listening on port 46815
+WebDriver BiDi listening on ws://127.0.0.1:55373
+Read port: 46815
+1668274560539	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileCsHVEd/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:55373/devtools/browser/149d8bbb-b6a8-4594-ab8e-3b5215304d63
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:33427."
+1668274569800	Marionette	INFO	Stopped listening on port 46815
+1668274589995	geckodriver	INFO	Listening on 127.0.0.1:57425
+1668274590497	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "58421" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileIWVTdr"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668274591101	Marionette	INFO	Marionette enabled
+1668274591105	Marionette	INFO	Listening on port 35059
+WebDriver BiDi listening on ws://127.0.0.1:58421
+Read port: 35059
+1668274591284	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileIWVTdr/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:58421/devtools/browser/3409f9ee-3e78-4691-83bb-9bd23cad09c9
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:53859."
+1668274599579	Marionette	INFO	Stopped listening on port 35059
+1668274867049	geckodriver	INFO	Listening on 127.0.0.1:51443
+1668274867552	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "60813" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileDdVJWR"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668274868160	Marionette	INFO	Marionette enabled
+1668274868165	Marionette	INFO	Listening on port 43917
+WebDriver BiDi listening on ws://127.0.0.1:60813
+Read port: 43917
+1668274868356	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileDdVJWR/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:60813/devtools/browser/238c9dcf-2880-4e9e-9b53-f6b12a22d8f2
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668274870755	Marionette	INFO	Stopped listening on port 43917
+1668275218183	geckodriver	INFO	Listening on 127.0.0.1:43185
+1668275218687	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "41325" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileVgLrlg"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668275219293	Marionette	INFO	Marionette enabled
+1668275219297	Marionette	INFO	Listening on port 36055
+WebDriver BiDi listening on ws://127.0.0.1:41325
+Read port: 36055
+1668275219478	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileVgLrlg/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:41325/devtools/browser/8aa8e09a-0270-4f23-92b4-2aea8bad2549
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668275221568	Marionette	INFO	Stopped listening on port 36055
+1668275237893	geckodriver	INFO	Listening on 127.0.0.1:37167
+1668275238395	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "54729" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofiletJsX8S"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668275239008	Marionette	INFO	Marionette enabled
+1668275239012	Marionette	INFO	Listening on port 39733
+WebDriver BiDi listening on ws://127.0.0.1:54729
+Read port: 39733
+1668275239202	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofiletJsX8S/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:54729/devtools/browser/f998c93a-0be2-457c-8c76-7090e60db75a
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668275241654	Marionette	INFO	Stopped listening on port 39733
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 693: TypeError: this.tablesData[table] is undefined
+1668275307666	geckodriver	INFO	Listening on 127.0.0.1:37255
+1668275308169	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "41081" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilewzz6Z6"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668275308751	Marionette	INFO	Marionette enabled
+1668275308757	Marionette	INFO	Listening on port 38659
+Read port: 38659
+WebDriver BiDi listening on ws://127.0.0.1:41081
+1668275308825	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilewzz6Z6/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:41081/devtools/browser/b585ce13-2137-47e9-b4ef-4387f399dff9
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668275311464	Marionette	INFO	Stopped listening on port 38659
+1668275617874	geckodriver	INFO	Listening on 127.0.0.1:36871
+1668275618378	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "60451" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileCXNck0"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668275618975	Marionette	INFO	Marionette enabled
+1668275618979	Marionette	INFO	Listening on port 41977
+WebDriver BiDi listening on ws://127.0.0.1:60451
+Read port: 41977
+1668275619166	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileCXNck0/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:60451/devtools/browser/26bdb082-fe11-434d-a0c2-3ece2523dbdc
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:54537."
+1668275627350	Marionette	INFO	Stopped listening on port 41977
+1668275676304	geckodriver	INFO	Listening on 127.0.0.1:52279
+1668275676807	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "54967" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileQGKsKi"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668275677406	Marionette	INFO	Marionette enabled
+1668275677411	Marionette	INFO	Listening on port 41321
+WebDriver BiDi listening on ws://127.0.0.1:54967
+Read port: 41321
+1668275677594	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileQGKsKi/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:54967/devtools/browser/8fbd09a9-31d1-4c64-94d3-6dac674f92b6
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:55179."
+1668275686299	Marionette	INFO	Stopped listening on port 41321
+1668275784914	geckodriver	INFO	Listening on 127.0.0.1:37263
+1668275785417	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "38987" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilerDapsW"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668275786020	Marionette	INFO	Marionette enabled
+1668275786024	Marionette	INFO	Listening on port 37587
+WebDriver BiDi listening on ws://127.0.0.1:38987
+Read port: 37587
+1668275786214	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilerDapsW/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:38987/devtools/browser/7d25a6d2-d69b-4389-b75b-9c919db12a7c
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:44311."
+1668275794313	Marionette	INFO	Stopped listening on port 37587
+1668275809280	geckodriver	INFO	Listening on 127.0.0.1:48809
+1668275809783	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "56279" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileWSOM5Q"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668275810395	Marionette	INFO	Marionette enabled
+1668275810401	Marionette	INFO	Listening on port 39563
+WebDriver BiDi listening on ws://127.0.0.1:56279
+Read port: 39563
+1668275810588	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileWSOM5Q/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56279/devtools/browser/ff198561-ca2e-41b4-bd25-4f8ae18bfc0b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:48823."
+1668275814578	Marionette	INFO	Stopped listening on port 39563
+1668275824096	geckodriver	INFO	Listening on 127.0.0.1:36053
+1668275824600	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "37747" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileizIJL8"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668275825198	Marionette	INFO	Marionette enabled
+1668275825203	Marionette	INFO	Listening on port 34129
+WebDriver BiDi listening on ws://127.0.0.1:37747
+Read port: 34129
+1668275825380	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileizIJL8/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:37747/devtools/browser/47f3ccbd-2238-41e3-8de5-1c70f84f6c0d
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:44881."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:44881."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:44881."
+1668275828214	Marionette	INFO	Stopped listening on port 34129
+1668275828702	geckodriver	INFO	Listening on 127.0.0.1:58201
+1668275829205	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "42267" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileREZD0n"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668275829789	Marionette	INFO	Marionette enabled
+1668275829794	Marionette	INFO	Listening on port 33541
+Read port: 33541
+WebDriver BiDi listening on ws://127.0.0.1:42267
+1668275829860	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileREZD0n/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:42267/devtools/browser/9bed3beb-c641-43ca-a1d9-fe3303fed7ca
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:45243."
+1668275832282	Marionette	INFO	Stopped listening on port 33541
+1668275833051	geckodriver	INFO	Listening on 127.0.0.1:56225
+1668275833554	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "60531" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileHx8X9T"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668275834146	Marionette	INFO	Marionette enabled
+1668275834150	Marionette	INFO	Listening on port 41693
+Read port: 41693
+WebDriver BiDi listening on ws://127.0.0.1:60531
+1668275834225	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileHx8X9T/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:60531/devtools/browser/0b9a5006-9924-4e15-8ff0-d392d0630d9a
+1668275854272	Marionette	INFO	Stopped listening on port 41693
+1668275854746	geckodriver	INFO	Listening on 127.0.0.1:49845
+1668275855249	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "49517" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileGrwnJd"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668275855855	Marionette	INFO	Marionette enabled
+1668275855859	Marionette	INFO	Listening on port 43551
+WebDriver BiDi listening on ws://127.0.0.1:49517
+Read port: 43551
+1668275856049	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileGrwnJd/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:49517/devtools/browser/a12ea442-edfa-4eae-a25e-329f0d4a18b6
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668275858716	Marionette	INFO	Stopped listening on port 43551
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 693: TypeError: this.tablesData[table] is undefined
+1668275859229	geckodriver	INFO	Listening on 127.0.0.1:38899
+1668275859732	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "36705" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileMl3y93"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668275860328	Marionette	INFO	Marionette enabled
+1668275860334	Marionette	INFO	Listening on port 42657
+WebDriver BiDi listening on ws://127.0.0.1:36705
+Read port: 42657
+1668275860515	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileMl3y93/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:36705/devtools/browser/d15d36f8-101f-4e9e-a33b-ab7ed104c386
+1668275864125	Marionette	INFO	Stopped listening on port 42657
+1668276183418	geckodriver	INFO	Listening on 127.0.0.1:57359
+1668276183921	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "53389" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileq21rPU"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668276184222	Marionette	INFO	Marionette enabled
+1668276184227	Marionette	INFO	Listening on port 43443
+WebDriver BiDi listening on ws://127.0.0.1:53389
+Read port: 43443
+1668276184437	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileq21rPU/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53389/devtools/browser/117563a4-c749-4f25-83fe-336f12b96c9d
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:47959."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:47959."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:47959."
+1668276187451	Marionette	INFO	Stopped listening on port 43443
+1668276188147	geckodriver	INFO	Listening on 127.0.0.1:49375
+1668276188650	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "48155" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilesAOGvh"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668276188952	Marionette	INFO	Marionette enabled
+1668276188956	Marionette	INFO	Listening on port 45003
+WebDriver BiDi listening on ws://127.0.0.1:48155
+Read port: 45003
+1668276189153	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilesAOGvh/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:48155/devtools/browser/e2ec940f-710e-434d-a0fc-efff4755deff
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:37705."
+1668276190820	Marionette	INFO	Stopped listening on port 45003
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668276192193	geckodriver	INFO	Listening on 127.0.0.1:49389
+1668276192696	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "37819" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilebVdYuX"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668276193010	Marionette	INFO	Marionette enabled
+1668276193014	Marionette	INFO	Listening on port 39581
+WebDriver BiDi listening on ws://127.0.0.1:37819
+Read port: 39581
+1668276193199	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilebVdYuX/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:37819/devtools/browser/eb9f30c1-d88a-4e46-9ee3-bec19ab79fbf
+1668276212433	Marionette	INFO	Stopped listening on port 39581
+1668276212834	geckodriver	INFO	Listening on 127.0.0.1:59791
+1668276213338	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "47791" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileSsFLWp"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668276213631	Marionette	INFO	Marionette enabled
+1668276213635	Marionette	INFO	Listening on port 32947
+Read port: 32947
+WebDriver BiDi listening on ws://127.0.0.1:47791
+1668276213691	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileSsFLWp/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:47791/devtools/browser/80fc9bd2-7392-408e-9cf2-591251e4dd22
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668276215133	Marionette	INFO	Stopped listening on port 32947
+1668276216835	geckodriver	INFO	Listening on 127.0.0.1:46293
+1668276217338	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "43537" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileXgHgF3"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668276217643	Marionette	INFO	Marionette enabled
+1668276217647	Marionette	INFO	Listening on port 45229
+WebDriver BiDi listening on ws://127.0.0.1:43537
+Read port: 45229
+1668276217847	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileXgHgF3/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:43537/devtools/browser/6a4d3cce-d4e8-4348-8902-b6c76e51b1b5
+1668276220713	Marionette	INFO	Stopped listening on port 45229
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668352386263	geckodriver	INFO	Listening on 127.0.0.1:38863
+1668352386767	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "42733" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileUPzsbS"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668352387054	Marionette	INFO	Marionette enabled
+1668352387058	Marionette	INFO	Listening on port 40229
+Read port: 40229
+WebDriver BiDi listening on ws://127.0.0.1:42733
+1668352387115	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileUPzsbS/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:42733/devtools/browser/438be764-b70e-46af-b539-0e42524277ac
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:48277."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:48277."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:48277."
+1668352389478	Marionette	INFO	Stopped listening on port 40229
+1668352390467	geckodriver	INFO	Listening on 127.0.0.1:33901
+1668352390970	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "59143" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilevtAgwA"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668352391271	Marionette	INFO	Marionette enabled
+1668352391276	Marionette	INFO	Listening on port 33971
+WebDriver BiDi listening on ws://127.0.0.1:59143
+Read port: 33971
+1668352391490	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilevtAgwA/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:59143/devtools/browser/c769b8ee-05d7-4e13-b60b-48686c05b9e2
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:39399."
+1668352393551	Marionette	INFO	Stopped listening on port 33971
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668352394647	geckodriver	INFO	Listening on 127.0.0.1:59349
+1668352395150	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "47069" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileDlst6Q"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668352395448	Marionette	INFO	Marionette enabled
+1668352395452	Marionette	INFO	Listening on port 41843
+WebDriver BiDi listening on ws://127.0.0.1:47069
+Read port: 41843
+1668352395645	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileDlst6Q/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:47069/devtools/browser/f69ceaca-3d2f-4166-87a1-db7ed74894ef
+1668352414870	Marionette	INFO	Stopped listening on port 41843
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668352415271	geckodriver	INFO	Listening on 127.0.0.1:34505
+1668352415774	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "36085" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileCQQFEX"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668352416071	Marionette	INFO	Marionette enabled
+1668352416074	Marionette	INFO	Listening on port 34671
+Read port: 34671
+WebDriver BiDi listening on ws://127.0.0.1:36085
+1668352416130	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileCQQFEX/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:36085/devtools/browser/0f51c38c-451e-4817-b766-3565007d51a8
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668352417867	Marionette	INFO	Stopped listening on port 34671
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668352419264	geckodriver	INFO	Listening on 127.0.0.1:47873
+1668352419767	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "42153" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileko5W3E"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668352420065	Marionette	INFO	Marionette enabled
+1668352420068	Marionette	INFO	Listening on port 45063
+WebDriver BiDi listening on ws://127.0.0.1:42153
+Read port: 45063
+1668352420257	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileko5W3E/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:42153/devtools/browser/98554a53-91b2-443f-8cb0-379405c57518
+1668352423308	Marionette	INFO	Stopped listening on port 45063
+1668353005302	geckodriver	INFO	Listening on 127.0.0.1:43153
+1668353005805	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "49691" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile1Xd1QJ"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668353006091	Marionette	INFO	Marionette enabled
+1668353006095	Marionette	INFO	Listening on port 46433
+Read port: 46433
+WebDriver BiDi listening on ws://127.0.0.1:49691
+1668353006153	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile1Xd1QJ/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:49691/devtools/browser/cf435de6-f531-4221-b457-4c613893fcae
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:33105."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:33105."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:33105."
+1668353008696	Marionette	INFO	Stopped listening on port 46433
+1668353009544	geckodriver	INFO	Listening on 127.0.0.1:46013
+1668353010047	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "50897" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofiletxDgLl"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668353010340	Marionette	INFO	Marionette enabled
+1668353010343	Marionette	INFO	Listening on port 43261
+Read port: 43261
+WebDriver BiDi listening on ws://127.0.0.1:50897
+1668353010399	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofiletxDgLl/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50897/devtools/browser/35527adb-0a91-41f9-83e2-7a1f3801966c
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:44159."
+1668353012234	Marionette	INFO	Stopped listening on port 43261
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668353015580	geckodriver	INFO	Listening on 127.0.0.1:40671
+1668353016082	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "43267" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileuv5cYu"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668353016377	Marionette	INFO	Marionette enabled
+1668353016381	Marionette	INFO	Listening on port 40119
+Read port: 40119
+WebDriver BiDi listening on ws://127.0.0.1:43267
+1668353016437	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileuv5cYu/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:43267/devtools/browser/44172577-ba2d-49b8-8193-c447b85d398b
+1668353035913	Marionette	INFO	Stopped listening on port 40119
+1668353036319	geckodriver	INFO	Listening on 127.0.0.1:59465
+1668353036822	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "33753" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileCOur7j"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668353037113	Marionette	INFO	Marionette enabled
+1668353037117	Marionette	INFO	Listening on port 43389
+Read port: 43389
+WebDriver BiDi listening on ws://127.0.0.1:33753
+1668353037173	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileCOur7j/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:33753/devtools/browser/3f2bf6e9-1e89-4af0-be23-d557aafdee96
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+1668353038584	Marionette	INFO	Stopped listening on port 43389
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668353040283	geckodriver	INFO	Listening on 127.0.0.1:52627
+1668353040786	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "52403" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileHrc8KQ"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668353041108	Marionette	INFO	Marionette enabled
+1668353041112	Marionette	INFO	Listening on port 45895
+WebDriver BiDi listening on ws://127.0.0.1:52403
+Read port: 45895
+1668353041303	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileHrc8KQ/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52403/devtools/browser/2679fb91-f476-43ba-b6b1-981880c859c5
+1668353044243	Marionette	INFO	Stopped listening on port 45895
+1668353144321	geckodriver	INFO	Listening on 127.0.0.1:52419
+1668353144824	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "52173" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileryoENN"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668353145114	Marionette	INFO	Marionette enabled
+1668353145118	Marionette	INFO	Listening on port 42563
+Read port: 42563
+WebDriver BiDi listening on ws://127.0.0.1:52173
+1668353145179	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileryoENN/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52173/devtools/browser/307019b9-6894-4bc9-90fe-ebf0fe3bb721
+1668353148055	Marionette	INFO	Stopped listening on port 42563
+1668353183367	geckodriver	INFO	Listening on 127.0.0.1:51095
+1668353183870	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "39649" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilentfF8Y"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668353184161	Marionette	INFO	Marionette enabled
+1668353184165	Marionette	INFO	Listening on port 45945
+Read port: 45945
+WebDriver BiDi listening on ws://127.0.0.1:39649
+1668353184226	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilentfF8Y/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:39649/devtools/browser/e1042a99-6c87-4f27-8c16-af48c7a72a1b
+1668353186875	Marionette	INFO	Stopped listening on port 45945
+JavaScript error: resource://gre/actors/AudioPlaybackParent.jsm, line 20: TypeError: browser is null
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668353530874	geckodriver	INFO	Listening on 127.0.0.1:34573
+1668353531377	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "52695" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileSqoJa0"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668353531669	Marionette	INFO	Marionette enabled
+1668353531673	Marionette	INFO	Listening on port 38421
+Read port: 38421
+WebDriver BiDi listening on ws://127.0.0.1:52695
+1668353531729	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileSqoJa0/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52695/devtools/browser/c061b433-a2c0-4628-8008-8282152e3be6
+1668353547627	geckodriver	INFO	Listening on 127.0.0.1:40305
+1668353548131	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "38251" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileyXfkBC"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668353548414	Marionette	INFO	Marionette enabled
+1668353548418	Marionette	INFO	Listening on port 45989
+Read port: 45989
+WebDriver BiDi listening on ws://127.0.0.1:38251
+1668353548477	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileyXfkBC/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:38251/devtools/browser/239feee1-eee9-44d4-b923-d1aa2ab00b76
+1668353551049	Marionette	INFO	Stopped listening on port 45989
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668353588447	geckodriver	INFO	Listening on 127.0.0.1:34461
+1668353588951	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "43371" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileQ4kdl4"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668353589244	Marionette	INFO	Marionette enabled
+1668353589248	Marionette	INFO	Listening on port 45023
+Read port: 45023
+WebDriver BiDi listening on ws://127.0.0.1:43371
+1668353589307	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileQ4kdl4/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:43371/devtools/browser/14353d62-be31-46ec-80c6-10a119971034
+1668353591857	Marionette	INFO	Stopped listening on port 45023
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668353628902	geckodriver	INFO	Listening on 127.0.0.1:36811
+1668353629405	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "40539" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileFnwltJ"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668353629690	Marionette	INFO	Marionette enabled
+1668353629694	Marionette	INFO	Listening on port 43355
+Read port: 43355
+WebDriver BiDi listening on ws://127.0.0.1:40539
+1668353629752	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileFnwltJ/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:40539/devtools/browser/d7cf2703-bff6-4276-b3bb-fe6758f892a3
+1668353632879	Marionette	INFO	Stopped listening on port 43355
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668353648005	geckodriver	INFO	Listening on 127.0.0.1:60627
+1668353648508	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "55841" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileOQksQp"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668353648799	Marionette	INFO	Marionette enabled
+1668353648803	Marionette	INFO	Listening on port 42501
+Read port: 42501
+WebDriver BiDi listening on ws://127.0.0.1:55841
+1668353648860	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileOQksQp/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:55841/devtools/browser/c22821cb-7013-4624-b3f7-b7fed54c6320
+1668353651793	Marionette	INFO	Stopped listening on port 42501
+JavaScript error: resource://gre/actors/AudioPlaybackParent.jsm, line 20: TypeError: browser is null
+1668353747762	geckodriver	INFO	Listening on 127.0.0.1:58431
+1668353748265	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "40851" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilefWEbbO"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668353748852	Marionette	INFO	Marionette enabled
+1668353748857	Marionette	INFO	Listening on port 39547
+Read port: 39547
+WebDriver BiDi listening on ws://127.0.0.1:40851
+1668353748924	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilefWEbbO/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:40851/devtools/browser/ccda8f21-df35-4c93-9088-19a6e30727d1
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+1668353752230	Marionette	INFO	Stopped listening on port 39547
+1668353769172	geckodriver	INFO	Listening on 127.0.0.1:35443
+1668353769675	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "56751" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileHUxMiV"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668353770245	Marionette	INFO	Marionette enabled
+1668353770249	Marionette	INFO	Listening on port 42645
+Read port: 42645
+WebDriver BiDi listening on ws://127.0.0.1:56751
+1668353770316	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileHUxMiV/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56751/devtools/browser/d8d1798e-de48-4d4d-a3cb-3b0ebf281bfc
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+1668353774899	Marionette	INFO	Stopped listening on port 42645
+1668353917448	geckodriver	INFO	Listening on 127.0.0.1:32959
+1668353917951	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "59077" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilemxUdMf"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668353918554	Marionette	INFO	Marionette enabled
+1668353918559	Marionette	INFO	Listening on port 44771
+WebDriver BiDi listening on ws://127.0.0.1:59077
+Read port: 44771
+1668353918747	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilemxUdMf/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:59077/devtools/browser/73111627-d2d9-4de6-91ac-d6269a1178b8
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+1668353923950	Marionette	INFO	Stopped listening on port 44771
+1668353937363	geckodriver	INFO	Listening on 127.0.0.1:57913
+1668353937866	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "42809" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileP9H9Be"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668353938474	Marionette	INFO	Marionette enabled
+1668353938480	Marionette	INFO	Listening on port 33133
+WebDriver BiDi listening on ws://127.0.0.1:42809
+Read port: 33133
+1668353938672	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileP9H9Be/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:42809/devtools/browser/193552a8-76bb-4a47-a3d4-62bc65802f06
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+1668353942898	Marionette	INFO	Stopped listening on port 33133
+1668353959232	geckodriver	INFO	Listening on 127.0.0.1:55085
+1668353959735	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "47493" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileHdOoN8"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668353960335	Marionette	INFO	Marionette enabled
+1668353960339	Marionette	INFO	Listening on port 42425
+WebDriver BiDi listening on ws://127.0.0.1:47493
+Read port: 42425
+1668353960517	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileHdOoN8/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:47493/devtools/browser/a02063d1-ce5e-4990-b57b-0a06916a79c2
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+1668353964251	Marionette	INFO	Stopped listening on port 42425
+1668353980589	geckodriver	INFO	Listening on 127.0.0.1:55927
+1668353981092	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "60771" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileCpAhU1"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668353981386	Marionette	INFO	Marionette enabled
+1668353981390	Marionette	INFO	Listening on port 45647
+Read port: 45647
+WebDriver BiDi listening on ws://127.0.0.1:60771
+1668353981448	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileCpAhU1/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:60771/devtools/browser/557f033a-8e12-4bc2-a3dc-5f38c1729828
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+1668353984696	Marionette	INFO	Stopped listening on port 45647
+1668354001809	geckodriver	INFO	Listening on 127.0.0.1:38597
+1668354002312	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "50027" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileT7BLBc"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668354002906	Marionette	INFO	Marionette enabled
+1668354002910	Marionette	INFO	Listening on port 44175
+Read port: 44175
+WebDriver BiDi listening on ws://127.0.0.1:50027
+1668354002991	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileT7BLBc/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50027/devtools/browser/216a7ee0-47fa-4330-804c-635608bab40d
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+1668354007161	Marionette	INFO	Stopped listening on port 44175
+1668354063286	geckodriver	INFO	Listening on 127.0.0.1:40347
+1668354063789	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "53797" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileQutReJ"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668354064398	Marionette	INFO	Marionette enabled
+1668354064405	Marionette	INFO	Listening on port 32793
+WebDriver BiDi listening on ws://127.0.0.1:53797
+Read port: 32793
+1668354064583	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileQutReJ/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53797/devtools/browser/0089c528-9080-4a56-8eec-cf452f930967
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+1668354068223	Marionette	INFO	Stopped listening on port 32793
+1668354076049	geckodriver	INFO	Listening on 127.0.0.1:43569
+1668354076552	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "33839" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileIlY4c6"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668354076861	Marionette	INFO	Marionette enabled
+1668354076865	Marionette	INFO	Listening on port 36769
+WebDriver BiDi listening on ws://127.0.0.1:33839
+Read port: 36769
+1668354077055	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileIlY4c6/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:33839/devtools/browser/a7b824e6-f00f-489a-84ff-40caa1bd547b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+1668354080465	Marionette	INFO	Stopped listening on port 36769
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668354264677	geckodriver	INFO	Listening on 127.0.0.1:48511
+1668354265180	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "53523" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileYMAdoh"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668354265470	Marionette	INFO	Marionette enabled
+1668354265474	Marionette	INFO	Listening on port 37913
+Read port: 37913
+WebDriver BiDi listening on ws://127.0.0.1:53523
+1668354265532	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileYMAdoh/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53523/devtools/browser/d25d1096-11e8-4110-8f0f-9042cf864b52
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+1668354268768	Marionette	INFO	Stopped listening on port 37913
+JavaScript error: resource://gre/actors/AudioPlaybackParent.jsm, line 20: TypeError: browser is null
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668354336654	geckodriver	INFO	Listening on 127.0.0.1:56655
+1668354337158	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "35717" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileEmwQjX"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668354337452	Marionette	INFO	Marionette enabled
+1668354337456	Marionette	INFO	Listening on port 42209
+Read port: 42209
+WebDriver BiDi listening on ws://127.0.0.1:35717
+1668354337514	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileEmwQjX/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:35717/devtools/browser/97f07dea-eb1e-4ab5-9485-9cf5d534f877
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+1668354340694	Marionette	INFO	Stopped listening on port 42209
+JavaScript error: resource://gre/actors/AudioPlaybackParent.jsm, line 20: TypeError: browser is null
+1668354361962	geckodriver	INFO	Listening on 127.0.0.1:55903
+1668354362465	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "53389" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileOfpOPH"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668354362762	Marionette	INFO	Marionette enabled
+1668354362766	Marionette	INFO	Listening on port 35129
+WebDriver BiDi listening on ws://127.0.0.1:53389
+Read port: 35129
+1668354362973	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileOfpOPH/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53389/devtools/browser/c6943618-a6bd-4848-8862-fdcd69699ef9
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+1668354365431	Marionette	INFO	Stopped listening on port 35129
+JavaScript error: resource://gre/actors/AudioPlaybackParent.jsm, line 20: TypeError: browser is null
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668354461437	geckodriver	INFO	Listening on 127.0.0.1:41725
+1668354461940	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "35499" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileOk98gL"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668354462231	Marionette	INFO	Marionette enabled
+1668354462235	Marionette	INFO	Listening on port 37767
+Read port: 37767
+WebDriver BiDi listening on ws://127.0.0.1:35499
+1668354462293	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileOk98gL/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:35499/devtools/browser/0d762d2e-b148-431c-b068-733f77473692
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+1668354464835	Marionette	INFO	Stopped listening on port 37767
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 693: TypeError: this.tablesData[table] is undefined
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668354513198	geckodriver	INFO	Listening on 127.0.0.1:59923
+1668354513701	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "56529" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileSfHOtN"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668354513986	Marionette	INFO	Marionette enabled
+1668354513990	Marionette	INFO	Listening on port 35901
+Read port: 35901
+WebDriver BiDi listening on ws://127.0.0.1:56529
+1668354514048	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileSfHOtN/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56529/devtools/browser/e269d9eb-04bb-4a7d-8d84-0c204d4b412f
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+1668354516108	Marionette	INFO	Stopped listening on port 35901
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668355116026	geckodriver	INFO	Listening on 127.0.0.1:43751
+1668355116529	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "54019" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileABdcOA"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668355116816	Marionette	INFO	Marionette enabled
+1668355116819	Marionette	INFO	Listening on port 43307
+Read port: 43307
+WebDriver BiDi listening on ws://127.0.0.1:54019
+1668355116878	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileABdcOA/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:54019/devtools/browser/5af538fd-7bee-40e7-9b17-51f9fa71747e
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+1668355120149	Marionette	INFO	Stopped listening on port 43307
+JavaScript error: resource://gre/actors/AudioPlaybackParent.jsm, line 20: TypeError: browser is null
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668360587054	geckodriver	INFO	Listening on 127.0.0.1:46135
+1668360587559	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "44133" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofiles9xIAa"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668360587869	Marionette	INFO	Marionette enabled
+1668360587874	Marionette	INFO	Listening on port 44521
+WebDriver BiDi listening on ws://127.0.0.1:44133
+Read port: 44521
+1668360588096	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofiles9xIAa/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:44133/devtools/browser/3c169651-428b-4505-ac12-d0bbb959c790
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:53423."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:53423."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:53423."
+1668360590247	Marionette	INFO	Stopped listening on port 44521
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 420))
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668360591322	geckodriver	INFO	Listening on 127.0.0.1:59407
+1668360591825	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "41549" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile0eixyg"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668360592112	Marionette	INFO	Marionette enabled
+1668360592116	Marionette	INFO	Listening on port 42129
+Read port: 42129
+WebDriver BiDi listening on ws://127.0.0.1:41549
+1668360592175	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile0eixyg/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:41549/devtools/browser/dc3afb8e-468a-4497-996f-c21685a16b9c
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:45415."
+1668360593759	Marionette	INFO	Stopped listening on port 42129
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668360627407	geckodriver	INFO	Listening on 127.0.0.1:53681
+1668360627910	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "51059" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilerlkP34"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668360628212	Marionette	INFO	Marionette enabled
+1668360628217	Marionette	INFO	Listening on port 35171
+WebDriver BiDi listening on ws://127.0.0.1:51059
+Read port: 35171
+1668360628449	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilerlkP34/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51059/devtools/browser/b39e40ef-b741-40e0-9439-3e40f9228aae
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:40457."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:40457."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:40457."
+1668360630588	Marionette	INFO	Stopped listening on port 35171
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 693: TypeError: this.tablesData[table] is undefined
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668360633723	geckodriver	INFO	Listening on 127.0.0.1:45447
+1668360634226	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "58463" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileguNEBC"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668360634523	Marionette	INFO	Marionette enabled
+1668360634527	Marionette	INFO	Listening on port 38333
+WebDriver BiDi listening on ws://127.0.0.1:58463
+Read port: 38333
+1668360634724	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileguNEBC/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:58463/devtools/browser/a43ecb21-d050-4fae-9a46-5514871e2a94
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:59861."
+1668360636790	Marionette	INFO	Stopped listening on port 38333
+1668360657827	geckodriver	INFO	Listening on 127.0.0.1:60419
+1668360658330	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "49705" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile1mfcPf"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668360658622	Marionette	INFO	Marionette enabled
+1668360658626	Marionette	INFO	Listening on port 33257
+Read port: 33257
+WebDriver BiDi listening on ws://127.0.0.1:49705
+1668360658685	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile1mfcPf/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:49705/devtools/browser/e4a5fe6d-5b1f-4f32-b0c4-1651e14c27a1
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:48371."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:48371."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:48371."
+1668360661030	Marionette	INFO	Stopped listening on port 33257
+1668360662048	geckodriver	INFO	Listening on 127.0.0.1:44461
+1668360662551	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "39679" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile39ZFY0"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668360662845	Marionette	INFO	Marionette enabled
+1668360662848	Marionette	INFO	Listening on port 40361
+Read port: 40361
+WebDriver BiDi listening on ws://127.0.0.1:39679
+1668360662906	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile39ZFY0/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:39679/devtools/browser/839cf849-522f-4b27-8aad-7e1a43dabbf5
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:50003."
+1668360664775	Marionette	INFO	Stopped listening on port 40361
+1668360714412	geckodriver	INFO	Listening on 127.0.0.1:55281
+1668360714915	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "53293" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileBKl6IR"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668360715218	Marionette	INFO	Marionette enabled
+1668360715222	Marionette	INFO	Listening on port 41799
+WebDriver BiDi listening on ws://127.0.0.1:53293
+Read port: 41799
+1668360715422	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileBKl6IR/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53293/devtools/browser/c6d6d714-0b0f-4254-90da-7388023df52a
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:46229."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:46229."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:46229."
+1668360717623	Marionette	INFO	Stopped listening on port 41799
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668360718650	geckodriver	INFO	Listening on 127.0.0.1:38673
+1668360719153	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "53803" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileySmvLb"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668360719447	Marionette	INFO	Marionette enabled
+1668360719451	Marionette	INFO	Listening on port 42247
+Read port: 42247
+WebDriver BiDi listening on ws://127.0.0.1:53803
+1668360719508	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileySmvLb/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53803/devtools/browser/48f2bf46-2e93-45c4-b5a1-faf480bb7338
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:49881."
+1668360721084	Marionette	INFO	Stopped listening on port 42247
+1668360791405	geckodriver	INFO	Listening on 127.0.0.1:51331
+1668360791908	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "35667" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile0J7Mec"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668360792215	Marionette	INFO	Marionette enabled
+1668360792219	Marionette	INFO	Listening on port 46703
+WebDriver BiDi listening on ws://127.0.0.1:35667
+Read port: 46703
+1668360792428	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile0J7Mec/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:35667/devtools/browser/69c5d76b-beb9-4610-9501-81105292c498
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:49967."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:49967."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:49967."
+1668360795483	Marionette	INFO	Stopped listening on port 46703
+1668360796187	geckodriver	INFO	Listening on 127.0.0.1:42925
+1668360796690	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "60207" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilelqdHBZ"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668360796991	Marionette	INFO	Marionette enabled
+1668360796995	Marionette	INFO	Listening on port 43267
+WebDriver BiDi listening on ws://127.0.0.1:60207
+Read port: 43267
+1668360797199	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilelqdHBZ/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:60207/devtools/browser/c953c90b-86be-48b3-8ed3-b27e315b309e
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:59183."
+1668360798580	Marionette	INFO	Stopped listening on port 43267
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668360859852	geckodriver	INFO	Listening on 127.0.0.1:36621
+1668360860356	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "43911" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilehr1Wqd"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668360860654	Marionette	INFO	Marionette enabled
+1668360860657	Marionette	INFO	Listening on port 36069
+WebDriver BiDi listening on ws://127.0.0.1:43911
+Read port: 36069
+1668360860847	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilehr1Wqd/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:43911/devtools/browser/a46b9439-3bb7-40d4-83fe-aa29cbec8109
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:49049."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:49049."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:49049."
+1668360863327	Marionette	INFO	Stopped listening on port 36069
+1668360864101	geckodriver	INFO	Listening on 127.0.0.1:60719
+1668360864604	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "52091" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofiledb9bN8"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668360864908	Marionette	INFO	Marionette enabled
+1668360864911	Marionette	INFO	Listening on port 45803
+WebDriver BiDi listening on ws://127.0.0.1:52091
+Read port: 45803
+1668360865094	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofiledb9bN8/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52091/devtools/browser/2e8e9bc9-c788-451e-bd20-44c7ad53a5e7
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:56469."
+1668360866831	Marionette	INFO	Stopped listening on port 45803
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668361021442	geckodriver	INFO	Listening on 127.0.0.1:48393
+1668361021945	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "42321" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileqt3VPG"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668361022239	Marionette	INFO	Marionette enabled
+1668361022243	Marionette	INFO	Listening on port 39927
+Read port: 39927
+WebDriver BiDi listening on ws://127.0.0.1:42321
+1668361022300	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileqt3VPG/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:42321/devtools/browser/384d6dfa-9e22-41c8-bf00-6783fde6e1fe
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:52045."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:52045."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:52045."
+1668361024646	Marionette	INFO	Stopped listening on port 39927
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668361025656	geckodriver	INFO	Listening on 127.0.0.1:57437
+1668361026159	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "53623" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilezgndOH"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668361026454	Marionette	INFO	Marionette enabled
+1668361026458	Marionette	INFO	Listening on port 39621
+Read port: 39621
+WebDriver BiDi listening on ws://127.0.0.1:53623
+1668361026523	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilezgndOH/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53623/devtools/browser/930fb43c-2ece-4b39-9dd7-fe5a5525981b
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:47413."
+1668361028062	Marionette	INFO	Stopped listening on port 39621
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668361106947	geckodriver	INFO	Listening on 127.0.0.1:46439
+1668361107451	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "52367" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilegzLYjq"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668361107742	Marionette	INFO	Marionette enabled
+1668361107748	Marionette	INFO	Listening on port 37729
+Read port: 37729
+WebDriver BiDi listening on ws://127.0.0.1:52367
+1668361107809	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilegzLYjq/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52367/devtools/browser/3072d085-0e71-41fc-b918-a2226a22d0ce
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:56145."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:56145."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:56145."
+1668361110863	Marionette	INFO	Stopped listening on port 37729
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668361111667	geckodriver	INFO	Listening on 127.0.0.1:46419
+1668361112170	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "49759" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilesJjJ0t"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668361112478	Marionette	INFO	Marionette enabled
+1668361112482	Marionette	INFO	Listening on port 33791
+WebDriver BiDi listening on ws://127.0.0.1:49759
+Read port: 33791
+1668361112689	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilesJjJ0t/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:49759/devtools/browser/e1da7d3e-040a-4901-9bc5-6b6fb0ce89b2
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:47085."
+1668361114741	Marionette	INFO	Stopped listening on port 33791
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1668361153868	geckodriver	INFO	Listening on 127.0.0.1:37335
+1668361154372	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "41195" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofiled6dtLS"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668361154668	Marionette	INFO	Marionette enabled
+1668361154671	Marionette	INFO	Listening on port 37029
+Read port: 37029
+WebDriver BiDi listening on ws://127.0.0.1:41195
+1668361154730	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofiled6dtLS/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:41195/devtools/browser/e920f171-32f3-4af3-86f6-47031db32495
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:52125."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:52125."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:52125."
+1668361157154	Marionette	INFO	Stopped listening on port 37029
+1668361158119	geckodriver	INFO	Listening on 127.0.0.1:44647
+1668361158622	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "38741" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileHWKYF2"
+*** You are running in headless mode.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1668361158923	Marionette	INFO	Marionette enabled
+1668361158927	Marionette	INFO	Listening on port 37247
+WebDriver BiDi listening on ws://127.0.0.1:38741
+Read port: 37247
+1668361159122	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileHWKYF2/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:38741/devtools/browser/37d09c43-6cb7-42f2-8407-eda28f806fa2
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 58: Error: Can't find profile directory.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:41455."
+1668361160555	Marionette	INFO	Stopped listening on port 37247
