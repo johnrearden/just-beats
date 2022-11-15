@@ -7,7 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 
-from .models import Review, Drumloop
+from .models import Review, Drumloop, Track
 
 class TestLoopList(StaticLiveServerTestCase):
 
@@ -241,6 +241,128 @@ class TestLoopEditorPage(StaticLiveServerTestCase):
         loop = Drumloop.objects.get(id=drumloop_id)
         self.assertEqual(loop.name, 'New name')
         self.assertEqual(loop.tempo, 61)
+
+    def test_delete_track_button_and_confirm_modal(self):
+
+        track_count = len(Track.objects.filter(drumloop=13))
+        
+        # Check confirm modal opens when delete track button pressed
+        drumloop_id = 13
+        self.driver.get(self.BASE_URL + f'editor/{drumloop_id}')
+        track_holders = self.driver.find_elements(By.CLASS_NAME, 'track-holder-row')
+        first_track_holder = track_holders[0]
+        delete_buttons = self.driver.find_elements(By.CLASS_NAME, 'delete-track-button')
+        first_del_button = delete_buttons[0]
+        first_del_button.click()
+        time.sleep(1)
+
+        delete_confirm_modal = self.driver.find_elements(By.ID, 'delete-track-confirmation')
+        classList = delete_confirm_modal[0].get_attribute('class').split(" ")
+        self.assertTrue('in' in classList or 'show' in classList)
+
+        # Check confirmation refusal hides modal and track remains.
+        refuse_button = self.driver.find_element(By.ID, 'refuse-delete-track-button')
+        refuse_button.click()
+        time.sleep(1) 
+        self.assertFalse('in' in classList and 'show' in classList)
+        track_holders = self.driver.find_elements(By.CLASS_NAME, 'track-holder-row')
+        self.assertTrue(first_track_holder in track_holders)
+
+        # Click the delete button again and confirm this time
+        first_del_button.click()
+        time.sleep(1)
+        confirm_button = self.driver.find_element(By.ID, 'confirm-delete-track-button')
+        confirm_button.click()
+        time.sleep(1)
+        track_holders = self.driver.find_elements(By.CLASS_NAME, 'track-holder-row')
+        self.assertFalse(first_track_holder in track_holders)
+
+        # Confirm that the track has been removed from the database.
+        track_count = len(Track.objects.filter(drumloop=13))
+        self.assertEqual(track_count, len(track_holders))
+
+
+    def test_add_new_track_button_and_selection_modal(self):
+
+        # Store the current number of tracks, and click the new track button
+        drumloop_id = 13
+        self.driver.get(self.BASE_URL + f'editor/{drumloop_id}')
+        new_track_button = self.driver.find_element(By.ID, 'add-new-track')
+        track_holders = self.driver.find_elements(By.CLASS_NAME, 'track-holder-row')
+        track_count = len(track_holders)
+        script = "document.getElementById('add-new-track').scrollIntoView(true);"
+        self.driver.execute_script(script) 
+        time.sleep(1)
+        new_track_button.click()
+        time.sleep(1)
+
+        # Check that instrument chooser modal is shown.
+        modal = self.driver.find_element(By.ID, 'instrument-chooser')
+        class_list = modal.get_attribute('class').split(" ")
+        self.assertTrue('in' in class_list or 'show' in class_list)
+
+        # Select the first instrument, store the name, and click confirm
+        first_instrument = self.driver.find_elements(By.CLASS_NAME, 'instrument-spans')[0]
+        chosen_instrument_name = first_instrument.get_attribute('innerText')
+        confirm_button = self.driver.find_element(By.ID, 'save-new-instrument')
+        confirm_button.click()
+        time.sleep(1)
+
+        # Check the updated track display to ensure the last track (tracks are ordered 
+        # by primary key) instrument name matches the chosen instrument name.
+        track_inst_names = self.driver.find_elements(By.CLASS_NAME, 'instrument-name')
+        track_holders = self.driver.find_elements(By.CLASS_NAME, 'track-holder-row')
+        new_track_count = len(track_holders)
+        self.assertEqual(track_count + 1, new_track_count)
+        new_inst = track_inst_names[-1].get_attribute('innerText')
+        self.assertEqual(chosen_instrument_name, new_inst)
+
+        # Check that a new track has been added to the database.
+        db_track_count = len(Track.objects.filter(drumloop=13))
+        self.assertEqual(db_track_count, new_track_count)
+
+
+    def test_toggle_beat_and_save_to_db(self):
+        drumloop_id = 13
+        self.driver.get(self.BASE_URL + f'editor/{drumloop_id}')
+        
+        # Get a ref to the first track's beats-holder, and click on each child beat 
+        # to ensure it toggles the active_beat class.
+        initial_values = []
+        beats_1 = self.driver.find_elements(By.CLASS_NAME, 'beats-holder')[0]
+        beat_element_list = beats_1.find_elements(By.XPATH, './child::*')
+        for elem in beat_element_list:
+            initially_active = 'active_beat' in elem.get_attribute('class').split(" ")
+            initial_values.append('8' if initially_active else '0')
+            elem.click()
+            if (initially_active):
+                self.assertTrue('active_beat' not in elem.get_attribute('class').split(" "))
+            else: 
+                self.assertTrue('active_beat' in elem.get_attribute('class').split(" "))
+            elem.click()
+            self.assertEqual(initially_active, 'active_beat' in elem.get_attribute('class').split(" "))
+        initial_beat_string = ''.join(initial_values)
+
+        # Flip each character in the initial_beat_string, and click each beat div once to toggle
+        # each one. Save the drumloop and compare the beat string to the record in the db.
+        new_beat_string = ''.join(['8' if char == '0' else '0' for char in initial_beat_string])
+        for elem in beat_element_list:
+            elem.click()
+        save_button = self.driver.find_element(By.ID, 'save-data')
+        script = "document.getElementById('save-data').scrollIntoView(true);"
+        self.driver.execute_script(script) 
+        time.sleep(1) # allow time to scroll
+        save_button.click()
+        time.sleep(1) # allow time for post request
+        tracks = Track.objects.filter(drumloop=13).order_by('id')
+        self.assertEqual(tracks[0].beats, new_beat_string)
+
+
+        
+
+
+
+    
 
 
 

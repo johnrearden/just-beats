@@ -73,7 +73,7 @@ class LoopEditor(View):
     def get(self, request, id=1, *args, **kwargs):
         query_set = Drumloop.objects.all()
         loop = get_object_or_404(query_set, id=id)
-        tracks = Track.objects.select_related().filter(drumloop=loop)
+        tracks = Track.objects.select_related().filter(drumloop=loop).order_by('id')
         instruments = Instrument.objects.order_by('name')
 
         return render(
@@ -109,7 +109,7 @@ class SaveLoopAndTracks(APIView):
 class TracksForLoop(APIView):
     def get(self, request, id, *args, **kwargs):
         loop = Drumloop.objects.get(id=id)
-        tracks = Track.objects.select_related().filter(drumloop=loop)
+        tracks = Track.objects.select_related().filter(drumloop=loop).order_by('id')
         serializer = TrackSerializer(
             tracks, context={'request': request}, many=True)
         return Response(serializer.data)

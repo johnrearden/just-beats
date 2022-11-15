@@ -29,7 +29,7 @@
 <div class="container-lg">
     <div class="track-holder text-center mt-4">
         {% for track in tracks %}
-        <div id='track_{{ track.id }}' class="row align-items-center m-2">
+        <div id='track_{{ track.id }}' class="row align-items-center m-2 track-holder-row">
             {% if forloop.counter != 1 %}
             <hr>
             {% endif %}
@@ -71,7 +71,7 @@
             </div>
 
             <div class="col-lg-1">
-                <button onclick="onDeleteTrackButtonClick(event, '{{ track.id }}')">
+                <button class='delete-track-button' onclick="onDeleteTrackButtonClick(event, '{{ track.id }}')">
                     X
                 </button>
             </div>
@@ -114,7 +114,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="onModalSaveChangesClicked()">
+                <button id='save-new-instrument' type="button" class="btn btn-primary" 
+                        onclick="onModalSaveChangesClicked()">
                     Save changes
                 </button>
             </div>
@@ -125,12 +126,6 @@
 <div class="modal fade" id='delete-track-confirmation' tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <!-- <div class="modal-header">
-          <h5 class="modal-title">Delete a Track</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div> -->
             <div class="modal-body">
                 <p class="text-dark">Do you really want to delete this track?</p>
             </div>
