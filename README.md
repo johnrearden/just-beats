@@ -163,5 +163,8 @@ https://www.brennantymrak.com/articles/fetching-data-with-ajax-and-django.html
 Testing Djando form widget fields
 https://stackoverflow.com/questions/50643143/testing-form-field-widget-type
 
+login_required decorator
+Jose Guerra, from my cohort
+
 
 [Return to top](#just-beats)

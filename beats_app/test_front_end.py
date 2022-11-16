@@ -190,6 +190,11 @@ class TestCreateReviewPage(StaticLiveServerTestCase):
             rating=5)
         self.assertTrue(ratings)
 
+
+''' A number of these tests are simplified by the assumption that the tracks in the 
+    track-holder div are ordered by id ascending, and will break if this ordering is
+    altered. 
+'''
 class TestLoopEditorPage(StaticLiveServerTestCase):
 
     fixtures = ['db_fixture.json', 'users.json']

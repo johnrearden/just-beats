@@ -5,6 +5,7 @@ from rest_framework import status
 from django.shortcuts import render, get_object_or_404
 from django.views import View, generic
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from .models import Drumloop, Track, Instrument, Review
 from .serializers import TrackSerializer
 from .forms import NewDrumloopForm, ReviewForm
@@ -73,18 +74,20 @@ class LoopEditor(View):
     def get(self, request, id=1, *args, **kwargs):
         query_set = Drumloop.objects.all()
         loop = get_object_or_404(query_set, id=id)
-        tracks = Track.objects.select_related().filter(drumloop=loop).order_by('id')
-        instruments = Instrument.objects.order_by('name')
-
-        return render(
-            request,
-            "loop_editor.html",
-            {
-                "loop": loop,
-                "tracks": tracks,
-                "instruments": instruments,
-            }
-        )
+        if loop.creator != request.user:
+            return HttpResponse('No way Jose')
+        else:
+            tracks = Track.objects.select_related().filter(drumloop=loop).order_by('id')
+            instruments = Instrument.objects.order_by('name')
+            return render(
+                request,
+                "loop_editor.html",
+                {
+                    "loop": loop,
+                    "tracks": tracks,
+                    "instruments": instruments,
+                }
+            )
 
 
 class SaveLoopAndTracks(APIView):
