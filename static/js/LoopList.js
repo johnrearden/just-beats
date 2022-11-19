@@ -5,12 +5,25 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let button of playButtons) {
         button.addEventListener('click', (e) => {
 
+            
+
             // Get the id and tempo associated with this loop.
             const target = e.target;
             const loopID = target.getAttribute('data-id');
             const tempo = target.getAttribute('data-tempo');
             const name = target.getAttribute('data-name');
             const username = target.getAttribute('data-user');
+
+            // If the current user is the owner of this track, 
+            // disable the rating link button.
+            let creator = target.getAttribute('data-creator');
+            let ratingLauncherButton = document.getElementById('rating-launcher-button');
+            if (username === creator) {
+                console.log('The logged in user wrote this loop');
+                ratingLauncherButton.classList.add('invisible');
+            } else {
+                ratingLauncherButton.classList.remove('invisible');
+            }
 
             const ratingButton = document.getElementById('rating-launcher-button');
             ratingButton.setAttribute('data-id', loopID);

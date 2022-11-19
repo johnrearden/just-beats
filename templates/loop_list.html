@@ -43,8 +43,11 @@
                         </td>
                         <td>
                             <!-- Store the loop fields necessary for creating the DrumLoop object-->
-                            <i data-id="{{ loop.id }}" data-tempo="{{ loop.tempo }}" data-name="{{ loop.name }}"
-                                data-user="{{ user.username }}" class="fa-regular fa-circle-play play-button"></i>
+                            <i data-id="{{ loop.id }}" data-tempo="{{ loop.tempo }}" 
+                                data-name="{{ loop.name }}" data-user="{{ user.username }}" 
+                                data-creator="{{ loop.creator }}" 
+                                class="fa-regular fa-circle-play play-button">
+                            </i>
                         </td>
                         <td>
                             {% if user == loop.creator %}
@@ -67,7 +70,7 @@
         <div id="current-track-display" class="col-md-10 offset-md-1 text-center mt-5 invisible">
             <h3>Now playing ... </h3>
             <h1><span id="playing-track-name" class="fst-italic"></span></h1>
-            <button id="rating-launcher-button" class="mt-3">
+            <button id="rating-launcher-button" class="mt-3" en>
                 Give it a rating
             </button>
         </div>
