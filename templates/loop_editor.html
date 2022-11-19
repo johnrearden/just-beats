@@ -17,7 +17,7 @@
             <input type="text" id="creator_name" readonly value="{{ loop.creator }}" name="creator_name">
         </div>
         <div class="row text-center align-items-center">
-            <div class="col-5 offset-1">
+            <div class="col-4 offset-4">
                 <label for="tempo">Tempo</label>
                 <input type="number" id="tempo" name="tempo" value="{{ loop.tempo }}" min="60" max="200" step="1"
                     oninput="onTempoInputChange(event)">
@@ -29,12 +29,12 @@
 <div class="container-lg">
     <div class="track-holder text-center mt-4">
         {% for track in tracks %}
-        <div id='track_{{ track.id }}' class="row align-items-center m-2 track-holder-row">
+        <div id='track_{{ track.id }}' class="row align-items-center  m-2 track-holder-row">
             {% if forloop.counter != 1 %}
             <hr>
             {% endif %}
             <div class="col-6 col-lg-2" vertical-align>
-                <div id="instrument-name_{{ track.id }}" class="instrument-name"
+                <div id="instrument-name_{{ track.id }}" class="instrument-name py-2 py-md-0"
                     onclick="onInstrumentButtonClicked('{{ loop.id }}','{{ track.id }}')">
                     {{ track.instrument.name }}
                 </div>
@@ -43,7 +43,7 @@
             <div class="col-6 col-lg-2 overflow-hidden">
                 <!-- <label for="track_volume_{{ track.id }}">Vol</label> -->
                 <input type="range" id="track_volume_{{ track.id }}" name="track_volume_{{ track.id }}"
-                    value="{{ track.track_volume }}" min="0" max="10" class="track-volume" list="tickmarks"
+                    value="{{ track.track_volume }}" min="0" max="10" class="track-volume py-2 py-md-0" list="tickmarks"
                     oninput="onTrackVolumeChange(event, '{{ track.id }}')">
                 <datalist id="tickmarks">
                     <option value="0" label="0"></option>
@@ -56,7 +56,7 @@
             </div>
 
             <div class="col-12 col-lg-7">
-                <div id="beats-holder-track_{{ forloop.counter0 }}" class="beats-holder">
+                <div id="beats-holder-track_{{ forloop.counter0 }}" class="beats-holder py-2 py-md-0">
                     {% for char in track.beats %}
                     {% if char == '8' %}
                     <div id="{{ track.id }}:{{ forloop.counter0 }}" class="beat active_beat"

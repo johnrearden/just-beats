@@ -4,9 +4,9 @@
 
 {% block content %}
 
-<div class="container-md vert-gap">
+<div class="container-md vert-gap-100">
     <div class="row">
-        <div class="col-md-4 text-center align-self-center darker-background p-5">
+        <div class="col-lg-4 text-center align-self-center darker-background p-5">
             <h1>Feeling Creative?</h1>
             <p>Why not create a new loop of your own? Click here to start!</p>
             <div>
@@ -15,15 +15,15 @@
                 </a>
             </div>
         </div>
-        <div class="col-md-8 text-center">
+        <div class="col-lg-8 text-center">
             <h1 class="text-center beats-header">Drumloops</h1>
             <table class="drumloop-table">
                 <thead>
                     <tr>
                         <th scope="col">Creator</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Tempo</th>
-                        <th scope="col">Rating</th>
+                        <th scope="col" class="d-none d-md-inline">Tempo</th>
+                        <th scope="col" class="d-none d-sm-inline">Rating</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -36,10 +36,10 @@
                         <td class="drumloop-table-item">
                             {{ loop.name }}
                         </td>
-                        <td id="tempo" class="drumloop-table-item loop-tempo">
+                        <td id="tempo" class="drumloop-table-item loop-tempo d-none d-md-inline">
                             {{ loop.tempo }}
                         </td>
-                        <td id="rating-display-{{forloop.counter0}}">
+                        <td id="rating-display-{{forloop.counter0}}" class="d-none d-sm-inline">
                         </td>
                         <td>
                             <!-- Store the loop fields necessary for creating the DrumLoop object-->
@@ -49,7 +49,7 @@
                         <td>
                             {% if user == loop.creator %}
                             <a href="{% url 'loop_editor' loop.id %}">
-                                <button>Edit</button>
+                                <button class="edit-button">Edit</button>
                             </a>
                             {% endif %}
                         </td>

@@ -31,10 +31,9 @@ p, span {
 }
 
 input {
-    background-color:#ffffff33;
+    background-color:#00000088;
     color: inherit;
-    border: none;
-    border: 1px solid inherit;
+    border: 1px solid gray;
     border-radius: 4px;
     padding: 4px 8px;
     margin: 0 20px;
@@ -63,7 +62,7 @@ button:hover {
 }
 
 .darker-background {
-    background-image: radial-gradient(#00000088, #00000033);
+    background-image: radial-gradient(#000000bb, #00000088);
     border-radius: 20px;
 }
 
@@ -90,9 +89,8 @@ button:hover {
 /* These css elements style the review page */
 
 input[type="number"] {
-    background-color: #ffffff33;
     color: white;
-    border: 1px solid gray;
+    
     max-width: 100px
 }
 
@@ -123,8 +121,12 @@ label {
 
 /* These css elements style the drum loop list template ----------*/
 
-.vert-gap {
+.vert-gap-100 {
     margin-top: 100px;
+}
+
+.vert-gap-200 {
+    margin-top: 200px;
 }
 
 
@@ -166,7 +168,6 @@ label {
 .rating-star {
     font-size: 1.2rem;
     color: gold;
-    /* text-shadow: 0 0 5px lightblue; */
 }
 
 .play-button {
@@ -187,6 +188,23 @@ label {
     max-height: 100%;
     object-fit: contain;
     opacity: 0.4;
+}
+
+@media screen and (max-width:450px) {
+    .drumloop-table {
+        padding: 2px
+    }
+    .drumloop-table-item {
+        padding: 5px;
+        font-size: 0.8rem;
+    }
+    .play-button {
+        font-size: 1.4rem;
+    }
+    .edit-button {
+        font-size: 0.8rem;
+        padding: 3px 5px;
+    }
 }
 
 /* These css elements style the drumloop_editor template ---------*/
@@ -219,7 +237,6 @@ label {
     display: inline-block;
     color: white;
     background: yellow;
-    border: 1px solid red;
     width: 100%;
 }
 
@@ -228,7 +245,6 @@ label {
     width: 10px;
     height: 32px;
     background-color: gray;
-    color: red;
     border: 1px solid rgb(116, 221, 125);
 }
 
@@ -236,7 +252,6 @@ label {
     display: inline-block;
     margin-left: 3px;
     background-color: gray;
-    color: red;
     border: 1px solid rgb(116, 221, 125);
     height: 35px;
 }
@@ -244,6 +259,15 @@ label {
 @media screen and (max-width: 600px) {
     .beat {
         width: 6px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .beat {
+        width: 3px;
+    }
+    .track-holder {
+        padding: 0
     }
 }
 
