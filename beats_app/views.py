@@ -4,6 +4,7 @@ from rest_framework.views import APIView
 from rest_framework import status
 from django.shortcuts import render, get_object_or_404
 from django.views import View, generic
+from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .models import Drumloop, Track, Instrument, Review
@@ -30,6 +31,7 @@ class CreateNewLoop(View):
         querydict = request.POST
         creator_id_string = querydict.get('creator')
         creator = User.objects.get(id=int(creator_id_string))
+        name = querydict.get('name')
         new_drumloop = Drumloop.objects.create(
             name=querydict.get('name'),
             tempo=int(querydict.get('tempo')),
@@ -40,6 +42,7 @@ class CreateNewLoop(View):
         default_track = Track.objects.create(
             drumloop=new_drumloop,
             instrument=instrument,)
+        messages.success(request, f'New loop created by {creator.username}.... it\'s called {name}!')
         return HttpResponseRedirect(f'/editor/{drumloop_id}')
 
 
@@ -65,6 +68,7 @@ class SaveReview(View):
         form = ReviewForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, f"Thanks! Your review has been saved and is awaiting approval.")
         else:
             return render(request, 'review_form.html', {'form': form})
         return HttpResponseRedirect('/')
@@ -106,6 +110,7 @@ class SaveLoopAndTracks(APIView):
             instrument = Instrument.objects.get(pk=element.get('instrumentID'))
             original_track.instrument = instrument
             original_track.save()
+
         return Response('Ok')
 
 
@@ -127,6 +132,7 @@ class AddNewTrack(APIView):
         instrument = Instrument.objects.get(pk=instrumentID)
         newTrack = Track(drumloop=drumloop, instrument=instrument)
         newTrack.save()
+        messages.success(request, f'New track added, with the instrument {instrument.name}')
         return HttpResponse('Ok')
 
 

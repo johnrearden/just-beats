@@ -82,7 +82,7 @@ const onInstrumentButtonClicked = (loopID, trackID) => {
     $('#instrument-chooser').modal('show');
 }
 
-const onModalSaveChangesClicked = async(e) => {
+const onModalSaveChangesClicked = async (e) => {
 
     // If an existing track is being modified, update the instrumentID input 
     // so that the backend can save the new instrument selection.
@@ -90,8 +90,8 @@ const onModalSaveChangesClicked = async(e) => {
 
         // Change the loopPlayer instrument id and sample for this track.
         await loopPlayer.setInstrument(
-            instrumentModalConfig.selectedTrackID, 
-            instrumentModalConfig.currentInstrumentID, 
+            instrumentModalConfig.selectedTrackID,
+            instrumentModalConfig.currentInstrumentID,
             instrumentModalConfig.currentInstrumentURL);
 
         // Change the instrument name on the track GUI.
@@ -223,11 +223,12 @@ const onConfirmDeleteTrackClick = (event) => {
         },
     }
     fetch('/delete_track/', options); // No need to reload page in this instance.
+    displaySuccessAlert('Track deleted ..... farewell, condemned beats.')
 }
 
-const postLoopAndTracks = async(event) => {
+const postLoopAndTracks = async (event) => {
     const csrfToken = getCookie('csrftoken');
-    
+
     const options = {
         method: 'POST',
         credentials: 'same-origin',
@@ -240,10 +241,28 @@ const postLoopAndTracks = async(event) => {
     }
     await fetch('/save_loop_and_tracks/', options)
         .then(response => response.json())
-        .then(json => console.log(json));
+        .then(json => displaySuccessAlert('Loop and tracks successfully saved!'));
 }
 
-getCookie = (name) => {
+const displaySuccessAlert = (message) => {
+    let alertHTML = `
+        <div class="alert alert-success alert-dismissible fade show"
+            id="msg" role="alert">
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>`;
+        let messageHolder = document.getElementById('message-holder');
+        messageHolder.innerHTML = alertHTML;
+        setTimeout(function() {
+            let messages = document.getElementById('msg');
+            if (messages) {
+                let alert = new bootstrap.Alert(messages);
+                alert.close();
+            }
+        }, 3000);
+}
+
+const getCookie = (name) => {
     let cookieValue = null;
     if (document.cookie && document.cookie !== '') {
         const cookies = document.cookie.split(';');
@@ -285,8 +304,8 @@ const hashString = (string) => {
 }
 
 class InstrumentModalConfig {
-    constructor(selectedTrackID, currentInstrumentID, currentLoopID, 
-                newTrack, currentInstrumentURL, currentInstrumentName) {
+    constructor(selectedTrackID, currentInstrumentID, currentLoopID,
+        newTrack, currentInstrumentURL, currentInstrumentName) {
         this.selectedTrackID = selectedTrackID;
         this.currentInstrumentID = currentInstrumentID;
         this.currentInstrumentURL = currentInstrumentURL;

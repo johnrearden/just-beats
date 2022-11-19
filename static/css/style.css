@@ -1,3 +1,5 @@
+/* These css elements style the whole site, and the base.html template */
+
 :root {
     --track-light: rgb(27, 85, 200);
     --track-dark: rgb(100, 133, 200);
@@ -67,12 +69,16 @@ button:hover {
 }
 
 .grey-background {
-    background-image: radial-gradient(#ffffff00, #ffffff88);
+    background-image: radial-gradient(#ffffff66, #ffffffcc);
 }
 
 .light-border {
     border: 1px solid gray;
     border-radius: 20px;
+}
+
+#message-holder {
+    height: 60px;
 }
 
 /* These css elements style the navbar */
@@ -149,7 +155,7 @@ label {
     border-spacing: 0 0.5rem;
     border: 3px solid transparent;
     border-radius: 10px;
-    background-image: radial-gradient(#aaaaaa99, #aaaaaa55);
+    background-image: radial-gradient(#aaaaaaff, #aaaaaaaa);
     box-shadow: 0 0 5px black;
 }
 
