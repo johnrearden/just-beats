@@ -68,6 +68,18 @@ class SaveReview(View):
         form = ReviewForm(request.POST)
         if form.is_valid():
             form.save()
+
+            # Recalculate the average rating for this loop.
+            querydict = request.POST
+            loop_id = int(querydict.get('drumloop'))
+            all_reviews = Review.objects.all().filter(drumloop=loop_id)
+            total = sum([review.rating for review in all_reviews])
+            average_rating = total / (len(all_reviews))
+            drumloop = Drumloop.objects.get(id=loop_id)
+            drumloop.rating = average_rating
+            print(drumloop)
+            drumloop.save()
+
             messages.success(request, f"Thanks! Your review has been saved and is awaiting approval.")
         else:
             return render(request, 'review_form.html', {'form': form})

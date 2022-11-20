@@ -50,6 +50,8 @@ class TestViews(TestCase):
         response = self.client.post('/save_review/', data)
         queryset = Review.objects.all()
         self.assertGreater(len(queryset), 0)
+        drumloop_rating = Drumloop.objects.get(id=self.test_drumloop.pk).rating
+        self.assertEqual(drumloop_rating, 3)
         self.assertRedirects(response, '/')
 
     def test_save_review_with_invalid_form_data(self):
