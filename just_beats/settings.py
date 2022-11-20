@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import sys
-from telnetlib import AUTHENTICATION
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
@@ -129,16 +128,20 @@ SELENIUM_FIXTURE_PASSWORD = os.environ.get("SELENIUM_FIXTURE_PASSWORD")
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': ('django.contrib.auth.password_validation'
+                 '.UserAttributeSimilarityValidator',)
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': ('django.contrib.auth.password_validation'
+                 '.MinimumLengthValidator',)
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': ('django.contrib.auth.password_validation.'
+                 'CommonPasswordValidator',)
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': ('django.contrib.auth.password_validation.'
+                 'NumericPasswordValidator',)
     },
 ]
 
@@ -170,9 +173,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Unless testing, use Cloudinary hashed storage. 
+# Unless testing, use Cloudinary hashed storage.
 if not sys.argv.__contains__('test'):
-    STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+    STATICFILES_STORAGE = ('cloudinary_storage.storage'
+                           '.StaticHashedCloudinaryStorage')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 

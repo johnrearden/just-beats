@@ -2,10 +2,12 @@ from django import forms
 from django.forms import Textarea, HiddenInput, NumberInput
 from .models import Drumloop, Review
 
+
 class NewDrumloopForm(forms.ModelForm):
     class Meta:
         model = Drumloop
         fields = ('name', 'tempo',)
+
 
 class ReviewForm(forms.ModelForm):
     class Meta:
