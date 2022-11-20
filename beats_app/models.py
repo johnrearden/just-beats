@@ -10,7 +10,7 @@ class Drumloop(models.Model):
     creator = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="drumloops")
     created_on = models.DateTimeField(auto_now_add=True)
-    rating = models.IntegerField(default=0, validators=[
+    rating = models.FloatField(default=0, validators=[
         MinValueValidator(0), MaxValueValidator(5)
     ])
     tempo = models.IntegerField(default=120, validators=[
