@@ -10,15 +10,23 @@ from .serializers import TrackSerializer
 from .forms import NewDrumloopForm, ReviewForm
 
 
+
 class LoopList(View):
+    """
+    This view returns a list view of the drumloops stored in the database. The
+    view takes an optional parameter 'selection', which defaults to 'all'. If
+    this parameter is set to anything other than all, the view returns a list
+    of only the drumloops created by the current user.
+    """
     def get(self, request, selection='all'):
         if (selection == 'all'):
             drumloops = Drumloop.objects.order_by('-rating')
-        else: 
-            drumloops = Drumloop.objects.filter(creator=request.user).order_by('-rating')
+        else:
+            drumloops = Drumloop.objects.filter(
+                creator=request.user).order_by('-rating')
         context = {
-                'drumloops': drumloops,
-                'selection': selection,
+            'drumloops': drumloops,
+            'selection': selection,
         }
         return render(
             request,
@@ -28,6 +36,16 @@ class LoopList(View):
 
 
 class CreateNewLoop(View):
+    """
+    This view has 2 methods, get and post.
+
+    The GET method returns a short form that asks the user for a name and 
+    tempo for the new loop.
+
+    The POST method accepts the submitted form, creates the drumloop and a 
+    default track. It then redirects the user to the LoopEditor view, and 
+    creates a message for the user confirming the loop creation.
+    """
     def get(self, request):
         return render(
             request,
@@ -44,13 +62,14 @@ class CreateNewLoop(View):
             name=querydict.get('name'),
             tempo=int(querydict.get('tempo')),
             creator=creator
-            )
+        )
         drumloop_id = new_drumloop.pk
         instrument = Instrument.objects.first()
         default_track = Track.objects.create(
             drumloop=new_drumloop,
             instrument=instrument,)
-        messages.success(request, f'New loop created by {creator.username}.... it\'s called {name}!')
+        messages.success(
+            request, f'New loop created by {creator.username}.... it\'s called {name}!')
         return HttpResponseRedirect(f'/editor/{drumloop_id}')
 
 
@@ -86,7 +105,8 @@ class SaveReview(View):
             drumloop = Drumloop.objects.get(id=loop_id)
             drumloop.rating = average_rating
             drumloop.save()
-            messages.success(request, f"Thanks! Your review has been saved and is awaiting approval.")
+            messages.success(
+                request, f"Thanks! Your review has been saved and is awaiting approval.")
         else:
             return render(request, 'review_form.html', {'form': form})
         return HttpResponseRedirect('/')
@@ -149,7 +169,8 @@ class AddNewTrack(APIView):
         instrument = Instrument.objects.get(pk=instrumentID)
         newTrack = Track(drumloop=drumloop, instrument=instrument)
         newTrack.save()
-        messages.success(request, f'New track added, with the instrument {instrument.name}')
+        messages.success(
+            request, f'New track added, with the instrument {instrument.name}')
         return HttpResponse('Ok')
 
 
@@ -170,4 +191,3 @@ class DeleteLoop(APIView):
         loop.delete()
         messages.success(request, f'{loop_name} has been deleted.')
         return HttpResponse('Ok')
-

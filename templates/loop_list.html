@@ -6,14 +6,26 @@
 
 <div class="container-md vert-gap-100">
     <div class="row">
+        
         <div class="col-lg-4 text-center align-self-center darker-background p-5">
             <h1>Feeling Creative?</h1>
+            {% if user.is_authenticated %}
             <p>Why not create a new loop of your own? Click here to start!</p>
             <div>
                 <a href="{% url 'new_drumloop_form' %}">
                     <button id="create-new-loop-button">Create New Loop</button>
                 </a>
             </div>
+            {% else %}
+            <p>
+                Login or create an account to start making your own loops!
+            </p>
+            <div>
+                <a href="{% url 'account_login' %}">
+                    <button>Login</button>
+                </a>
+            </div>
+            {% endif %}
         </div>
         <div class="col-lg-8 text-center">
             <h1 class="text-center beats-header">Drumloops</h1>
