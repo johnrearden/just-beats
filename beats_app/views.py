@@ -1,12 +1,10 @@
 from django.http import HttpResponseRedirect, HttpResponse
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework import status
-from django.shortcuts import render, get_object_or_404
-from django.views import View, generic
+from django.shortcuts import render, get_object_or_404, redirect
+from django.views import View
 from django.contrib import messages
 from django.contrib.auth.models import User
-from django.contrib.auth.decorators import login_required
 from .models import Drumloop, Track, Instrument, Review
 from .serializers import TrackSerializer
 from .forms import NewDrumloopForm, ReviewForm
@@ -90,7 +88,6 @@ class SaveReview(View):
             drumloop.rating = average_rating
             print(drumloop)
             drumloop.save()
-
             messages.success(request, f"Thanks! Your review has been saved and is awaiting approval.")
         else:
             return render(request, 'review_form.html', {'form': form})
@@ -133,7 +130,6 @@ class SaveLoopAndTracks(APIView):
             instrument = Instrument.objects.get(pk=element.get('instrumentID'))
             original_track.instrument = instrument
             original_track.save()
-
         return Response('Ok')
 
 
@@ -165,3 +161,15 @@ class DeleteTrack(APIView):
         trackID = int(data.get('trackID'))
         Track.objects.get(pk=trackID).delete()
         return HttpResponse('Ok')
+
+
+class DeleteLoop(APIView):
+    def post(self, request, *args, **kwargs):
+        data = request.data
+        loopID = int(data.get('loopID'))
+        loop = Drumloop.objects.get(pk=loopID)
+        loop_name = loop.name
+        loop.delete()
+        messages.success(request, f'{loop_name} has been deleted.')
+        return HttpResponse('Ok')
+

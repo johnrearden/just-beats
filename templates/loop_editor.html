@@ -83,13 +83,16 @@
     <button class="m-3" id="play-loop">PLAY</button>
     <button id="add-new-track" class="m-3">ADD NEW TRACK</button>
     <button id="save-data" class="m-3" onclick="postLoopAndTracks(event)">SAVE</button>
+    <button id="delete-loop" class="m-3" onclick="onDeleteLoopButtonClick(event, '{{ loop.id }}')">
+        DELETE LOOP
+    </button>
 </div>
 
 <!-- Instrument selection modal -->
 <div class="modal fade " id="instrument-chooser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content bg-dark">
+        <div class=" modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLongTitle">Choose Instrument</h5>
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
@@ -124,9 +127,9 @@
 
 <div class="modal fade" id='delete-track-confirmation' tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
+        <div class="custom-justbeats-modal modal-content">
             <div class="modal-body">
-                <p class="text-dark">Do you really want to delete this track?</p>
+                <p>Do you really want to delete this track?</p>
             </div>
             <div class="modal-footer">
                 <button id='refuse-delete-track-button' type="button" class="btn btn-danger"
@@ -135,6 +138,26 @@
                 </button>
                 <button id='confirm-delete-track-button' type="button" class="btn btn-primary"
                     onclick="onConfirmDeleteTrackClick(event)">
+                    Delete It!
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id='delete-loop-confirmation' tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="custom-justbeats-modal modal-content">
+            <div class="modal-body">
+                <p>Do you really want to delete this loop?</p>
+            </div>
+            <div class="modal-footer">
+                <button id='refuse-delete-loop-button' type="button" class="btn btn-danger"
+                    onclick="onRefuseDeleteLoopClick(event)">
+                    No, wait!
+                </button>
+                <button id='confirm-delete-loop-button' type="button" class="btn btn-primary"
+                    onclick="onConfirmDeleteLoopClick(event)">
                     Delete It!
                 </button>
             </div>

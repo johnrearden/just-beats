@@ -92,6 +92,11 @@ button:disabled {
     height: 60px;
 }
 
+.custom-justbeats-modal {
+    color: yellowgreen;
+    background-color: #555555;
+}
+
 /* These css elements style the navbar */
 
 .site-logo {

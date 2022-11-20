@@ -97,7 +97,6 @@ const onModalSaveChangesClicked = async (e) => {
         const instrumentNameDivs = document.getElementsByClassName('instrument-name');
         for (const div of instrumentNameDivs) {
             if (div.id.split('_')[1] === instrumentModalConfig.selectedTrackID) {
-                console.log('track matched');
                 div.innerText = instrumentModalConfig.currentInstrumentName;
             }
         }
@@ -224,6 +223,49 @@ const onConfirmDeleteTrackClick = (event) => {
     fetch('/delete_track/', options); // No need to reload page in this instance.
     displaySuccessAlert('Track deleted ..... farewell, condemned beats.')
 }
+
+const onDeleteLoopButtonClick = (event, loopID) => {
+    event.preventDefault();
+
+    // Store the selected loopID in the confirm button.
+    const confirmButton = document.getElementById('confirm-delete-loop-button');
+    confirmButton.setAttribute('loopID', loopID);
+
+    // Open a modal dialog to ask user to confrim action.
+    $('#delete-loop-confirmation').modal('show');
+}
+
+const onRefuseDeleteLoopClick = (event) => {
+    $('#delete-loop-confirmation').modal('hide');
+}
+
+const onConfirmDeleteLoopClick = (event) => {
+
+    // Hide the dialog again.
+    $('#delete-loop-confirmation').modal('hide');
+
+    // Get the loopID from the confirm button.
+    const loopID = event.target.getAttribute('loopID');
+
+    // Make a POST request to the backend to delete this track.
+    const csrfToken = getCookie('csrftoken');
+    const params = {
+        'loopID': loopID,
+    }
+    const options = {
+        method: 'POST',
+        credentials: 'same-origin',
+        body: JSON.stringify(params),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrfToken,
+        },
+    }
+    fetch('/delete_loop/', options)
+        .then(() => window.location = '/')
+}
+
 
 const postLoopAndTracks = async (event) => {
     const csrfToken = getCookie('csrftoken');
