@@ -25,27 +25,41 @@
                             <button id="all-loops" class="highlighted-button">All Loops</button>
                         </a>
                     </div>
-                    <div class="col-3">
-                        <a href="{% url 'home' 'user_only' %}">
-                            <button id="my-loops">My Loops</button>
-                        </a>
-                    </div>
+                        {% if user.is_authenticated %}
+                        <div class="col-3">
+                            <a href="{% url 'home' 'user_only' %}">
+                                <button id="my-loops">My Loops</button>
+                            </a>
+                        </div>
+                        {% else %}
+                        <div class="col-3">
+                            <a href="{% url 'home' 'user_only' %}">
+                                <button id="my-loops" disabled>My Loops</button>
+                            </a>
+                        </div>
+                        {% endif %}
                     {% else %}
                     <div class="col-3 offset-3">
                         <a href="{% url 'home' 'all' %}">
                             <button id="all-loops">All Loops</button>
                         </a>
                     </div>
-                    <div class="col-3">
-                        <a href="{% url 'home' 'user_only' %}">
-                            <button id="my-loops" class="highlighted-button">My Loops</button>
-                        </a>
-                    </div>
-                    </a>
+                        {% if user.is_authenticated %}
+                        <div class="col-3">
+                            <a href="{% url 'home' 'user_only' %}">
+                                <button id="my-loops" class="highlighted-button" >My Loops</button>
+                            </a>
+                        </div>
+                        {% else %}
+                        <div class="col-3">
+                            <a href="{% url 'home' 'user_only' %}">
+                                <button id="my-loops" class="highlighted-button" 
+                                        disabled>My Loops</button>
+                            </a>
+                        </div>
+                        {% endif %}
                     {% endif %}
-                    <div class="col-6">
-                        
-                    </div>
+                    
                 </div>
             </div>
             

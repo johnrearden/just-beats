@@ -63,6 +63,13 @@ button:hover {
     transition: 0.2s all;
 }
 
+button:disabled {
+    color: gray;
+    text-shadow: none;
+    border: 1px solid gray;
+    opacity: 0.5;
+}
+
 .highlighted-button {
     background-color:rgb(167, 167, 86);
 }
