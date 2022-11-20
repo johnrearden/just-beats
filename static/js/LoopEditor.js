@@ -66,10 +66,9 @@ const onInstrumentButtonClicked = (loopID, trackID) => {
         '',
         '',
     )
-    console.log(instrumentModalConfig)
 
     // Set the current instrument as selected in the modal.
-    const instrumentSpans = document.getElementsByClassName('instrument-spans');
+    const instrumentSpans = document.getElementsByClassName('instrument-name');
     for (let span of instrumentSpans) {
         if (span.id.split('_')[1] === currentInstrumentID) {
             span.classList.add('selected-instrument');
@@ -140,7 +139,7 @@ const onModalInstrumentClicked = (e, instrumentURL, instrumentName) => {
     instrumentModalConfig.currentInstrumentName = instrumentName;
     instrumentModalConfig.currentInstrumentURL = instrumentURL;
 
-    const instrumentSpans = document.getElementsByClassName('instrument-spans');
+    const instrumentSpans = document.getElementsByClassName('instrument-name');
     for (let span of instrumentSpans) {
         if (span.id.split('_')[1] === selectedInstrumentID) {
             span.classList.add('selected-instrument');

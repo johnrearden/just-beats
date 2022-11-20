@@ -101,9 +101,8 @@
                 <div class="container">
                     <div class="row">
                         {% for instrument in instruments %}
-
                         <div class="col-md-6 text-center">
-                            <span id="modal-instrument-id_{{ instrument.id }}" class="instrument-spans"
+                            <span id="modal-instrument-id_{{ instrument.id }}" class="instrument-name"
                                 onclick="onModalInstrumentClicked(event, '{{ instrument.url }}', '{{ instrument.name }}')">
                                 {{ instrument.name }}
                             </span>

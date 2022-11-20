@@ -314,16 +314,22 @@ label {
 }
 
 .instrument-name {
+    color: #bbbbbb;
     width: 100%;
     border-radius: 5px;
     padding: 5px;
-    font-family: 'chinese_rocks';
+    margin: 3px;
+    border: 1px solid #333333;
+}
+
+.instrument-name:hover {
+    color: white;
+    border: 1px solid white;
 }
 
 /* These css elements style the instrument selector modal ---------*/
 .selected-instrument {
-    color: red;
-    background-color: pink;
+    border: 1px solid white;
 }
 
 /* These css elements style the forms */
