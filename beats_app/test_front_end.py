@@ -201,7 +201,7 @@ class TestLoopEditorPage(StaticLiveServerTestCase):
 
     def setUp(self):
         options = webdriver.ChromeOptions()
-        options.add_argument("--headless")
+        # options.add_argument("--headless")
         options.add_argument("--allow-insecure-localhost") # necessary for headless
         options.add_argument("--remote-debugging-port=9222") # due to local port conflict
         options.add_argument("--window-size=1920,1080")
@@ -213,15 +213,24 @@ class TestLoopEditorPage(StaticLiveServerTestCase):
         self.driver.quit()
 
     def test_name_and_tempo_change_reflected_in_db(self):
-        drumloop_id = 13
+        drumloop_id = 2
         self.driver.get(self.BASE_URL + f'editor/{drumloop_id}')
+
+        # login as user who created fixture.
+        username = self.driver.find_element(by=By.NAME, value='login')
+        password = self.driver.find_element(by=By.NAME, value='password')
+        submit = self.driver.find_element(by=By.ID, value="submit")
+        username.send_keys(settings.SELENIUM_FIXTURE_USERNAME)
+        password.send_keys(settings.SELENIUM_FIXTURE_PASSWORD)
+        submit.click()
+        time.sleep(1)
+
         name_input = self.driver.find_elements(By.NAME, 'drumloop_name')
         tempo_input = self.driver.find_elements(By.NAME, 'tempo')
         save_button = self.driver.find_elements(By.ID, 'save-data')
         self.assertTrue(name_input)
         self.assertTrue(tempo_input)
         self.assertTrue(save_button)
-
         
         script = 'document.getElementById("tempo").setAttribute("value", "61");'
         self.driver.execute_script(script)
@@ -249,11 +258,21 @@ class TestLoopEditorPage(StaticLiveServerTestCase):
 
     def test_delete_track_button_and_confirm_modal(self):
 
-        track_count = len(Track.objects.filter(drumloop=13))
+        drumloop_id = 2
+        track_count = len(Track.objects.filter(drumloop=drumloop_id))
         
         # Check confirm modal opens when delete track button pressed
-        drumloop_id = 13
         self.driver.get(self.BASE_URL + f'editor/{drumloop_id}')
+
+        # login as user who created fixture.
+        username = self.driver.find_element(by=By.NAME, value='login')
+        password = self.driver.find_element(by=By.NAME, value='password')
+        submit = self.driver.find_element(by=By.ID, value="submit")
+        username.send_keys(settings.SELENIUM_FIXTURE_USERNAME)
+        password.send_keys(settings.SELENIUM_FIXTURE_PASSWORD)
+        submit.click()
+        time.sleep(1)
+
         track_holders = self.driver.find_elements(By.CLASS_NAME, 'track-holder-row')
         first_track_holder = track_holders[0]
         delete_buttons = self.driver.find_elements(By.CLASS_NAME, 'delete-track-button')
@@ -283,15 +302,25 @@ class TestLoopEditorPage(StaticLiveServerTestCase):
         self.assertFalse(first_track_holder in track_holders)
 
         # Confirm that the track has been removed from the database.
-        track_count = len(Track.objects.filter(drumloop=13))
+        track_count = len(Track.objects.filter(drumloop=drumloop_id))
         self.assertEqual(track_count, len(track_holders))
 
 
     def test_add_new_track_button_and_selection_modal(self):
 
         # Store the current number of tracks, and click the new track button
-        drumloop_id = 13
+        drumloop_id = 2
         self.driver.get(self.BASE_URL + f'editor/{drumloop_id}')
+
+        # login as user who created fixture.
+        username = self.driver.find_element(by=By.NAME, value='login')
+        password = self.driver.find_element(by=By.NAME, value='password')
+        submit = self.driver.find_element(by=By.ID, value="submit")
+        username.send_keys(settings.SELENIUM_FIXTURE_USERNAME)
+        password.send_keys(settings.SELENIUM_FIXTURE_PASSWORD)
+        submit.click()
+        time.sleep(1)
+
         new_track_button = self.driver.find_element(By.ID, 'add-new-track')
         track_holders = self.driver.find_elements(By.CLASS_NAME, 'track-holder-row')
         track_count = len(track_holders)
@@ -299,7 +328,7 @@ class TestLoopEditorPage(StaticLiveServerTestCase):
         self.driver.execute_script(script) 
         time.sleep(1)
         new_track_button.click()
-        time.sleep(1)
+        time.sleep(3)
 
         # Check that instrument chooser modal is shown.
         modal = self.driver.find_element(By.ID, 'instrument-chooser')
@@ -315,7 +344,7 @@ class TestLoopEditorPage(StaticLiveServerTestCase):
 
         # Check the updated track display to ensure the last track (tracks are ordered 
         # by primary key) instrument name matches the chosen instrument name.
-        track_inst_names = self.driver.find_elements(By.CLASS_NAME, 'instrument-name')
+        track_inst_names = self.driver.find_elements(By.CLASS_NAME, 'inst-test')
         track_holders = self.driver.find_elements(By.CLASS_NAME, 'track-holder-row')
         new_track_count = len(track_holders)
         self.assertEqual(track_count + 1, new_track_count)
@@ -323,13 +352,22 @@ class TestLoopEditorPage(StaticLiveServerTestCase):
         self.assertEqual(chosen_instrument_name, new_inst)
 
         # Check that a new track has been added to the database.
-        db_track_count = len(Track.objects.filter(drumloop=13))
+        db_track_count = len(Track.objects.filter(drumloop=drumloop_id))
         self.assertEqual(db_track_count, new_track_count)
 
 
     def test_toggle_beat_and_save_to_db(self):
-        drumloop_id = 13
+        drumloop_id = 2
         self.driver.get(self.BASE_URL + f'editor/{drumloop_id}')
+
+        # login as user who created fixture.
+        username = self.driver.find_element(by=By.NAME, value='login')
+        password = self.driver.find_element(by=By.NAME, value='password')
+        submit = self.driver.find_element(by=By.ID, value="submit")
+        username.send_keys(settings.SELENIUM_FIXTURE_USERNAME)
+        password.send_keys(settings.SELENIUM_FIXTURE_PASSWORD)
+        submit.click()
+        time.sleep(1)
         
         # Get a ref to the first track's beats-holder, and click on each child beat 
         # to ensure it toggles the active_beat class.
@@ -359,7 +397,7 @@ class TestLoopEditorPage(StaticLiveServerTestCase):
         time.sleep(1) # allow time to scroll
         save_button.click()
         time.sleep(1) # allow time for post request
-        tracks = Track.objects.filter(drumloop=13).order_by('id')
+        tracks = Track.objects.filter(drumloop=drumloop_id).order_by('id')
         self.assertEqual(tracks[0].beats, new_beat_string)
 
 

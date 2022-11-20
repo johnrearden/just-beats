@@ -1,6 +1,7 @@
-from django.test import TestCase
+from django.test import TestCase, RequestFactory
 from django.contrib.auth.models import User
 from .models import Drumloop, Track, Instrument, Review
+from .views import LoopEditor
 
 
 class TestViews(TestCase):
@@ -15,6 +16,7 @@ class TestViews(TestCase):
                                               instrument=cls.test_instrument,
                                               beats="8888",
                                               track_volume='8')
+        cls.factory = RequestFactory()
 
     def test_get_looplist(self):
         response = self.client.get('/')
@@ -28,11 +30,14 @@ class TestViews(TestCase):
                                 'new_drumloop_form.html')
 
     def test_post_new_loop(self):
-        user = User.objects.create(username='name', password='pass')
+        orig_loop_count = Drumloop.objects.count()
+        self.client.login(username=self.test_user.username, 
+                          password=self.test_user.password)
         response = self.client.post(
-            '/create_new_loop/', {'name': 'test_name', 'tempo': '42', 'creator': user.pk})
+            '/create_new_loop/', {'name': 'test_name', 'tempo': '42', 'creator': self.test_user.pk})
         newly_created_drumloop = Drumloop.objects.get(name='test_name')
-        self.assertRedirects(response, f'/editor/{newly_created_drumloop.pk}')
+        self.assertEqual(newly_created_drumloop.creator, self.test_user)
+        self.assertEqual(Drumloop.objects.count(), orig_loop_count + 1)
 
     def test_get_review_drumloop(self):
         url = f'/create_review/{self.test_drumloop.pk}/{self.test_user.username}/'
@@ -68,9 +73,10 @@ class TestViews(TestCase):
 
     def test_get_loop_editor(self):
         url = f'/editor/{self.test_drumloop.pk}'
-        response = self.client.get(url)
+        request = self.factory.get(url)
+        request.user = self.test_user
+        response = LoopEditor().get(request)
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'loop_editor.html')
 
     def test_post_to_save_loop_and_tracks_view(self):
         data = {

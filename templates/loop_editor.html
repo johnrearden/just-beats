@@ -34,7 +34,7 @@
             <hr>
             {% endif %}
             <div class="col-6 col-lg-2" vertical-align>
-                <div id="instrument-name_{{ track.id }}" class="instrument-name py-2 py-md-0"
+                <div id="instrument-name_{{ track.id }}" class="instrument-name inst-test py-2 py-md-0"
                     onclick="onInstrumentButtonClicked('{{ loop.id }}','{{ track.id }}')">
                     {{ track.instrument.name }}
                 </div>
@@ -92,7 +92,7 @@
 <div class="modal fade " id="instrument-chooser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class=" modal-content">
+        <div class=" modal-content bg-dark">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLongTitle">Choose Instrument</h5>
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
@@ -105,7 +105,7 @@
                     <div class="row">
                         {% for instrument in instruments %}
                         <div class="col-md-6 text-center">
-                            <span id="modal-instrument-id_{{ instrument.id }}" class="instrument-name"
+                            <span id="modal-instrument-id_{{ instrument.id }}" class="instrument-name instrument-spans"
                                 onclick="onModalInstrumentClicked(event, '{{ instrument.url }}', '{{ instrument.name }}')">
                                 {{ instrument.name }}
                             </span>

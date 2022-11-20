@@ -12,7 +12,6 @@ from .forms import NewDrumloopForm, ReviewForm
 
 class LoopList(View):
     def get(self, request, selection='all'):
-        print(f'selection == {selection}')
         if (selection == 'all'):
             drumloops = Drumloop.objects.order_by('-rating')
         else: 
@@ -86,7 +85,6 @@ class SaveReview(View):
             average_rating = total / (len(all_reviews))
             drumloop = Drumloop.objects.get(id=loop_id)
             drumloop.rating = average_rating
-            print(drumloop)
             drumloop.save()
             messages.success(request, f"Thanks! Your review has been saved and is awaiting approval.")
         else:
