@@ -12,11 +12,22 @@ from .serializers import TrackSerializer
 from .forms import NewDrumloopForm, ReviewForm
 
 
-class LoopList(generic.ListView):
-    model = Drumloop
-    queryset = Drumloop.objects.order_by('-rating')
-    template_name = 'loop_list.html'
-    paginate_by = 8
+class LoopList(View):
+    def get(self, request, selection='all'):
+        print(f'selection == {selection}')
+        if (selection == 'all'):
+            drumloops = Drumloop.objects.order_by('-rating')
+        else: 
+            drumloops = Drumloop.objects.filter(creator=request.user).order_by('-rating')
+        context = {
+                'drumloops': drumloops,
+                'selection': selection,
+        }
+        return render(
+            request,
+            'loop_list.html',
+            context
+        )
 
 
 class CreateNewLoop(View):

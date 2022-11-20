@@ -63,6 +63,10 @@ button:hover {
     transition: 0.2s all;
 }
 
+.highlighted-button {
+    background-color:rgb(167, 167, 86);
+}
+
 .darker-background {
     background-image: radial-gradient(#000000bb, #00000088);
     border-radius: 20px;

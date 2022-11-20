@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
     path('', views.LoopList.as_view(), name='home'),
+    path('/<str:selection>', views.LoopList.as_view(), name='home'),
     path('create_new_loop/', views.CreateNewLoop.as_view(), name='new_drumloop_form'),
     path('editor/<int:id>', login_required(views.LoopEditor.as_view()), name='loop_editor'),
     path('tracks/<int:id>', views.TracksForLoop.as_view(), name='tracks'),
