@@ -48,6 +48,40 @@ Make your own drum loops on the web
 
 # Development Process
 
+## Project planning and documentation in GitHub
+
+GitHub Issues were used to document the development steps undertaken in the project. Two issue templates, 
+for [User Epics](https://github.com/johnrearden/just-beats/issues/new?assignees=&labels=&template=user-epic.md&title=USER+EPIC+%3A+%3CTITLE%3E) and [User Stories](https://github.com/johnrearden/just-beats/issues/new?assignees=johnrearden&labels=&template=user-story.md&title=USER+STORY+%3A+%3CTITLE%3E) were used. Various labels were employed to enable quick identification of issue type including Bugs, User Epics, User Stories and Style. MoSCoW prioritisation was employed using the labels must-have, should-have and could-have. 
+
+To break the project into manageable sprints, GitHub Projects was used to provide a Kanban board
+onto which the issues were posted, moving them from 'Todo' to 'In Progress' to 'Done' as they 
+were completed in turn. The iterations are documented here - [Iteration 1](https://github.com/users/johnrearden/projects/4) and [Iteration 2](https://github.com/users/johnrearden/projects/5).
+
+The User Epics and their related User Stories are as follows:
+- Epic : [Create Drum Loops](https://github.com/johnrearden/just-beats/issues/2).
+    - Story : [Load basic drum template](https://github.com/johnrearden/just-beats/issues/5#issue-1393424794)
+    - Story : [Toggle beats on and off](https://github.com/johnrearden/just-beats/issues/6#issue-1393425523)
+- Epic : [Listen to other users' loops](https://github.com/johnrearden/just-beats/issues/4)
+    - Story : [Create list view of all drumloops ordered by rating]()
+    - Story : [Allow user to preview loops without switching to loop editor view](https://github.com/johnrearden/just-beats/issues/19)
+- Epic : [Create an account](https://github.com/johnrearden/just-beats/issues/1)
+    - Story : [User account creation using all-auth](https://github.com/johnrearden/just-beats/issues/15#issue-1406144429)
+    - Story : [Styling the user account views](https://github.com/johnrearden/just-beats/issues/16)
+    - Story : [Social sign in](https://github.com/johnrearden/just-beats/issues/17)
+- Epic : [Play drum loops](https://github.com/johnrearden/just-beats/issues/10)
+    - Story : [Play/pause drumloop audio](https://github.com/johnrearden/just-beats/issues/11)
+    - Story : [Change track volume](https://github.com/johnrearden/just-beats/issues/12)
+- Epic : [Edit my drum loops](https://github.com/johnrearden/just-beats/issues/3)
+    - Story : [Add new track to drumloop](https://github.com/johnrearden/just-beats/issues/7#issue-1393427818)
+    - Story : [Change instrument on a track](https://github.com/johnrearden/just-beats/issues/8#issue-1393428524)
+    - Story : [Change drumloop tempo](https://github.com/johnrearden/just-beats/issues/13#issue-1393439736)
+    - Story : [Save drumloop](https://github.com/johnrearden/just-beats/issues/9#issue-1393429114)
+    - Story : [Delete existing track](https://github.com/johnrearden/just-beats/issues/21#issue-1428735119)
+- Epic : [Rating other users' loops](https://github.com/johnrearden/just-beats/issues/22)
+    - Story : [Give a star rating to someone else's loop](https://github.com/johnrearden/just-beats/issues/23#issue-1436561054)
+    - Story : [Make a comment on someone else's loop](https://github.com/johnrearden/just-beats/issues/24#issue-1436564637)
+    - Story : [Allow admin to moderate comments before publishing](https://github.com/johnrearden/just-beats/issues/25)
+
 ### Inline JavaScript and event handlers.
 When using Django templates, the fields passed in from the backend are only 
 available within the HTML document itself. It is therefore simpler to write event
