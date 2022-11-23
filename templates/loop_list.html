@@ -4,10 +4,10 @@
 
 {% block content %}
 
-<div class="container-md vert-gap-100">
+<div class="container-md">
     <div class="row">
         
-        <div class="col-lg-4 text-center align-self-center darker-background p-5">
+        <div class="col-lg-4 order-2 order-lg-1 text-center align-self-center darker-background p-5">
             <h1>Feeling Creative?</h1>
             {% if user.is_authenticated %}
             <p>Why not create a new loop of your own? Click here to start!</p>
@@ -27,24 +27,26 @@
             </div>
             {% endif %}
         </div>
-        <div class="col-lg-8 text-center">
-            <h1 class="text-center beats-header">Drumloops</h1>
+        <div class="col-lg-8 order-1 order-lg-2 text-center">
+            <span>
+                <h1 class="text-center beats-header mb-3 darker-background">Drumloops</h1>
+            </span>
             <div class="container">
                 <div class="row">
                     {% if selection == 'all' %}
-                    <div class="col-3 offset-3">
+                    <div class="col-6 col-md-3 offset-md-3">
                         <a href="{% url 'home' 'all' %}">
                             <button id="all-loops" class="highlighted-button">All Loops</button>
                         </a>
                     </div>
                         {% if user.is_authenticated %}
-                        <div class="col-3">
+                        <div class="col-6 col-md-3">
                             <a href="{% url 'home' 'user_only' %}">
                                 <button id="my-loops">My Loops</button>
                             </a>
                         </div>
                         {% else %}
-                        <div class="col-3">
+                        <div class="col-6 col-md-3">
                             <a href="{% url 'home' 'user_only' %}">
                                 <button id="my-loops" disabled>My Loops</button>
                             </a>

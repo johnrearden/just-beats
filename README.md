@@ -104,6 +104,25 @@ these are loaded before test run starts.https://github.com/jazzband/django-nose/
 
 ## Manual Testing
 
+### Responsiveness
+
+![iphone12_homepage](media/docs/iPhone12_homepage_screenshot.png)
+![iphone12_editor](media/docs/iPhone12_loopeditor_screenshot.png)
+![iphone12_instrument](media/docs/iPhone12_instrumentchooser_screenshot.png)
+![iphone12_review](media/docs/iPhone12_commentform_screenshot.png)
+
+### Browser Compatibility
+
+### Bugs
+
+### Lighthouse
+
+### Code Validation
+
+### User Stories
+
+### Features
+
 ## Automated Testing
 
 ### Testing django views, models and forms.
