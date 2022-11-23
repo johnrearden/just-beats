@@ -151,9 +151,14 @@ const onModalInstrumentClicked = (e, instrumentURL, instrumentName) => {
     audio.play();
 }
 
-const onAddNewTrackButtonClick = (e) => {
+const onAddNewTrackButtonClick = async (e) => {
     // Stop the LoopPlayer if playing
     loopPlayer.audioCtx.suspend();
+
+    // Save the loop and track data, as the page will reload in order to 
+    // display the loop with the newly added track, and any modifications
+    // made up till now will be lost.
+    await postLoopAndTracks();
 
     // Display the first instrument as selected, so that there is a default if
     // the modal is closed before a selection is made.
