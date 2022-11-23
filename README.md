@@ -105,11 +105,28 @@ these are loaded before test run starts.https://github.com/jazzband/django-nose/
 ## Manual Testing
 
 ### Responsiveness
+Here's a set of screenshots taken with the Chrome dev tools device toolbar, set
+to the iPhone 12 Pro. They are, in order, the homepage, loop editor page, instrument chooser page, 
+and the review form.
 
 ![iphone12_homepage](media/docs/iPhone12_homepage_screenshot.png)
 ![iphone12_editor](media/docs/iPhone12_loopeditor_screenshot.png)
 ![iphone12_instrument](media/docs/iPhone12_instrumentchooser_screenshot.png)
 ![iphone12_review](media/docs/iPhone12_commentform_screenshot.png)
+
+Here's the same four pages on the Surface Pro 7
+
+![surfacepro_homepage](media/docs/surface_pro_homepage_screenshot.png)
+![surfacepro_editor](media/docs/surface_pro_editor_screenshot.png)
+![surfacepro_instrument](media/docs/surface_pro_instrumentchooser_screenshot.png)
+![surfacepro_review](media/docs/surface_pro_review_screenshot.png)
+
+And finally the same four pages on a desktop monitor (1920x1080)
+
+![surfacepro_homepage](media/docs/desktop_homepage_screenshot.png)
+![surfacepro_editor](media/docs/desktop_editor_screenshot.png)
+![surfacepro_instrument](media/docs/desktop_instrumentchooser_screenshot.png)
+![surfacepro_review](media/docs/desktop_review_screenshot.png)
 
 ### Browser Compatibility
 
