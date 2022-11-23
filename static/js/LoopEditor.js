@@ -180,12 +180,24 @@ const onAddNewTrackButtonClick = async (e) => {
 const onDeleteTrackButtonClick = (event, trackID) => {
     event.preventDefault();
 
-    // Store the selected trackID in the confirm button.
+    // Check that there is more than one track remaining. If this is the last 
+    // track, inform the user with a warning that a drumloop must have at least 
+    // one track, and abort the delete action.
+    const trackHolderRows = document.getElementsByClassName('track-holder-row');
+    const trackCount = trackHolderRows.length;
+    console.log(`tracks : ${trackHolderRows}, count = ${trackCount}`);
+    if (trackCount === 1) {
+        displayWarningAlert('Can\'t delete the last track! A loop must have at least one.');
+    } else {
+        // Store the selected trackID in the confirm button.
     const confirmButton = document.getElementById('confirm-delete-track-button');
     confirmButton.setAttribute('trackID', trackID);
 
     // Open a modal dialog to ask user to confirm action.
     $('#delete-track-confirmation').modal('show');
+    }
+
+    
 }
 
 const onRefuseDeleteTrackClick = (event) => {
@@ -293,6 +305,24 @@ const postLoopAndTracks = async (event) => {
 const displaySuccessAlert = (message) => {
     let alertHTML = `
         <div class="alert alert-success alert-dismissible fade show"
+            id="msg" role="alert">
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>`;
+        let messageHolder = document.getElementById('message-holder');
+        messageHolder.innerHTML = alertHTML;
+        setTimeout(function() {
+            let messages = document.getElementById('msg');
+            if (messages) {
+                let alert = new bootstrap.Alert(messages);
+                alert.close();
+            }
+        }, 3000);
+}
+
+const displayWarningAlert = (message) => {
+    let alertHTML = `
+        <div class="alert alert-warning alert-dismissible fade show"
             id="msg" role="alert">
         ${message}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
