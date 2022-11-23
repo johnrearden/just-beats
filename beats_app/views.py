@@ -140,8 +140,9 @@ class LoopEditor(View):
     def get(self, request, id=1, *args, **kwargs):
         query_set = Drumloop.objects.all()
         loop = get_object_or_404(query_set, id=id)
+        print(f'Creator is {loop.creator}, current user is {request.user}')
         if loop.creator != request.user:
-            return HttpResponse('No way Jose')
+            return HttpResponseRedirect('/direct_url_entry_warning')
         else:
             tracks = (Track.objects.select_related()
                       .filter(drumloop=loop)
@@ -256,3 +257,15 @@ class DeleteLoop(APIView):
         loop.delete()
         messages.success(request, f'{loop_name} has been deleted.')
         return HttpResponse('Ok')
+
+
+class DirectURLEntryWarning(View):
+    """
+    This view simply returns the direct url entry warning page.
+    """
+    def get(self, request):
+        return render(
+            request,
+            'url_manipulation_warning.html',
+            {}
+        )

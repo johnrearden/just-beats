@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 text-center darker-background p-3 vert-gap-100">
+            <h1>Sorry, no can do!</h1>
+            <p>I see you're trying to edit drumloops that don't belong
+                to you by entering their ids directly in the address bar.
+                Please don't! You can only edit your own loops, and you need
+                to log in through the normal channels to do so.
+                Thanks!
+            </p>
+            <a href="{% url 'home' %}"><button>Home</button></a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

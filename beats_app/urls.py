@@ -18,5 +18,7 @@ urlpatterns = [
     path('create_review/<int:id>/<str:username>/',
          views.ReviewDrumloop.as_view(),
          name='review_drumloop'),
-    path('save_review/', views.SaveReview.as_view(), name="save_review")
+    path('save_review/', views.SaveReview.as_view(), name="save_review"),
+    path('direct_url_entry_warning/', views.DirectURLEntryWarning.as_view(),
+         name='direct_url_entry_warning'),
 ]
