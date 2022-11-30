@@ -1,3 +1,8 @@
+/**
+ * A class that handles audio playback for multiple different pages within
+ * the project. It operates using the WebAudio API, enabling it to play 
+ * multiple tracks simultaneously and schedule the playing of samples in advance.
+ */
 class LoopPlayer {
     constructor(tempo, tracks, loopID, name) {
         // Create a new AudioContext and suspend it immediately. This is to ensure
@@ -42,7 +47,11 @@ class LoopPlayer {
         this.scheduler();
     }
 
-    togglePlay = () => {
+    /**
+     * Repeated calls to this function will alternately stop and restart the
+     * audio playback.
+     */
+    togglePlay() {
         if (this.audioCtx.state === 'running') {
             this.audioCtx.suspend();
         } else {
@@ -50,13 +59,20 @@ class LoopPlayer {
         }
     }
 
-    isPlaying = () => {
+    /**
+     * 
+     * @returns a boolean, true if playing, false if not
+     */
+    isPlaying() {
         return this.audioCtx.state === 'running';
     }
 
-    // Adds a track to the loop. Extracts the fields of the backend model Track
-    // necessary to play the loop. Loads the required sample from remote file.
-    addTrackSequence = async (track) => {
+    /**
+     * Adds a track to the loop. Extracts the fields of the backend model Track
+     * necessary to play the loop. Loads the required sample from remote file.
+     * @param {Object} track 
+     */
+    async addTrackSequence(track) {
         let instrumentURL = track.instrument_url;
         let drumURL = drumURLs[instrumentURL];
         let sample = await this.getAudioBuffer(drumURL);
@@ -70,28 +86,45 @@ class LoopPlayer {
         this.trackSequences.set(track.pk, trackSequence);
     }
 
-    // Deletes a track from the loop.
-    deleteTrack = (trackID) => {
-        this.trackSequences.delete(trackID);
+
+    /**
+     * Deletes a track from the loop.
+     * @param {String} trackID 
+     */
+    deleteTrack(trackID){
+        this.trackSequences.delete(parseInt(trackID));
     }
 
-    // Switches the beat at index on and off alternately.
-    toggleBeatAt = (trackID, index) => {
+
+    /**
+     *  Switches the beat at index on and off alternately.
+     */ 
+    toggleBeatAt(trackID, index) {
         let trackSeq = this.trackSequences.get(trackID);
         trackSeq.toggleBeat(index);
     }
 
-    // Alter the tempo (beats per minute) that the loop is playing at.
-    changeTempo = (newTempo) => {
+
+    /**
+     * Alter the tempo (beats per minute) that the loop is playing at.
+     * @param {Integer} newTempo 
+     */
+    changeTempo(newTempo) {
         this.tempo = newTempo;
         let beatsPerSec = newTempo / 60 * 8;
         this.beatDuration = 1 / beatsPerSec;
     }
 
-    // When a user selects a track to play, replaces the current tempo and tracks
-    // with the specified ones. This avoids the overhead of creating a new AudioContext
-    // each time a different loop is played.
-    swapLoop = (tempo, tracks, loopID) => {
+
+    /**
+     * When a user selects a track to play, replaces the current tempo and tracks
+     * with the specified ones. This avoids the overhead of creating a new AudioContext
+     * each time a different loop is played.
+     * @param {Integer} tempo 
+     * @param {String} tracks 
+     * @param {String} loopID 
+     */
+    swapLoop(tempo, tracks, loopID) {
 
         // The new loopID of this loop.
         this.loopID = loopID;
@@ -110,26 +143,44 @@ class LoopPlayer {
     }
 
 
-    deleteTrack = (trackID) => {
-        this.trackSequences.delete(parseInt(trackID));
-    }
-
-    // Changes the overall track volume to the new value.
-    changeTrackVolume = (trackID, newVolume) => {
+    /**
+     * Changes the overall track volume to the new value.
+     * @param {String} trackID 
+     * @param {Integer} newVolume 
+     */
+    changeTrackVolume(trackID, newVolume) {
         const idAsNumber = parseInt(trackID);
         this.trackSequences.get(idAsNumber).masterVolume = newVolume;
     }
 
-    // Changes the track name.
-    changeLoopName = (newName) => {
+
+    /**
+     * Changes the track name.
+     * @param {String} newName 
+     */
+    changeLoopName(newName) {
         this.name = newName;
     }
 
-    getInstrumentID = (trackID) => {
+
+    /**
+     * Returns the Instrument ID of the current track.
+     * @param {String} trackID 
+     * @returns The instrument id of the specified track
+     */
+    getInstrumentID(trackID) {
         return this.trackSequences.get(parseInt(trackID)).instrumentID;
     }
 
-    setInstrument = async (trackID, newInstrumentID, newInstrumentURL) => {
+
+    /**
+     * When a new instrument is chosen, loads the sample and stores a reference
+     * to it in the trackSequences array.
+     * @param {String} trackID 
+     * @param {String} newInstrumentID 
+     * @param {String} newInstrumentURL 
+     */
+    async setInstrument(trackID, newInstrumentID, newInstrumentURL) {
         const trackSeq = this.trackSequences.get(parseInt(trackID));
         trackSeq.instrumentID = newInstrumentID;
         let drumURL = drumURLs[newInstrumentURL];
@@ -137,10 +188,17 @@ class LoopPlayer {
         trackSeq.sample = sample;
     }
 
-    scheduler = () => {
+
+    /**
+     * If the next beat falls within the lookahead window, this function iterates
+     * through the trackSequences and schedules any notes that the sequences have
+     * on this beat. It then advances the nextBeatTime by the current beatDuration, 
+     * and advances the beatIndex, cycling back to 0 if necessary to begin the loop
+     * again from the start.
+     */
+    scheduler() {
         let currentTime = this.audioCtx.currentTime;
         while (this.nextBeatTime - currentTime < this.scheduleWindow) {
-
             // Check the currentNote of each instrument to see if it is due 
             // to be played.
             for (const track of this.trackSequences.values()) {
@@ -163,7 +221,16 @@ class LoopPlayer {
             this.scheduler, this.lookahead);
     }
 
-    scheduleNote = (sample, volume, noteTime) => {
+
+    /**
+     * Connects up the AudioContext pipeline - 
+     * sample(source) -> gainNode -> destination.
+     * Schedules the sample to be played at the noteTime specified.
+     * @param {AudioBuffer} sample 
+     * @param {Integer} volume 
+     * @param {Number} noteTime 
+     */
+    scheduleNote(sample, volume, noteTime) {
         const sampleSource = new AudioBufferSourceNode(this.audioCtx, {
             buffer: sample,
             playbackRate: 1.0,
@@ -175,22 +242,28 @@ class LoopPlayer {
         sampleSource.start(noteTime);
     }
 
-    // Fetches the file at the specified path and converts it to an audioBuffer, 
-    // ready for playing by the AudioContext
-    getAudioBuffer = async (filepath) => {
+
+    /**
+     *  Fetches the file at the specified path and converts it to an audioBuffer, 
+     *  ready for playing by the AudioContext
+     */
+    async getAudioBuffer(filepath) {
         const response = await fetch(filepath);
         const arrayBuffer = await response.arrayBuffer();
         const audioBuffer = await this.audioCtx.decodeAudioData(arrayBuffer);
         return audioBuffer;
     }
 
-    // Return a JSON representation of this loop, for sending in a POST request.
-    getLoopAsJSON = () => {
-        const obj = {}
+
+    /**
+     * Return a JSON representation of this loop, for sending in a POST request.
+    */ 
+    getLoopAsJSON() {
+        const obj = {};
         obj.name = this.name;
         obj.tempo = this.tempo;
         obj.loopID = this.loopID;
-        obj.trackList = []
+        obj.trackList = [];
         for (const track of this.trackSequences.values()) {
             const element = {};
             element.trackID = track.id;
@@ -203,9 +276,12 @@ class LoopPlayer {
     }
 }
 
-// A TrackSequence is the representation of the backend model Track as used
-// by the LoopPlayer. In addition to the fields in the model Track, it also
-// holds the same (an AudioBuffer) to allow the track to be played aloud.
+
+/**
+ * A TrackSequence is the representation of the backend model Track as used
+ * by the LoopPlayer. In addition to the fields in the model Track, it also
+ * holds the sample (an AudioBuffer) to allow the track to be played aloud.
+ */
 class TrackSequence {
     constructor(id, instrumentID, sample, beatList, masterVolume) {
         this.id = id;
@@ -215,7 +291,12 @@ class TrackSequence {
         this.masterVolume = masterVolume;
     }
 
-    toggleBeat = (index) => {
+    /**
+     * Toggles the character (repesenting the beat on/off) at the index
+     * specified.
+     * @param {Integer} index 
+     */
+    toggleBeat(index){
         if (this.beatList.charAt(index) === "8") {
             this.beatList = replaceCharacter(this.beatList, index, "0");
         } else {
@@ -223,19 +304,36 @@ class TrackSequence {
         }
     }
 
-    getVolume = () => {
+    /**
+     * Returns the master volume divided by 10 for use in the gainNode
+     * of the AudioContext.
+     * @returns master volume * 0.1
+     */
+    getVolume() {
         return this.masterVolume * 0.1;
     }
 
-    // returns true if there is a beat to be played at this index.
-    hasBeatAt = (index) => {
+    /**
+     * returns true if there is a beat to be played at this index.
+     * @returns true if beat exists at index, false otherwise.
+    */
+    hasBeatAt(index) {
         return this.beatList.charAt(index) === '8';
     }
 }
 
+
+/**
+ * Utility function which replaces the character at a given position in the
+ * string parameter with the supplied replacement character.
+ * @param {String} string 
+ * @param {Integer} position 
+ * @param {String} newCharacter 
+ * @returns The altered string.
+ */
 const replaceCharacter = (string, position, newCharacter) => {
     let before = string.substring(0, position);
     let after = string.substring(position + 1);
     return before + newCharacter + after;
-}
+};
 

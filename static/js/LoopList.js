@@ -1,12 +1,17 @@
+/**
+ * The LoopPlayer object that handles audio playback.
+ */
 let loopPlayer;
 
+
+/**
+ * Adds event listeners to the play buttons belonging to each loop in the
+ * loop list.
+ */
 document.addEventListener('DOMContentLoaded', () => {
     const playButtons = document.getElementsByClassName('play-button');
     for (let button of playButtons) {
         button.addEventListener('click', (e) => {
-
-            
-
             // Get the id and tempo associated with this loop.
             const target = e.target;
             const loopID = target.getAttribute('data-id');
@@ -41,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         .then(tracks => {
                             populateLoopPlayer(parseInt(tempo), tracks, loopID);
                             loopPlayer.audioCtx.resume();
-                            changeCurrentTrackName(name);
+                            changeCurrentLoopName(name);
                             showRatingLink();
                         });
                 } else {
@@ -72,8 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Each time the loopPlayer is toggled, the rating link must be also. This keeps
-// the visibility of the link in sync with the loopPlayer.
+
+/**
+ * Each time the loopPlayer is toggled, the rating link must be also. This keeps
+ * the visibility of the link in sync with the loopPlayer.
+ * @param {String} name 
+ */
 const toggleRatingLink = (name) => {
     // If the loopPlayer is being set to play, then display the 
     // loop name in the current track display.
@@ -85,24 +94,40 @@ const toggleRatingLink = (name) => {
     } else {
         currentTrackDisplay.classList.add('invisible');
     }
-}
+};
 
-// Used when the user has clicked on a new track. In this case, the loopPlayer
-// is not toggled, it is switched on (whether or not it was on before). The 
-// rating link visiblity must be displayed to match the audio behaviour
+
+/**
+ * Used when the user has clicked on a new track. In this case, the loopPlayer
+ * is not toggled, it is switched on (whether or not it was on before). The 
+ * rating link visiblity must be displayed to match the audio behaviour
+ */ 
 const showRatingLink = () => {
     const currentTrackDisplay = document.getElementById('current-track-display');
     currentTrackDisplay.classList.remove('invisible');
-}
+};
 
-const changeCurrentTrackName = (name) => {
-    document.getElementById('playing-track-name').textContent = name;
-}
 
+/**
+ * Sets the currently playing loop name on the page.
+ * @param {String} name 
+ */
+const changeCurrentLoopName = (name) => {
+    document.getElementById('playing-loop-name').textContent = name;
+};
+
+
+/**
+ * Creates a new LoopPlayer object if one does not yet exist, and passes
+ * the loop ID, tracks info and tempo to it.
+ * @param {Integer} tempo 
+ * @param {String} tracks 
+ * @param {String} loopID 
+ */
 const populateLoopPlayer = (tempo, tracks, loopID) => {
     if (!loopPlayer) {
         loopPlayer = new LoopPlayer(tempo, tracks, loopID);
     } else {
         loopPlayer.swapLoop(tempo, tracks, loopID);
     }
-}
+};
