@@ -102,7 +102,7 @@ const toggleRatingLink = (name) => {
  * rating link visiblity must be displayed to match the audio behaviour
  */ 
 const showRatingLink = () => {
-    const currentTrackDisplay = document.getElementById('current-track-display');
+    const currentTrackDisplay = document.getElementById('current-loop-display');
     currentTrackDisplay.classList.remove('invisible');
 };
 

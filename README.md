@@ -27,7 +27,6 @@ a row for each track. Each row consists of the instrument name (clickable to cha
 the track volume (a slider), the beats display (a div for each beat which toggles when
 clicked) and a delete button, which allows the user remove that track permanently (requires
 confirmation). At the bottom are 4 buttons - Play, Add New Track, Save and Delete Loop.
-
 The page also provides three modals; one each to confirm deletion of a track or the whole loop, 
 and an instrument chooser modal which displays a table containing all available instruments, with 
 the current choice highlighted.
@@ -43,7 +42,9 @@ on the chosen loop and the respective ratings are shown in a dialog on the left 
 ![desktop_review](media/docs/desktop_review_screenshot.png)
 
 - **Messaging** : 
-Messaging is handled by two separate processes, both of which write to the same dedicated div just below the navbar. Standard Django messages are dispatched from the backend and displayed as the page is loaded/reloaded. As these messages are embedded in templates, they can only be shown when 
+Messaging is handled by two separate processes, both of which write to the same dedicated div just below the navbar. Standard Django messages are dispatched from the backend and displayed as the page is loaded/reloaded. As these messages are embedded in templates, they can only be shown to the user when a page is loaded. For actions that are carried out using POST requests, such as saving the tracks and loop information, JavaScript is used to write confirmation and error messages to the same div on the page. In both cases, a script removes the message again after a short delay.
+
+![messaging_screenshot](media/docs/messaging_screenshot.png)
 
 [User Experience](#User-Experience)
 
