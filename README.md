@@ -8,8 +8,10 @@ on and rate other users' loops to provide a social element to the site.
 
 [Screenshots](#Screenshots)
 
+![responsivenes_screenshot](media/docs/responsiveness_screenshot.png)
+
 [Features](#Features)
-- Homepage
+- **Homepage** : 
 The user is first shown a list of all the saved drumloops, ordered by rating, 
 and can listen to any of these. Clicking on the play button plays the loop, and also
 brings up a display at the bottom of the page with the loop name and a button to
@@ -18,7 +20,7 @@ not the current user's own loops). If logged in, the user can click a button to 
 their own loops, which will have an edit button beside them linking to the loop_editor page.
 ![desktop_homepage](media/docs/desktop_homepage_screenshot.png)
 
-- Loop Editor Page
+- **Loop Editor Page** :
 The user is shown a display representing the current loop. At the top there are 3 inputs - 
 Loop Name, Creator(not editable) and Tempo (a number input). Below this is a table containing
 a row for each track. Each row consists of the instrument name (clickable to change instrument), 
@@ -33,6 +35,15 @@ the current choice highlighted.
 ![iphone12_editor](media/docs/iPhone12_loopeditor_screenshot.png)
 ![iphone12_instrument](media/docs/iPhone12_instrumentchooser_screenshot.png)
 
+- **Loop Rating and Comments** :
+The user, if logged in, can rate and comment on drumloops by other users (the rating link is
+disabled for a user's own loops - you can't let people rate themselves!). All previous comments 
+on the chosen loop and the respective ratings are shown in a dialog on the left hand side (on top on mobile). A simple form with 2 editable inputs - for the numerical rating and the comment - appears on the right-hand side (below on mobile).
+
+![desktop_review](media/docs/desktop_review_screenshot.png)
+
+- **Messaging** : 
+Messaging is handled by two separate processes, both of which write to the same dedicated div just below the navbar. Standard Django messages are dispatched from the backend and displayed as the page is loaded/reloaded. As these messages are embedded in templates, they can only be shown when 
 
 [User Experience](#User-Experience)
 
