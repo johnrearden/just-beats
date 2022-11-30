@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "jshint": "^2.13.6"
+  },
+  "jshintConfig": {
+    "esversion": 8
+  }
+}

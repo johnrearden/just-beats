@@ -1,6 +1,21 @@
+/**
+ * The LoopPlayer object that handles audio playback.
+ */
 let loopPlayer;
-let instrumentModalConfig;
 
+
+/**
+ * A configuration object that stores state relevant to the operation of the 
+ * instrument chooser modal.
+ */
+let instrumentModalConfig; 
+
+
+/**
+ * This function runs after the page content has loaded. It fetches the track 
+ * data for this loop from the backend, creates the LoopPlayer object, and sets
+ * up the event listeners on the play button and the addNewTrackButton.
+ */
 document.addEventListener('DOMContentLoaded', () => {
     const addNewTrackButton = document.getElementById('add-new-track');
     addNewTrackButton.addEventListener('click', (event) => {
@@ -23,6 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
     setIntrumentNameColors();
 });
 
+
+/**
+ * This event handler responds to a click on any of the beat divs on the page, 
+ * toggles its active_beat class, and passes the toggle event to the LoopPlayer
+ * object to update the audio data.
+ * @param {Event} event 
+ */
 const onBeatClick = (event) => {
     let beatDiv = event.target;
     let [trackString, beatString] = beatDiv.id.split(":");
@@ -36,23 +58,49 @@ const onBeatClick = (event) => {
         beatDiv.classList.add('active_beat');
         loopPlayer.toggleBeatAt(trackNumber, beatNumber);
     }
-}
+};
 
+
+/**
+ * Passes the changed drumloop name to the LoopPlayer object.
+ * @param {Event} event 
+ */
 const onDrumloopNameChange = (event) => {
     loopPlayer.changeLoopName(event.target.value);
-}
+};
 
+
+/**
+ * Passes the changed tempo to the loopPlayer object.
+ * @param {Event} event 
+ */
 const onTempoInputChange = (event) => {
     const newTempo = event.target.value;
     loopPlayer.changeTempo(newTempo);
-}
+};
 
+
+/**
+ * This function reacts to a change in the value of any of the volume sliders, 
+ * passing the appropriate track ID and the new value of the slider to the 
+ * LoopPlayer object.
+ * @param {Event} event 
+ * @param {String} trackID 
+ */
 const onTrackVolumeChange = (event, trackID) => {
     loopPlayer.changeTrackVolume(trackID, event.target.value);
-}
+};
 
+
+/**
+ * When any of the instrument buttons are clicked, creates an new
+ * InstrumentModalConfig object to store the loop and track ID, and the current
+ * instrument value for this track. It stops the audio playback (if running), 
+ * so that the sample instrument sounds can be heard clearly.
+ * @param {String} loopID 
+ * @param {String} trackID 
+ */
 const onInstrumentButtonClicked = (loopID, trackID) => {
-
     // Stop the LoopPlayer if playing
     loopPlayer.audioCtx.suspend();
 
@@ -64,9 +112,8 @@ const onInstrumentButtonClicked = (loopID, trackID) => {
         loopID,
         false,
         '',
-        '',
-    )
-
+        ''
+    );
     // Set the current instrument as selected in the modal.
     const instrumentSpans = document.getElementsByClassName('instrument-name');
     for (let span of instrumentSpans) {
@@ -79,8 +126,15 @@ const onInstrumentButtonClicked = (loopID, trackID) => {
 
     // Display the modal.
     $('#instrument-chooser').modal('show');
-}
+};
 
+
+/**
+ * When a new instrument is selected in the instrument chooser modal, this 
+ * function passes the current InstrumentModalConfig settings to the LoopPlayer, 
+ * changes the instrument name and colour on the page, and hides the modal.
+ * @param {Event} e 
+ */
 const onModalSaveChangesClicked = async (e) => {
 
     // If an existing track is being modified, update the instrumentID input 
@@ -106,13 +160,14 @@ const onModalSaveChangesClicked = async (e) => {
         $('#instrument-chooser').modal('hide');
 
     } else {
+        // Grab the csrf cookie for the POST request.
         const csrfToken = getCookie('csrftoken');
         // A new track is being created. Make a POST request to the backend
         // to create a new track.
         const params = {
             'loopID': instrumentModalConfig.currentLoopID,
             'instrumentID': instrumentModalConfig.currentInstrumentID,
-        }
+        };
         const options = {
             method: 'POST',
             credentials: 'same-origin',
@@ -123,15 +178,25 @@ const onModalSaveChangesClicked = async (e) => {
                 'X-CSRFToken': csrfToken,
             },
 
-        }
+        };
         fetch('/add_new_track/', options)
             .then(() => {
                 // Reload the page
                 window.location.reload();
             });
     }
-}
+};
 
+
+/**
+ * This event handler function fires when an instrument is selection in the
+ * instrument chooser modal. It highlights the instrument on the page, and
+ * plays the instrument sample so that the user can listen to the instrument
+ * they've chosen.
+ * @param {Event} e 
+ * @param {String} instrumentURL 
+ * @param {String} instrumentName 
+ */
 const onModalInstrumentClicked = (e, instrumentURL, instrumentName) => {
     const selectedInstrumentID = e.target.id.split('_')[1];
     instrumentModalConfig.currentInstrumentID = selectedInstrumentID;
@@ -149,8 +214,15 @@ const onModalInstrumentClicked = (e, instrumentURL, instrumentName) => {
     const url = drumURLs[instrumentURL];
     audio = new Audio(url);
     audio.play();
-}
+};
 
+
+/**
+ * Stops the audio playback, saves the current loop and track data (as the 
+ * page needs to reload after a new track is created) and displays the 
+ * instrument chooser modal (as a track must have an instrument).
+ * @param {Event} e 
+ */
 const onAddNewTrackButtonClick = async (e) => {
     // Stop the LoopPlayer if playing
     loopPlayer.audioCtx.suspend();
@@ -171,12 +243,20 @@ const onAddNewTrackButtonClick = async (e) => {
         defaultInstrumentID,
         loopPlayer.loopID,
         true,
-    )
+    );
 
     // Display the modal.
     $('#instrument-chooser').modal('show');
-}
+};
 
+
+/**
+ * Checks that there is more than one remaining track in this loop. If so, 
+ * opens a confirmation modal and stores the track ID as an attribute in this
+ * modal.
+ * @param {Event} event 
+ * @param {String} trackID 
+ */
 const onDeleteTrackButtonClick = (event, trackID) => {
     event.preventDefault();
 
@@ -185,7 +265,6 @@ const onDeleteTrackButtonClick = (event, trackID) => {
     // one track, and abort the delete action.
     const trackHolderRows = document.getElementsByClassName('track-holder-row');
     const trackCount = trackHolderRows.length;
-    console.log(`tracks : ${trackHolderRows}, count = ${trackCount}`);
     if (trackCount === 1) {
         displayWarningAlert('Can\'t delete the last track! A loop must have at least one.');
     } else {
@@ -196,16 +275,29 @@ const onDeleteTrackButtonClick = (event, trackID) => {
     // Open a modal dialog to ask user to confirm action.
     $('#delete-track-confirmation').modal('show');
     }
+};
 
-    
-}
 
+/**
+ * If the user doesn't confirm the track deletion, simply hides the confirmation
+ * modal.
+ * @param {Event} event 
+ */
 const onRefuseDeleteTrackClick = (event) => {
     $('#delete-track-confirmation').modal('hide');
-}
+};
 
+
+/**
+ * On confirmation of the track deletion, takes the following 4 actions :
+ *    1) Hides the confirmation modal
+ *    2) Removes the track element from the page
+ *    3) Removes the track from the LoopPlayer object.
+ *    4) Makes a POST request to the backend to delete the track from 
+ *       the database.
+ * @param {Event} event 
+ */
 const onConfirmDeleteTrackClick = (event) => {
-
     // Hide the dialog again.
     $('#delete-track-confirmation').modal('hide');
 
@@ -226,7 +318,7 @@ const onConfirmDeleteTrackClick = (event) => {
     const csrfToken = getCookie('csrftoken');
     const params = {
         'trackID': trackID,
-    }
+    };
     const options = {
         method: 'POST',
         credentials: 'same-origin',
@@ -236,11 +328,18 @@ const onConfirmDeleteTrackClick = (event) => {
             'Content-Type': 'application/json',
             'X-CSRFToken': csrfToken,
         },
-    }
+    };
     fetch('/delete_track/', options); // No need to reload page in this instance.
-    displaySuccessAlert('Track deleted ..... farewell, condemned beats.')
-}
+    displaySuccessAlert('Track deleted ..... farewell, condemned beats.');
+};
 
+
+/**
+ * When the delete loop button is clicked, opens a modal to request
+ * confirmation from the user.
+ * @param {Event} event 
+ * @param {String} loopID 
+ */
 const onDeleteLoopButtonClick = (event, loopID) => {
     event.preventDefault();
 
@@ -248,14 +347,26 @@ const onDeleteLoopButtonClick = (event, loopID) => {
     const confirmButton = document.getElementById('confirm-delete-loop-button');
     confirmButton.setAttribute('loopID', loopID);
 
-    // Open a modal dialog to ask user to confrim action.
+    // Open a modal dialog to ask user to confirm action.
     $('#delete-loop-confirmation').modal('show');
-}
+};
 
+
+/**
+ * If the user does not confirm the loop deletion, hides the modal.
+ * @param {Event} event 
+ */
 const onRefuseDeleteLoopClick = (event) => {
     $('#delete-loop-confirmation').modal('hide');
-}
+};
 
+
+/**
+ * If the user confirms the loop deletion, this function hides the confirmation
+ * modal, makes a POST request to the backend to delete the loop, and navigates
+ * back to the homepage (the loop list).
+ * @param {Event} event 
+ */
 const onConfirmDeleteLoopClick = (event) => {
 
     // Hide the dialog again.
@@ -268,7 +379,7 @@ const onConfirmDeleteLoopClick = (event) => {
     const csrfToken = getCookie('csrftoken');
     const params = {
         'loopID': loopID,
-    }
+    };
     const options = {
         method: 'POST',
         credentials: 'same-origin',
@@ -278,12 +389,16 @@ const onConfirmDeleteLoopClick = (event) => {
             'Content-Type': 'application/json',
             'X-CSRFToken': csrfToken,
         },
-    }
+    };
     fetch('/delete_loop/', options)
-        .then(() => window.location = '/')
-}
+        .then(() => window.location = '/');
+};
 
-
+/**
+ * This function makes a POST request to the backend, passing the current 
+ * loop and track data so that it can be saved to the database.
+ * @param {Event} event 
+ */
 const postLoopAndTracks = async (event) => {
     const csrfToken = getCookie('csrftoken');
 
@@ -296,12 +411,20 @@ const postLoopAndTracks = async (event) => {
             'Content-Type': 'application/json',
             'X-CSRFToken': csrfToken,
         },
-    }
+    };
     await fetch('/save_loop_and_tracks/', options)
         .then(response => response.json())
         .then(json => displaySuccessAlert('Loop and tracks successfully saved!'));
-}
+};
 
+
+/**
+ * Utility function to display a Bootstrap alert to the user. This alert mimics
+ * the messages passed by Django to the page, and is used in the event that a 
+ * message is needed, but the page is not reloaded, and so the Django messaging
+ * functionality cannot be used.
+ * @param {String} message 
+ */
 const displaySuccessAlert = (message) => {
     let alertHTML = `
         <div class="alert alert-success alert-dismissible fade show"
@@ -318,8 +441,15 @@ const displaySuccessAlert = (message) => {
                 alert.close();
             }
         }, 3000);
-}
+};
 
+/**
+ * Utility function to display a Bootstrap alert to the user. This alert mimics
+ * the messages passed by Django to the page, and is used in the event that a 
+ * message is needed, but the page is not reloaded, and so the Django messaging
+ * functionality cannot be used.
+ * @param {String} message 
+ */
 const displayWarningAlert = (message) => {
     let alertHTML = `
         <div class="alert alert-warning alert-dismissible fade show"
@@ -336,8 +466,13 @@ const displayWarningAlert = (message) => {
                 alert.close();
             }
         }, 3000);
-}
+};
 
+/**
+ * Retrieves the document crsf cookie and returns it.
+ * @param {String} name 
+ * @returns the cookie value.
+ */
 const getCookie = (name) => {
     let cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -352,8 +487,15 @@ const getCookie = (name) => {
         }
     }
     return cookieValue;
-}
+};
 
+
+/**
+ * Creates a RGB color from the hashed value of the instrument name string, 
+ * so that each instrument will have a unique color to improve UX. This 
+ * approach reduces maintainance load as any new or custom instruments will
+ * automatically have a new colour generated for them.
+ */
 const setIntrumentNameColors = () => {
     let instrumentNameDivs = document.getElementsByClassName('instrument-name');
     for (let div of instrumentNameDivs) {
@@ -366,8 +508,14 @@ const setIntrumentNameColors = () => {
         div.style.backgroundColor = `rgb(${red}, ${green}, ${blue}, 0.4)`;
         div.style.color = "white";
     }
-}
+};
 
+
+/**
+ * 
+ * @param {String} string 
+ * @returns an integer hash value (almost always) unique to the string.
+ */
 const hashString = (string) => {
     let hash = 0;
     if (string.length === 0) return hash;
@@ -377,8 +525,14 @@ const hashString = (string) => {
         hash |= 0;
     }
     return hash;
-}
+};
 
+
+/**
+ * A utility class used to store information about the current track, loop
+ * and instrument before opening the instrument chooser modal. This information
+ * is then accessed by the modal event handlers upon user action.
+ */
 class InstrumentModalConfig {
     constructor(selectedTrackID, currentInstrumentID, currentLoopID,
         newTrack, currentInstrumentURL, currentInstrumentName) {
