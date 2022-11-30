@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
             let creator = target.getAttribute('data-creator');
             let ratingLauncherButton = document.getElementById('rating-launcher-button');
             if (username === creator) {
-                console.log('The logged in user wrote this loop');
                 ratingLauncherButton.classList.add('invisible');
             } else {
                 ratingLauncherButton.classList.remove('invisible');
@@ -86,8 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
 const toggleRatingLink = (name) => {
     // If the loopPlayer is being set to play, then display the 
     // loop name in the current track display.
-    const currentTrackDisplay = document.getElementById('current-track-display');
-    const trackNameSpan = document.getElementById('playing-track-name');
+    const currentTrackDisplay = document.getElementById('current-loop-display');
+    const trackNameSpan = document.getElementById('playing-loop-name');
     if (currentTrackDisplay.classList.contains('invisible')) {
         trackNameSpan.textContent = name;
         currentTrackDisplay.classList.remove('invisible');

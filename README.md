@@ -1,9 +1,38 @@
 # just-beats
 Make your own drum loops on the web
 
+## Purpose of Project
+The aim of the project is to allow users to create and edit drum loops using
+a custom GUI, and save them to a database. Users can also (if logged in) comment
+on and rate other users' loops to provide a social element to the site.
+
 [Screenshots](#Screenshots)
 
 [Features](#Features)
+- Homepage
+The user is first shown a list of all the saved drumloops, ordered by rating, 
+and can listen to any of these. Clicking on the play button plays the loop, and also
+brings up a display at the bottom of the page with the loop name and a button to
+allow the user to rate and comment on the loop (only possible with other users' loops, 
+not the current user's own loops). If logged in, the user can click a button to see just 
+their own loops, which will have an edit button beside them linking to the loop_editor page.
+![desktop_homepage](media/docs/desktop_homepage_screenshot.png)
+
+- Loop Editor Page
+The user is shown a display representing the current loop. At the top there are 3 inputs - 
+Loop Name, Creator(not editable) and Tempo (a number input). Below this is a table containing
+a row for each track. Each row consists of the instrument name (clickable to change instrument), 
+the track volume (a slider), the beats display (a div for each beat which toggles when
+clicked) and a delete button, which allows the user remove that track permanently (requires
+confirmation). At the bottom are 4 buttons - Play, Add New Track, Save and Delete Loop.
+
+The page also provides three modals; one each to confirm deletion of a track or the whole loop, 
+and an instrument chooser modal which displays a table containing all available instruments, with 
+the current choice highlighted.
+
+![iphone12_editor](media/docs/iPhone12_loopeditor_screenshot.png)
+![iphone12_instrument](media/docs/iPhone12_instrumentchooser_screenshot.png)
+
 
 [User Experience](#User-Experience)
 
@@ -123,10 +152,10 @@ Here's the same four pages on the Surface Pro 7
 
 And finally the same four pages on a desktop monitor (1920x1080)
 
-![surfacepro_homepage](media/docs/desktop_homepage_screenshot.png)
-![surfacepro_editor](media/docs/desktop_editor_screenshot.png)
-![surfacepro_instrument](media/docs/desktop_instrumentchooser_screenshot.png)
-![surfacepro_review](media/docs/desktop_review_screenshot.png)
+![desktop_homepage](media/docs/desktop_homepage_screenshot.png)
+![desktop_editor](media/docs/desktop_editor_screenshot.png)
+![desktop_instrument](media/docs/desktop_instrumentchooser_screenshot.png)
+![desktop_review](media/docs/desktop_review_screenshot.png)
 
 ### Browser Compatibility
 
@@ -183,6 +212,21 @@ Google social authentication: Error 400 redirect_uri_mismatch. The problem was c
 I supplied to Google when setting up the credentials having a missing trailing slash at the end. 
 https://www.youtube.com/watch?v=QHz1Rs6lZHQ&t=1s
 
+Problem with setTimeout and this.
+I originally wrote the LoopPlayer class using the ES6 constructor syntax, but using
+arrow functions syntax in the function definitions. 
+
+`scheduler = () => { .... }`
+
+JSHint did not approve, so I changed the function definitions to the standard class syntax.
+
+`scheduler() { ...... }`
+
+This introduced a bug which was equal parts annoying and interesting. At the end of the scheduler function, it invokes itself again after a delay using setTimeout. Removing the arrow syntax from the
+function definitions resulted in the value of this being reset to the global context, which didn't have access to the AudioContext created within the class constructor.
+ - Solution : I wrapped the schedule function call inside a wrapper function and bound this
+ to the correct context. The [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this#as_an_object_method) and [this stack overflow reply](
+https://stackoverflow.com/questions/591269/settimeout-and-this-in-javascript) were very helpful.
 ## Solved Bugs
 
 ## Remaining Bugs

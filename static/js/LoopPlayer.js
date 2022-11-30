@@ -1,3 +1,4 @@
+counter = 0;
 /**
  * A class that handles audio playback for multiple different pages within
  * the project. It operates using the WebAudio API, enabling it to play 
@@ -41,8 +42,12 @@ class LoopPlayer {
         // The tracks related to this loop. These are assigned to an object
         // to enable straightforward lookup by id.
         this.trackSequences = new Map();
+        this.initialise(tracks);
+    }
+    
+    async initialise(tracks) {
         for (let track of tracks) {
-            this.addTrackSequence(track);
+            await this.addTrackSequence(track);
         }
         this.scheduler();
     }
@@ -217,8 +222,9 @@ class LoopPlayer {
         }
 
         // Set a timeout to run the scheduler again.
-        setTimeout(
-            this.scheduler, this.lookahead);
+        setTimeout(function() {
+            this.scheduler();
+        }.bind(this), this.lookAhead);
     }
 
 
