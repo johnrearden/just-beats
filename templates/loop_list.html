@@ -4,9 +4,9 @@
 
 {% block content %}
 
+<!--Call to action for user, encouraging them to create their own loops-->
 <div class="container-md">
     <div class="row">
-        
         <div class="col-lg-4 order-2 order-lg-1 text-center align-self-center darker-background p-5">
             <h1>Feeling Creative?</h1>
             {% if user.is_authenticated %}
@@ -31,6 +31,8 @@
             <span>
                 <h1 class="text-center beats-header mb-3 darker-background">Drumloops</h1>
             </span>
+            <!--Button selectors to allow user to view all loops, or just their own. Own loop
+                option is only available to authenticated users-->
             <div class="container">
                 <div class="row">
                     {% if selection == 'all' %}
@@ -73,11 +75,10 @@
                         </div>
                         {% endif %}
                     {% endif %}
-                    
                 </div>
             </div>
             
-            
+            <!--A table to display the drumloops-->
             <table class="drumloop-table mt-3">
                 <thead>
                     <tr>
@@ -126,6 +127,7 @@
     </div>
 </div>
 
+<!--Displays the currently playing loop-->
 <div class="container">
     <div class="row">
         <div id="current-loop-display" class="col-md-10 offset-md-1 text-center mt-5 invisible">
@@ -137,6 +139,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- This script is placed inline as it is tightly bound to the ratings element 
      of this template, and cannot be reused elsewhere -->

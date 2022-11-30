@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!--Head section containing style, bootstrap and font links common to all pages-->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,6 +41,7 @@
     </style>
 </head>
 
+<!--Common body elements across all pages, including a background image and a navbar-->
 <body style="
     background-image: url('{% static "images/graffiti_3.jpg" %}'); background-repeat: no-repeat;
     background-position:center; background-size: cover; ">
@@ -81,6 +83,8 @@
         </nav>
     </header>
 
+    <!--A holder for messages, both those passed by Django to the page and also 
+        those created in JavaScript to mimic the Django messaging-->
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2" id="message-holder">
@@ -95,17 +99,20 @@
         </div>
     </div>
 
+    <!--The specific content of each child page goes here-->
     <main>
         {% block content %}
         {% endblock content %}
     </main>
 
+    <!--Simple footer with a copyright message-->
     <footer class="fixed-bottom bg-dark bg-gradient bg-opacity-75 text-center text-lg-start">
         <div>
             &copy John Rearden 2022
         </div>
     </footer>
 
+    <!--A script to remove displayed messages after a short delay-->
     <script>
         setTimeout(function() {
             let messages = document.getElementById('msg');

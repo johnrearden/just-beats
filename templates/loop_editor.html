@@ -4,7 +4,8 @@
 
 {% block content %}
 
-
+<!--Contains the loop name(editable), the tempo(adjustable) and the creator name(immutable)
+    for the current loop-->
 <div class="container-lg">
     <div class="row align-items-center">
         <div class="col-md-6 p-4 mt-3 text-center">
@@ -26,6 +27,8 @@
         </div>
     </div>
 </div>
+
+<!--Hold the tracks for the current loop-->
 <div class="container-lg">
     <div class="track-holder text-center mt-4">
         {% for track in tracks %}
@@ -33,6 +36,7 @@
             {% if forloop.counter != 1 %}
             <hr>
             {% endif %}
+            <!--The instrument name display - clickable to change instrument-->
             <div class="col-6 col-lg-2" vertical-align>
                 <div id="instrument-name_{{ track.id }}" class="instrument-name inst-test py-2 py-md-0"
                     onclick="onInstrumentButtonClicked('{{ loop.id }}','{{ track.id }}')">
@@ -40,8 +44,8 @@
                 </div>
             </div>
 
+            <!--The track volume slider-->
             <div class="col-6 col-lg-2 overflow-hidden">
-                <!-- <label for="track_volume_{{ track.id }}">Vol</label> -->
                 <input type="range" id="track_volume_{{ track.id }}" name="track_volume_{{ track.id }}"
                     value="{{ track.track_volume }}" min="0" max="10" class="track-volume py-2 py-md-0" list="tickmarks"
                     oninput="onTrackVolumeChange(event, '{{ track.id }}')">
@@ -55,6 +59,7 @@
                 </datalist>
             </div>
 
+            <!--A holder with a div for each beat which can be togged to turn the beat on or off-->
             <div class="col-12 col-lg-7">
                 <div id="beats-holder-track_{{ forloop.counter0 }}" class="beats-holder py-2 py-md-0">
                     {% for char in track.beats %}
@@ -70,6 +75,7 @@
                 </div>
             </div>
 
+            <!--Button to allow user to delete this track-->
             <div class="col-lg-1">
                 <button class='delete-track-button' onclick="onDeleteTrackButtonClick(event, '{{ track.id }}')">
                     X
@@ -79,6 +85,9 @@
         {% endfor %}
     </div>
 </div>
+
+<!--Button controls to allow user to play the loop, add a new track, save the current loop, 
+    and delete the entire loop-->
 <div class="col text-center p-3">
     <button class="m-3" id="play-loop">PLAY</button>
     <button id="add-new-track" class="m-3">ADD NEW TRACK</button>
@@ -88,7 +97,7 @@
     </button>
 </div>
 
-<!-- Instrument selection modal -->
+<!-- Instrument selection modal, shown when the instrument display name on any track is clicked -->
 <div class="modal fade " id="instrument-chooser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -125,6 +134,7 @@
     </div>
 </div>
 
+<!--Confirm track delete modal-->
 <div class="modal fade" id='delete-track-confirmation' tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="custom-justbeats-modal modal-content">
@@ -145,6 +155,7 @@
     </div>
 </div>
 
+<!--Confirm loop delete modal-->
 <div class="modal fade" id='delete-loop-confirmation' tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="custom-justbeats-modal modal-content">

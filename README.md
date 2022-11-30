@@ -234,7 +234,10 @@ Testing Djando form widget fields
 https://stackoverflow.com/questions/50643143/testing-form-field-widget-type
 
 login_required decorator
-Jose Guerra, from my cohort
+Thanks to Jose Guerra, from my cohort
+
+Hiding Django messages after a short delay: Code Institute video.
+https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/b31493372e764469823578613d11036b/ae7923cfce7f4653a3af9f51825d2eba/
 
 
 [Return to top](#just-beats)
