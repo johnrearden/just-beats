@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // disable the rating link button.
             let creator = target.getAttribute('data-creator');
             let ratingLauncherButton = document.getElementById('rating-launcher-button');
-            if (username === creator) {
+            if (username === creator || username === "") {
                 ratingLauncherButton.classList.add('invisible');
             } else {
                 ratingLauncherButton.classList.remove('invisible');
@@ -71,8 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
     ratingLauncher.addEventListener('click', (event) => {
         const loopID = event.target.getAttribute('data-id');
         const username = event.target.getAttribute('data-username');
-        const url = `/create_review/${loopID}/${username}/`;
-        window.location = url;
+        console.log(`username = "${username}"`);
+        
+        /* const url = `/create_review/${loopID}/${username}/`;
+        window.location = url; */
     });
 });
 

@@ -84,8 +84,9 @@
                     <tr>
                         <th scope="col">Creator</th>
                         <th scope="col">Name</th>
-                        <th scope="col" class="d-none d-md-inline">Tempo</th>
-                        <th scope="col" class="d-none d-sm-inline">Rating</th>
+                        <th scope="col" class="d-none d-md-table-cell">Tempo</th>
+                        <th scope="col" class="d-none d-sm-table-cell">Rating</th>
+                        <th scope="col"></th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -98,10 +99,10 @@
                         <td class="drumloop-table-item">
                             {{ loop.name }}
                         </td>
-                        <td id="tempo" class="drumloop-table-item loop-tempo d-none d-md-inline">
+                        <td id="tempo" class="drumloop-table-item loop-tempo d-none d-md-table-cell">
                             {{ loop.tempo }}
                         </td>
-                        <td id="rating-display-{{forloop.counter0}}" class="d-none d-sm-inline">
+                        <td id="rating-display-{{forloop.counter0}}" class="d-none d-sm-table-cell">
                         </td>
                         <td>
                             <!-- Store the loop fields necessary for creating the DrumLoop object-->

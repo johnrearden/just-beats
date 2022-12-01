@@ -6,11 +6,23 @@ The aim of the project is to allow users to create and edit drum loops using
 a custom GUI, and save them to a database. Users can also (if logged in) comment
 on and rate other users' loops to provide a social element to the site.
 
-[Screenshots](#Screenshots)
-
 ![responsivenes_screenshot](media/docs/responsiveness_screenshot.png)
 
 [Features](#Features)
+
+[User Experience](#User-Experience)
+
+[Development Process](#Development-Process)
+
+[Testing](#Testing)
+
+[Bugs](#Bugs)
+
+[Deployment](#Deployment)
+
+[Credits](#Credits)
+
+## Features
 - **Homepage** : 
 The user is first shown a list of all the saved drumloops, ordered by rating, 
 and can listen to any of these. Clicking on the play button plays the loop, and also
@@ -46,35 +58,18 @@ Messaging is handled by two separate processes, both of which write to the same 
 
 ![messaging_screenshot](media/docs/messaging_screenshot.png)
 
-[User Experience](#User-Experience)
-
-[Development Process](#Development-Process)
-
-[Testing](#Testing)
-
-[Bugs](#Bugs)
-
-[Deployment](#Deployment)
-
-[Credits](#Credits
-
-
-
-## Screenshots
-
-
-[Return to top](#just-beats)
-
-## Features
-
 ### Future Features
+- A useful possible future feature would be the ability to accept an audio sample from the user, 
+save it to media storage, and make it available to all users as one of the instrument choices once it had been approved by an admin or staff member.
+- It might also be useful to use the staff feature of the Django User model to allow staff members to 
+approve ratings and comments, without allowing them full admin access to the database.
+- The app could be expanded to allow the use of musical instruments as well as drum beats and samples alone.
 
 
 [Return to top](#just-beats)
 # User Experience
 
 ## User Stories
-
 
 ## Design
 
@@ -171,11 +166,18 @@ And finally the same four pages on a desktop monitor (1920x1080)
 
 ### Browser Compatibility
 
-### Bugs
-
+| Feature | Chrome | Firefox | Safari(mobile) |
+--- | --- | --- | --- | 
+Audio playback upon first user interaction | True | True | True
+Fonts render correctly | True | True | True
+All elements visible | True | True | True 
+Pages are responsive at all screen sizes | True | True | True
 ### Lighthouse
 
 ### Code Validation
+
+#### Python code : 
+All python code is validated by both the Flake8 linter (installed in VSCode) and the external CodeInstitute validator @ https://pep8ci.herokuapp.com/. The sole exceptions are the test classes, 
 
 ### User Stories
 
@@ -212,10 +214,6 @@ resulting in changes to the development database, rather than the testing databa
 Also, it was necessary to use the default static storage in place of Cloudinary's static hashed storage
 to run the selenium based tests, so a conditional statement was added to settings.py to detect if a test was being run or not.
 
-## User Story Testing
-
-## Validator Testing
-
 [Return to top](#just-beats)
 
 # Bugs
@@ -242,6 +240,7 @@ https://stackoverflow.com/questions/591269/settimeout-and-this-in-javascript) we
 ## Solved Bugs
 
 ## Remaining Bugs
+There are (hopefully) no remaining bugs in the project.
 
 [Return to top](#just-beats)
 
