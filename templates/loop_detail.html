@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+
+    <!--This row displays the loop name and its creator-->
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1>{{ loop.name }}</h1> by <h3>{{ loop.creator }}</h3>
+        </div>
+    </div>
+
+    <!--This row displays the beats of each track in read-only form-->
+    <div class="row">
+        <div class="col-12">
+            <div class="container">
+                {% for track in tracks %}
+                <div class="row">
+                    <div class="col-12">
+                        <div id="beats-holder-track_{{ forloop.counter0 }}" class="beats-holder py-2 py-md-0">
+                            {% for char in track.beats %}
+                            {% if char == '8' %}
+                            <div id="{{ track.id }}:{{ forloop.counter0 }}" class="beat active_beat"
+                                onclick="onBeatClick(event)">
+                            </div>
+                            {% else %}
+                            <div id="{{ track.id }}:{{ forloop.counter0 }}" class="beat" onclick="onBeatClick(event)">
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!--This row displays a link and a button that copies it to the clipboard-->
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <span id="link"></span>
+            <i class="fa-regular fa-copy"></i>
+        </div>
+    </div>
+
+    <script>
+        const link = document.getElementById('link');
+        link.textContent = window.location;
+    </script>
+
+    <!--This row displays a set of buttons-->
+    <div class="row">
+        <!--A button linking to the review page-->
+        <div class="col-md-3 offset-md-3">
+            <a href="{% url 'review_drumloop' loop.id user.username %}">
+                <button>Rate It!</button>
+            </a>
+        </div>
+        <!--A button to play/pause the audio-->
+        <div class="col-md-2">
+            <i class="fa-solid fa-play"></i>
+        </div>
+        <!--A slider to control the playback volume-->
+        <div class="col-md-3">
+            <input type="range" id="loop-volume" value="5" min="0" max="10" class="track-volume py-2 py-md-0"
+                list="tickmarks" oninput="onTrackVolumeChange">
+            <datalist id="tickmarks">
+                <option value="0" label="0"></option>
+                <option value="2"></option>
+                <option value="4"></option>
+                <option value="6"></option>
+                <option value="8"></option>
+                <option value="10" label="10"></option>
+            </datalist>
+        </div>
+    </div>
+
+    <!--This row contains the most recent comments and ratings-->
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <!--Container for list of previous reviews-->
+            <div class="container darker-background light-border p-3">
+                <div class="row">
+                    <div class="col-12 col-md-10 offset-md-1 text-center">
+                        <h3 class="mb-3">What other people think ..</h3>
+                    </div>
+                </div>
+                <hr>
+                <div class="row align-items-center">
+                    <div class="col-7">
+                        <h3>Comment</h3>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h5>Stars</h5>
+                    </div>
+                    <div class="col-2 text-center">
+                        <h5>By</h5>
+                    </div>
+                </div>
+                {% for review in reviews %}
+                <div class="row review-outline">
+                    {% if review.approved %}
+                    <div class="col-7">
+                        <span class="existing-comment">"{{ review.comment }}"</span>
+                    </div>
+                    {% else %}
+                    <div class="col-7">
+                        <span>(awaiting approval)</span>
+                    </div>
+                    {% endif %}
+                    <div class="col-3 text-center">
+                        <span class="existing-rating">{{ review.rating }}</span>
+                    </div>
+                    <div class="col-2 text-center">
+                        <span class="existing-reviewer">{{ review.reviewer.username }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

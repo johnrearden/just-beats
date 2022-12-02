@@ -35,6 +35,30 @@ class LoopList(View):
         )
 
 
+class LoopDetail(View):
+    """
+    This view returns a read-only view of a drumloop, which can be accessed
+    by any unauthenticated user.
+    """
+
+    def get(self, request, creator, loop_name):
+        query_set = Drumloop.objects.all()
+        loop = get_object_or_404(query_set, name=loop_name)
+        tracks = (Track.objects.select_related()
+                  .filter(drumloop=loop)
+                  .order_by('id'))
+        recent_reviews = Review.objects.filter(drumloop=loop).order_by(
+            '-created_on')[:5]
+        context = {
+            'loop': loop,
+            'tracks': tracks,
+            'reviews': recent_reviews,
+        }
+        return render(
+            request, 'loop_detail.html', context
+        )
+
+
 class CreateNewLoop(View):
     """
     This view has 2 methods, get and post.
