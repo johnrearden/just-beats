@@ -61,6 +61,16 @@
             </form>
         </div>
     </div>
+    {% if previous_rating_exists %}
+    <div class="row">
+        <div class="col-12 text-center mt-5">
+            <h3>
+                You've already reviewed this form ... you can change it
+                if you like!
+            </h3>
+        </div>
+    </div>
+    {% endif %}
 </div>
 
 {% endblock %}

@@ -71,10 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ratingLauncher.addEventListener('click', (event) => {
         const loopID = event.target.getAttribute('data-id');
         const username = event.target.getAttribute('data-username');
-        console.log(`username = "${username}"`);
-        
-        /* const url = `/create_review/${loopID}/${username}/`;
-        window.location = url; */
+        const url = `/create_review/${loopID}/${username}/`;
+        window.location = url;
     });
 });
 

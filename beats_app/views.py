@@ -87,9 +87,33 @@ class ReviewDrumloop(View):
         user = User.objects.get(username=username)
         previous_reviews = Review.objects.filter(
             drumloop=drumloop).order_by('-created_on')[:5]
-        review_form = ReviewForm(
-            initial={'rating': '3', 'drumloop': drumloop, 'reviewer': user})
+        existing_review_by_user = Review.objects.filter(
+            drumloop=drumloop, reviewer=user
+        )
+
+        # If there is an existing review of this loop by the user, give this
+        # review back to them for editing - a user should only be able to
+        # review a loop once.
+        if len(existing_review_by_user) > 0:
+            previous_rating_exists = True
+            existing_rating = existing_review_by_user[0].rating
+            existing_comment = existing_review_by_user[0].comment
+            review_form = ReviewForm(
+                initial={
+                    'rating': existing_rating,
+                    'drumloop': drumloop,
+                    'reviewer': user,
+                    'comment': existing_comment}
+            )
+        else:
+            previous_rating_exists = False
+            review_form = ReviewForm(
+                initial={
+                    'rating': '3',
+                    'drumloop': drumloop,
+                    'reviewer': user})
         context = {
+            "previous_rating_exists": previous_rating_exists,
             "review_form": review_form,
             "user": user,
             "drumloop": drumloop,
@@ -100,8 +124,10 @@ class ReviewDrumloop(View):
 
 class SaveReview(View):
     """
-    This view's POST method accepts a completed review form and saves it
-    if it is valid. It then calculates the new average rating for the
+    This view's POST method accepts a completed review form and checks it for
+    validity. If valid, it checks to ensure that this is a new review of this
+    loop by this reviewer. If so, it saves it. Otherwise, it updates the
+    existing review. It then calculates the new average rating for the
     drumloop, and saves the new value to the database. Finally, it sends
     the user a message confirming receipt of the review, and redirects
     to the LoopList view.
@@ -110,11 +136,24 @@ class SaveReview(View):
     def post(self, request):
         form = ReviewForm(request.POST)
         if form.is_valid():
-            form.save()
-
-            # Recalculate the average rating for this loop.
+            # Check if this form's reviewer has already reviewed this loop.
             querydict = request.POST
             loop_id = int(querydict.get('drumloop'))
+            reviewer = querydict.get('reviewer')
+            existing_review_by_user = Review.objects.filter(
+                drumloop=loop_id, reviewer=reviewer)
+
+            # If a review already exists, update it. Otherwise, save this one.
+            if len(existing_review_by_user) > 0:
+                existing_review = existing_review_by_user[0]
+                existing_review.rating = int(querydict.get('rating'))
+                existing_review.comment = querydict.get('comment')
+                existing_review.approved = False
+                existing_review.save()
+            else:
+                form.save()
+
+            # Recalculate the average rating for this loop.
             all_reviews = Review.objects.all().filter(drumloop=loop_id)
             total = sum([review.rating for review in all_reviews])
             average_rating = total / (len(all_reviews))
@@ -263,6 +302,7 @@ class DirectURLEntryWarning(View):
     """
     This view simply returns the direct url entry warning page.
     """
+
     def get(self, request):
         return render(
             request,
