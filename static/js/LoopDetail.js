@@ -43,6 +43,14 @@ document.addEventListener('DOMContentLoaded', () => {
             loopPlayer.changeLoopVolume(volume * 0.1);
         }
     });
+
+    // Wire up the sharing link url copier.
+    let copyToClipboardButton = document.getElementsByClassName('copy-icon')[0];
+    copyToClipboardButton.addEventListener('click', (e) => {
+        navigator.clipboard.writeText(document.location);
+        displaySuccessAlert('Link to here copied to your clipboard .... send it to your friends!');
+    });
+    
 });
 
 const toggleIcon = () => {
@@ -56,4 +64,30 @@ const toggleIcon = () => {
         playIcon.classList.add('d-none');
         pauseIcon.classList.remove('d-none');
     }
+};
+
+
+/**
+ * Utility function to display a Bootstrap alert to the user. This alert mimics
+ * the messages passed by Django to the page, and is used in the event that a 
+ * message is needed, but the page is not reloaded, and so the Django messaging
+ * functionality cannot be used.
+ * @param {String} message 
+ */
+ const displaySuccessAlert = (message) => {
+    let alertHTML = `
+        <div class="alert alert-success alert-dismissible fade show"
+            id="msg" role="alert">
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>`;
+        let messageHolder = document.getElementById('message-holder');
+        messageHolder.innerHTML = alertHTML;
+        setTimeout(function() {
+            let messages = document.getElementById('msg');
+            if (messages) {
+                let alert = new bootstrap.Alert(messages);
+                alert.close();
+            }
+        }, 3000);
 };
