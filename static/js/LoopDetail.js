@@ -72,10 +72,31 @@ const toggleIcon = () => {
 };
 
 const fireAnimation = (beatIndex) => {
-    if (beatIndex % 8 === 0) {
-        console.log(`beat : ${beatIndex}`);
+
+    // Animate the currently playing beat on the beats display.
+    const trackCount = document.getElementsByClassName('beats-holder').length;
+    for (let i = 0; i < trackCount; i++) {
+        const beatsHolder = document.getElementById(`beats-holder-track_${i}`);
+        const beatDivs = beatsHolder.children;
+        const beatCount = beatDivs.length;
+        const previousBeatIndex = beatIndex > 0 ? beatIndex - 1 : beatCount - 1;
+        const beatDiv = beatDivs[beatIndex];
+        if (beatDiv.classList.contains('readonly-active-beat')) {
+            beatDiv.classList.add('readonly-active-highlighted-beat');
+        } else {
+            beatDiv.classList.add('readonly-highlighted-beat');
+        }
+        beatDivs[previousBeatIndex].classList.remove('readonly-highlighted-beat');
+        beatDivs[previousBeatIndex].classList.remove('readonly-active-highlighted-beat');
     }
-    
+
+    // Rotate the play button
+    const playButton = document.getElementById('detail-play-button');
+    if (beatIndex === 0) {
+        playButton.style.transform = `rotate(1turn)`;    
+    } else if (beatIndex === 16) {
+        playButton.style.transform = 'rotate(-1turn)';
+    }
 };
 
 
