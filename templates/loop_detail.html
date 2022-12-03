@@ -100,19 +100,22 @@
         </div>
     </div>
 
-    <!--This row displays a link and a button that copies it to the clipboard-->
+    <!--This row displays a link and a button that copies it to the clipboard
+        and a link to the ratings page if user is authenticated-->
     <div class="row m-md-5 justify-content-around">
         <div class="col-md-auto text-center py-md-2 px-md-5 darker-background">
             <h3 id="share-loop-title">Share this loop with your friends!</h3>
             <span id="pasteable-link"></span>
             <button class="copy-icon"><i class="fa-regular fa-copy"></i></button>
         </div>
+        {% if user.is_authenticated %}
         <div class="col-md-auto text-center mt-5 mt-md-0">
             <h5 class="text-greenyellow">Like what you hear?</h5>
             <a href="{% url 'review_drumloop' loop.id user.username %}">
                 <button>Rate this Loop</button>
             </a>
         </div>
+        {% endif %}
     </div>
 </div>
 
