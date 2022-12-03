@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let copyToClipboardButton = document.getElementsByClassName('copy-icon')[0];
     copyToClipboardButton.addEventListener('click', (e) => {
         navigator.clipboard.writeText(document.location);
-        displaySuccessAlert('Link to here copied to your clipboard .... send it to your friends!');
+        displaySuccessAlert('Link copied to your clipboard .... send it to your friends!');
     });
     
 });
