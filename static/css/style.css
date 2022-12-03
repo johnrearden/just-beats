@@ -210,7 +210,6 @@ label {
     margin-top: 200px;
 }
 
-
 .dark-shadow-text {
     text-shadow: 0 0 130px black;
 }
@@ -234,6 +233,11 @@ label {
     box-shadow: 0 0 5px black;
 }
 
+.drumloop-table-row:hover {
+    background-color: rgb(179, 207, 122);
+    transition: 0.3s all;
+}
+
 .drumloop-table thead {
     color: greenyellow;
     text-shadow: 2px 2px 5px purple;
@@ -251,13 +255,13 @@ label {
     color: gold;
 }
 
-.play-button {
+/* .play-button {
     font-size: 2rem;
     color: greenyellow;
     text-shadow: 0 0 5px purple;
     margin: 0 20px;
     transition: 0.5s all;
-}
+} */
 
 .play-button:hover {
     text-shadow: 0 0 5px pink;
@@ -269,6 +273,16 @@ label {
     max-height: 100%;
     object-fit: contain;
     opacity: 0.4;
+}
+
+.edit-button {
+    color: yellow;
+    border-color: rgb(249, 249, 137);
+    margin-left: 10px;
+}
+
+.edit-button:hover {
+    border-color: yellow;
 }
 
 @media screen and (max-width:450px) {
