@@ -7,102 +7,71 @@
 <div class="container">
 
     <!--This row displays the loop name and its creator-->
-    <div class="row">
+    <div class="row text-center mb-5">
         <div class="col-md-6 offset-md-3">
-            <h1>{{ loop.name }}</h1> by <h3>{{ loop.creator }}</h3>
+            <h1 class="d-inline-block p-2">{{ loop.name }}</h1>
+            <div class="d-inline-block"> by </div>
+            <h3 class="d-inline-block p-2">{{ loop.creator }}</h3>
         </div>
     </div>
 
     <!--This row displays the beats of each track in read-only form-->
     <div class="row">
-        <div class="col-12">
-            <div class="container">
-                {% for track in tracks %}
-                <div class="row">
-                    <div class="col-12">
-                        <div id="beats-holder-track_{{ forloop.counter0 }}" class="beats-holder py-2 py-md-0">
-                            {% for char in track.beats %}
-                            {% if char == '8' %}
-                            <div id="{{ track.id }}:{{ forloop.counter0 }}" class="beat active_beat"
-                                onclick="onBeatClick(event)">
-                            </div>
-                            {% else %}
-                            <div id="{{ track.id }}:{{ forloop.counter0 }}" class="beat" onclick="onBeatClick(event)">
-                            </div>
-                            {% endif %}
-                            {% endfor %}
+        <div class="col-md-5 darker-background light-border p-3">
+            {% for track in tracks %}
+            <div class="row text-center">
+                <div class="col-4 text-center align-self-center">
+                    {{ track.instrument.name }}
+                </div>
+                <div class="col-auto">
+                    <div id="beats-holder-track_{{ forloop.counter0 }}" class="beats-holder p-1">
+                        {% for char in track.beats %}
+                        {% if char == '8' %}
+                        <div id="{{ track.id }}:{{ forloop.counter0 }}" class="readonly-beat readonly-active-beat"
+                            onclick="onBeatClick(event)">
                         </div>
+                        {% else %}
+                        <div id="{{ track.id }}:{{ forloop.counter0 }}" class="readonly-beat"
+                            onclick="onBeatClick(event)">
+                        </div>
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
-                {% endfor %}
             </div>
+            {% endfor %}
         </div>
-    </div>
-
-    <!--This row displays a link and a button that copies it to the clipboard-->
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <span id="link"></span>
-            <i class="fa-regular fa-copy"></i>
+        <div class="col-md-2 justify-content-center text-center align-contents-center p-5">
+            <!--A button to play/pause the audio-->
+            <button class="large-play-button mb-3">
+                <i class="fa-solid fa-play"></i>
+            </button>
+            <!--A number input to control the volume-->
+            <label for="loop-detail-volume">Volume</label>
+            <input type="number" id="loop-detail-volume" min="0" max="10" value="5">
         </div>
-    </div>
-
-    <script>
-        const link = document.getElementById('link');
-        link.textContent = window.location;
-    </script>
-
-    <!--This row displays a set of buttons-->
-    <div class="row">
-        <!--A button linking to the review page-->
-        <div class="col-md-3 offset-md-3">
-            <a href="{% url 'review_drumloop' loop.id user.username %}">
-                <button>Rate It!</button>
-            </a>
-        </div>
-        <!--A button to play/pause the audio-->
-        <div class="col-md-2">
-            <i class="fa-solid fa-play"></i>
-        </div>
-        <!--A slider to control the playback volume-->
-        <div class="col-md-3">
-            <input type="range" id="loop-volume" value="5" min="0" max="10" class="track-volume py-2 py-md-0"
-                list="tickmarks" oninput="onTrackVolumeChange">
-            <datalist id="tickmarks">
-                <option value="0" label="0"></option>
-                <option value="2"></option>
-                <option value="4"></option>
-                <option value="6"></option>
-                <option value="8"></option>
-                <option value="10" label="10"></option>
-            </datalist>
-        </div>
-    </div>
-
-    <!--This row contains the most recent comments and ratings-->
-    <div class="row">
-        <div class="col-md-10 offset-md-1">
+        <div class="col-md-5">
             <!--Container for list of previous reviews-->
-            <div class="container darker-background light-border p-3">
+            <div class="container-fluid darker-background light-border p-3">
                 <div class="row">
-                    <div class="col-12 col-md-10 offset-md-1 text-center">
-                        <h3 class="mb-3">What other people think ..</h3>
+                    <div class="col text-center">
+                        <h4 class="mb-3">What other people think ..</h4>
                     </div>
                 </div>
                 <hr>
                 <div class="row align-items-center">
                     <div class="col-7">
-                        <h3>Comment</h3>
+                        <h6>Comment</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h5>Stars</h5>
+                        <h6>Stars</h6>
                     </div>
                     <div class="col-2 text-center">
-                        <h5>By</h5>
+                        <h6>By</h6>
                     </div>
                 </div>
                 {% for review in reviews %}
-                <div class="row review-outline">
+                <div class="row ">
                     {% if review.approved %}
                     <div class="col-7">
                         <span class="existing-comment">"{{ review.comment }}"</span>
@@ -123,6 +92,21 @@
             </div>
         </div>
     </div>
+
+    <!--This row displays a link and a button that copies it to the clipboard-->
+    <div class="row m-5 text-center">
+        <div class="col-auto offset-md-3 text-center py-2 px-5 darker-background">
+            <h3 id="share-loop-title">Share this loop with your friends!</h3>
+            <span id="pasteable-link"></span>
+            <button class="copy-icon"><i class="fa-regular fa-copy"></i></button>
+        </div>
+    </div>
+
+    <!--Todo move to LoopDetail.js-->
+    <script>
+        const link = document.getElementById('pasteable-link');
+        link.textContent = window.location;
+    </script>
 </div>
 
 {% endblock %}

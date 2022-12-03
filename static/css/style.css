@@ -52,19 +52,21 @@ a {
 
 button {
     color: greenyellow;
-    background-color: #88888870;
+    background-color: #66656570;
     text-shadow: 0 0 5px purple;
     font-size: 1.2rem;
     font-weight: bolder;
     transition: 0.2s all;
-    border: 1px solid greenyellow;
+    border: 2px solid #acff2fbb;
     border-radius: 5px;
     padding: 3px 10px;
 }
 
 button:hover {
-    text-shadow: 0 0 5px pink;
+    text-shadow: 0 0 10px pink;
     transition: 0.2s all;
+    background-color: #42414170;
+    border: 2px solid greenyellow;
 }
 
 button:disabled {
@@ -112,11 +114,64 @@ button:disabled {
 }
 
 
+/* These css elements style the loop detail page */
+.large-play-button {
+    color: yellow;
+    border: 3px solid rgb(251, 251, 118);
+    font-size: 80px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    padding-left: 15%;
+}
+
+.large-play-button:hover {
+    border: 3px solid yellow;
+}
+
+.loop-volume {
+    width: 100%;
+    color: yellowgreen !important; 
+}
+
+.readonly-beat {
+    display: inline-block;
+    width: 5px;
+    height: 30px;
+    background-color: lightblue;
+    opacity: 0.2;
+    border-radius: 5px;
+}
+
+.readonly-active-beat {
+    opacity: 1.0;
+}
+
+#share-loop-title {
+    color: greenyellow;
+}
+
+.copy-icon {
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    margin-left: 20px;
+}
+
+#pasteable-link {
+    border: 1px solid gray;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#loop-detail-volume {
+    font-size: 1.8rem;
+}
+
+
 /* These css elements style the review page */
 
 input[type="number"] {
     color: white;
-    
     max-width: 100px
 }
 
