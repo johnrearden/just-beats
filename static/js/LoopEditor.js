@@ -32,11 +32,22 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(url)
         .then(response => response.json())
         .then(tracks => {
-            loopPlayer = new LoopPlayer(tempo, tracks, loopID, name);
+            loopPlayer = new LoopPlayer(
+                tempo, tracks, loopID, name, animationCallback);
             playButton.addEventListener('click', e => loopPlayer.togglePlay());
         });
     setIntrumentNameColors();
 });
+
+
+/**
+ * This function is passed to the LoopPlayer object as a callback, and called 
+ * on every fourth beat in order to synchronise animations on the page with
+ * the loop.
+ */
+const animationCallback = () => {
+    
+};
 
 
 /**

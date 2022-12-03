@@ -24,7 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
             fetch(url)
                 .then(response => response.json())
                 .then(tracks => {
-                    loopPlayer = new LoopPlayer(tempo, tracks, loopID);
+                    loopPlayer = new LoopPlayer(
+                        tempo, 
+                        tracks, 
+                        loopID,
+                        'anonymous',
+                        fireAnimation);
                     loopPlayer.changeLoopVolume(volume * 0.1);
                     loopPlayer.togglePlay();
                     toggleIcon();
@@ -64,6 +69,13 @@ const toggleIcon = () => {
         playIcon.classList.add('d-none');
         pauseIcon.classList.remove('d-none');
     }
+};
+
+const fireAnimation = (beatIndex) => {
+    if (beatIndex % 8 === 0) {
+        console.log(`beat : ${beatIndex}`);
+    }
+    
 };
 
 

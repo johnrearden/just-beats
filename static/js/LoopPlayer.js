@@ -5,13 +5,17 @@ counter = 0;
  * multiple tracks simultaneously and schedule the playing of samples in advance.
  */
 class LoopPlayer {
-    constructor(tempo, tracks, loopID, name) {
+    constructor(tempo, tracks, loopID, name, animationCallback) {
         // Create a new AudioContext and suspend it immediately. This is to ensure
         // consistent behaviour - browsers will allow autoplay (having initially 
         // forbidden it) after an unspecified number of user actions initiating
         // audio playback.
         this.audioCtx = new AudioContext();
         this.audioCtx.suspend();
+
+        // A callback used by client code to synchronise animations on
+        // the page with the beat.
+        this.animationCallback = animationCallback;
 
         // The id (pk from model) of the current loop.
         this.loopID = loopID;
@@ -33,6 +37,7 @@ class LoopPlayer {
         this.lookAhead = 25;
 
         // Future time window, in seconds, that the scheduler will take beats from. 
+        // This is less than the min possible beatDuration, 200bpm / 60sec = 0.3sec.
         this.scheduleWindow = 0.1;
 
         // The time (relative to audioCtx.currentTime) the next scheduled beat
@@ -215,6 +220,7 @@ class LoopPlayer {
      */
     scheduler() {
         let currentTime = this.audioCtx.currentTime;
+        
         while (this.nextBeatTime - currentTime < this.scheduleWindow) {
             // Check the currentNote of each instrument to see if it is due 
             // to be played.
@@ -227,13 +233,20 @@ class LoopPlayer {
                 }
             }
 
+            // Set a timeout to call the animation callback at the time of the next beat.
+            let timeUntilNextBeat = this.nextBeatTime - currentTime;
+            setTimeout(this.animationCallback, timeUntilNextBeat, this.beatIndex);
+
             // Add beatDuration to nextBeatTime, and increment the beatIndex counter
             // (looping back when we hit the end)
             this.nextBeatTime += this.beatDuration;
             this.beatIndex = (this.beatIndex + 1) % this.loopLength;
         }
 
-        // Set a timeout to run the scheduler again.
+        // Set a timeout to run the scheduler again. The call to the scheduler
+        // is wrapped in a function explicitly bound to the current context, as
+        // setTimeout would otherwise default to the global context, making
+        // the scheduler function inaccessible.
         setTimeout(function() {
             this.scheduler();
         }.bind(this), this.lookAhead);
