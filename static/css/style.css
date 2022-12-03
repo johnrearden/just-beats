@@ -171,6 +171,16 @@ button:disabled {
     border-radius: 5px;
 }
 
+@media screen and (max-width: 768px) {
+    #pasteable-link {
+        font-size: 0.8rem;
+    }
+    .copy-icon {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
 #loop-detail-volume {
     font-size: 1.8rem;
 }

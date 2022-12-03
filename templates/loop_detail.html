@@ -4,10 +4,10 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container-fluid">
 
     <!--This row displays the loop name and its creator-->
-    <div class="row text-center mb-5">
+    <div class="row text-center mb-md-5">
         <div class="col-md-6 offset-md-3">
             <h1 class="d-inline-block p-2">{{ loop.name }}</h1>
             <div class="d-inline-block"> by </div>
@@ -17,13 +17,13 @@
 
     <!--This row displays the beats of each track in read-only form-->
     <div class="row">
-        <div class="col-md-5 darker-background light-border p-3">
+        <div class="col-12 col-md-5 darker-background light-border p-3">
             {% for track in tracks %}
             <div class="row text-center">
-                <div class="col-4 text-center align-self-center">
+                <div class="col-12 col-md-4 text-center align-self-center">
                     {{ track.instrument.name }}
                 </div>
-                <div class="col-auto">
+                <div class="col-12 col-md-auto">
                     <div id="beats-holder-track_{{ forloop.counter0 }}" class="beats-holder p-1">
                         {% for char in track.beats %}
                         {% if char == '8' %}
@@ -42,19 +42,22 @@
             {% endfor %}
         </div>
 
-        <div class="col-md-2 justify-content-center text-center align-contents-center p-5">
+        <div class="col-md-2 offset-md-0 justify-content-center text-center align-contents-center p-5">
             <!--A button to play/pause the audio-->
-            <button id="detail-play-button" class="large-play-button mb-3"
-                    data-id="{{ loop.id }}" data-tempo="{{ loop.tempo }}">
+            <button id="detail-play-button" class="large-play-button mb-3" data-id="{{ loop.id }}"
+                data-tempo="{{ loop.tempo }}">
                 <i class="fa-solid fa-play play-button-icon"></i>
                 <i class="fa-solid fa-pause pause-button-icon d-none"></i>
             </button>
-            <!--A number input to control the volume-->
-            <label for="loop-detail-volume">Volume</label>
-            <input type="number" id="loop-detail-volume" min="0" max="10" value="5">
+            <div>
+                <!--A number input to control the volume-->
+                <label for="loop-detail-volume">Volume</label>
+                <input type="number" id="loop-detail-volume" min="0" max="10" value="5">
+            </div>
+
         </div>
 
-        <div class="col-md-5">
+        <div class="col-12 col-md-5">
             <!--Container for list of previous reviews-->
             <div class="container-fluid darker-background light-border p-3">
                 <div class="row">
@@ -98,8 +101,8 @@
     </div>
 
     <!--This row displays a link and a button that copies it to the clipboard-->
-    <div class="row m-5 text-center">
-        <div class="col-auto offset-md-3 text-center py-2 px-5 darker-background">
+    <div class="row m-md-5 text-center">
+        <div class="col-md-auto text-center py-md-2 px-md-5 darker-background">
             <h3 id="share-loop-title">Share this loop with your friends!</h3>
             <span id="pasteable-link"></span>
             <button class="copy-icon"><i class="fa-regular fa-copy"></i></button>
