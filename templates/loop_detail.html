@@ -41,15 +41,19 @@
             </div>
             {% endfor %}
         </div>
+
         <div class="col-md-2 justify-content-center text-center align-contents-center p-5">
             <!--A button to play/pause the audio-->
-            <button class="large-play-button mb-3">
-                <i class="fa-solid fa-play"></i>
+            <button id="detail-play-button" class="large-play-button mb-3"
+                    data-id="{{ loop.id }}" data-tempo="{{ loop.tempo }}">
+                <i class="fa-solid fa-play play-button-icon"></i>
+                <i class="fa-solid fa-pause pause-button-icon d-none"></i>
             </button>
             <!--A number input to control the volume-->
             <label for="loop-detail-volume">Volume</label>
             <input type="number" id="loop-detail-volume" min="0" max="10" value="5">
         </div>
+
         <div class="col-md-5">
             <!--Container for list of previous reviews-->
             <div class="container-fluid darker-background light-border p-3">
@@ -101,12 +105,51 @@
             <button class="copy-icon"><i class="fa-regular fa-copy"></i></button>
         </div>
     </div>
-
-    <!--Todo move to LoopDetail.js-->
-    <script>
-        const link = document.getElementById('pasteable-link');
-        link.textContent = window.location;
-    </script>
 </div>
+
+<script>
+    /*
+        This JavaScript snippet maps the audio file URLs stored in the database
+        to the URLs on Cloudinary, which hash the filenames so that browser caches
+        are invalidated where necessary. Must be inline to avail of templating.
+    */
+    const drumURLs = {
+        "audio/kick_swooshy.wav": "{% static 'audio/kick_swooshy.wav'|escapejs %}",
+        "audio/perc_wobble.wav": "{% static 'audio/perc_wobble.wav'|escapejs %}",
+        "audio/snare_breathe.wav": "{% static 'audio/snare_breathe.wav'|escapejs %}",
+        "audio/hats_micro.wav": "{% static 'audio/hats_micro.wav'|escapejs %}",
+        "audio/kick_hard.wav": "{% static 'audio/kick_hard.wav'|escapejs %}",
+        "audio/clap_liquid.wav": "{% static 'audio/clap_liquid.wav'|escapejs %}",
+        "audio/clap_vinyl.wav": "{% static 'audio/clap_vinyl.wav'|escapejs %}",
+        "audio/hats_massamola.wav": "{% static 'audio/hats_massamola.wav'|escapejs %}",
+        "audio/hats_metal.wav": "{% static 'audio/hats_metal.wav'|escapejs %}",
+        "audio/hats_zippo.wav": "{% static 'audio/hats_zippo.wav'|escapejs %}",
+        "audio/hihat_808.wav": "{% static 'audio/hihat_808.wav'|escapejs %}",
+        "audio/kick_borefest.wav": "{% static 'audio/kick_borefest.wav'|escapejs %}",
+        "audio/kick_coffee_shop.wav": "{% static 'audio/kick_coffee_shop.wav'|escapejs %}",
+        "audio/kick_juicy.wav": "{% static 'audio/kick_juicy.wav'|escapejs %}",
+        "audio/kick_stomp.wav": "{% static 'audio/kick_stomp.wav'|escapejs %}",
+        "audio/kick_tape.wav": "{% static 'audio/kick_tape.wav'|escapejs %}",
+        "audio/kick_tight.wav": "{% static 'audio/kick_tight.wav'|escapejs %}",
+        "audio/perc_808.wav": "{% static 'audio/perc_808.wav'|escapejs %}",
+        "audio/perc_hollow.wav": "{% static 'audio/perc_hollow.wav'|escapejs %}",
+        "audio/perc_laser.wav": "{% static 'audio/perc_laser.wav'|escapejs %}",
+        "audio/perc_nasty.wav": "{% static 'audio/perc_nasty.wav'|escapejs %}",
+        "audio/perc_skipper.wav": "{% static 'audio/perc_skipper.wav'|escapejs %}",
+        "audio/perc_springboard.wav": "{% static 'audio/perc_springboard.wav'|escapejs %}",
+        "audio/perc_tambo.wav": "{% static 'audio/perc_tambo.wav'|escapejs %}",
+        "audio/perc_weirdo.wav": "{% static 'audio/perc_weirdo.wav'|escapejs %}",
+        "audio/snare_electro.wav": "{% static 'audio/snare_electro.wav'|escapejs %}",
+        "audio/snare_lastbar.wav": "{% static 'audio/snare_lastbar.wav'|escapejs %}",
+        "audio/snare_lofi.wav": "{% static 'audio/snare_lofi.wav'|escapejs %}",
+        "audio/snare_tight.wav": "{% static 'audio/snare_tight.wav'|escapejs %}",
+        "audio/tom_acoustic.wav": "{% static 'audio/tom_acoustic.wav'|escapejs %}",
+        "audio/tom_short.wav": "{% static 'audio/tom_short.wav'|escapejs %}",
+    }
+
+</script>
+
+<script type="text/javascript" src="{% static 'js/LoopDetail.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/LoopPlayer.js' %}"></script>
 
 {% endblock %}

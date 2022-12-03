@@ -39,6 +39,9 @@ class LoopPlayer {
         // should be played.
         this.nextBeatTime = 0;
 
+        // The master loop volume.
+        this.loopVolume = 1.0;
+
         // The tracks related to this loop. These are assigned to an object
         // to enable straightforward lookup by id.
         this.trackSequences = new Map();
@@ -149,6 +152,15 @@ class LoopPlayer {
 
 
     /**
+     * Changes the overall master volume for the whole loop playback.
+     * @param {Integer} newVolume 
+     */
+    changeLoopVolume(newVolume) {
+        this.loopVolume = newVolume;
+    }
+
+
+    /**
      * Changes the overall track volume to the new value.
      * @param {String} trackID 
      * @param {Integer} newVolume 
@@ -158,7 +170,7 @@ class LoopPlayer {
         this.trackSequences.get(idAsNumber).masterVolume = newVolume;
     }
 
-
+    
     /**
      * Changes the track name.
      * @param {String} newName 
@@ -210,7 +222,7 @@ class LoopPlayer {
                 if (track.hasBeatAt(this.beatIndex)) {
                     this.scheduleNote(
                         track.sample,
-                        track.getVolume(),
+                        track.getVolume() * this.loopVolume,
                         this.nextBeatTime);
                 }
             }
