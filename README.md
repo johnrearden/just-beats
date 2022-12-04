@@ -169,6 +169,82 @@ in the absence of direct fetch calls to the API.
 
 ## Manual Testing
 
+### Feature Testing
+
+|Page|Feature|Action|Effect|
+|---|---|---|---|
+|Homepage|Site Logo|||
+|Homepage|Logged In User Display|||
+|Homepage|Home link|||
+|Homepage|Logout link|||
+|Homepage|Login link|||
+|Homepage|Register link|||
+|Homepage|All Loops Button|||
+|Homepage|My Loops Button|||
+|Homepage|Edit Button|||
+|Homepage|Loop row hover|||
+|Homepage|Loop row click|||
+|Homepage|Call-to-Action New Loop Button|||
+|Homepage|Call-to-Action login button|||
+|Homepage|Message on login|||
+|Homepage|Message on logout|||
+|Login Page|Social sign-in|||
+|Login Page|Social sign-in confirmation|||
+|Login Page|Username validation|||
+|Login Page|Password validation|||
+|Login Page|Remember me button|||
+|Login Page|Sign in button|||
+|Logout Confirm Page|Sign Out button|||
+|Register Page|Reroute to login page|||
+|Register Page|Username validation|||
+|Register Page|email validation|||
+|Register Page|password1|||
+|Register Page|password2|||
+|Register Page|Sign Up button|||
+|Loop Detail Page|Loop name display|||
+|Loop Detail Page|Creator display|||
+|Loop Detail Page|Track beat display|||
+|Loop Detail Page|Track beat animation|||
+|Loop Detail Page|Site logo animation|||
+|Loop Detail Page|Play button|||
+|Loop Detail Page|Pause button|||
+|Loop Detail Page|Play/pause button animation|||
+|Loop Detail Page|Volume Input|||
+|Loop Detail Page|Share link display|||
+|Loop Detail Page|Share link copy button|||
+|Loop Detail Page|Rating button|||
+|Loop Editor Page|Loop name display|||
+|Loop Editor Page|Creator display|||
+|Loop Editor Page|Tempo control|||
+|Loop Editor Page|Instrument button|||
+|Loop Editor Page|Instrument modal|||
+|Loop Editor Page|Instrument modal dismiss|||
+|Loop Editor Page|Instrument change message|||
+|Loop Editor Page|Track volume control|||
+|Loop Editor Page|Beat toggle|||
+|Loop Editor Page|Delete track button|||
+|Loop Editor Page|Delete track confirm modal|||
+|Loop Editor Page|Confirm delete track|||
+|Loop Editor Page|Refuse delete track|||
+|Loop Editor Page|Play button|||
+|Loop Editor Page|Loop volume control|||
+|Loop Editor Page|Add new track button|||
+|Loop Editor Page|Delete Loop Button|||
+|Loop Editor Page|Delete Loop confirm|||
+|Loop Editor Page|Delete loop reject|||
+|New Loop Form|Name field|||
+|New Loop Form|Tempo field|||
+|New Loop Form|Let's get looping button|||
+|New Loop Creation Flow||||
+|Loop Rating page|Previous comment|||
+|Loop Rating page|Previous rating|||
+|Loop Rating page|Previous reviewer|||
+|Loop Rating page|User rating selector|||
+|Loop Rating page|User rating validation|||
+|Loop Rating page|User comment field|||
+|Loop Rating page|Submit button|||
+
+
 ### Responsiveness
 Here's a set of screenshots taken with the Chrome dev tools device toolbar, set
 to the iPhone 12 Pro. They are, in order, the homepage, loop editor page, instrument chooser page, 
@@ -305,14 +381,17 @@ There are (hopefully) no remaining bugs in the project.
 3. [Git](https://git-scm.com/)
     - Version control was implemented using Git through the Github terminal.
 4. [Github](https://github.com/)
-    - Github was used to store the projects after being pushed from Git and its cloud service [Github Pages](https://pages.github.com/) was used to serve the project on the web.
+    - Github was used to store the projects after being pushed from Git and its cloud service [Github Pages](https://pages.github.com/) was used to serve the project on the web. GitHub Projects was used to track the User Stories, User Epics, bugs and other issues during the project.
 5. [Visual Studio Code](https://code.visualstudio.com/)
-    - VS Code was used locally as the main IDE environment, primarily because it was easier to set up a development environment locally than in GitPod (I wasn't sure how to persist the Jest installation across different GitPod sessions)
-6. [PyCharm-Community](https://www.jetbrains.com/pycharm/)
-    - I switched to PyCharm towards the end of the project, as it has better support for PEP8 compliance.
-7. [pytest](https://docs.pytest.org/en/7.1.x/)
+    - VS Code was used locally as the main IDE environment, with the JSHint and Flake8 linters installed for JavaScript and Python code validation respectively.
+6. [pytest](https://docs.pytest.org/en/7.1.x/)
     - Pytest was used for automated testing.
-
+7. [Selenium](https://www.selenium.dev/)
+    - The selenium python bindings were used to write automated front-end/integration tests. This was 
+    very convenient as it allowed these tests to be run as part of the usual Django test suite, and also 
+    allowed programmatic access to the projects models and database right next to the selenium calls to automate the browser.
+8. [GIMP](https://www.gimp.org/)
+    - The GIMP graphic editing package was used to manipulate and export all images used in the project.
 ## Deployment
 
 [Return to top](#just-beats)
@@ -346,6 +425,8 @@ Thanks to Jose Guerra, from my cohort
 
 Hiding Django messages after a short delay: Code Institute video.
 https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/b31493372e764469823578613d11036b/ae7923cfce7f4653a3af9f51825d2eba/
+
+Drum samples used in the project from https://99sounds.org/drum-samples/.
 
 
 [Return to top](#just-beats)
