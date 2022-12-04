@@ -352,6 +352,19 @@ label {
     color: white;
 }
 
+.medium-play-button {
+    color: yellow;
+    border: 3px solid rgb(251, 251, 118);
+    font-size: 40px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.medium-play-button:hover {
+    border: 3px solid yellow;
+}
+
 .track-holder {
     background-color: #333333aa;
     padding: 0 20px;

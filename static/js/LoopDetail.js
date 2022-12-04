@@ -58,6 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
 });
 
+
+/**
+ * This function alternates the play button between a play icon and a 
+ * pause icon.
+ */
 const toggleIcon = () => {
     const playIcon = document.getElementsByClassName('fa-play')[0];
     const pauseIcon = document.getElementsByClassName('fa-pause')[0];
@@ -71,6 +76,12 @@ const toggleIcon = () => {
     }
 };
 
+
+/**
+ * This function is passed as a parameter to the LoopPlayer object and receives
+ * a callback on each beat with the index of that beat.
+ * @param {Integer} beatIndex 
+ */
 const fireAnimation = (beatIndex) => {
 
     // Animate the currently playing beat on the beats display.

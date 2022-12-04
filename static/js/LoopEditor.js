@@ -21,7 +21,15 @@ document.addEventListener('DOMContentLoaded', () => {
     addNewTrackButton.addEventListener('click', (event) => {
         onAddNewTrackButtonClick(event);
     });
-    const playButton = document.getElementById('play-loop');
+    // Wire up the volume control.
+    volumeInput = document.getElementById('loop-detail-volume');
+    volumeInput.addEventListener('input', (e) => {
+        volume = e.target.value;
+        if(loopPlayer) {
+            loopPlayer.changeLoopVolume(volume * 0.1);
+        }
+    });
+    const playButton = document.getElementById('editor-play-button');
 
     // Fetch the tracks for this loop from the server, and create a new
     // LoopPlayer object to play the loop.
@@ -34,10 +42,30 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(tracks => {
             loopPlayer = new LoopPlayer(
                 tempo, tracks, loopID, name, animationCallback);
-            playButton.addEventListener('click', e => loopPlayer.togglePlay());
+            playButton.addEventListener('click', e => {
+                loopPlayer.togglePlay();
+                toggleIcon();
+            });
         });
     setIntrumentNameColors();
 });
+
+/**
+ * This function alternates the play button between a play icon and a 
+ * pause icon.
+ */
+const toggleIcon = () => {
+    const playIcon = document.getElementsByClassName('fa-play')[0];
+    const pauseIcon = document.getElementsByClassName('fa-pause')[0];
+
+    if (playIcon.classList.contains('d-none')) {
+        playIcon.classList.remove('d-none');
+        pauseIcon.classList.add('d-none');
+    } else {
+        playIcon.classList.add('d-none');
+        pauseIcon.classList.remove('d-none');
+    }
+};
 
 
 /**
@@ -67,7 +95,7 @@ const animationCallback = (beatIndex) => {
     const siteLogo = document.getElementsByClassName('site-logo')[0];
     if (beatIndex % 16 === 0) {
         siteLogo.classList.remove('transition-on');
-        siteLogo.style.transform = 'scale(1.1, 1.1)';
+        siteLogo.style.transform = 'scale(1.15, 1.15)';
     }
     if (beatIndex % 16 === 8) {
         siteLogo.style.transform = 'scale(1.0, 1.0)';

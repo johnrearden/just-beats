@@ -15,8 +15,8 @@
         </div>
         <div class="col-md-6 text-center">
             <label for="creator_name">Creator</label>
-            <input type="text" id="creator_name" readonly value="{{ loop.creator }}" 
-                   class="text-white" name="creator_name">
+            <input type="text" id="creator_name" readonly value="{{ loop.creator }}" class="text-white"
+                name="creator_name">
         </div>
         <div class="row text-center align-items-center">
             <div class="col-4 offset-4">
@@ -90,7 +90,14 @@
 <!--Button controls to allow user to play the loop, add a new track, save the current loop, 
     and delete the entire loop-->
 <div class="col text-center p-3">
-    <button class="m-3" id="play-loop">PLAY</button>
+    <button id="editor-play-button" class="medium-play-button m-3">
+        <i class="fa-solid fa-play "></i>
+        <i class="fa-solid fa-pause  d-none"></i>
+    </button>
+    <!--A number input to control the volume-->
+    <label for="loop-detail-volume">Volume</label>
+    <input type="number" id="loop-detail-volume" min="0" max="10" value="7">
+    
     <button id="add-new-track" class="m-3">ADD NEW TRACK</button>
     <button id="save-data" class="m-3" onclick="postLoopAndTracks(event)">SAVE</button>
     <button id="delete-loop" class="m-3" onclick="onDeleteLoopButtonClick(event, '{{ loop.id }}')">
@@ -126,8 +133,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button id='save-new-instrument' type="button" class="btn btn-primary" 
-                        onclick="onModalSaveChangesClicked()">
+                <button id='save-new-instrument' type="button" class="btn btn-primary"
+                    onclick="onModalSaveChangesClicked()">
                     Save changes
                 </button>
             </div>
