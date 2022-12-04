@@ -108,7 +108,7 @@ class ReviewDrumloop(View):
 
     def get(self, request, id, username):
         drumloop = Drumloop.objects.get(id=int(id))
-        user = User.objects.get(username=username)
+        user = request.user
         previous_reviews = Review.objects.filter(
             drumloop=drumloop).order_by('-created_on')[:5]
         existing_review_by_user = Review.objects.filter(
@@ -203,7 +203,6 @@ class LoopEditor(View):
     def get(self, request, id=1, *args, **kwargs):
         query_set = Drumloop.objects.all()
         loop = get_object_or_404(query_set, id=id)
-        print(f'Creator is {loop.creator}, current user is {request.user}')
         if loop.creator != request.user:
             return HttpResponseRedirect('/direct_url_entry_warning')
         else:

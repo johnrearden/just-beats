@@ -73,7 +73,6 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -129,19 +128,19 @@ SELENIUM_FIXTURE_PASSWORD = os.environ.get("SELENIUM_FIXTURE_PASSWORD")
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': ('django.contrib.auth.password_validation'
-                 '.UserAttributeSimilarityValidator',)
+                 '.UserAttributeSimilarityValidator')
     },
     {
         'NAME': ('django.contrib.auth.password_validation'
-                 '.MinimumLengthValidator',)
+                 '.MinimumLengthValidator')
     },
     {
         'NAME': ('django.contrib.auth.password_validation.'
-                 'CommonPasswordValidator',)
+                 'CommonPasswordValidator')
     },
     {
         'NAME': ('django.contrib.auth.password_validation.'
-                 'NumericPasswordValidator',)
+                 'NumericPasswordValidator')
     },
 ]
 

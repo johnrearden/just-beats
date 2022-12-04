@@ -4,12 +4,13 @@ from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
     path('', views.LoopList.as_view(), name='home'),
-    path('/<str:selection>', views.LoopList.as_view(), name='home'),
+    path('<str:selection>', views.LoopList.as_view(), name='home'),
     path('loop/<str:creator>/<str:loop_name>/', views.LoopDetail.as_view(),
          name='loop_detail'),
     path('create_new_loop/', login_required(views.CreateNewLoop.as_view()),
          name='new_drumloop_form'),
-    path('delete_loop/', views.DeleteLoop.as_view(), name='delete_loop'),
+    path('delete_loop/', login_required(views.DeleteLoop.as_view()),
+         name='delete_loop'),
     path('editor/<int:id>', login_required(views.LoopEditor.as_view()),
          name='loop_editor'),
     path('tracks/<int:id>', views.TracksForLoop.as_view(),

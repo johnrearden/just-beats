@@ -117,6 +117,10 @@ The User Epics and their related User Stories are as follows:
     - Story : [Give a star rating to someone else's loop](https://github.com/johnrearden/just-beats/issues/23#issue-1436561054)
     - Story : [Make a comment on someone else's loop](https://github.com/johnrearden/just-beats/issues/24#issue-1436564637)
     - Story : [Allow admin to moderate comments before publishing](https://github.com/johnrearden/just-beats/issues/25)
+- Epic : [Enhance user engagement](https://github.com/johnrearden/just-beats/issues/34#issue-1473376685)
+    - Story : [Allow users to share a link to a drumloop](https://github.com/johnrearden/just-beats/issues/35)
+    - Story : [Add animations synchronised with audio playback](https://github.com/johnrearden/just-beats/issues/36#issue-1473393530)
+
 
 ### Inline JavaScript and event handlers.
 When using Django templates, the fields passed in from the backend are only 

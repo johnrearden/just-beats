@@ -28,66 +28,31 @@ class TestLoopList(StaticLiveServerTestCase):
         self.driver.quit()
 
     def test_create_new_loop_button(self):
+
+        # Find and click the signup link on the login page
+        self.driver.get(self.BASE_URL)
+        signup_link = self.driver.find_element(by=By.ID, value='register-link')
+        signup_link.click()
+
+        # Enter and submit a testing username and password
+        username = self.driver.find_element(by=By.NAME, value='username')
+        password = self.driver.find_element(by=By.NAME, value='password1')
+        password_confirm = self.driver.find_element(
+            by=By.NAME, value='password2')
+        submit = self.driver.find_element(by=By.ID, value="submit")
+        username.send_keys(settings.SELENIUM_TEST_USERNAME)
+        password.send_keys(settings.SELENIUM_TEST_PASSWORD)
+        password_confirm.send_keys(settings.SELENIUM_TEST_PASSWORD)
+        submit.click()
+
+        # Now test the create new loop button, which only appears to logged
+        # in users.
         self.driver.get(self.BASE_URL)
         create_new_loop_button = self.driver.find_element(
             by=By.ID, value='create-new-loop-button')
         create_new_loop_button.click()
         self.assertEqual(self.driver.current_url,
                          self.BASE_URL + 'create_new_loop/')
-
-    def test_all_play_buttons_show_and_hide_current_track_display(self):
-        self.driver.get(self.BASE_URL)
-        play_buttons = self.driver.find_elements(
-            by=By.CLASS_NAME, value="play-button")
-        current_track_display = self.driver.find_element(
-            by=By.ID, value="current-track-display")
-
-        time.sleep(1)
-        for button in play_buttons:
-            button.click()
-            time.sleep(1)
-            self.assertNotIn(
-                'invisible', current_track_display.get_attribute('class')
-                                                  .split())
-
-            button.click()
-            time.sleep(1)
-            self.assertIn(
-                'invisible', current_track_display.get_attribute('class')
-                                                  .split())
-
-    def test_loop_rating_link(self):
-        self.driver.get(self.BASE_URL)
-
-        # The currentTrackDisplay should exist, but not be visible on page
-        # load.
-        element_list = self.driver.find_elements(
-            by=By.ID, value="current-track-display")
-        self.assertTrue(element_list)
-        self.assertTrue(
-            'invisible' in element_list[0].get_attribute('class').split())
-
-        # Click on the first track (if it exist) to display the
-        # currentTrackDisplay.
-        time.sleep(0.5)
-        play_buttons = self.driver.find_elements(
-            by=By.CLASS_NAME, value="play-button")
-        if (play_buttons):
-            play_buttons[0].click()
-            time.sleep(0.5)
-            self.assertFalse(
-                'invisible' in element_list[0].get_attribute('class').split())
-
-        # Ensure the rating-launcher-button is visible on the page, and click
-        # it to check that it links to the create review page.
-        self.driver.execute_script(
-            'document.getElementById("rating-launcher-button").scrollIntoView(true)')
-        button_list = self.driver.find_elements(
-            by=By.ID, value="rating-launcher-button")
-        self.assertTrue(button_list)
-        button_list[0].click()
-        self.assertTrue(self.driver.current_url.startswith(
-            self.BASE_URL + 'create_review/'))
 
 
 class TestAllAuthFunctionality(StaticLiveServerTestCase):
@@ -119,10 +84,10 @@ class TestAllAuthFunctionality(StaticLiveServerTestCase):
             by=By.ID, value='register-link')
         register_link.click()
         self.assertEqual(self.driver.current_url,
-                         f'{self.BASE_URL}accounts/login/')
+                         f'{self.BASE_URL}accounts/signup/')
 
         # Find and click the signup link on the login page
-        signup_link = self.driver.find_element(by=By.ID, value='signup-link')
+        signup_link = self.driver.find_element(by=By.ID, value='register-link')
         signup_link.click()
         self.assertEqual(self.driver.current_url,
                          f'{self.BASE_URL}accounts/signup/')
@@ -194,6 +159,25 @@ class TestCreateReviewPage(StaticLiveServerTestCase):
         self.driver.quit()
 
     def test_previous_reviews_appear_on_page(self):
+
+        # Find and click the signup link on the login page
+        self.driver.get(self.BASE_URL)
+        signup_link = self.driver.find_element(by=By.ID, value='register-link')
+        signup_link.click()
+
+        # Enter and submit a testing username and password
+        username = self.driver.find_element(by=By.NAME, value='username')
+        password = self.driver.find_element(by=By.NAME, value='password1')
+        password_confirm = self.driver.find_element(
+            by=By.NAME, value='password2')
+        submit = self.driver.find_element(by=By.ID, value="submit")
+        username.send_keys(settings.SELENIUM_TEST_USERNAME)
+        password.send_keys(settings.SELENIUM_TEST_PASSWORD)
+        password_confirm.send_keys(settings.SELENIUM_TEST_PASSWORD)
+        time.sleep(3)
+        submit.click()
+
+        # Once logged in, navigate to the review page
         self.driver.get(self.BASE_URL + 'create_review/2/bolg')
         self.assertTrue(self.driver.find_elements(
             by=By.CLASS_NAME, value='existing-comment'))
@@ -221,7 +205,6 @@ class TestCreateReviewPage(StaticLiveServerTestCase):
             'document.getElementsByName("rating")[0].setAttribute("value", "5")', form_rating_input)
         submit_button.click()
         ratings = Review.objects.all().filter(
-            reviewer=reviewer,
             drumloop=drumloop,
             comment=sample_comment,
             rating=5)
@@ -240,7 +223,7 @@ class TestLoopEditorPage(StaticLiveServerTestCase):
 
     def setUp(self):
         options = webdriver.ChromeOptions()
-        # options.add_argument("--headless")
+        options.add_argument("--headless")
         # necessary for headless
         options.add_argument("--allow-insecure-localhost")
         # due to local port conflict
