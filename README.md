@@ -46,6 +46,14 @@ the current choice highlighted.
 ![iphone12_editor](media/docs/iPhone12_loopeditor_screenshot.png)
 ![iphone12_instrument](media/docs/iPhone12_instrumentchooser_screenshot.png)
 
+- **Loop Detail Page**:
+This page was added late in the project, at the suggestion of my mentor, Celestine Okoro. The page collects and displays all the information associated with a particular loop, including the 5 most recent reviews, a graphic showing the beats of each track, a play/pause button, a volume control and a link to the rating
+page. Various animations are displayed when the user hits the play button to hear the audio. A visitor to
+the site does not need to be authenticated to view this page, and it contains a span with a link to the page and a copy button that transfers the link to the visitor's clipboard to facilitate sharing.  
+
+![desktop_loop_detail_page](media/docs/desktop_loop_detail.png)
+
+
 - **Loop Rating and Comments** :
 The user, if logged in, can rate and comment on drumloops by other users (the rating link is
 disabled for a user's own loops - you can't let people rate themselves!). All previous comments 
@@ -69,11 +77,28 @@ approve ratings and comments, without allowing them full admin access to the dat
 [Return to top](#just-beats)
 # User Experience
 
-## User Stories
-
 ## Design
 
+### Fonts 
+- The main text font used for ordinary text in the body of the project was 'Kanit', which I obtained from Google Fonts. It's a very legible sans-serif font, whose glyphs have a blocky shape that suits the graffiti theme in the site as a whole.
+
+![wallpoet_sample](media/docs/kanit_font_sample.png)
+
+- The font used for headings and labels is 'Wallpoet', which is similar in appearance to a stencil. It was sourced from [this website](https://www.1001fonts.com/graffiti-fonts.html). Thanks to [Lars Berggman](https://www.1001fonts.com/users/punktlars/).
+
+![wallpoet_sample](media/docs/wallpoet_font_sample.png)
+- The font used for the site logo is 'Future', which is slightly less readable but looks more like what a graffiti artist would draw with a can of spraypaing. It was sourced from the same site as 'wallpoet' - thanks to [PressGangStudios](https://www.1001fonts.com/users/pressgang/).
+
+![wallpoet_sample](media/docs/outrun_font_sample.png)
+
+### Colour
+The main image, of a large dark hall with columns covered in graffiti, was sourced from [pexels](www.pexels.com) - thanks to [Paul Basel](https://www.pexels.com/@paul-basel-903490/). As it is dark, I decided to put most of the content inside boxes with an opaque darker overlay, and use white as the font colour throughout to ensure a good contrast between foreground and background. Headings are in yellow or yellow green, which both contrast well against a dark background. For variety, the list of loops on the homepage is black text and gold stars on a light grey background.
+
 ### Wireframes
+I decided to draw the wireframes out by hand for this project, as the free wireframe
+prototyping services I had used for previous projects take quite a while to set up. In
+the interests of productivity, I went for the quicker option of pen and paper.
+
 ![Wireframe of drumloop list view](media/docs/drumloop_list_wireframe.png)
 ![Wireframe of instrument picker modal](media/docs/instrument_picker_wireframe.png)
 ![Wireframe of new drumloop creation form](media/docs/new_drumloop_form_wireframe.png)
@@ -91,7 +116,7 @@ for [User Epics](https://github.com/johnrearden/just-beats/issues/new?assignees=
 
 To break the project into manageable sprints, GitHub Projects was used to provide a Kanban board
 onto which the issues were posted, moving them from 'Todo' to 'In Progress' to 'Done' as they 
-were completed in turn. The iterations are documented here - [Iteration 1](https://github.com/users/johnrearden/projects/4) and [Iteration 2](https://github.com/users/johnrearden/projects/5).
+were completed in turn. The iterations are documented here - [Iteration 1](https://github.com/users/johnrearden/projects/4), [Iteration 2](https://github.com/users/johnrearden/projects/5) and [Iteration 3](https://github.com/users/johnrearden/projects/6)
 
 The User Epics and their related User Stories are as follows:
 - Epic : [Create Drum Loops](https://github.com/johnrearden/just-beats/issues/2).
@@ -136,37 +161,40 @@ in the absence of direct fetch calls to the API.
 # Testing
 - Manual testing
 - Automated testing
-Note - tried using nose as the test runner, but it doesn't pick up model coverage as 
-these are loaded before test run starts.https://github.com/jazzband/django-nose/issues/180
 - In-app testing
 - User story testing
 - Validator testing
+
+---
 
 ## Manual Testing
 
 ### Responsiveness
 Here's a set of screenshots taken with the Chrome dev tools device toolbar, set
 to the iPhone 12 Pro. They are, in order, the homepage, loop editor page, instrument chooser page, 
-and the review form.
+the review form, and the loop detail page.
 
 ![iphone12_homepage](media/docs/iPhone12_homepage_screenshot.png)
 ![iphone12_editor](media/docs/iPhone12_loopeditor_screenshot.png)
 ![iphone12_instrument](media/docs/iPhone12_instrumentchooser_screenshot.png)
 ![iphone12_review](media/docs/iPhone12_commentform_screenshot.png)
+![surfacepro_loop_detail](media/docs/iphone12_loop_detail_page.png)
 
-Here's the same four pages on the Surface Pro 7
+Here's the same five pages on the Surface Pro 7
 
 ![surfacepro_homepage](media/docs/surface_pro_homepage_screenshot.png)
 ![surfacepro_editor](media/docs/surface_pro_editor_screenshot.png)
 ![surfacepro_instrument](media/docs/surface_pro_instrumentchooser_screenshot.png)
 ![surfacepro_review](media/docs/surface_pro_review_screenshot.png)
+![surfacepro_loop_detail](media/docs/surface_pro_loop_detail_screenshot.png)
 
-And finally the same four pages on a desktop monitor (1920x1080)
+And finally the same five pages on a desktop monitor (1920x1080)
 
 ![desktop_homepage](media/docs/desktop_homepage_screenshot.png)
 ![desktop_editor](media/docs/desktop_editor_screenshot.png)
 ![desktop_instrument](media/docs/desktop_instrumentchooser_screenshot.png)
 ![desktop_review](media/docs/desktop_review_screenshot.png)
+![desktop_loop_detail_page](media/docs/desktop_loop_detail.png)
 
 ### Browser Compatibility
 
@@ -181,11 +209,30 @@ Pages are responsive at all screen sizes | True | True | True
 ### Code Validation
 
 #### Python code : 
-All python code is validated by both the Flake8 linter (installed in VSCode) and the external CodeInstitute validator @ https://pep8ci.herokuapp.com/. The sole exceptions are the test classes, 
+- All python code is validated by both the Flake8 linter (installed in VSCode) and the external CodeInstitute validator @ https://pep8ci.herokuapp.com/. The sole exceptions are the test classes, some of which contain
+JavaScript snippets which are more readable if confined to one line.
+
+#### JavaScript code :
+- All JavaScript code in the project was validated during development with the JSHint plugin for VSCode.
+
+#### HTML Validation :
+
+#### CSS Validation :
+- No errors were found when the single CSS file style.css was passed through the W3C Validation Service
 
 ### User Stories
+The User Epics and Stories in this project are documented in three GitHub Projects, corresponding 
+to the three iterations that comprised the development work of the project. These can be found here :
 
-### Features
+- [Iteration 1](https://github.com/users/johnrearden/projects/4)
+- [Iteration 2](https://github.com/users/johnrearden/projects/5)
+- [Iteration 3](https://github.com/users/johnrearden/projects/6/views/1)
+
+Alternitively, the Epics and Stories are individually linked here :
+
+- [Epics and Stories](#development-process)
+
+---
 
 ## Automated Testing
 
@@ -209,7 +256,7 @@ Automated tests were written for all forms, models and views using the Django te
 
 The nose test runner was installed, which conveniently runs the coverage report and html generation as part of the test suite, but unfortunately it turned out that nose loads the models before running the tests, so that the model code is never accessed during the tests themselves, and thus does not show up
 in the coverage report. This is a deal-breaker, as the html coverage report is very useful for finding
-untested parts of the codebase.
+untested parts of the codebase. Issue link : https://github.com/jazzband/django-nose/issues/180
 
 ### Testing page functionality with Selenium
 Note - writing of tests was considerably slowed down by an issue with actions fired by selenium 
@@ -222,26 +269,28 @@ to run the selenium based tests, so a conditional statement was added to setting
 
 # Bugs
 
-Google social authentication: Error 400 redirect_uri_mismatch. The problem was caused by the redirect uri
+- Google social authentication: Error 400 redirect_uri_mismatch. The problem was caused by the redirect uri
 I supplied to Google when setting up the credentials having a missing trailing slash at the end. 
 https://www.youtube.com/watch?v=QHz1Rs6lZHQ&t=1s
 
-Problem with setTimeout and this.
+- Problem with setTimeout and this.
 I originally wrote the LoopPlayer class using the ES6 constructor syntax, but using
 arrow functions syntax in the function definitions. 
-
 `scheduler = () => { .... }`
-
 JSHint did not approve, so I changed the function definitions to the standard class syntax.
-
 `scheduler() { ...... }`
-
 This introduced a bug which was equal parts annoying and interesting. At the end of the scheduler function, it invokes itself again after a delay using setTimeout. Removing the arrow syntax from the
-function definitions resulted in the value of this being reset to the global context, which didn't have access to the AudioContext created within the class constructor.
- - Solution : I wrapped the schedule function call inside a wrapper function and bound this
+function definitions resulted in the value of this being reset to the global context, which didn't have access to the AudioContext created within the class constructor. The solution was to place the schedule function call inside a wrapper function and bind this
  to the correct context. The [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this#as_an_object_method) and [this stack overflow reply](
 https://stackoverflow.com/questions/591269/settimeout-and-this-in-javascript) were very helpful.
-## Solved Bugs
+
+- A number of other bugs and their solution are documented in the issues tracker on GitHub, such as :
+    - https://github.com/johnrearden/just-beats/issues/33#issue-1470078969
+    - https://github.com/johnrearden/just-beats/issues/32#issue-1470076409
+    - https://github.com/johnrearden/just-beats/issues/31#issue-1469595248
+    - https://github.com/johnrearden/just-beats/issues/29#issue-1456889524
+    - https://github.com/johnrearden/just-beats/issues/28#issue-1456888950
+    - https://github.com/johnrearden/just-beats/issues/20#issue-1419176312
 
 ## Remaining Bugs
 There are (hopefully) no remaining bugs in the project.
