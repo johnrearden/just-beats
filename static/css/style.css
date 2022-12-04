@@ -1,13 +1,7 @@
 /* These css elements style the whole site, and the base.html template */
 
-:root {
-    --track-light: rgb(27, 85, 200);
-    --track-dark: rgb(100, 133, 200);
-    /* --text-standard: rgb(140, 189, 6); */
-    --text-standard: rgb(180, 180, 180);
-    --text-dim: #30303050;
-    /* --text-dim:rgb(1, 47, 75); */
-    --text-medium: rgb(81, 110, 3);
+.transition-on {
+    transition: 0.8s all;
 }
 
 body {
@@ -29,6 +23,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-greenyellow {
     color: greenyellow;
+}
+
+.text-white {
+    color: white;
 }
 
 p, span {
@@ -115,6 +113,11 @@ button:disabled {
 
 #logged-in-user {
     color: yellowgreen;
+}
+
+
+.navbar-brand {
+    width: 300px;
 }
 
 

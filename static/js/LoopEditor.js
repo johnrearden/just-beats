@@ -8,7 +8,7 @@ let loopPlayer;
  * A configuration object that stores state relevant to the operation of the 
  * instrument chooser modal.
  */
-let instrumentModalConfig; 
+let instrumentModalConfig;
 
 
 /**
@@ -45,8 +45,34 @@ document.addEventListener('DOMContentLoaded', () => {
  * on every fourth beat in order to synchronise animations on the page with
  * the loop.
  */
-const animationCallback = () => {
-    
+const animationCallback = (beatIndex) => {
+    // Animate the currently playing beat on the beats display.
+    const trackCount = document.getElementsByClassName('beats-holder').length;
+    for (let i = 0; i < trackCount; i++) {
+        const beatsHolder = document.getElementById(`beats-holder-track_${i}`);
+        const beatDivs = beatsHolder.children;
+        const beatCount = beatDivs.length;
+        const previousBeatIndex = beatIndex > 0 ? beatIndex - 1 : beatCount - 1;
+        const beatDiv = beatDivs[beatIndex];
+        if (beatDiv.classList.contains('active-beat')) {
+            beatDiv.classList.add('readonly-active-highlighted-beat');
+        } else {
+            beatDiv.classList.add('readonly-highlighted-beat');
+        }
+        beatDivs[previousBeatIndex].classList.remove('readonly-highlighted-beat');
+        beatDivs[previousBeatIndex].classList.remove('readonly-active-highlighted-beat');
+    }
+
+    // Control the size of the site logo
+    const siteLogo = document.getElementsByClassName('site-logo')[0];
+    if (beatIndex % 16 === 0) {
+        siteLogo.classList.remove('transition-on');
+        siteLogo.style.transform = 'scale(1.1, 1.1)';
+    }
+    if (beatIndex % 16 === 8) {
+        siteLogo.style.transform = 'scale(1.0, 1.0)';
+        siteLogo.classList.add('transition-on');
+    }
 };
 
 
@@ -280,11 +306,11 @@ const onDeleteTrackButtonClick = (event, trackID) => {
         displayWarningAlert('Can\'t delete the last track! A loop must have at least one.');
     } else {
         // Store the selected trackID in the confirm button.
-    const confirmButton = document.getElementById('confirm-delete-track-button');
-    confirmButton.setAttribute('trackID', trackID);
+        const confirmButton = document.getElementById('confirm-delete-track-button');
+        confirmButton.setAttribute('trackID', trackID);
 
-    // Open a modal dialog to ask user to confirm action.
-    $('#delete-track-confirmation').modal('show');
+        // Open a modal dialog to ask user to confirm action.
+        $('#delete-track-confirmation').modal('show');
     }
 };
 
@@ -443,15 +469,15 @@ const displaySuccessAlert = (message) => {
         ${message}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>`;
-        let messageHolder = document.getElementById('message-holder');
-        messageHolder.innerHTML = alertHTML;
-        setTimeout(function() {
-            let messages = document.getElementById('msg');
-            if (messages) {
-                let alert = new bootstrap.Alert(messages);
-                alert.close();
-            }
-        }, 3000);
+    let messageHolder = document.getElementById('message-holder');
+    messageHolder.innerHTML = alertHTML;
+    setTimeout(function () {
+        let messages = document.getElementById('msg');
+        if (messages) {
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }
+    }, 3000);
 };
 
 /**
@@ -468,15 +494,15 @@ const displayWarningAlert = (message) => {
         ${message}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>`;
-        let messageHolder = document.getElementById('message-holder');
-        messageHolder.innerHTML = alertHTML;
-        setTimeout(function() {
-            let messages = document.getElementById('msg');
-            if (messages) {
-                let alert = new bootstrap.Alert(messages);
-                alert.close();
-            }
-        }, 3000);
+    let messageHolder = document.getElementById('message-holder');
+    messageHolder.innerHTML = alertHTML;
+    setTimeout(function () {
+        let messages = document.getElementById('msg');
+        if (messages) {
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }
+    }, 3000);
 };
 
 /**

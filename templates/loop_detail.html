@@ -9,9 +9,9 @@
     <!--This row displays the loop name and its creator-->
     <div class="row text-center mb-md-5">
         <div class="col-md-6 offset-md-3">
-            <h1 class="d-inline-block p-2">{{ loop.name }}</h1>
-            <div class="d-inline-block"> by </div>
-            <h3 class="d-inline-block p-2">{{ loop.creator }}</h3>
+            <h1 id="loop-name-heading" class="d-inline-block p-2">{{ loop.name }}</h1>
+            <div class="d-none d-md-inline-block"> by </div>
+            <h3 class="d-none d-md-inline-block p-2">{{ loop.creator }}</h3>
         </div>
     </div>
 
@@ -20,7 +20,7 @@
         <div class="col-12 col-md-5 darker-background light-border p-3">
             {% for track in tracks %}
             <div class="row text-center">
-                <div class="col-12 col-md-4 text-center align-self-center">
+                <div class="col-12 col-md-4 text-white text-center align-self-center d-none d-md-block">
                     {{ track.instrument.name }}
                 </div>
                 <div class="col-12 col-md-auto">
@@ -54,7 +54,6 @@
                 <label for="loop-detail-volume">Volume</label>
                 <input type="number" id="loop-detail-volume" min="0" max="10" value="5">
             </div>
-
         </div>
 
         <div class="col-12 col-md-5">

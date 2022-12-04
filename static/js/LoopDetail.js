@@ -93,9 +93,25 @@ const fireAnimation = (beatIndex) => {
     // Rotate the play button
     const playButton = document.getElementById('detail-play-button');
     if (beatIndex === 0) {
-        playButton.style.transform = `rotate(1turn)`;    
+        playButton.style.transform = `rotatez(1turn)`;    
     } else if (beatIndex === 16) {
-        playButton.style.transform = 'rotate(-1turn)';
+        playButton.style.transform = 'rotatez(-1turn)';
+    }
+
+    // Control the size of the site logo
+    const siteLogo = document.getElementsByClassName('site-logo')[0];
+    const loopName = document.getElementById('loop-name-heading');
+    if (beatIndex % 16 === 0) {
+        siteLogo.classList.remove('transition-on');
+        siteLogo.style.transform = 'scale(1.1, 1.1)';
+        loopName.style.transform = 'scale(1.1, 1.1)';
+        loopName.classList.remove('transition-on');
+    }
+    if (beatIndex % 16 === 8) {
+        siteLogo.style.transform = 'scale(1.0, 1.0)';
+        siteLogo.classList.add('transition-on');
+        loopName.style.transform = 'scale(1.0, 1.0)';
+        loopName.classList.add('transition-on');
     }
 };
 
