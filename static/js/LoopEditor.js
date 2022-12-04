@@ -224,6 +224,9 @@ const onModalSaveChangesClicked = async (e) => {
         // Hide the instrument modal.
         $('#instrument-chooser').modal('hide');
 
+        // Confirm the change with a message to the user.
+        displaySuccessAlert(`Instrument changed to ${instrumentModalConfig.currentInstrumentName}`);
+
     } else {
         // Grab the csrf cookie for the POST request.
         const csrfToken = getCookie('csrftoken');
