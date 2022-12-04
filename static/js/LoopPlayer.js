@@ -1,4 +1,3 @@
-counter = 0;
 /**
  * A class that handles audio playback for multiple different pages within
  * the project. It operates using the WebAudio API, enabling it to play 

@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
         navigator.clipboard.writeText(document.location);
         displaySuccessAlert('Link copied to your clipboard .... send it to your friends!');
     });
-    
 });
 
 

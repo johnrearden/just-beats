@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     addNewTrackButton.addEventListener('click', (event) => {
         onAddNewTrackButtonClick(event);
     });
+    
     // Wire up the volume control.
     volumeInput = document.getElementById('loop-detail-volume');
     volumeInput.addEventListener('input', (e) => {
