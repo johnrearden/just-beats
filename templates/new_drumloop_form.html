@@ -6,7 +6,7 @@
 <!--Holder for the create new loop form-->
 <div class="container">
     <div class="row">
-        <div class="col-md-6 offset-md-3 form-holder mt-5 text-center">
+        <div class="col-md-6 offset-md-3 form-holder darker-background light-border mt-5 text-center">
             <form action="/create_new_loop/" method="POST">
                 {% csrf_token %}
                 {{ new_drumloop_form.as_p }}

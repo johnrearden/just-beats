@@ -158,6 +158,9 @@ in the absence of direct fetch calls to the API.
 
 ![Entity-relationship diagram for models](media/docs/entity_relationship_diagram.png)
 
+### Data validation
+
+
 # Testing
 - Manual testing
 - Automated testing
@@ -173,76 +176,82 @@ in the absence of direct fetch calls to the API.
 
 |Page|Feature|Action|Effect|
 |---|---|---|---|
-|Homepage|Site Logo|||
-|Homepage|Logged In User Display|||
-|Homepage|Home link|||
-|Homepage|Logout link|||
-|Homepage|Login link|||
-|Homepage|Register link|||
-|Homepage|All Loops Button|||
-|Homepage|My Loops Button|||
-|Homepage|Edit Button|||
-|Homepage|Loop row hover|||
-|Homepage|Loop row click|||
-|Homepage|Call-to-Action New Loop Button|||
-|Homepage|Call-to-Action login button|||
-|Homepage|Message on login|||
-|Homepage|Message on logout|||
-|Login Page|Social sign-in|||
-|Login Page|Social sign-in confirmation|||
-|Login Page|Username validation|||
-|Login Page|Password validation|||
-|Login Page|Remember me button|||
-|Login Page|Sign in button|||
-|Logout Confirm Page|Sign Out button|||
-|Register Page|Reroute to login page|||
-|Register Page|Username validation|||
-|Register Page|email validation|||
-|Register Page|password1|||
-|Register Page|password2|||
-|Register Page|Sign Up button|||
-|Loop Detail Page|Loop name display|||
-|Loop Detail Page|Creator display|||
-|Loop Detail Page|Track beat display|||
-|Loop Detail Page|Track beat animation|||
-|Loop Detail Page|Site logo animation|||
-|Loop Detail Page|Play button|||
-|Loop Detail Page|Pause button|||
-|Loop Detail Page|Play/pause button animation|||
-|Loop Detail Page|Volume Input|||
-|Loop Detail Page|Share link display|||
-|Loop Detail Page|Share link copy button|||
-|Loop Detail Page|Rating button|||
-|Loop Editor Page|Loop name display|||
-|Loop Editor Page|Creator display|||
-|Loop Editor Page|Tempo control|||
-|Loop Editor Page|Instrument button|||
-|Loop Editor Page|Instrument modal|||
-|Loop Editor Page|Instrument modal dismiss|||
-|Loop Editor Page|Instrument change message|||
-|Loop Editor Page|Track volume control|||
-|Loop Editor Page|Beat toggle|||
-|Loop Editor Page|Delete track button|||
-|Loop Editor Page|Delete track confirm modal|||
-|Loop Editor Page|Confirm delete track|||
-|Loop Editor Page|Refuse delete track|||
-|Loop Editor Page|Play button|||
-|Loop Editor Page|Loop volume control|||
-|Loop Editor Page|Add new track button|||
-|Loop Editor Page|Delete Loop Button|||
-|Loop Editor Page|Delete Loop confirm|||
-|Loop Editor Page|Delete loop reject|||
-|New Loop Form|Name field|||
-|New Loop Form|Tempo field|||
-|New Loop Form|Let's get looping button|||
-|New Loop Creation Flow||||
-|Loop Rating page|Previous comment|||
-|Loop Rating page|Previous rating|||
-|Loop Rating page|Previous reviewer|||
-|Loop Rating page|User rating selector|||
-|Loop Rating page|User rating validation|||
-|Loop Rating page|User comment field|||
-|Loop Rating page|Submit button|||
+|Homepage|Site Logo|Click|Redirects to home page from all pages|
+|Homepage|Logged In User Display|Log in as existing user|Username appears in navbar|
+|Homepage|Home link|Click|Redirects to home page from all pages|
+|Homepage|Logout link|Click|Redirects to confirm signout page|
+|Homepage|Confirm logout|Click 'ok'|Redirects to home page|
+|Homepage|Login link|Click|Redirects to Sign In Page|
+|Homepage|Register link|Click|Redirects to Sign Up Page|
+|Homepage|All Loops Button|Click|All loops displayed on homepage|
+|Homepage|My Loops Button|Not logged in|Button is disabled|
+|Homepage|My Loops Button|Logged in : click|Only user's loops are displayed|
+|Homepage|Edit Button|Logged out|Not visible|
+|Homepage|Edit Button|Logged in : click|Visible - redirects to Loop Editor Page|
+|Homepage|Loop row|Hover on row|Row is highlighted in green|
+|Homepage|Loop row|Click|Redirects to Loop Detail Page for this selected loop|
+|Homepage|Call-to-Action New Loop Button|Logged in : click|Redirects to Create New Loop Form|
+|Homepage|Call-to-Action login button|Logged out : click|Redirects to Login Page|
+|Homepage|Message on login|Login as user|Successful Signin message appears, clears after 3 seconds|
+|Homepage|Message on logout|Logout|Successful signout message appears, clears after 3 seconds|
+|Login Page|Social sign-in button|Click|Redirects to confirm social signin page|
+|Login Page|Social sign-in continue button|Click|Redirects to Sign in with Google page|
+|Login Page|Username validation|Enter incorrect username|Error message response - does not specify if username or password failed|
+|Login Page|Password validation|Enter incorrect password|Error message response - does not specify if username or password failed|
+|Login Page|Remember me button|Checkbox on|Close browser window and reopen - user still logged in|
+|Login Page|Sign in button|Click|Redirects to home page, shows successful login message|
+|Logout Confirm Page|Sign Out button|Click|Redirects to home page, user logged out|
+|Register Page|Reroute to login page|Click link|Redirects to login page|
+|Register Page|Username validation|Try using existing username|Error message appears - 'A user with that username already exists'|
+|Register Page|email validation|Entered invalid email (without '@'|Error message - 'Please enter valid email address' and registration fails|
+|Register Page|password1|Enter a short password|Error message - 'That password is too short'|
+|Register Page|password2|Enter different password to password1 field|Error message - 'You must type the same password each time'|
+|Register Page|Sign Up button|Entered valid form data|Redirects to home page - success message displayed|
+|Loop Detail Page|Loop name display|No action|Loop name displays correctly|
+|Loop Detail Page|Creator display|No action|Creator name displays correctly|
+|Loop Detail Page|Track beat display|No action|All tracks present, all beats present|
+|Loop Detail Page|Track beat animation|Click play button|Each beat highlighted in time on each track|
+|Loop Detail Page|Site logo animation|Click play button|Logo grows on every 16th beat, and then slowly shrinks|
+|Loop Detail Page|Play button|Click|Audio playback and animations begin|
+|Loop Detail Page|Play button|Hover|Button appearance changes|
+|Loop Detail Page|Pause button|Click|Audio playback and animations cease|
+|Loop Detail Page|Play/pause button animation|Click to play|Button icon rotates quickly at beginning of every 16th beat|
+|Loop Detail Page|Volume Input|Click on up and down buttons on input|Volume immediately goes up and down|
+|Loop Detail Page|Share link display|No action|current url displayed|
+|Loop Detail Page|Share link copy button|Click|link successfully copied to clipboard|
+|Loop Detail Page|Rating button|Click|Redirects to rating page|
+|Loop Detail Page|Rating button when logged out|No action|Not shown|
+|Loop Editor Page|Loop name display|No action|Loop name displayed correctly|
+|Loop Editor Page|Creator display|No action|Creator name displayed correctly|
+|Loop Editor Page|Tempo control|Click arrow buttons to increase and decrease value|Tempo increases and decreases immediately as audio plays|
+|Loop Editor Page|Instrument button|Click|Instrument modal shown, current instrument highlighted|
+|Loop Editor Page|Instrument modal|Click on option|Sample plays once|
+|Loop Editor Page|Instrument modal dismiss|Click outside modal or close button|Modal is hidden|
+|Loop Editor Page|Instrument modal save button|Save clicked|Modal hidden, instrument updated|
+|Loop Editor Page|Instrument change message|No action|Instrument changed message shown, fades after 3 sec|
+|Loop Editor Page|Track volume control|Adjust slider|Volume of track changes in real time|
+|Loop Editor Page|Beat toggle|Toggle on|Beat is now heard in playback, beat div highlighted|
+|Loop Editor Page|Delete track button|Click|Confirm delete track modal shown|
+|Loop Editor Page|Confirm delete track|Click|Track deleted and confirmation message shown|
+|Loop Editor Page|Refuse delete track|Click|No change to loop|
+|Loop Editor Page|Play button|Click|Audio playback and animations begin, icon changes to pause|
+|Loop Editor Page|Pause button|Click|Audio playback and animations end, icon changes to play|
+|Loop Editor Page|Loop volume control|Click on up and down arrow buttons|Overall playback volume increases and decreases|
+|Loop Editor Page|Add new track button|Click|Instrument modal shown, after save clicked, new track appears with chosen instrument|
+|Loop Editor Page|Delete Loop Button|Click|Confirm delete loop modal appears|
+|Loop Editor Page|Delete Loop confirm|Click|Redirects to homepage, success message displayed, loop gone|
+|Loop Editor Page|Delete loop reject|Click|No change to loop|
+|New Loop Form|Name field|No action|Default name shown|
+|New Loop Form|Tempo field|Click on arrow buttons|Tempo increases and decreases|
+|New Loop Form|Let's get looping button|Click|Redirects to Loop Editor page, success message displayed|
+|New Loop Creation Flow|Default set-up|Create new loop|New loop created with one track, default instrument selected, no beats yet selected|
+|Loop Rating page|Previous comment|No action|Previous comments shown correctly|
+|Loop Rating page|Previous rating|No action|Previous ratings shown correctly|
+|Loop Rating page|Previous reviewer|No action|Previous reviewer shown correctly|
+|Loop Rating page|User rating selector|Click on up and down arrows|Rating ranges from 0 to 5|
+|Loop Rating page|User rating validation|Click to increase from 5 to 6|No change and red error highlight appears|
+|Loop Rating page|User comment field|Fill with text|Text appears, comment max length observed|
+|Loop Rating page|Submit button|Click|Redirects to home page, success message appears|
 
 
 ### Responsiveness

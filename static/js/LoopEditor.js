@@ -17,16 +17,27 @@ let instrumentModalConfig;
  * up the event listeners on the play button and the addNewTrackButton.
  */
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Check for messages placed in the page by the backend, and if presend, set a timer
+    // to delete them after 3 seconds.
+    setTimeout(function () {
+        let messages = document.getElementById('msg');
+        if (messages) {
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }
+    }, 3000);
+
     const addNewTrackButton = document.getElementById('add-new-track');
     addNewTrackButton.addEventListener('click', (event) => {
         onAddNewTrackButtonClick(event);
     });
-    
+
     // Wire up the volume control.
     volumeInput = document.getElementById('loop-detail-volume');
     volumeInput.addEventListener('input', (e) => {
         volume = e.target.value;
-        if(loopPlayer) {
+        if (loopPlayer) {
             loopPlayer.changeLoopVolume(volume * 0.1);
         }
     });

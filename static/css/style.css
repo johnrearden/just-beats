@@ -252,7 +252,7 @@ label {
 
 .beats-header {
     color: greenyellow;
-    text-shadow: 0 0 5px pink;
+    text-shadow: 0 0 2px pink;
     font-weight: bolder;
 }
 
@@ -290,14 +290,6 @@ label {
     font-size: 1.2rem;
     color: gold;
 }
-
-/* .play-button {
-    font-size: 2rem;
-    color: greenyellow;
-    text-shadow: 0 0 5px purple;
-    margin: 0 20px;
-    transition: 0.5s all;
-} */
 
 .play-button:hover {
     text-shadow: 0 0 5px pink;
@@ -462,7 +454,6 @@ label {
 /* These css elements style the forms */
 .form-holder {
     color: white;
-    background-color: black;
     display: block;
     font-size: 1.5em;
 }

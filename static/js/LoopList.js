@@ -12,3 +12,19 @@ const onRowClicked = (event, creator, loopName) => {
 };
 
 
+/**
+ * Check for messages placed in the page by the backend, and if presend, set a timer
+ * to delete them after 3 seconds.
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(function () {
+        let messages = document.getElementById('msg');
+        if (messages) {
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }
+
+    }, 3000);
+});
+
+
