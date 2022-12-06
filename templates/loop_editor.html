@@ -49,7 +49,8 @@
             <div class="col-6 col-lg-2 overflow-hidden">
                 <input type="range" id="track_volume_{{ track.id }}" name="track_volume_{{ track.id }}"
                     value="{{ track.track_volume }}" min="0" max="10" class="track-volume py-2 py-md-0" list="tickmarks"
-                    oninput="onTrackVolumeChange(event, '{{ track.id }}')">
+                    oninput="onTrackVolumeChange(event, '{{ track.id }}')"
+                    aria-label="volume slider">
                 <datalist id="tickmarks">
                     <option value="0" label="0"></option>
                     <option value="2"></option>
@@ -90,7 +91,7 @@
 <!--Button controls to allow user to play the loop, add a new track, save the current loop, 
     and delete the entire loop-->
 <div class="col text-center p-3">
-    <button id="editor-play-button" class="medium-play-button m-3">
+    <button id="editor-play-button" class="medium-play-button m-3" aria-label="play button">
         <i class="fa-solid fa-play "></i>
         <i class="fa-solid fa-pause  d-none"></i>
     </button>

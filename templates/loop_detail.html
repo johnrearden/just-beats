@@ -11,7 +11,7 @@
         <div class="col-md-6 offset-md-3">
             <h1 id="loop-name-heading" class="d-inline-block p-2">{{ loop.name }}</h1>
             <div class="d-none d-md-inline-block"> by </div>
-            <h3 class="d-none d-md-inline-block p-2">{{ loop.creator }}</h3>
+            <h2 class="d-none d-md-inline-block p-2">{{ loop.creator }}</h2>
         </div>
     </div>
 
@@ -63,19 +63,19 @@
             <div class="container-fluid darker-background light-border p-3">
                 <div class="row">
                     <div class="col text-center">
-                        <h4 class="mb-3">What other people think ..</h4>
+                        <h3 class="mb-3">What other people think ..</h3>
                     </div>
                 </div>
                 <hr>
                 <div class="row align-items-center">
                     <div class="col-6">
-                        <h6>Comment</h6>
+                        <h4>Comment</h4>
                     </div>
                     <div class="col-3 text-center">
-                        <h6>Stars</h6>
+                        <h4>Stars</h4>
                     </div>
                     <div class="col-3 text-center">
-                        <h6>By</h6>
+                        <h4>By</h4>
                     </div>
                 </div>
                 {% for review in reviews %}
@@ -105,10 +105,11 @@
         and a link to the ratings page if user is authenticated-->
     <div class="row m-md-5 justify-content-around">
         <div class="col-md-auto text-center py-md-2 px-md-5 darker-background">
-            <h3 id="share-loop-title">Share this loop with your friends!</h3>
+            <h5 id="share-loop-title">Share this loop with your friends!</h5>
             <span id="pasteable-link"></span>
-            <button class="copy-icon"><i class="fa-regular fa-copy"
-                    aria-label="copy link to loop button"></i></button>
+            <button class="copy-icon" aria-label="copy link to loop button">
+                <i class="fa-regular fa-copy"></i>
+            </button>
         </div>
         {% if user.is_authenticated %}
         <div class="col-md-auto text-center mt-5 mt-md-0">

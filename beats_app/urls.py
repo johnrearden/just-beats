@@ -1,9 +1,12 @@
 from . import views
 from django.urls import path
 from django.contrib.auth.decorators import login_required
+from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path('', views.LoopList.as_view(), name='home'),
+    path('robots.txt', TemplateView.as_view(template_name='robots.txt',
+         content_type='text/plain'), name='robots'),
     path('<str:selection>', views.LoopList.as_view(), name='home'),
     path('loop/<str:creator>/<str:loop_name>/', views.LoopDetail.as_view(),
          name='loop_detail'),
@@ -29,4 +32,5 @@ urlpatterns = [
          name="save_review"),
     path('direct_url_entry_warning/', views.DirectURLEntryWarning.as_view(),
          name='direct_url_entry_warning'),
+    
 ]
