@@ -6,7 +6,7 @@
 
 body {
     background-color: black;
-    color: var(--text-standard);
+    color: white;
     font-family: 'Kanit', sans-serif;
     margin-bottom: 55px;
 }
@@ -55,7 +55,7 @@ a {
 button {
     color: greenyellow;
     background-color: #66656570;
-    text-shadow: 0 0 5px purple;
+    text-shadow: 0 0 2px purple;
     font-size: 1.2rem;
     font-weight: bolder;
     transition: 0.2s all;
@@ -65,7 +65,7 @@ button {
 }
 
 button:hover {
-    text-shadow: 0 0 10px pink;
+    text-shadow: 0 0 4px pink;
     transition: 0.2s all;
     background-color: #42414170;
     border: 2px solid greenyellow;

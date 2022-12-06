@@ -45,8 +45,9 @@
         <!--This column contains a play/pause button and a volume control-->
         <div class="col-lg-2 offset-lg-0 justify-content-center text-center align-contents-center p-5">
             <!--A button to play/pause the audio-->
-            <button id="detail-play-button" class="large-play-button mb-3" data-id="{{ loop.id }}"
-                data-tempo="{{ loop.tempo }}">
+            <button id="detail-play-button" class="large-play-button mb-3" 
+                data-id="{{ loop.id }}" data-tempo="{{ loop.tempo }}"
+                aria-label="play and pause toggle button">
                 <i class="fa-solid fa-play play-button-icon"></i>
                 <i class="fa-solid fa-pause pause-button-icon d-none"></i>
             </button>
@@ -106,7 +107,8 @@
         <div class="col-md-auto text-center py-md-2 px-md-5 darker-background">
             <h3 id="share-loop-title">Share this loop with your friends!</h3>
             <span id="pasteable-link"></span>
-            <button class="copy-icon"><i class="fa-regular fa-copy"></i></button>
+            <button class="copy-icon"><i class="fa-regular fa-copy"
+                    aria-label="copy link to loop button"></i></button>
         </div>
         {% if user.is_authenticated %}
         <div class="col-md-auto text-center mt-5 mt-md-0">
