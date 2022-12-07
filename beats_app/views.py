@@ -84,7 +84,6 @@ class CreateNewLoop(View):
             name = form.cleaned_data.get('name')
             tempo = form.cleaned_data.get('tempo')
             name_already_used = Drumloop.objects.filter(name=name).exists()
-            print('error !!!! name already in use!')
             if name_already_used:
                 context = {'new_drumloop_form': form,
                            'error': 'This name is already in use!'}

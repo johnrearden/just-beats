@@ -41,7 +41,9 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_get_looplist_with_user_only_loops(self):
-        response = self.client.get('/user-only')
+        self.client.login(username=self.test_user.username,
+                          password=self.test_user.password)
+        response = self.client.get('/home/user-only')
         self.assertTemplateUsed(response, 'loop_list.html')
 
     def test_get_create_new_loop(self):
@@ -56,7 +58,7 @@ class TestViews(TestCase):
                           password=self.test_user.password)
         self.client.post(
             '/create_new_loop/',
-            {'name': 'test_name', 'tempo': '42', 'creator': self.test_user.pk})
+            {'name': 'test_name', 'tempo': '70', 'creator': self.test_user.pk})
         newly_created_drumloop = Drumloop.objects.get(name='test_name')
         self.assertEqual(newly_created_drumloop.creator, self.test_user)
         self.assertEqual(Drumloop.objects.count(), orig_loop_count + 1)

@@ -23,7 +23,7 @@ class TestModels(TestCase):
 
     def test_drumloop_model(self):
         loop = Drumloop.objects.create(creator=self.test_user)
-        self.assertEqual(loop.name, 'brand_new_loop')
+        self.assertEqual(loop.name, '')
         self.assertEqual(loop.tempo, 120)
         self.assertEqual(loop.rating, 0)
         self.assertIsInstance(loop.created_on, datetime)
@@ -36,7 +36,7 @@ class TestModels(TestCase):
 
     def test_drumloop_creation_fails_without_user(self):
         def create_loop_without_user():
-            loop = Drumloop.objects.create()
+            Drumloop.objects.create()
         self.assertRaises(IntegrityError, lambda: create_loop_without_user())
 
     def test_drumloop_creation_fails_with_out_of_bounds_rating(self):
