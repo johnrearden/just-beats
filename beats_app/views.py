@@ -200,9 +200,9 @@ class SaveReview(View):
             messages.success(
                 request, ("Thanks! Your review has been saved and is awaiting"
                           " approval."))
+            return HttpResponseRedirect('/')
         else:
             return render(request, 'review_form.html', {'form': form})
-        return HttpResponseRedirect('/')
 
 
 class LoopEditor(View):

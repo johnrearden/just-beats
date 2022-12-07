@@ -7,7 +7,7 @@ urlpatterns = [
     path('', views.LoopList.as_view(), name='home'),
     path('robots.txt', TemplateView.as_view(template_name='robots.txt',
          content_type='text/plain'), name='robots'),
-    path('<str:selection>', views.LoopList.as_view(), name='home'),
+    path('home/<str:selection>', views.LoopList.as_view(), name='home'),
     path('loop/<str:creator>/<str:loop_name>/', views.LoopDetail.as_view(),
          name='loop_detail'),
     path('create_new_loop/', login_required(views.CreateNewLoop.as_view()),
