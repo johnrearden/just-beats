@@ -439,6 +439,38 @@ There are (hopefully) no remaining bugs in the project.
     - The GIMP graphic editing package was used to manipulate and export all images used in the project.
 # Deployment
 
+## Deploying the app on Heroku
+1. Log into Heroku and navigate to the Dashboard.
+2. Click on the 'New' button.
+3. Choose a unique app name, and select the region closest to you.
+4. Create a database on Heroku (I elected to stay on Heroku and pay the monthly fee)
+    - Click on the Resources tab.
+    - Click the Find more add-ons button.
+    - Select Heroku Postgres, and click on Install Heroku Postgres.
+    - Select a plan (default = Mini @ $5.00 a month, which I'm using), and select your app.
+    - Return to Resources tab and click on the Heroku Postgres icon, then select the settings tab and click on Database Credentials. Copy the URI to your clipboard. Paste it to your env.py file using the key "DATABASE_URL". This will allow you to use the same database for development and production.
+5. Click the settings tab on the Dashboard, and click the button to Reveal Config Vars. Your database url should be populated here already. Add your Django secret key and your Cloudinary URL to the config variables.
+Set the PORT to 8000. I also have a GOOGLE-API-KEY config variable to enable Social-Sign-In with Google.
+6. In your local repository, add a Procfile to the root directory of the project, containing the following line :<br /> `web: gunicorn JUST_BEATS.wsgi`.
+7. Add the url of your Heroku project to the `ALLOWED_HOSTS` list in `settings.py`.
+8. Set DEBUG to False, and commit your changes and push to GitHub.
+9. In Heroku, navigate to the Settings Tab, and within this the Buildpacks section, and click on Add Buildpack. Select the python buildpack, and save changes.
+10. On the Dashboard, select the Deploy tab, and under the Deployment Method heading, select the
+GitHub icon to connect your Heroku project to your GitHub repo. Enter your repository name in the text input, and click Search, and then when your repo appears, click Connect.
+11. Under the Manual deploy section, click Deploy Branch.
+
+
+
+
+
+
+
+## Forking the GitHub repository
+
+## Making a local clone
+
+## Running the app in your local environment
+
 [Return to top](#just-beats)
 # Credits
 Cloning a string in javascript:
