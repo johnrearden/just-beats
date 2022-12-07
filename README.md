@@ -342,9 +342,14 @@ JavaScript snippets which are more readable if confined to one line.
 - All JavaScript code in the project was validated during development with the JSHint plugin for VSCode.
 
 #### HTML Validation :
+- All HTML files in the project were validated using the W3C Narkup Validation Service.
+https://validator.w3.org/
+
 
 #### CSS Validation :
-- No errors were found when the single CSS file style.css was passed through the W3C Validation Service
+- No errors were found when the single CSS file style.css was passed through the W3C Validation Service.
+https://jigsaw.w3.org/css-validator/
+
 
 ### User Stories
 The User Epics and Stories in this project are documented in three GitHub Projects, corresponding 

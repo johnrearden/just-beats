@@ -52,7 +52,7 @@ a {
     text-decoration: none;
 }
 
-button {
+button, .imitation-button {
     color: greenyellow;
     background-color: transparent;
     font-size: 1.2rem;
@@ -63,7 +63,7 @@ button {
     padding: 3px 10px;
 }
 
-button:hover {
+button:hover, .imitation-button:hover {
     color: black;
     text-shadow: 0 0 2px pink;
     transition: 0.2s all;
@@ -304,6 +304,12 @@ label {
     color: yellow;
     border-color: rgb(249, 249, 137);
     margin-left: 10px;
+    border: 1px solid rgb(249, 249, 137);
+    background-color: transparent;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    border-radius: 5px;
+    padding: 3px 10px;
 }
 
 .edit-button:hover {

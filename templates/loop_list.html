@@ -13,7 +13,7 @@
             <p>Why not create a new loop of your own? Click here to start!</p>
             <div>
                 <a href="{% url 'new_drumloop_form' %}">
-                    <button id="create-new-loop-button">Create New Loop</button>
+                    <span id="create-new-loop-button" class="imitation-button">Create New Loop</span>
                 </a>
             </div>
             {% else %}
@@ -28,9 +28,7 @@
             {% endif %}
         </div>
         <div class="col-lg-8 order-1 order-lg-2 text-center">
-            <span>
-                <h1 class="text-center beats-header mb-3 darker-background">Drumloops</h1>
-            </span>
+            <h1 class="text-center beats-header mb-3 darker-background">Drumloops</h1>
             <!--Button selectors to allow user to view all loops, or just their own. Own loop
                 option is only available to authenticated users-->
             <div class="container">
@@ -38,13 +36,13 @@
                     {% if selection == 'all' %}
                     <div class="col-6 col-md-3 offset-md-3">
                         <a href="{% url 'home' 'all' %}">
-                            <button id="all-loops" class="highlighted-button">All Loops</button>
+                            <span id="all-loops" class="imitation-button highlighted-button">All Loops</span>
                         </a>
                     </div>
                         {% if user.is_authenticated %}
                         <div class="col-6 col-md-3">
                             <a href="{% url 'home' 'user_only' %}">
-                                <button id="my-loops">My Loops</button>
+                                <span id="my-loops" class="imitation-button">My Loops</span>
                             </a>
                         </div>
                         {% else %}
@@ -87,6 +85,7 @@
                         <th scope="col" class="d-none d-md-table-cell">Tempo</th>
                         <th scope="col" >Rating</th>
                         <th scope="col"></th>
+                        <th class="d-none"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -99,7 +98,7 @@
                         <td class="drumloop-table-item">
                             {{ loop.name }}
                         </td>
-                        <td id="tempo" class="drumloop-table-item d-none d-md-table-cell">
+                        <td class="drumloop-table-item d-none d-md-table-cell">
                             {{ loop.tempo }}
                         </td>
                         <td id="rating-display-{{forloop.counter0}}" >
@@ -107,12 +106,15 @@
                         <td>
                             {% if user == loop.creator %}
                             <a href="{% url 'loop_editor' loop.id %}">
-                                <button class="edit-button">Edit</button>
+                                <span class="edit-button">Edit</span>
                             </a>
                             {% endif %}
                         </td>
+                        <td class="d-none" id="rating-{{ forloop.counter0 }}">
+                            {{loop.rating}}
+                        </td>
                     </tr>
-                    <input readonly class="d-none" id="rating-{{ forloop.counter0 }}" value="{{loop.rating}}">
+                    
                     {% endfor %}
                 </tbody>
             </table>
@@ -120,27 +122,13 @@
     </div>
 </div>
 
-<!--Displays the currently playing loop-->
-<div class="container">
-    <div class="row">
-        <div id="current-loop-display" class="col-md-10 offset-md-1 text-center mt-5 invisible">
-            <h3>Now playing ... </h3>
-            <h1><span id="playing-loop-name" class="fst-italic"></span></h1>
-            <button id="rating-launcher-button" class="mt-3" en>
-                Give it a rating
-            </button>
-        </div>
-    </div>
-</div>
-
-
 <!-- This script is placed inline as it is tightly bound to the ratings element 
      of this template, and cannot be reused elsewhere -->
-<script type="text/javascript">
+<script>
     const loopCount = document.getElementsByClassName('drumloop-table-row').length;
     for (let i = 0; i < loopCount; i++) {
         let literal = `rating-${i}`;
-        const rating = document.getElementById(literal).value;
+        const rating = document.getElementById(literal).innerHTML;
         const ratingDisplay = document.getElementById(`rating-display-${i}`);
         for (let j = 1; j <= 5; j++) {
             const newElement = document.createElement("span");
@@ -154,6 +142,6 @@
     }
 </script>
 
-<script type="text/javascript" src="{% static 'js/LoopList.js' %}"></script>
+<script src="{% static 'js/LoopList.js' %}"></script>
 
 {% endblock %}
