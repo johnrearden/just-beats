@@ -8,19 +8,48 @@ on and rate other users' loops to provide a social element to the site.
 
 ![responsivenes_screenshot](media/docs/responsiveness_screenshot.png)
 
+---
+
+## Links to content
+
 [Features](#Features)
 
 [User Experience](#User-Experience)
+- [Design](#design)
+    - [Fonts](#fonts)
+    - [Colour](#colour)
+    - [Wireframes](#wireframes)
 
 [Development Process](#Development-Process)
+- [Project Planning](#project-planning-and-documentation-in-github)
+- [Inline JavaScript](#inline-javascript-and-event-handlers)
+- [Data Model](#data-model)
 
 [Testing](#Testing)
+- [Manual Testing](#manual-testing)
+    - [Feature Testing](#feature-testing)
+    - [Responsiveness](#responsiveness)
+    - [Browser Compatibility](#browser-compatibility)
+    - [Lighthouse](#lighthouse)
+    - [Code Validation](#code-validation)
+        - [Python](#python-code)
+        - [JavaScript](#javascript-code)
+        - [HTML](#html-validation)
+        - [CSS](#css-validation)
+    - [User Stories](#user-stories)
+- [Automated Testing](#automated-testing)
+    - [Django testing](#testing-django-views-models-and-forms)
+    - [Selenium testing](#testing-page-functionality-with-selenium)
 
 [Bugs](#Bugs)
+
+[Libraries and Programs Used](#libraries-and-programs-used)
 
 [Deployment](#Deployment)
 
 [Credits](#Credits)
+
+---
 
 ## Features
 - **Homepage** : 
@@ -147,7 +176,7 @@ The User Epics and their related User Stories are as follows:
     - Story : [Add animations synchronised with audio playback](https://github.com/johnrearden/just-beats/issues/36#issue-1473393530)
 
 
-### Inline JavaScript and event handlers.
+## Inline JavaScript and event handlers.
 When using Django templates, the fields passed in from the backend are only 
 available within the HTML document itself. It is therefore simpler to write event
 handlers directly into the document, rather than in external JS files. This means that
@@ -158,7 +187,7 @@ in the absence of direct fetch calls to the API.
 
 ![Entity-relationship diagram for models](media/docs/entity_relationship_diagram.png)
 
-### Data validation
+- Data validation
 
 
 # Testing
@@ -383,7 +412,7 @@ There are (hopefully) no remaining bugs in the project.
 
 [Return to top](#just-beats)
 
-## Libraries and Programs Used
+# Libraries and Programs Used
 1. [Lucid](https://www.lucidchart.com/pages/)
     - Lucid charts were used to create the execution path diagrams.
 2. [Heroku](https://www.heroku.com/)
@@ -402,10 +431,10 @@ There are (hopefully) no remaining bugs in the project.
     allowed programmatic access to the projects models and database right next to the selenium calls to automate the browser.
 8. [GIMP](https://www.gimp.org/)
     - The GIMP graphic editing package was used to manipulate and export all images used in the project.
-## Deployment
+# Deployment
 
 [Return to top](#just-beats)
-## Credits
+# Credits
 Cloning a string in javascript:
 https://stackoverflow.com/questions/31712808/how-to-force-javascript-to-deep-copy-a-string
 
