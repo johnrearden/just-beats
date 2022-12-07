@@ -184,9 +184,12 @@ button:disabled {
 }
 
 #pasteable-link {
+    display: inline-block;
     border: 1px solid gray;
     padding: 5px 10px;
     border-radius: 5px;
+    max-width: 80%;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 768px) {

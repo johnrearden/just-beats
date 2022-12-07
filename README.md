@@ -457,13 +457,7 @@ Set the PORT to 8000. I also have a GOOGLE-API-KEY config variable to enable Soc
 9. In Heroku, navigate to the Settings Tab, and within this the Buildpacks section, and click on Add Buildpack. Select the python buildpack, and save changes.
 10. On the Dashboard, select the Deploy tab, and under the Deployment Method heading, select the
 GitHub icon to connect your Heroku project to your GitHub repo. Enter your repository name in the text input, and click Search, and then when your repo appears, click Connect.
-11. Under the Manual deploy section, click Deploy Branch.
-
-
-
-
-
-
+11. Under the Manual deploy section, click Deploy Branch. You should receive this message - 'Your app was successfully deployed". Click view to see the app running in the browser.
 
 ## Forking the GitHub repository
 
