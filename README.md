@@ -126,7 +126,8 @@ approve ratings and comments, without allowing them full admin access to the dat
 ![wallpoet_sample](media/docs/outrun_font_sample.png)
 
 ### Colour
-The main image, of a large dark hall with columns covered in graffiti, was sourced from [pexels](www.pexels.com) - thanks to [Paul Basel](https://www.pexels.com/@paul-basel-903490/). As it is dark, I decided to put most of the content inside boxes with an opaque darker overlay, and use white as the font colour throughout to ensure a good contrast between foreground and background. Headings are in yellow or yellow green, which both contrast well against a dark background. For variety, the list of loops on the homepage is black text and gold stars on a light grey background.
+The main image, of a large dark hall with columns covered in graffiti, was sourced from [pexels](www.pexels.com) - thanks to [Paul Basel](https://www.pexels.com/@paul-basel-903490/). As it is dark, I decided to put most of the content inside boxes with an opaque darker overlay, and use white as the font colour throughout to ensure a good contrast between foreground and background. Headings are in yellow or yellow green, which both contrast well against a dark background. For variety, the list of loops on the homepage is black text and gold stars on a light grey background. Here's the basic palette for the site :
+![Colour Palette](media/docs/color_palette.png)
 
 ### Wireframes
 I decided to draw the wireframes out by hand for this project, as the free wireframe
@@ -331,6 +332,20 @@ Fonts render correctly | True | True | True
 All elements visible | True | True | True 
 Pages are responsive at all screen sizes | True | True | True
 ### Lighthouse
+
+Here are the lighthouse reports for the site's main pages :
+#### Homepage
+
+![homepage](media/docs/homepage_lighthouse_report.png)
+
+#### Loop Editor Page
+![loop_editor_page](media/docs/loop_editor_lighthouse_report.png)
+
+#### Loop Detail Page
+![loop_detail_page](media/docs/loop_detail_lighthouse_report.png)
+
+#### Loop Rating Page
+![loop_rating_page](media/docs/create_review_lighthouse_report.png)
 
 ### Code Validation
 
