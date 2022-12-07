@@ -142,7 +142,9 @@ button:disabled {
 }
 
 .large-play-button:hover {
+    color: #222222;
     border: 3px solid yellow;
+    background-color: #ffff0088;
 }
 
 .loop-volume {
@@ -359,7 +361,9 @@ label {
 }
 
 .medium-play-button:hover {
+    color: #222222;
     border: 3px solid yellow;
+    background-color: #ffff0088;
 }
 
 .track-holder {
