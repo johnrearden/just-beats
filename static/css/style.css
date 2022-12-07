@@ -54,20 +54,20 @@ a {
 
 button {
     color: greenyellow;
-    background-color: #66656570;
-    text-shadow: 0 0 2px purple;
+    background-color: transparent;
     font-size: 1.2rem;
     font-weight: bolder;
     transition: 0.2s all;
-    border: 2px solid #acff2fbb;
+    border: 2px solid #acff2f66;
     border-radius: 5px;
     padding: 3px 10px;
 }
 
 button:hover {
-    text-shadow: 0 0 4px pink;
+    color: black;
+    text-shadow: 0 0 2px pink;
     transition: 0.2s all;
-    background-color: #42414170;
+    background-color:  #acff2fbb;
     border: 2px solid greenyellow;
 }
 
@@ -79,7 +79,8 @@ button:disabled {
 }
 
 .highlighted-button {
-    background-color:rgb(167, 167, 86);
+    background-color:  #acff2f22;
+    border: 2px solid greenyellow;
 }
 
 .darker-background {
@@ -261,6 +262,7 @@ label {
 }
 
 .drumloop-table {
+    color: white;
     overflow-x: auto;
     margin: auto;
     padding: 10px;
@@ -274,17 +276,15 @@ label {
 }
 
 .drumloop-table-row:hover {
-    background-color: black;
-    transition: 0.3s all;
+    color: greenyellow;
+    background-color: #ffffff22;
 }
 
 .drumloop-table thead {
     color: greenyellow;
-    /* text-shadow: 2px 2px 2px purple; */
 }
 
 .drumloop-table-item {
-    color: white;
     font-size: 1.2rem;
     padding: 5px 15px;
     transition: 0.5s all;
@@ -300,13 +300,6 @@ label {
     transition: 0.5s all;
 }
 
-.drum-image {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    opacity: 0.4;
-}
-
 .edit-button {
     color: yellow;
     border-color: rgb(249, 249, 137);
@@ -315,6 +308,8 @@ label {
 
 .edit-button:hover {
     border-color: yellow;
+    background-color: #ffff0066;
+    color: yellow;
 }
 
 @media screen and (max-width:450px) {
