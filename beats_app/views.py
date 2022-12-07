@@ -79,24 +79,37 @@ class CreateNewLoop(View):
         )
 
     def post(self, request):
-        querydict = request.POST
-        creator_id_string = querydict.get('creator')
-        creator = User.objects.get(id=int(creator_id_string))
-        name = querydict.get('name')
-        new_drumloop = Drumloop.objects.create(
-            name=querydict.get('name'),
-            tempo=int(querydict.get('tempo')),
-            creator=creator
-        )
-        drumloop_id = new_drumloop.pk
-        instrument = Instrument.objects.first()
-        Track.objects.create(
-            drumloop=new_drumloop,
-            instrument=instrument,)
-        messages.success(
-            request, (f'New loop created by {creator.username}.... its called'
-                      f'{name}!'))
-        return HttpResponseRedirect(f'/editor/{drumloop_id}')
+        form = NewDrumloopForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data.get('name')
+            tempo = form.cleaned_data.get('tempo')
+            name_already_used = Drumloop.objects.filter(name=name).exists()
+            print('error !!!! name already in use!')
+            if name_already_used:
+                context = {'new_drumloop_form': form,
+                           'error': 'This name is already in use!'}
+                return render(request, 'new_drumloop_form.html', context)
+            else:
+                creator_id_string = request.POST.get('creator')
+                creator = User.objects.get(id=int(creator_id_string))
+                new_drumloop = Drumloop.objects.create(
+                    name=name,
+                    tempo=tempo,
+                    creator=creator
+                )
+                drumloop_id = new_drumloop.pk
+                instrument = Instrument.objects.first()
+                Track.objects.create(
+                    drumloop=new_drumloop,
+                    instrument=instrument,)
+                messages.success(
+                    request, (f'New loop created by {creator.username}.... '
+                              f'its called {name}!'))
+                return HttpResponseRedirect(f'/editor/{drumloop_id}')
+        else:
+            messages.error(request, 'Sorry, there\'s a problem!')
+            context = {'new_drumloop_form': form}
+            return render(request, 'new_drumloop_form.html', context)
 
 
 class ReviewDrumloop(View):

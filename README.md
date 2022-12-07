@@ -245,6 +245,7 @@ in the absence of direct fetch calls to the API.
 |New Loop Form|Tempo field|Click on arrow buttons|Tempo increases and decreases|
 |New Loop Form|Let's get looping button|Click|Redirects to Loop Editor page, success message displayed|
 |New Loop Creation Flow|Default set-up|Create new loop|New loop created with one track, default instrument selected, no beats yet selected|
+|New Loop Creation Flow|Error|Enter name that already exists|Form displayed again with error shown|
 |Loop Rating page|Previous comment|No action|Previous comments shown correctly|
 |Loop Rating page|Previous rating|No action|Previous ratings shown correctly|
 |Loop Rating page|Previous reviewer|No action|Previous reviewer shown correctly|
