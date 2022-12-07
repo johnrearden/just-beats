@@ -266,14 +266,14 @@ label {
     text-align: center;
     border-collapse: separate;
     border-spacing: 0 0.5rem;
-    border: 3px solid transparent;
-    border-radius: 10px;
-    background-image: radial-gradient(#aaaaaaff, #aaaaaaaa);
-    box-shadow: 0 0 5px black;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-image: radial-gradient(#666666ff, #333333cc);
+    box-shadow: 0 0 20px #adff2f80;
 }
 
 .drumloop-table-row:hover {
-    background-color: rgb(179, 207, 122);
+    background-color: black;
     transition: 0.3s all;
 }
 
@@ -283,7 +283,7 @@ label {
 }
 
 .drumloop-table-item {
-    color: black;
+    color: white;
     font-size: 1.2rem;
     padding: 5px 15px;
     transition: 0.5s all;

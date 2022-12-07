@@ -136,7 +136,7 @@
 
 <!-- This script is placed inline as it is tightly bound to the ratings element 
      of this template, and cannot be reused elsewhere -->
-<script>
+<script type="text/javascript">
     const loopCount = document.getElementsByClassName('drumloop-table-row').length;
     for (let i = 0; i < loopCount; i++) {
         let literal = `rating-${i}`;
@@ -154,6 +154,6 @@
     }
 </script>
 
-<script type="text/javascript" src="{% static 'js/LoopList.js' %}"
+<script type="text/javascript" src="{% static 'js/LoopList.js' %}"></script>
 
 {% endblock %}
