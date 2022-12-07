@@ -4,8 +4,7 @@ from django.contrib.auth.models import User
 
 
 class Drumloop(models.Model):
-    name = models.CharField(max_length=50, unique=True,
-                            default="brand_new_loop")
+    name = models.CharField(max_length=50, unique=True)
     creator = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="drumloops")
     created_on = models.DateTimeField(auto_now_add=True)

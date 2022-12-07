@@ -188,6 +188,11 @@ in the absence of direct fetch calls to the API.
 ![Entity-relationship diagram for models](media/docs/entity_relationship_diagram.png)
 
 - Data validation
+    - Drumloop model
+    - Track model
+    - Instrument model
+    - Review model
+    - User model
 
 
 # Testing
