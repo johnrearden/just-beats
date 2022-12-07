@@ -7,10 +7,9 @@
 
 {% block content %}
 
-<div class="container vert-gap-100 darker-background p-3">
+<div class="container`">
     <div class="row">
-        <div class="col-md-6 offset-md-3 p-5 text-center">
-
+        <div class="col-md-4 offset-md-4 darker-background p-3 text-center">
 
             <h1 class="text-center">{% trans "Sign In" %}</h1>
 
@@ -41,7 +40,12 @@
 
             <form class="login" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
-                {{ form.as_p }}
+                {% for fm in form %}
+                <div>
+                    <label>{{ fm.label }}</label>
+                    <p>{{ fm }}</p>
+                </div>
+                {% endfor %}
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}

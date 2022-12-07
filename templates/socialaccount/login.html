@@ -1,13 +1,14 @@
-{% extends "socialaccount/base.html" %}
+{% extends "base.html" %}
 {% load i18n %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-{% if process == "connect" %}
-<div class="container text-center">
+
+<div class="container">
     <div class="row">
-        <div class="col-md-6 offset-md-3 darker-background text-center">
+        <div class="col-md-4 offset-md-4 darker-background text-center p-3">
+            {% if process == "connect" %}
             <h1>{% blocktrans with provider.name as provider %}Connect {{ provider }}{% endblocktrans %}</h1>
 
             <p>{% blocktrans with provider.name as provider %}You are about to connect a new third party account from {{
@@ -15,7 +16,7 @@
             {% else %}
             <h1>{% blocktrans with provider.name as provider %}Sign In Via {{ provider }}{% endblocktrans %}</h1>
 
-            <p>{% blocktrans with provider.name as provider %}You, man, are about to sign in using a third party account from
+            <p>{% blocktrans with provider.name as provider %}You are about to sign in using a third party account from
                 {{ provider }}.{% endblocktrans %}</p>
             {% endif %}
 

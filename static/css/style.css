@@ -83,7 +83,7 @@ button:disabled {
 }
 
 .darker-background {
-    background-image: radial-gradient(#000000bb, #00000088);
+    background-image: radial-gradient(#000000dd, #000000aa);
     border-radius: 20px;
 }
 
@@ -178,13 +178,14 @@ button:disabled {
 }
 
 .copy-icon {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     padding: 5px 10px;
     margin-left: 20px;
 }
 
 #pasteable-link {
     display: inline-block;
+    font-size: 0.8rem;
     border: 1px solid gray;
     padding: 5px 10px;
     border-radius: 5px;
@@ -269,7 +270,7 @@ label {
     border: 1px solid black;
     border-radius: 20px;
     background-image: radial-gradient(#666666ff, #333333cc);
-    box-shadow: 0 0 20px #adff2f80;
+    box-shadow: 0 0 20px black;
 }
 
 .drumloop-table-row:hover {
@@ -279,7 +280,7 @@ label {
 
 .drumloop-table thead {
     color: greenyellow;
-    text-shadow: 2px 2px 5px purple;
+    /* text-shadow: 2px 2px 2px purple; */
 }
 
 .drumloop-table-item {

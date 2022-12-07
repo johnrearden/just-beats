@@ -103,15 +103,15 @@
 
     <!--This row displays a link and a button that copies it to the clipboard
         and a link to the ratings page if user is authenticated-->
-    <div class="row m-md-5 justify-content-around">
+    <div class="row m-md-5 justify-content-around ">
         <div class="col-md-auto text-center py-md-2 px-md-5 darker-background">
             <h5 id="share-loop-title">Share this loop with your friends!</h5>
-            <span type="text" readonly id="pasteable-link"></span>
-            <button class="copy-icon" aria-label="copy link to loop button">
+            <span class="align-middle" type="text" readonly id="pasteable-link"></span>
+            <button class="copy-icon align-middle" aria-label="copy link to loop button">
                 <i class="fa-regular fa-copy"></i>
             </button>
         </div>
-        {% if user.is_authenticated %}
+        {% if user.is_authenticated and user != loop.creator %}
         <div class="col-md-auto text-center mt-5 mt-md-0">
             <h5 class="text-greenyellow">Like what you hear?</h5>
             <a href="{% url 'review_drumloop' loop.id user.username %}">
