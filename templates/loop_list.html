@@ -48,7 +48,7 @@
                         {% else %}
                         <div class="col-6 col-md-3">
                             <a href="{% url 'home' 'user_only' %}">
-                                <button id="my-loops" disabled>My Loops</button>
+                                <span id="my-loops" class="imitiation-button disabled">My Loops</button>
                             </a>
                         </div>
                         {% endif %}
@@ -61,14 +61,14 @@
                         {% if user.is_authenticated %}
                         <div class="col-3">
                             <a href="{% url 'home' 'user_only' %}">
-                                <button id="my-loops" class="highlighted-button" >My Loops</button>
+                                <span id="my-loops" class="imitiation-button" >My Loops</span>
                             </a>
                         </div>
                         {% else %}
                         <div class="col-3">
                             <a href="{% url 'home' 'user_only' %}">
-                                <button id="my-loops" class="highlighted-button" 
-                                        disabled>My Loops</button>
+                                <span id="my-loops" class="imitiation-button" 
+                                        disabled>My Loops</span>
                             </a>
                         </div>
                         {% endif %}

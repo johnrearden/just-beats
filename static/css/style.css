@@ -71,10 +71,15 @@ button:hover, .imitation-button:hover {
     border: 2px solid greenyellow;
 }
 
-button:disabled {
+.disabled {
+    font-size: 1.2rem;
+    font-weight: bolder;
+    transition: 0.2s all;
+    border-radius: 5px;
+    padding: 3px 10px;
     color: gray;
     text-shadow: none;
-    border: 1px solid gray;
+    border: 2px solid gray;
     opacity: 0.5;
 }
 
