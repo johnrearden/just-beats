@@ -415,10 +415,14 @@ label {
 
 @media screen and (max-width: 500px) {
     .beat {
-        width: 3px;
+        width: 5px;
+        margin: 0;
     }
     .track-holder {
         padding: 0
+    }
+    .beat:nth-child(4n - 3) {
+        margin-left: 1px;
     }
 }
 
