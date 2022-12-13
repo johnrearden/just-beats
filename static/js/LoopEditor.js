@@ -178,8 +178,13 @@ const onTrackVolumeChange = (event, trackID) => {
  * @param {String} trackID 
  */
 const onInstrumentButtonClicked = (loopID, trackID) => {
-    // Stop the LoopPlayer if playing
-    loopPlayer.audioCtx.suspend();
+
+    if (loopPlayer.isPlaying()) {
+        // Stop the LoopPlayer if playing, and toggle the play button.
+        loopPlayer.audioCtx.suspend();
+        toggleIcon();
+    }
+
 
     // Create a new InstrumentModalConfig object to store current state.
     const currentInstrumentID = loopPlayer.getInstrumentID(trackID);
