@@ -545,6 +545,9 @@ https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/c
 
 Drum samples used in the project from https://99sounds.org/drum-samples/.
 
+How to display a favicon in Django (tldr; put it in base.html)
+https://learndjango.com/tutorials/django-favicon-tutorial
+
 # Acknowledgements
 
 [Return to top](#just-beats)
