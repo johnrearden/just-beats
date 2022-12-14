@@ -550,4 +550,8 @@ https://learndjango.com/tutorials/django-favicon-tutorial
 
 # Acknowledgements
 
+I'd like to acknowledge the invaluable assistance I received from my tutor, Celestine Okoro, 
+and the advice and encouragement I received from my cohort coordinators Kenan Wright and Kasia Bogucka.
+Thanks also to my fellow students whose help in our weekly stand-ups made a big difference.
+
 [Return to top](#just-beats)

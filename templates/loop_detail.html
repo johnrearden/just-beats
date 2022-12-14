@@ -43,20 +43,17 @@
         </div>
 
         <!--This column contains a play/pause button and a volume control-->
-        <div class="col-lg-2 offset-lg-0 order-1 order-lg-2 justify-content-center text-center 
-                    align-contents-center p-0 p-md-5 d-inline-block d-lg-block">
+        <div class="col-lg-2 offset-lg-0 order-1 order-lg-2 
+                     p-0 p-md-5 text-center">
             <!--A button to play/pause the audio-->
-            <button id="detail-play-button" class="large-play-button m-3" 
-                data-id="{{ loop.id }}" data-tempo="{{ loop.tempo }}"
-                aria-label="play and pause toggle button">
+            <button id="detail-play-button" class="large-play-button m-3 me-5" data-id="{{ loop.id }}"
+                data-tempo="{{ loop.tempo }}" aria-label="play and pause toggle button">
                 <i class="fa-solid fa-play play-button-icon"></i>
                 <i class="fa-solid fa-pause pause-button-icon d-none"></i>
             </button>
-           <!--  <div> -->
-                <!--A number input to control the volume-->
-                <label id="loop-detail-volume-label" for="loop-detail-volume">Volume</label>
-                <input type="number" id="loop-detail-volume" min="0" max="10" value="7">
-           <!--  </div> -->
+            <!--A number input to control the volume-->
+            <label id="loop-detail-volume-label" for="loop-detail-volume">Volume</label>
+            <input type="number" id="loop-detail-volume" min="0" max="10" value="7">
         </div>
 
         <div class="col-12 col-lg-5 order-3 order-lg-3">

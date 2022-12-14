@@ -228,6 +228,7 @@ button:hover, .imitation-button:hover {
     }
     #loop-detail-volume, #loop-detail-volume-label {
         font-size: 1rem;
+        padding: 0;
     }
 }
 
