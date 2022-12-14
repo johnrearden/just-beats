@@ -1,5 +1,9 @@
 # just-beats
-Make your own drum loops on the web
+Make your own drum loops on the web. 
+
+Source code can be found [here](www.github.com/johnrearden/just-beats)
+
+The live project can be viewed [here](www.just-beats.herokuapp.com)
 
 ## Purpose of Project
 The aim of the project is to allow users to create and edit drum loops using
