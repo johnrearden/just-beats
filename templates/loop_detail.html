@@ -7,7 +7,7 @@
 <div class="container-fluid">
 
     <!--This row displays the loop name and its creator-->
-    <div class="row text-center mb-md-5">
+    <div class="row text-center m-0 mb-md-5">
         <div class="col-md-6 offset-md-3">
             <h1 id="loop-name-heading" class="d-inline-block p-2">{{ loop.name }}</h1>
             <div class="d-none d-md-inline-block"> by </div>
@@ -17,7 +17,7 @@
 
     <div class="row">
         <!--This column displays the beats of each track in read-only form-->
-        <div class="col-12 col-lg-5 darker-background light-border p-3">
+        <div class="col-12 col-lg-5 order-2 order-lg-1 darker-background light-border p-3">
             {% for track in tracks %}
             <div class="row text-center">
                 <div class="col-12 col-md-4 text-white text-center align-self-center d-none d-md-block">
@@ -43,22 +43,23 @@
         </div>
 
         <!--This column contains a play/pause button and a volume control-->
-        <div class="col-lg-2 offset-lg-0 justify-content-center text-center align-contents-center p-5">
+        <div class="col-lg-2 offset-lg-0 order-1 order-lg-2 justify-content-center text-center 
+                    align-contents-center p-0 p-md-5 d-inline-block d-lg-block">
             <!--A button to play/pause the audio-->
-            <button id="detail-play-button" class="large-play-button mb-3" 
+            <button id="detail-play-button" class="large-play-button m-3" 
                 data-id="{{ loop.id }}" data-tempo="{{ loop.tempo }}"
                 aria-label="play and pause toggle button">
                 <i class="fa-solid fa-play play-button-icon"></i>
                 <i class="fa-solid fa-pause pause-button-icon d-none"></i>
             </button>
-            <div>
+           <!--  <div> -->
                 <!--A number input to control the volume-->
-                <label for="loop-detail-volume">Volume</label>
+                <label id="loop-detail-volume-label" for="loop-detail-volume">Volume</label>
                 <input type="number" id="loop-detail-volume" min="0" max="10" value="7">
-            </div>
+           <!--  </div> -->
         </div>
 
-        <div class="col-12 col-lg-5">
+        <div class="col-12 col-lg-5 order-3 order-lg-3">
             <!--Container for list of previous reviews-->
             <div class="container-fluid darker-background light-border p-3">
                 <div class="row">
