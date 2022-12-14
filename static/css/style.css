@@ -127,9 +127,8 @@ button:hover, .imitation-button:hover {
     color: yellowgreen;
 }
 
-
 .navbar-brand {
-    width: 200px;
+    width: 180px;
     height: 60px;
 }
 
@@ -414,6 +413,13 @@ label {
     width: 100%;
 }
 
+.beats-holder {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
 .beat {
     display: inline-block;
     width: 10px;
@@ -432,13 +438,13 @@ label {
 
 @media screen and (max-width: 600px) {
     .beat {
-        width: 6px;
+        width: 10px;
     }
 }
 
 @media screen and (max-width: 500px) {
     .beat {
-        width: 5px;
+        width: 10px;
         margin: 0;
     }
     .track-holder {
