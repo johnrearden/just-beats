@@ -4,6 +4,7 @@
 {% load static %}
 
 <!--Head section containing style, bootstrap and font links common to all pages-->
+
 <head>
     <title>Just Beats</title>
     <meta charset="UTF-8">
@@ -35,44 +36,48 @@
 </head>
 
 <!--Common body elements across all pages, including a background image and a navbar-->
+
 <body style="
     background-image: url('{% static "images/graffiti_3.webp" %}'); background-repeat: no-repeat;
-    background-position:center; background-size: cover; ">
+    background-position:center; background-size: cover;">
     <header>
-        <nav class=" navbar navbar-expand-lg navbar-dark bg-dark bg-gradient bg-opacity-75 p-3">
-            <div class="container-fluid text-white">
-                <a class="navbar-brand text-center" href="/">
-                    <p class="fw-bold text-white site-logo">JUST BEATS</p></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        {% if user.is_authenticated %}
-                        <li class="nav-item align-self-center me-5 fst-italic">
-                            Logged in as <span id="logged-in-user" class="fw-bold">{{ user.username }}</span>
-                        </li>
-                        {% endif %}
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-                        </li>
-                        {% if user.is_authenticated %}
-                        <li id="logout-link" class="nav-item">
-                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                        </li>
-                        {% else %}
-                        <li class="nav-item">
-                            <a id="register-link" class="nav-link" href="{% url 'account_signup' %}">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="login-link" class="nav-link" href="{% url 'account_login' %}">Login</a>
-                        </li>
-                        {% endif %}
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient bg-opacity-75 p-3">
+    <div class="container-fluid text-white">
+
+        <a class="navbar-brand home-link" href="/">
+            <span class="fw-bold text-white site-logo">JUST BEATS</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                {% if user.is_authenticated %}
+                <li class="nav-item align-self-center me-5 fst-italic">
+                    Logged in as <span id="logged-in-user" class="fw-bold">{{ user.username }}</span>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li id="logout-link" class="nav-item">
+                    <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a id="register-link" class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a id="login-link" class="nav-link" href="{% url 'account_login' %}">Login</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+    </nav>
     </header>
 
     <!--A holder for messages, both those passed by Django to the page and also 
@@ -81,10 +86,9 @@
         <div class="row">
             <div class="col-md-8 offset-md-2" id="message-holder">
                 {% for message in messages %}
-                <div class="alert {{ message.tags }} alert-dismissible fade show"
-                    id="msg" role="alert">
-                {{ message | safe }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 {% endfor %}
             </div>

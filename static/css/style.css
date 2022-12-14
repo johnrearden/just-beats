@@ -113,6 +113,12 @@ button:hover, .imitation-button:hover {
 
 /* These css elements style the navbar */
 
+.home-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
 .site-logo {
     font-family: 'outrun';
 }
@@ -123,7 +129,7 @@ button:hover, .imitation-button:hover {
 
 
 .navbar-brand {
-    width: 300px;
+    width: 200px;
     height: 60px;
 }
 
