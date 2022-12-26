@@ -466,6 +466,9 @@ There are (hopefully) no remaining bugs in the project.
     allowed programmatic access to the projects models and database right next to the selenium calls to automate the browser.
 8. [GIMP](https://www.gimp.org/)
     - The GIMP graphic editing package was used to manipulate and export all images used in the project.
+9. [tooltip-sequence](https://github.com/SoorajSNBlaze333/tooltip-sequence)
+    - A handy javascript/css library for creating a sequence of modal tooltips, used in this project 
+    to create instructions for the Loop Editor.
 # Deployment
 
 ## Setting up a cloudinary account for static storage.

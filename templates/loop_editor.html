@@ -38,19 +38,21 @@
             <hr>
             {% endif %}
             <!--The instrument name display - clickable to change instrument-->
-            <div class="col-6 col-lg-2" vertical-align>
+            <div id="instrument-outer_{{ forloop.counter0 }}" class="col-6 col-lg-2" vertical-align>
                 <div id="instrument-name_{{ track.id }}" class="instrument-name inst-test py-2 py-md-0"
-                    onclick="onInstrumentButtonClicked('{{ loop.id }}','{{ track.id }}')">
+                    onclick="onInstrumentButtonClicked('{{ loop.id }}','{{ track.id }}')" data-toggle="tooltip"
+                    data-placement="right" title="Click on the button to change instrument">
                     {{ track.instrument.name }}
                 </div>
             </div>
 
             <!--The track volume slider-->
-            <div class="col-6 col-lg-2 overflow-hidden">
+            <div id="volume-slider-outer_{{ forloop.counter0 }}" class="col-6 col-lg-2 overflow-hidden">
                 <input type="range" id="track_volume_{{ track.id }}" name="track_volume_{{ track.id }}"
                     value="{{ track.track_volume }}" min="0" max="10" class="track-volume py-2 py-md-0" list="tickmarks"
                     oninput="onTrackVolumeChange(event, '{{ track.id }}')"
-                    aria-label="volume slider">
+                    aria-label="volume slider" data-toggle="tooltip" data-placement="bottom" data-delay="1500"
+                    title="Adjust the slider to change the volume">
                 <datalist id="tickmarks">
                     <option value="0" label="0"></option>
                     <option value="2"></option>
@@ -63,22 +65,23 @@
 
             <!--A holder with a div for each beat which can be togged to turn the beat on or off-->
             <div class="col-12 col-lg-7">
-                <div id="beats-holder-track_{{ forloop.counter0 }}" class="beats-holder py-2 py-md-0">
+                <div id="beats-holder-track_{{ forloop.counter0 }}" class="beats-holder py-2 py-md-0" 
+                     data-toggle="tooltip" data-placement="right" 
+                     title="Click on the green button below to toggle the beat on/off" data-delay=1500>
                     {% for char in track.beats %}
                     {% if char == '8' %}
                     <div id="{{ track.id }}:{{ forloop.counter0 }}" class="beat active_beat"
-                        onclick="onBeatClick(event)"></div>
+                        onclick="onBeatClick(event)" ></div>
                     {% else %}
                     <div id="{{ track.id }}:{{ forloop.counter0 }}" class="beat" onclick="onBeatClick(event)">
                     </div>
                     {% endif %}
-
                     {% endfor %}
                 </div>
             </div>
 
             <!--Button to allow user to delete this track-->
-            <div class="col-lg-1">
+            <div class="col-lg-1 justify-content-between">
                 <button class='delete-track-button' onclick="onDeleteTrackButtonClick(event, '{{ track.id }}')">
                     X
                 </button>
@@ -224,7 +227,6 @@
         "audio/tom_acoustic.wav": "{% static 'audio/tom_acoustic.wav'|escapejs %}",
         "audio/tom_short.wav": "{% static 'audio/tom_short.wav'|escapejs %}",
     }
-
 </script>
 
 <script src="{% static 'js/LoopPlayer.js' %}" type="text/javascript"></script>

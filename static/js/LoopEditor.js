@@ -60,6 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     setIntrumentNameColors();
+
+    // Check the cookie store to see if the instructions have been previously
+    // viewed - if not, show them and then set the cookie so that they will
+    // not be shown again.
+    checkInstructionsCookie();
 });
 
 /**
@@ -614,18 +619,67 @@ const hashString = (string) => {
 
 
 /**
- * A utility class used to store information about the current track, loop
- * and instrument before opening the instrument chooser modal. This information
- * is then accessed by the modal event handlers upon user action.
+ * This function first checks the cookie store to see if a cookie with 'displayInstructions'
+ * as the key exists. If the cookie is not present, then a short series of tooltips will display in turn
+ * to instruct the user in how to use the loop editor functionality. Afterwards, the cookie is set
+ * so that the tooltips will be seen only once.
  */
-class InstrumentModalConfig {
-    constructor(selectedTrackID, currentInstrumentID, currentLoopID,
-        newTrack, currentInstrumentURL, currentInstrumentName) {
-        this.selectedTrackID = selectedTrackID;
-        this.currentInstrumentID = currentInstrumentID;
-        this.currentInstrumentURL = currentInstrumentURL;
-        this.currentInstrumentName = currentInstrumentName;
-        this.currentLoopID = currentLoopID;
-        this.newTrack = newTrack;
+const checkInstructionsCookie = () => {
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const cookies = decodedCookie.split(';');
+    const COOKIE_KEY = "displayInstructions=";
+    let shouldShowInstuctions = true;
+    for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i];
+        while (cookie.charAt(0) == ' ') {
+            cookie = cookie.substring(1);
+        }
+        if (cookie.startsWith(COOKIE_KEY)) {
+            shouldShowInstuctions = false;
+        }
     }
-}
+    if (shouldShowInstuctions) {
+        const options = {
+            backdropColor: "transparent || color-code",
+            sequence: [{
+                element: "#drumloop_name",
+                description: "<h3 class='text-center'>Instructions (1/4)</h3><div>Here's a brief introduction to the editor ...</div>",
+                placement: "bottom"
+            }, {
+                element: "#instrument-outer_0",
+                description: "<h3 class='text-center'>Instrument (2/4)</h3><div>Click here to change the instrument for this track</div>",
+                placement: "bottom"
+            }, {
+                element: "#volume-slider-outer_0",
+                description: "<h3 class='text-center'>Volume Control (3/4)</h3><div>Adjust the slider to change the volume</div>",
+                placement: "bottom"
+            }, {
+                element: "#beats-holder-track_0",
+                description: "<h3 class='text-center'>Toggling Beats (4/4)</h3><div>Click on the green buttons to toggle a beat on or off</div>",
+                placement: "bottom"
+            }],
+            onComplete: function () {
+                document.cookie = "displayInstructions=false";
+            }
+        };
+        createSequence(options);
+    }
+};
+
+
+    /**
+     * A utility class used to store information about the current track, loop
+     * and instrument before opening the instrument chooser modal. This information
+     * is then accessed by the modal event handlers upon user action.
+     */
+    class InstrumentModalConfig {
+        constructor(selectedTrackID, currentInstrumentID, currentLoopID,
+            newTrack, currentInstrumentURL, currentInstrumentName) {
+            this.selectedTrackID = selectedTrackID;
+            this.currentInstrumentID = currentInstrumentID;
+            this.currentInstrumentURL = currentInstrumentURL;
+            this.currentInstrumentName = currentInstrumentName;
+            this.currentLoopID = currentLoopID;
+            this.newTrack = newTrack;
+        }
+    }

@@ -15,7 +15,12 @@ footer {
     height: 50px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: yellow;
     text-shadow: 0 0 1px greenyellow;
     font-family: 'wallpoet', sans-serif;
@@ -29,13 +34,14 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
-p, span {
+p,
+span {
     color: white;
     font-size: 1.1rem;
 }
 
 input {
-    background-color:#00000088;
+    background-color: #00000088;
     color: inherit;
     border: 1px solid gray;
     border-radius: 4px;
@@ -52,7 +58,8 @@ a {
     text-decoration: none;
 }
 
-button, .imitation-button {
+button,
+.imitation-button {
     color: greenyellow;
     background-color: transparent;
     font-size: 1.2rem;
@@ -63,11 +70,12 @@ button, .imitation-button {
     padding: 3px 10px;
 }
 
-button:hover, .imitation-button:hover {
+button:hover,
+.imitation-button:hover {
     color: black;
     text-shadow: 0 0 2px pink;
     transition: 0.2s all;
-    background-color:  #acff2fbb;
+    background-color: #acff2fbb;
     border: 2px solid greenyellow;
 }
 
@@ -84,7 +92,7 @@ button:hover, .imitation-button:hover {
 }
 
 .highlighted-button {
-    background-color:  #acff2f22;
+    background-color: #acff2f22;
     border: 2px solid greenyellow;
 }
 
@@ -160,7 +168,7 @@ button:hover, .imitation-button:hover {
 
 .loop-volume {
     width: 100%;
-    color: yellowgreen !important; 
+    color: yellowgreen !important;
 }
 
 .readonly-beat {
@@ -211,21 +219,26 @@ button:hover, .imitation-button:hover {
     #pasteable-link {
         font-size: 0.8rem;
     }
+
     .copy-icon {
         margin-left: 0;
         margin-top: 10px;
     }
+
     .large-play-button {
         font-size: 30px;
         width: 60px;
         height: 60px;
         border-radius: 50%;
     }
+
     .play-button-icon {
         transform: translateX(2px);
         pointer-events: none;
     }
-    #loop-detail-volume, #loop-detail-volume-label {
+
+    #loop-detail-volume,
+    #loop-detail-volume-label {
         font-size: 1rem;
         padding: 0;
     }
@@ -349,17 +362,21 @@ label {
     .drumloop-table {
         padding: 2px
     }
+
     .drumloop-table-item {
         padding: 5px;
         font-size: 0.8rem;
     }
+
     .play-button {
         font-size: 1.4rem;
     }
+
     .edit-button {
         font-size: 0.8rem;
         padding: 3px 5px;
     }
+
     .rating-star {
         font-size: 0.8rem;
     }
@@ -428,6 +445,10 @@ label {
     border: 1px solid rgb(116, 221, 125);
 }
 
+.tooltip-inner {
+    background-color: #00cc00;
+}
+
 .beat:nth-child(4n - 3) {
     display: inline-block;
     margin-left: 3px;
@@ -447,9 +468,11 @@ label {
         width: 10px;
         margin: 0;
     }
+
     .track-holder {
         padding: 0
     }
+
     .beat:nth-child(4n - 3) {
         margin-left: 1px;
     }
@@ -460,7 +483,7 @@ label {
 }
 
 .active_beat {
-    background: radial-gradient(rgb(140, 189, 6),rgb(68, 92, 3));
+    background: radial-gradient(rgb(140, 189, 6), rgb(68, 92, 3));
 }
 
 .beats-field {
@@ -476,7 +499,9 @@ label {
     display: none;
 }
 
-.beats-holder, .instrument-name, .track-volume {
+.beats-holder,
+.instrument-name,
+.track-volume {
     display: inline-block;
 }
 
@@ -494,6 +519,58 @@ label {
     border: 1px solid white;
 }
 
+/* These elements style the instruction tooltip sequence, copied from the tooltip-sequence 
+   library by Sooraj S Nair, and customized to suit site styling. */
+.tooltip-helper-active-description {
+    background-color: #dddddd !important;
+    font-size: 40px !important;
+    height: 180px !important;
+    padding: 20px !important;
+}
+
+.tooltip-helper-active-description p,
+.tooltip-helper-active-description h3 {
+    color: black !important;
+}
+
+.tooltip-helper-footer {
+    height: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px !important;
+}
+
+.tooltip-helper-arrow-down {
+    border-top: 20px solid #dddddd !important;
+}
+
+.tooltip-helper-arrow-up {
+    border-bottom: 20px solid #dddddd !important;
+  }
+
+.tooltip-helper-next-sequence,
+.tooltip-helper-prev-sequence {
+    background-color: inherit !important;
+    border: inherit !important;
+    border-radius: inherit !important;
+    color: black !important;
+}
+
+.tooltip-helper-end-sequence {
+    background-color: inherit !important;
+    border: inherit !important;
+    border-radius: inherit !important;
+    color: black !important;
+}
+
+.tooltip-disabled-btn {
+    background-color: #dddddd !important;
+    display: none !important;
+    user-select: none !important;
+    color: rgba(0, 0, 0, 0.1) !important;
+  }
+
 /* These css elements style the instrument selector modal ---------*/
 .selected-instrument {
     border: 1px solid white;
@@ -506,7 +583,7 @@ label {
     font-size: 1.5em;
 }
 
-.form-holder input{
+.form-holder input {
     padding: 5px;
     margin: 15px;
 }
