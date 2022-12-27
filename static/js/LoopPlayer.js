@@ -219,7 +219,6 @@ class LoopPlayer {
      */
     scheduler() {
         let currentTime = this.audioCtx.currentTime;
-        
         while (this.nextBeatTime - currentTime < this.scheduleWindow) {
             // Check the currentNote of each instrument to see if it is due 
             // to be played.

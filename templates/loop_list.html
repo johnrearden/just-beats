@@ -29,7 +29,7 @@
             {% endif %}
         </div>
         <div class="col-lg-8 order-1 order-lg-2 text-center">
-            <h1 class="text-center beats-header mb-3 darker-background">Drumloops</h1>
+            <h1 class="mx-auto beats-header mb-3 px-5 py-1 darker-background">Drumloops</h1>
             <!--Button selectors to allow user to view all loops, or just their own. Own loop
                 option is only available to authenticated users-->
             <div class="container">
@@ -49,27 +49,26 @@
                         {% else %}
                         <div class="col-6 col-md-3">
                             <a href="{% url 'home' 'user_only' %}">
-                                <span id="my-loops" class="imitiation-button disabled">My Loops</button>
+                                <span id="my-loops" class="imitiation-button disabled">My Loops</span>
                             </a>
                         </div>
                         {% endif %}
                     {% else %}
                     <div class="col-3 offset-3">
                         <a href="{% url 'home' 'all' %}">
-                            <button id="all-loops">All Loops</button>
+                            <span id="all-loops" class="imitation-button">All Loops</span>
                         </a>
                     </div>
                         {% if user.is_authenticated %}
                         <div class="col-3">
                             <a href="{% url 'home' 'user_only' %}">
-                                <span id="my-loops" class="imitiation-button" >My Loops</span>
+                                <span id="my-loops" class="imitation-button highlighted-button" >My Loops</span>
                             </a>
                         </div>
                         {% else %}
                         <div class="col-3">
                             <a href="{% url 'home' 'user_only' %}">
-                                <span id="my-loops" class="imitiation-button" 
-                                        disabled>My Loops</span>
+                                <span id="my-loops" class="imitiation-button disabled">My Loops</span>
                             </a>
                         </div>
                         {% endif %}

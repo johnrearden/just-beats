@@ -27,12 +27,10 @@
                     <div id="beats-holder-track_{{ forloop.counter0 }}" class="beats-holder p-1">
                         {% for char in track.beats %}
                         {% if char == '8' %}
-                        <div id="{{ track.id }}:{{ forloop.counter0 }}" class="readonly-beat readonly-active-beat"
-                            onclick="onBeatClick(event)">
+                        <div id="{{ track.id }}:{{ forloop.counter0 }}" class="readonly-beat readonly-active-beat">
                         </div>
                         {% else %}
-                        <div id="{{ track.id }}:{{ forloop.counter0 }}" class="readonly-beat"
-                            onclick="onBeatClick(event)">
+                        <div id="{{ track.id }}:{{ forloop.counter0 }}" class="readonly-beat">
                         </div>
                         {% endif %}
                         {% endfor %}

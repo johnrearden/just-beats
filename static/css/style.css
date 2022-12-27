@@ -299,6 +299,7 @@ label {
     color: greenyellow;
     text-shadow: 0 0 2px pink;
     font-weight: bolder;
+    width: fit-content;
 }
 
 .drumloop-table {
