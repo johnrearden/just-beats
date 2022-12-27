@@ -555,6 +555,9 @@ Drum samples used in the project from https://99sounds.org/drum-samples/.
 How to display a favicon in Django (tldr; put it in base.html)
 https://learndjango.com/tutorials/django-favicon-tutorial
 
+Adding a slug field to a model
+https://learndjango.com/tutorials/django-slug-tutorial
+
 # Acknowledgements
 
 I'd like to acknowledge the invaluable assistance I received from my tutor, Celestine Okoro, 

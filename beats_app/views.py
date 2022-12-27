@@ -41,9 +41,9 @@ class LoopDetail(View):
     by any unauthenticated user.
     """
 
-    def get(self, request, creator, loop_name):
+    def get(self, request, slug):
         query_set = Drumloop.objects.all()
-        loop = get_object_or_404(query_set, name=loop_name)
+        loop = get_object_or_404(query_set, slug=slug)
         tracks = (Track.objects.select_related()
                   .filter(drumloop=loop)
                   .order_by('id'))

@@ -9,7 +9,7 @@ urlpatterns = [
          content_type='text/plain'), name='robots'),
     path('home/<str:selection>', login_required(views.LoopList.as_view()),
          name='home'),
-    path('loop/<str:creator>/<str:loop_name>/', views.LoopDetail.as_view(),
+    path('loop/<slug:slug>/', views.LoopDetail.as_view(),
          name='loop_detail'),
     path('create_new_loop/', login_required(views.CreateNewLoop.as_view()),
          name='new_drumloop_form'),

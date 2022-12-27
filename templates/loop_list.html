@@ -92,7 +92,7 @@
                 <tbody>
                     {% for loop in drumloops %}
                     <tr class="drumloop-table-row" 
-                        onclick="onRowClicked(event, '{{ loop.creator }}', '{{ loop.name }}')">
+                        onclick="onRowClicked(event, '{{ loop.slug }}')">
                         <td class="drumloop-table-item">
                             {{ loop.creator }}
                         </td>

@@ -7,8 +7,8 @@
  * @param {String} creator 
  * @param {String} loopName 
  */
-const onRowClicked = (event, creator, loopName) => {
-    window.location = (`/loop/${creator}/${loopName}/`);
+const onRowClicked = (event,slug) => {
+    window.location = (`/loop/${slug}/`);
 };
 
 
