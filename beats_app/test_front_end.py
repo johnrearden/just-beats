@@ -18,7 +18,7 @@ class TestLoopList(StaticLiveServerTestCase):
         # necessary for headless
         options.add_argument("--allow-insecure-localhost")
         # due to local port conflict
-        options.add_argument("--remote-debugging-port=9222")
+        options.add_argument("--remote-debugging-port=9221")
         options.add_argument("--window-size=1920,1080")
         self.driver = webdriver.Chrome(options=options)
         self.driver.implicitly_wait(1)
@@ -63,7 +63,7 @@ class TestAllAuthFunctionality(StaticLiveServerTestCase):
         # necessary for headless
         options.add_argument("--allow-insecure-localhost")
         # due to local port conflict
-        options.add_argument("--remote-debugging-port=9222")
+        options.add_argument("--remote-debugging-port=9221")
         options.add_argument("--window-size=1920,1080")
         self.driver = webdriver.Chrome(options=options)
         self.driver.implicitly_wait(1)
@@ -149,7 +149,7 @@ class TestCreateReviewPage(StaticLiveServerTestCase):
         # necessary for headless
         options.add_argument("--allow-insecure-localhost")
         # due to local port conflict
-        options.add_argument("--remote-debugging-port=9222")
+        options.add_argument("--remote-debugging-port=9221")
         options.add_argument("--window-size=1920,1080")
         self.driver = webdriver.Chrome(options=options)
         self.driver.implicitly_wait(1)
@@ -227,11 +227,13 @@ class TestLoopEditorPage(StaticLiveServerTestCase):
         # necessary for headless
         options.add_argument("--allow-insecure-localhost")
         # due to local port conflict
-        options.add_argument("--remote-debugging-port=9222")
+        options.add_argument("--remote-debugging-port=9221")
         options.add_argument("--window-size=1920,1080")
         self.driver = webdriver.Chrome(options=options)
         self.driver.implicitly_wait(1)
         self.BASE_URL = self.live_server_url + '/'
+
+        
 
     def tearDown(self):
         self.driver.quit()
@@ -239,6 +241,10 @@ class TestLoopEditorPage(StaticLiveServerTestCase):
     def test_name_and_tempo_change_reflected_in_db(self):
         drumloop_id = 2
         self.driver.get(self.BASE_URL + f'editor/{drumloop_id}')
+
+        # Set the displayInstructions cookie to false - this testing suite
+        # does not test the instruction tooltip modals.
+        self.driver.add_cookie({'name': 'displayInstructions', 'value': 'false'})
 
         # login as user who created fixture.
         username = self.driver.find_element(by=By.NAME, value='login')
@@ -288,6 +294,10 @@ class TestLoopEditorPage(StaticLiveServerTestCase):
 
         # Check confirm modal opens when delete track button pressed
         self.driver.get(self.BASE_URL + f'editor/{drumloop_id}')
+
+        # Set the displayInstructions cookie to false - this testing suite
+        # does not test the instruction tooltip modals.
+        self.driver.add_cookie({'name': 'displayInstructions', 'value': 'false'})
 
         # login as user who created fixture.
         username = self.driver.find_element(by=By.NAME, value='login')
@@ -343,6 +353,10 @@ class TestLoopEditorPage(StaticLiveServerTestCase):
         drumloop_id = 2
         self.driver.get(self.BASE_URL + f'editor/{drumloop_id}')
 
+        # Set the displayInstructions cookie to false - this testing suite
+        # does not test the instruction tooltip modals.
+        self.driver.add_cookie({'name': 'displayInstructions', 'value': 'false'})
+
         # login as user who created fixture.
         username = self.driver.find_element(by=By.NAME, value='login')
         password = self.driver.find_element(by=By.NAME, value='password')
@@ -394,6 +408,10 @@ class TestLoopEditorPage(StaticLiveServerTestCase):
     def test_toggle_beat_and_save_to_db(self):
         drumloop_id = 2
         self.driver.get(self.BASE_URL + f'editor/{drumloop_id}')
+
+        # Set the displayInstructions cookie to false - this testing suite
+        # does not test the instruction tooltip modals.
+        self.driver.add_cookie({'name': 'displayInstructions', 'value': 'false'})
 
         # login as user who created fixture.
         username = self.driver.find_element(by=By.NAME, value='login')
