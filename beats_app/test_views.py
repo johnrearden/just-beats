@@ -194,7 +194,7 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_loop_detail_view(self):
-        url = f'/loop/{self.test_user.username}/{self.test_drumloop.name}/'
+        url = f'/loop/{self.test_drumloop.slug}/'
         response = self.client.get(url)
         self.assertTemplateUsed(response, 'loop_detail.html')
         self.assertEqual(response.status_code, 200)
