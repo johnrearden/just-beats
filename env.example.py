@@ -1,5 +1,6 @@
 import os
 
+# This file lists the environment variables necessary to run the project
 os.environ["DATABASE_URL"] = ""
 os.environ["SECRET_KEY"] = ""
 os.environ["CLOUDINARY_URL"] = ""
