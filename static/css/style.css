@@ -46,8 +46,9 @@ input {
     border: 1px solid gray;
     border-radius: 4px;
     padding: 4px 8px;
-    margin: 0 20px;
+    /* margin: 0 20px; */
     text-align: center;
+    width: fit-content;
 }
 
 input[type=range] {
@@ -271,7 +272,7 @@ label {
     color: white;
     text-shadow: 0 0 1px greenyellow;
     font-family: 'wallpoet';
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
 
 .review-outline {
@@ -386,8 +387,6 @@ label {
 /* These css elements style the drumloop_editor template ---------*/
 
 #drumloop_name {
-    width: 300px;
-    height: 70px;
     font-size: 1.2rem;
     color: white;
 }
@@ -476,6 +475,11 @@ label {
 
     .beat:nth-child(4n - 3) {
         margin-left: 1px;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 3px;
     }
 }
 

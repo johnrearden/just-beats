@@ -7,26 +7,47 @@
 <!--Contains the loop name(editable), the tempo(adjustable) and the creator name(immutable)
     for the current loop-->
 <div class="container-lg">
-    <div class="row align-items-center">
-        <div class="col-md-6 p-4 mt-3 text-center">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-auto text-center">
             <label for="drumloop_name">Loop Name</label>
             <input type="text" id="drumloop_name" value="{{ loop.name }}" name="drumloop_name"
                 oninput="onDrumloopNameChange(event)">
         </div>
-        <div class="col-md-6 text-center">
+        <div class="col-auto text-center">
+            <label for="tempo">Tempo</label>
+            <input type="number" id="tempo" name="tempo" value="{{ loop.tempo }}" min="60" max="200" step="1"
+                oninput="onTempoInputChange(event)">
+        </div>
+        <!-- <div class="col-6 col-lg-3 order-3 text-center">
             <label for="creator_name">Creator</label>
-            <input type="text" id="creator_name" readonly value="{{ loop.creator }}" class="text-white"
+            <input type="text" id="creator_name" readonly value="{{ loop.creator }}" class="text-white w-100"
                 name="creator_name">
-        </div>
-        <div class="row text-center align-items-center">
-            <div class="col-4 offset-4">
-                <label for="tempo">Tempo</label>
-                <input type="number" id="tempo" name="tempo" value="{{ loop.tempo }}" min="60" max="200" step="1"
-                    oninput="onTempoInputChange(event)">
-            </div>
-            <input type="text" class="hidden" id="drumloop-id" name="drumloop_id" value="{{ loop.id }}">
-        </div>
+        </div> -->
     </div>
+</div>
+<div class="row justify-content-center align-items-center">
+    <!--Button controls to allow user to play the loop, add a new track, save the current loop, 
+    and delete the entire loop-->
+    <div class="col-auto col-lg-2 order-1 text-center">
+        <button id="editor-play-button" class="medium-play-button m-3" aria-label="play button">
+            <i class="fa-solid fa-play "></i>
+            <i class="fa-solid fa-pause  d-none"></i>
+        </button>
+    </div>
+    <div class="col-auto col-lg-2 order-2 order-lg-3 text-center">
+        <!--A number input to control the volume-->
+        <label for="loop-detail-volume">Volume</label>
+        <input type="number" id="loop-detail-volume" min="0" max="10" value="7">
+    </div>
+    <div class="col-12 col-lg-auto order-3 order-lg-2 text-center">
+        <button id="add-new-track" class="m-1">ADD NEW TRACK</button>
+        <button id="save-data" class="m-1" onclick="postLoopAndTracks(event)">SAVE</button>
+        <button id="delete-loop" class="m-1" onclick="onDeleteLoopButtonClick(event, '{{ loop.id }}')">
+            DELETE LOOP
+        </button>
+    </div>
+</div>
+<input type="text" class="hidden" id="drumloop-id" name="drumloop_id" value="{{ loop.id }}">
 </div>
 
 <!--Hold the tracks for the current loop-->
@@ -50,8 +71,8 @@
             <div id="volume-slider-outer_{{ forloop.counter0 }}" class="col-6 col-lg-2 overflow-hidden">
                 <input type="range" id="track_volume_{{ track.id }}" name="track_volume_{{ track.id }}"
                     value="{{ track.track_volume }}" min="0" max="10" class="track-volume py-2 py-md-0" list="tickmarks"
-                    oninput="onTrackVolumeChange(event, '{{ track.id }}')"
-                    aria-label="volume slider" data-toggle="tooltip" data-placement="bottom" data-delay="1500"
+                    oninput="onTrackVolumeChange(event, '{{ track.id }}')" aria-label="volume slider"
+                    data-toggle="tooltip" data-placement="bottom" data-delay="1500"
                     title="Adjust the slider to change the volume">
                 <datalist id="tickmarks">
                     <option value="0" label="0"></option>
@@ -65,13 +86,13 @@
 
             <!--A holder with a div for each beat which can be togged to turn the beat on or off-->
             <div class="col-12 col-lg-7">
-                <div id="beats-holder-track_{{ forloop.counter0 }}" class="beats-holder py-2 py-md-0" 
-                     data-toggle="tooltip" data-placement="right" 
-                     title="Click on the green button below to toggle the beat on/off" data-delay=1500>
+                <div id="beats-holder-track_{{ forloop.counter0 }}" class="beats-holder py-2 py-md-0"
+                    data-toggle="tooltip" data-placement="right"
+                    title="Click on the green button below to toggle the beat on/off" data-delay=1500>
                     {% for char in track.beats %}
                     {% if char == '8' %}
                     <div id="{{ track.id }}:{{ forloop.counter0 }}" class="beat active_beat"
-                        onclick="onBeatClick(event)" ></div>
+                        onclick="onBeatClick(event)"></div>
                     {% else %}
                     <div id="{{ track.id }}:{{ forloop.counter0 }}" class="beat" onclick="onBeatClick(event)">
                     </div>
@@ -91,23 +112,7 @@
     </div>
 </div>
 
-<!--Button controls to allow user to play the loop, add a new track, save the current loop, 
-    and delete the entire loop-->
-<div class="col text-center p-3">
-    <button id="editor-play-button" class="medium-play-button m-3" aria-label="play button">
-        <i class="fa-solid fa-play "></i>
-        <i class="fa-solid fa-pause  d-none"></i>
-    </button>
-    <!--A number input to control the volume-->
-    <label for="loop-detail-volume">Volume</label>
-    <input type="number" id="loop-detail-volume" min="0" max="10" value="7">
-    
-    <button id="add-new-track" class="m-3">ADD NEW TRACK</button>
-    <button id="save-data" class="m-3" onclick="postLoopAndTracks(event)">SAVE</button>
-    <button id="delete-loop" class="m-3" onclick="onDeleteLoopButtonClick(event, '{{ loop.id }}')">
-        DELETE LOOP
-    </button>
-</div>
+
 
 <!-- Instrument selection modal, shown when the instrument display name on any track is clicked -->
 <div class="modal fade " id="instrument-chooser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
