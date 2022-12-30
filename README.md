@@ -125,7 +125,7 @@ approve ratings and comments, without allowing them full admin access to the dat
 - The font used for headings and labels is 'Wallpoet', which is similar in appearance to a stencil. It was sourced from [this website](https://www.1001fonts.com/graffiti-fonts.html). Thanks to [Lars Berggman](https://www.1001fonts.com/users/punktlars/).
 
 ![wallpoet_sample](media/docs/wallpoet_font_sample.png)
-- The font used for the site logo is 'Future', which is slightly less readable but looks more like what a graffiti artist would draw with a can of spraypaing. It was sourced from the same site as 'wallpoet' - thanks to [PressGangStudios](https://www.1001fonts.com/users/pressgang/).
+- The font used for the site logo is 'Future', which is slightly less readable but looks more like what a graffiti artist would draw with a can of spraypaint. It was sourced from the same site as 'wallpoet' - thanks to [PressGangStudios](https://www.1001fonts.com/users/pressgang/).
 
 ![wallpoet_sample](media/docs/outrun_font_sample.png)
 
