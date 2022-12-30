@@ -130,7 +130,6 @@ const animationCallback = (beatIndex) => {
 const onBeatClick = (event) => {
     let beatDiv = event.target;
     let [trackString, beatString] = beatDiv.id.split(":");
-    console.log(trackString, beatString);
     trackNumber = parseInt(trackString);
     beatNumber = parseInt(beatString);
     if (beatDiv.classList.contains('active_beat')) {
@@ -660,6 +659,7 @@ const checkInstructionsCookie = () => {
             }],
             onComplete: function () {
                 document.cookie = "displayInstructions=false";
+                location.reload();
             }
         };
         createSequence(options);
