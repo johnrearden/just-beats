@@ -40,58 +40,58 @@
                             <span id="all-loops" class="imitation-button highlighted-button">All Loops</span>
                         </a>
                     </div>
-                        {% if user.is_authenticated %}
-                        <div class="col-6 col-md-3">
-                            <a href="{% url 'home' 'user_only' %}">
-                                <span id="my-loops" class="imitation-button">My Loops</span>
-                            </a>
-                        </div>
-                        {% else %}
-                        <div class="col-6 col-md-3">
-                            <a href="{% url 'home' 'user_only' %}">
-                                <span id="my-loops" class="imitiation-button disabled">My Loops</span>
-                            </a>
-                        </div>
-                        {% endif %}
+                    {% if user.is_authenticated %}
+                    <div class="col-6 col-md-3">
+                        <a href="{% url 'home' 'user_only' %}">
+                            <span id="my-loops" class="imitation-button">My Loops</span>
+                        </a>
+                    </div>
+                    {% else %}
+                    <div class="col-6 col-md-3">
+                        <a href="{% url 'home' 'user_only' %}">
+                            <span id="my-loops" class="imitiation-button disabled">My Loops</span>
+                        </a>
+                    </div>
+                    {% endif %}
                     {% else %}
                     <div class="col-6 col-md-3 offset-md-3">
                         <a href="{% url 'home' 'all' %}">
                             <span id="all-loops" class="imitation-button">All Loops</span>
                         </a>
                     </div>
-                        {% if user.is_authenticated %}
-                        <div class="col-6 col-md-3">
-                            <a href="{% url 'home' 'user_only' %}">
-                                <span id="my-loops" class="imitation-button highlighted-button" >My Loops</span>
-                            </a>
-                        </div>
-                        {% else %}
-                        <div class="col-6 col-md-3">
-                            <a href="{% url 'home' 'user_only' %}">
-                                <span id="my-loops" class="imitiation-button disabled">My Loops</span>
-                            </a>
-                        </div>
-                        {% endif %}
+                    {% if user.is_authenticated %}
+                    <div class="col-6 col-md-3">
+                        <a href="{% url 'home' 'user_only' %}">
+                            <span id="my-loops" class="imitation-button highlighted-button">My Loops</span>
+                        </a>
+                    </div>
+                    {% else %}
+                    <div class="col-6 col-md-3">
+                        <a href="{% url 'home' 'user_only' %}">
+                            <span id="my-loops" class="imitiation-button disabled">My Loops</span>
+                        </a>
+                    </div>
+                    {% endif %}
                     {% endif %}
                 </div>
             </div>
-            
+
             <!--A table to display the drumloops-->
+            {% if drumloops %}
             <table class="drumloop-table mt-3">
                 <thead>
                     <tr>
                         <th scope="col">Creator</th>
                         <th scope="col">Name</th>
                         <th scope="col" class="d-none d-md-table-cell">Tempo</th>
-                        <th scope="col" >Rating</th>
+                        <th scope="col">Rating</th>
                         <th scope="col"></th>
                         <th class="d-none"></th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for loop in drumloops %}
-                    <tr class="drumloop-table-row" 
-                        onclick="onRowClicked(event, '{{ loop.slug }}')">
+                    <tr class="drumloop-table-row" onclick="onRowClicked(event, '{{ loop.slug }}')">
                         <td class="drumloop-table-item">
                             {{ loop.creator }}
                         </td>
@@ -101,7 +101,7 @@
                         <td class="drumloop-table-item d-none d-md-table-cell">
                             {{ loop.tempo }}
                         </td>
-                        <td id="rating-display-{{forloop.counter0}}" >
+                        <td id="rating-display-{{forloop.counter0}}">
                         </td>
                         <td>
                             {% if user == loop.creator %}
@@ -114,10 +114,15 @@
                             {{loop.rating}}
                         </td>
                     </tr>
-                    
+
                     {% endfor %}
+                    
+                    {% else %}
+                    <p class="m-3 fs-4">No loops yet ... why not create one!</p>
+                    
                 </tbody>
             </table>
+            {% endif %}
         </div>
     </div>
 </div>
