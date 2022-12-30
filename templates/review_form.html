@@ -17,32 +17,32 @@
                 </div>
                 <hr>
                 <div class="row align-items-center">
-                    <div class="col-7">
-                        <h3>Comment</h3>
+                    <div class="col-8 col-md-6">
+                        <h4 class="comment-box">Comment</h4>
                     </div>
-                    <div class="col-3 text-center">
-                        <h4>Stars</h4>
+                    <div class="col-3 text-center d-none d-md-block">
+                        <h4 class="comment-box">Stars</h4>
                     </div>
-                    <div class="col-2 text-center">
-                        <h4>By</h4>
+                    <div class="col-4 col-md-3 text-center">
+                        <h4 class="comment-box">By</h4>
                     </div>
                 </div>
                 {% for review in previous_reviews %}
-                <div class="row review-outline">
+                <div class="row fs-3 text-wrap">
                     {% if review.approved %}
-                    <div class="col-7">
-                        <span class="existing-comment">"{{ review.comment }}"</span>
+                    <div class="col-8 col-md-6">
+                        <span class="existing-comment comment-box">"{{ review.comment }}"</span>
                     </div>
                     {% else %}
-                    <div class="col-7">
-                        <span>(awaiting approval)</span>
+                    <div class="col-8 col-md-6">
+                        <span class="comment-box">(awaiting approval)</span>
                     </div>
                     {% endif %}
-                    <div class="col-3 text-center">
-                        <span class="existing-rating">{{ review.rating }}</span>
+                    <div class="col-4 col-md-3 text-center d-none d-md-block">
+                        <span class="existing-rating comment-box">{{ review.rating }}</span>
                     </div>
-                    <div class="col-2 text-center">
-                        <span class="existing-reviewer">{{ review.reviewer.username }}</span>
+                    <div class="col-4 col-md-3 text-center overflow-hidden">
+                        <span class="existing-reviewer comment-box">{{ review.reviewer.username }}</span>
                     </div>
                 </div>
                 {% endfor %}

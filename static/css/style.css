@@ -46,7 +46,6 @@ input {
     border: 1px solid gray;
     border-radius: 4px;
     padding: 4px 8px;
-    /* margin: 0 20px; */
     text-align: center;
     width: fit-content;
 }
@@ -242,6 +241,10 @@ button:hover,
     #loop-detail-volume-label {
         font-size: 1rem;
         padding: 0;
+    }
+
+    .comment-box {
+        font-size: 0.8rem;
     }
 }
 
