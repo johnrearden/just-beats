@@ -595,3 +595,7 @@ label {
     padding: 5px;
     margin: 15px;
 }
+
+.signup_form, .signup_form label{
+    display: inline-block;
+}
