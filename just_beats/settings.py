@@ -30,11 +30,11 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['just-beats.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['just-beats.herokuapp.com', 'localhost', 'port-8000-python-blue-monkey-johnrearden26051.preview.codeanywhere.com']
 
 # Application definition
 

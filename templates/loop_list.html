@@ -78,6 +78,7 @@
 
             <!--A table to display the drumloops-->
             {% if drumloops %}
+            
             <table class="drumloop-table mt-3">
                 <thead>
                     <tr>
@@ -90,7 +91,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for loop in drumloops %}
+                    {% for loop in page_obj %}
                     <tr class="drumloop-table-row" onclick="onRowClicked(event, '{{ loop.slug }}')">
                         <td class="drumloop-table-item">
                             {{ loop.creator }}
@@ -117,11 +118,21 @@
 
                     {% endfor %}
                     
-                    {% else %}
-                    <p class="m-3 fs-4">No loops yet ... why not create one!</p>
+                    
                     
                 </tbody>
             </table>
+            <h6 class="text-center mt-2">Page {{ page_number }} of {{ paginator.num_pages }}</h6>
+            
+            {% for item in page_links %}
+            <a href="{% url 'loop_list' forloop.counter %}">
+                <span class="{% if forloop.counter == page_number %}large_page_number{% else %}page_number{% endif %} text-center">
+                    {{ item }}
+                </span>
+            </a>
+                {% endfor %}
+            {% else %}
+                    <p class="m-3 fs-4">No loops yet ... why not create one!</p>
             {% endif %}
         </div>
     </div>

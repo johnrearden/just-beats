@@ -5,6 +5,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import View
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.core.paginator import Paginator
 from .models import Drumloop, Track, Instrument, Review
 from .serializers import TrackSerializer
 from .forms import NewDrumloopForm, ReviewForm
@@ -18,15 +19,22 @@ class LoopList(View):
     of only the drumloops created by the current user.
     """
 
-    def get(self, request, selection='all'):
+    def get(self, request, selection='all', page_number=1):
+        
         if (selection == 'all'):
             drumloops = Drumloop.objects.order_by('-rating')
         else:
             drumloops = Drumloop.objects.filter(
                 creator=request.user).order_by('-rating')
+        paginator = Paginator(drumloops, 6)
+        page_obj = paginator.get_page(page_number)
         context = {
             'drumloops': drumloops,
             'selection': selection,
+            'page_number': page_number,
+            'paginator': paginator,
+            'page_obj': page_obj,
+            'page_links': paginator.get_elided_page_range(page_number, on_each_side=1, on_ends=1)
         }
         return render(
             request,

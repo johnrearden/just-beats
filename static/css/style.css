@@ -599,3 +599,14 @@ label {
 .signup_form, .signup_form label{
     display: inline-block;
 }
+
+.large_page_number {
+    color: yellowgreen;
+    font-size: 1.5rem;
+    font-family: 'wallpoet', sans-serif;
+}
+
+.page_number {
+    color: green;
+    font-family: 'wallpoet', sans-serif;
+}

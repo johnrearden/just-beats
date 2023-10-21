@@ -4,7 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic.base import TemplateView
 
 urlpatterns = [
-    path('', views.LoopList.as_view(), name='home'),
+    path('', views.LoopList.as_view(), name="home"),
+    path('<int:page_number>', views.LoopList.as_view(), name='loop_list'),
     path('robots.txt', TemplateView.as_view(template_name='robots.txt',
          content_type='text/plain'), name='robots'),
     path('home/<str:selection>', login_required(views.LoopList.as_view()),
